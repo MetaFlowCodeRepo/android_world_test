@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "wimb-device": {
+      "type": "http",
+      "url": "http://8.140.220.95:8000/mcp/53a2610f7140ca28"
+    }
+  }
+}
