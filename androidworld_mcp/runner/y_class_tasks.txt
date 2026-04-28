@@ -1,0 +1,37 @@
+# 23 个不需要装第三方 app、且执行过程几乎不影响其他任务的任务
+# 顺序经过排版：先简单状态切换，再 UI 类，再 composite
+
+# system 设置（不修改 wifi 状态的放前面，方便排序）
+SystemBluetoothTurnOn
+SystemBluetoothTurnOnVerify
+SystemBluetoothTurnOff
+SystemBluetoothTurnOffVerify
+SystemBrightnessMax
+SystemBrightnessMaxVerify
+SystemBrightnessMin
+SystemBrightnessMinVerify
+SystemCopyToClipboard
+SystemWifiTurnOn
+SystemWifiTurnOnVerify
+SystemWifiTurnOff
+SystemWifiTurnOffVerify
+
+# clock
+ClockStopWatchPausedVerify
+ClockStopWatchRunning
+ClockTimerEntry
+
+# camera
+CameraTakePhoto
+CameraTakeVideo
+
+# contacts
+ContactsAddContact
+ContactsNewContactDraft
+
+# system - open app
+OpenAppTaskEval
+
+# composite
+TurnOnWifiAndOpenApp
+TurnOffWifiAndTurnOnBluetooth

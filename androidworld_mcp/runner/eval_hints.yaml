@@ -1,0 +1,169 @@
+# 视觉版成功判据。run_task.py 会把每个任务的 hint 拼到 Claude 的 prompt 里。
+#
+# 字段：
+#   pre_check    （可选）执行前需要 Claude 确认/重置的状态
+#   exec_hint    （可选）执行阶段的关键提示（不要替 Claude 思考，只标注易踩的坑）
+#   verify       （必填）成功判据，要求 Claude 在最后用截图+/或 XML 证实
+#   evidence     （必填）需要 Claude 输出的证据形式（screenshot / xml / 文字）
+#
+# 写法原则：
+#   - 不要把"点了 X 按钮"当作成功证据。必须看到状态变化的截图。
+#   - 涉及"打开/关闭"的开关类，截图要包含"开关本身处于目标状态"的画面，而不仅是
+#     某个 toast。
+#   - 涉及参数的，参数值必须在最终截图里能看到。
+
+CameraTakePhoto:
+  exec_hint: |
+    系统相机不同 ROM 差异大。先 press_home，再 open_app camera。
+    若进入相机后停留在视频模式，先切换到"照片"。
+  verify: |
+    1) 拍完后退出相机，open_app 系统"图库/相册"或滑出底部预览。
+    2) 截图证明"图库的最新一张是刚才拍的照片"（缩略图为新照、时间为'刚刚'）。
+  evidence: 1 张图库截图
+
+CameraTakeVideo:
+  exec_hint: |
+    切到"视频"模式录制 ≥1 秒，再次点录制按钮停止。
+  verify: |
+    退出相机进图库，最新一项是带"时长"水印的视频缩略图。
+  evidence: 1 张图库截图
+
+ClockStopWatchPausedVerify:
+  pre_check: |
+    若秒表正在跑，先按"暂停"。任务期望状态为"已暂停且 00:00:00 也算"。
+  verify: |
+    时钟 → 秒表页，截图必须看到：
+      a) 显示数值固定不动（再 wait_screen_update 后值不变），且
+      b) 主按钮显示为"开始/Start"（说明当前是 Paused/Stopped）。
+  evidence: 1 张秒表页截图
+
+ClockStopWatchRunning:
+  verify: |
+    时钟 → 秒表页，截图证明：
+      a) 主按钮显示"暂停/Pause"；
+      b) 等 1.5 秒后再截一张，时间数值已增大。
+  evidence: 2 张秒表页截图（前后对比）
+
+ClockTimerEntry:
+  exec_hint: |
+    输入数字，不要点"开始"。注意 hours/minutes/seconds 的输入顺序按"右往左填"
+    或"左往右填"在不同 ROM 不一样。最终显示文本格式 "HHh MMm SSs" 或 "HH:MM:SS"。
+  verify: |
+    时钟 → 计时器页，截图必须显示出 {hours}h {minutes}m {seconds}s（或 HH:MM:SS）
+    且按钮处于"开始"（未运行）。
+  evidence: 1 张计时器页截图
+
+ContactsAddContact:
+  verify: |
+    通讯录主列表里出现一条新联系人，名字 == {name}，号码 == {number}（可能带空格分隔）。
+    先打开该条目详情，截图证明姓名 + 电话两项都在。
+  evidence: 联系人详情页截图
+
+ContactsNewContactDraft:
+  exec_hint: |
+    任务明确要求"不要保存"，只填写表单。如果意外点了保存，撤回。
+  verify: |
+    停留在"新建联系人"编辑页。截图必须显示：
+      First name == {first}, Last name == {last}, Phone == {phone},
+      Phone label == {phone_label}（且 label 不是 "Mobile"）。
+  evidence: 1 张编辑页截图
+
+OpenAppTaskEval:
+  exec_hint: |
+    优先用 open_app 工具。{app_name} 是 short name (camera/clock/contacts/settings/dialer)。
+    遇到首启权限弹窗，全部允许；遇到引导页一路 next。
+  verify: |
+    截图证明前台是 {app_name} 对应的 app（标题栏/底部 nav 标识可读出 app 名）。
+  evidence: 1 张前台截图
+
+SystemBluetoothTurnOn:
+  exec_hint: |
+    可走"设置 → 蓝牙"或下拉快捷面板。
+  verify: |
+    打开"设置 → 蓝牙"页（不要只看快捷面板），截图证明顶部蓝牙开关在 ON 位置。
+  evidence: 1 张设置页截图
+
+SystemBluetoothTurnOnVerify:
+  verify: |
+    打开"设置 → 蓝牙"页，截图证明顶部蓝牙开关在 ON 位置。
+  evidence: 1 张设置页截图
+
+SystemBluetoothTurnOff:
+  verify: |
+    "设置 → 蓝牙"页，截图证明顶部蓝牙开关在 OFF 位置，且下方无"已连接的设备"列表。
+  evidence: 1 张设置页截图
+
+SystemBluetoothTurnOffVerify:
+  verify: |
+    "设置 → 蓝牙"页，截图证明顶部蓝牙开关在 OFF 位置。
+  evidence: 1 张设置页截图
+
+SystemBrightnessMax:
+  exec_hint: |
+    下拉快捷面板拖动亮度条到最右，或"设置 → 显示 → 亮度"。
+  verify: |
+    打开"设置 → 显示 → 亮度"页，截图证明亮度滑块在最右端（或显示 100%）。
+  evidence: 1 张亮度页截图
+
+SystemBrightnessMaxVerify:
+  verify: |
+    "设置 → 显示 → 亮度"页，截图证明亮度滑块在最右端。
+  evidence: 1 张亮度页截图
+
+SystemBrightnessMin:
+  exec_hint: |
+    部分 ROM 的"自动亮度"会反复跳动。先关掉自动亮度再拖到最左。
+  verify: |
+    "设置 → 显示 → 亮度"页，截图证明亮度滑块在最左端（或显示 0%/最小档）。
+  evidence: 1 张亮度页截图
+
+SystemBrightnessMinVerify:
+  verify: |
+    "设置 → 显示 → 亮度"页，截图证明亮度滑块在最左端。
+  evidence: 1 张亮度页截图
+
+SystemCopyToClipboard:
+  exec_hint: |
+    没有"复制"快捷入口。建议：用 ai_set_text 把目标文本塞进任意输入框（搜索框/便签皆可），
+    然后长按 → 全选 → 复制。注意验证阶段需要重新打开一个能粘贴的输入框。
+  verify: |
+    打开通讯录"新建联系人"页（任意有输入框的页面也行），长按某输入框 → 选"粘贴"，
+    截图证明粘贴出来的内容文字 == "{clipboard_content}"（允许少量空白差异）。
+  evidence: 1 张粘贴后的截图
+
+SystemWifiTurnOn:
+  verify: |
+    "设置 → WLAN/Wi-Fi"页，截图证明顶部 Wi-Fi 开关在 ON 位置（不强制要求已连接到网络）。
+  evidence: 1 张 Wi-Fi 设置页截图
+
+SystemWifiTurnOnVerify:
+  verify: |
+    "设置 → WLAN/Wi-Fi"页，截图证明顶部 Wi-Fi 开关在 ON 位置。
+  evidence: 1 张 Wi-Fi 设置页截图
+
+SystemWifiTurnOff:
+  verify: |
+    "设置 → WLAN/Wi-Fi"页，截图证明顶部 Wi-Fi 开关在 OFF 位置，且无"附近网络"列表。
+  evidence: 1 张 Wi-Fi 设置页截图
+
+SystemWifiTurnOffVerify:
+  verify: |
+    "设置 → WLAN/Wi-Fi"页，截图证明顶部 Wi-Fi 开关在 OFF 位置。
+  evidence: 1 张 Wi-Fi 设置页截图
+
+TurnOnWifiAndOpenApp:
+  exec_hint: |
+    分两步：先确保 Wi-Fi 已 ON（设置或快捷面板），再 open_app {app_name}。
+    顺序不能反——任务模板要求先开 Wi-Fi 再开 app。
+  verify: |
+    1) 截图：设置→Wi-Fi 页开关 ON。
+    2) 截图：前台是 {app_name}。
+  evidence: 2 张截图
+
+TurnOffWifiAndTurnOnBluetooth:
+  exec_hint: |
+    顺序：先关 Wi-Fi，再开蓝牙。两个动作之间务必各做一次截图确认。
+  verify: |
+    1) 截图：设置→Wi-Fi 页开关 OFF。
+    2) 截图：设置→蓝牙 页开关 ON。
+  evidence: 2 张截图

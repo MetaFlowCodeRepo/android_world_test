@@ -1,0 +1,278 @@
+[
+  {
+    "task": "SystemBluetoothTurnOn",
+    "goal": "Turn bluetooth on.",
+    "params": {
+      "on_or_off": "on"
+    },
+    "app_names": [
+      "settings"
+    ],
+    "complexity": 1,
+    "instance_id": "SystemBluetoothTurnOn#0"
+  },
+  {
+    "task": "SystemBluetoothTurnOnVerify",
+    "goal": "Turn bluetooth on.",
+    "params": {
+      "on_or_off": "on"
+    },
+    "app_names": [
+      "settings"
+    ],
+    "complexity": 1,
+    "instance_id": "SystemBluetoothTurnOnVerify#0"
+  },
+  {
+    "task": "SystemBluetoothTurnOff",
+    "goal": "Turn bluetooth off.",
+    "params": {
+      "on_or_off": "off"
+    },
+    "app_names": [
+      "settings"
+    ],
+    "complexity": 1,
+    "instance_id": "SystemBluetoothTurnOff#0"
+  },
+  {
+    "task": "SystemBluetoothTurnOffVerify",
+    "goal": "Turn bluetooth off.",
+    "params": {
+      "on_or_off": "off"
+    },
+    "app_names": [
+      "settings"
+    ],
+    "complexity": 1,
+    "instance_id": "SystemBluetoothTurnOffVerify#0"
+  },
+  {
+    "task": "SystemBrightnessMax",
+    "goal": "Turn brightness to the max value.",
+    "params": {
+      "max_or_min": "max"
+    },
+    "app_names": [
+      "settings"
+    ],
+    "complexity": 1,
+    "instance_id": "SystemBrightnessMax#0"
+  },
+  {
+    "task": "SystemBrightnessMaxVerify",
+    "goal": "Turn brightness to the max value.",
+    "params": {
+      "max_or_min": "max"
+    },
+    "app_names": [
+      "settings"
+    ],
+    "complexity": 1,
+    "instance_id": "SystemBrightnessMaxVerify#0"
+  },
+  {
+    "task": "SystemBrightnessMin",
+    "goal": "Turn brightness to the min value.",
+    "params": {
+      "max_or_min": "min"
+    },
+    "app_names": [
+      "settings"
+    ],
+    "complexity": 1,
+    "instance_id": "SystemBrightnessMin#0"
+  },
+  {
+    "task": "SystemBrightnessMinVerify",
+    "goal": "Turn brightness to the min value.",
+    "params": {
+      "max_or_min": "min"
+    },
+    "app_names": [
+      "settings"
+    ],
+    "complexity": 1,
+    "instance_id": "SystemBrightnessMinVerify#0"
+  },
+  {
+    "task": "SystemCopyToClipboard",
+    "goal": "Copy the following text to the clipboard: Transaction ID: def456",
+    "params": {
+      "clipboard_content": "Transaction ID: def456"
+    },
+    "app_names": [
+      "clipper"
+    ],
+    "complexity": 1,
+    "instance_id": "SystemCopyToClipboard#0"
+  },
+  {
+    "task": "SystemWifiTurnOn",
+    "goal": "Turn wifi on.",
+    "params": {
+      "on_or_off": "on"
+    },
+    "app_names": [
+      "settings"
+    ],
+    "complexity": 1,
+    "instance_id": "SystemWifiTurnOn#0"
+  },
+  {
+    "task": "SystemWifiTurnOnVerify",
+    "goal": "Turn wifi on.",
+    "params": {
+      "on_or_off": "on"
+    },
+    "app_names": [
+      "settings"
+    ],
+    "complexity": 1,
+    "instance_id": "SystemWifiTurnOnVerify#0"
+  },
+  {
+    "task": "SystemWifiTurnOff",
+    "goal": "Turn wifi off.",
+    "params": {
+      "on_or_off": "off"
+    },
+    "app_names": [
+      "settings"
+    ],
+    "complexity": 1,
+    "instance_id": "SystemWifiTurnOff#0"
+  },
+  {
+    "task": "SystemWifiTurnOffVerify",
+    "goal": "Turn wifi off.",
+    "params": {
+      "on_or_off": "off"
+    },
+    "app_names": [
+      "settings"
+    ],
+    "complexity": 1,
+    "instance_id": "SystemWifiTurnOffVerify#0"
+  },
+  {
+    "task": "ClockStopWatchPausedVerify",
+    "goal": "Pause the stopwatch.",
+    "params": {},
+    "app_names": [
+      "clock"
+    ],
+    "complexity": 1,
+    "instance_id": "ClockStopWatchPausedVerify#0"
+  },
+  {
+    "task": "ClockStopWatchRunning",
+    "goal": "Run the stopwatch.",
+    "params": {},
+    "app_names": [
+      "clock"
+    ],
+    "complexity": 1,
+    "instance_id": "ClockStopWatchRunning#0"
+  },
+  {
+    "task": "ClockTimerEntry",
+    "goal": "Create a timer with 18 hours, 12 minutes, and 45 seconds. Do not start the timer.",
+    "params": {
+      "hours": 18,
+      "minutes": 12,
+      "seconds": 45
+    },
+    "app_names": [
+      "clock"
+    ],
+    "complexity": 1,
+    "instance_id": "ClockTimerEntry#0"
+  },
+  {
+    "task": "CameraTakePhoto",
+    "goal": "Take one photo.",
+    "params": {},
+    "app_names": [
+      "camera"
+    ],
+    "complexity": 1,
+    "instance_id": "CameraTakePhoto#0"
+  },
+  {
+    "task": "CameraTakeVideo",
+    "goal": "Take one video.",
+    "params": {},
+    "app_names": [
+      "camera"
+    ],
+    "complexity": 1,
+    "instance_id": "CameraTakeVideo#0"
+  },
+  {
+    "task": "ContactsAddContact",
+    "goal": "Create a new contact for Alice Alves. Their number is +13413164752.",
+    "params": {
+      "name": "Alice Alves",
+      "number": "+13413164752"
+    },
+    "app_names": [
+      "contacts"
+    ],
+    "complexity": 1.2,
+    "instance_id": "ContactsAddContact#0"
+  },
+  {
+    "task": "ContactsNewContactDraft",
+    "goal": "Go to the new contact screen and enter the following details: First Name: Frank, Last Name: Wilson, Phone: 314-786-5374, Phone Label: Home. Do NOT hit save.",
+    "params": {
+      "first": "Frank",
+      "last": "Wilson",
+      "phone": "314-786-5374",
+      "phone_label": "Home"
+    },
+    "app_names": [
+      "contacts"
+    ],
+    "complexity": 1.2,
+    "instance_id": "ContactsNewContactDraft#0"
+  },
+  {
+    "task": "OpenAppTaskEval",
+    "goal": "Open the dialer app. Clear any pop-ups that may appear by granting all permissions that are required.",
+    "params": {
+      "app_name": "dialer"
+    },
+    "app_names": [
+      "camera",
+      "clock",
+      "contacts",
+      "settings",
+      "dialer"
+    ],
+    "complexity": 1,
+    "instance_id": "OpenAppTaskEval#0"
+  },
+  {
+    "task": "TurnOnWifiAndOpenApp",
+    "goal": "Turn on Wifi, then open the clock app",
+    "params": {
+      "app_name": "clock"
+    },
+    "app_names": [
+      "settings"
+    ],
+    "complexity": 2,
+    "instance_id": "TurnOnWifiAndOpenApp#0"
+  },
+  {
+    "task": "TurnOffWifiAndTurnOnBluetooth",
+    "goal": "Turn off WiFi, then enable bluetooth",
+    "params": {},
+    "app_names": [
+      "settings"
+    ],
+    "complexity": 2,
+    "instance_id": "TurnOffWifiAndTurnOnBluetooth#0"
+  }
+]
