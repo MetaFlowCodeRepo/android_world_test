@@ -2,6 +2,32 @@
 
 通过 40/47（85.1%）  |  总耗时 7554s  |  总费用 $27.00
 
+## 字段说明
+
+| 字段 | 含义 |
+|---|---|
+| **steps** | 实际调用的 MCP 工具次数。每调用一次设备操作工具（如 `press_home`、`get_screenshot`、`ai_click`）计为一步 |
+| **turns** | Claude API 对话轮次数。一个 turn = 一次 assistant 回复 + 后续 user 消息。一个 turn 内可能包含多个工具调用，因此 steps 通常 ≥ turns |
+| **wall_s** | 整个任务的墙钟耗时（秒），从 `claude` CLI 启动到退出的总时间 |
+| **cost** | 该任务消耗的 Claude API 费用（美元），由 Claude Code CLI 根据 token 用量自动计算 |
+| **stop_reason** | 任务结束原因。`success` = 正常完成；`error_max_turns` = 达到最大轮次上限被强制终止 |
+
+## 费用计算方式
+
+cost 由 Claude Code CLI 在 `stream.jsonl` 的 `result` 行中以 `total_cost_usd` 字段给出，计算公式为各类 token 数量 × 对应单价：
+
+| Token 类型 | 单价（Claude Opus 4） | 说明 |
+|---|---|---|
+| input_tokens | $15 / 1M | 常规输入 token |
+| cache_creation_input_tokens | $18.75 / 1M | 首次写入 prompt cache 的 token |
+| cache_read_input_tokens | $1.875 / 1M | 命中 prompt cache 的 token（大幅降低成本） |
+| output_tokens | $75 / 1M | 模型生成的输出 token |
+
+每增加一个 turn，输入 token 会累积增长（因为每轮都携带之前的截图和对话历史），所以 turns 越多费用越高。例如 SimpleCalendarAddOneEvent 跑了 103 turns，花费 $4.62；而简单的 OpenAppExpense 仅 5 turns，花费 $0.12。
+
+> 注：显示 `-` 的行是早期批次执行的任务，当时尚未采集 timing/steps 数据。
+
+## 任务结果
 
 | instance | task | result | steps | turns | wall_s | cost | stop_reason |
 |---|---|---|---|---|---|---|---|
