@@ -1,0 +1,13 @@
+{
+  "task": "OpenAppAudioRecorder",
+  "goal": "Open the Audio Recorder app. Grant all permissions (especially microphone).",
+  "params": {
+    "app_name": "audiorecorder",
+    "package": "com.dimowner.audiorecorder"
+  },
+  "app_names": [
+    "audiorecorder"
+  ],
+  "complexity": 1,
+  "instance_id": "OpenAppAudioRecorder#0"
+}

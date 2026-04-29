@@ -1,0 +1,10 @@
+{
+  "task": "CameraTakePhoto",
+  "goal": "Take one photo.",
+  "params": {},
+  "app_names": [
+    "camera"
+  ],
+  "complexity": 1,
+  "instance_id": "CameraTakePhoto#0"
+}

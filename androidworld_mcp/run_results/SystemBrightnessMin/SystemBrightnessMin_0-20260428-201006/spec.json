@@ -1,0 +1,12 @@
+{
+  "task": "SystemBrightnessMin",
+  "goal": "Turn brightness to the min value.",
+  "params": {
+    "max_or_min": "min"
+  },
+  "app_names": [
+    "settings"
+  ],
+  "complexity": 1,
+  "instance_id": "SystemBrightnessMin#0"
+}

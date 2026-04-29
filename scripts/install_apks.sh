@@ -31,8 +31,8 @@ detect_vlc_apk() {
   local abi
   abi=$(adb "${ADB_ARGS[@]}" shell getprop ro.product.cpu.abi 2>/dev/null | tr -d '\r')
   case "$abi" in
-    arm64-v8a|armeabi*) echo "org.videolan.vlc_13050408.apk" ;;
-    x86_64|x86)         echo "org.videolan.vlc_13050407.apk" ;;
+    arm64-v8a|armeabi*) echo "org.videolan.vlc_13050407.apk" ;;
+    x86_64|x86)         echo "org.videolan.vlc_13050408.apk" ;;
     *)                  echo "org.videolan.vlc_13050408.apk" ;;
   esac
 }

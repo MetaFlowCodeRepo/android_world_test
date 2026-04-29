@@ -1,0 +1,12 @@
+{
+  "task": "SystemBrightnessMax",
+  "goal": "Turn brightness to the max value.",
+  "params": {
+    "max_or_min": "max"
+  },
+  "app_names": [
+    "settings"
+  ],
+  "complexity": 1,
+  "instance_id": "SystemBrightnessMax#0"
+}

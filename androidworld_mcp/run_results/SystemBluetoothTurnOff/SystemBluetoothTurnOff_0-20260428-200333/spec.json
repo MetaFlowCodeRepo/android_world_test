@@ -1,0 +1,12 @@
+{
+  "task": "SystemBluetoothTurnOff",
+  "goal": "Turn bluetooth off.",
+  "params": {
+    "on_or_off": "off"
+  },
+  "app_names": [
+    "settings"
+  ],
+  "complexity": 1,
+  "instance_id": "SystemBluetoothTurnOff#0"
+}

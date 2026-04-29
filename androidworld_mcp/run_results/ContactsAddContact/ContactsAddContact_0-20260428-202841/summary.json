@@ -1,0 +1,10 @@
+{
+  "instance_id": "ContactsAddContact#0",
+  "task": "ContactsAddContact",
+  "params": {
+    "name": "Alice Alves",
+    "number": "+13413164752"
+  },
+  "returncode": 0,
+  "self_eval": null
+}

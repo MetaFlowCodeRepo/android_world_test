@@ -1,0 +1,13 @@
+{
+  "task": "OpenAppGallery",
+  "goal": "Open the Simple Gallery Pro app. Grant all permissions.",
+  "params": {
+    "app_name": "gallery",
+    "package": "com.simplemobiletools.gallery.pro"
+  },
+  "app_names": [
+    "simplegallery"
+  ],
+  "complexity": 1,
+  "instance_id": "OpenAppGallery#0"
+}

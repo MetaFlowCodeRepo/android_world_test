@@ -1,0 +1,182 @@
+{
+  "instance_id": "OpenAppCalendar#0",
+  "task": "OpenAppCalendar",
+  "params": {
+    "app_name": "calendar",
+    "package": "com.simplemobiletools.calendar.pro"
+  },
+  "returncode": 0,
+  "self_eval": {
+    "success": true,
+    "confidence": 1.0,
+    "evidence_summary": "Simple Calendar Pro is open in the foreground showing the monthly view for May (五月) with a complete date grid (1-31), day-of-week headers, today (29) highlighted, and a Team event on the 5th. Device info confirms package com.simplemobiletools.calendar.pro.",
+    "screenshot_paths": [
+      "MCP screenshot - final monthly view of Simple Calendar Pro showing May calendar grid"
+    ],
+    "failure_reason": ""
+  },
+  "timing": {
+    "wall_ms": 121379,
+    "api_ms": 92638
+  },
+  "num_turns": 18,
+  "cost_usd": 0.42684675000000005,
+  "stop_reason": "success",
+  "num_steps": 17,
+  "steps": [
+    {
+      "step": 1,
+      "tool": "press_home",
+      "input": {},
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 2,
+      "tool": "open_app",
+      "input": {
+        "package_name": "com.simplemobiletools.calendar.pro"
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 3,
+      "tool": "wait_stable_screen",
+      "input": {
+        "stable_duration": 2,
+        "timeout": 10
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 4,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 30
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 5,
+      "tool": "ai_click",
+      "input": {
+        "icon": "calendar grid icon in the top toolbar"
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 6,
+      "tool": "wait_stable_screen",
+      "input": {
+        "stable_duration": 1.5,
+        "timeout": 5
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 7,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 30
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 8,
+      "tool": "ai_click",
+      "input": {
+        "icon": "grid dots icon"
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 9,
+      "tool": "wait_stable_screen",
+      "input": {
+        "stable_duration": 1.5,
+        "timeout": 5
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 10,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 30
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 11,
+      "tool": "ai_click",
+      "input": {
+        "text": "月历视图"
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 12,
+      "tool": "wait_stable_screen",
+      "input": {
+        "stable_duration": 1.5,
+        "timeout": 5
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 13,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 30
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 14,
+      "tool": "device_info",
+      "input": {},
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 15,
+      "tool": "ai_click",
+      "input": {
+        "icon": "back arrow at top left"
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 16,
+      "tool": "wait_stable_screen",
+      "input": {
+        "stable_duration": 1.5,
+        "timeout": 5
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 17,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 30
+      },
+      "success": true,
+      "is_error": false
+    }
+  ]
+}

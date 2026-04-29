@@ -1,0 +1,10 @@
+{
+  "task": "ClockStopWatchRunning",
+  "goal": "Run the stopwatch.",
+  "params": {},
+  "app_names": [
+    "clock"
+  ],
+  "complexity": 1,
+  "instance_id": "ClockStopWatchRunning#0"
+}

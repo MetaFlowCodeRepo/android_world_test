@@ -1,0 +1,13 @@
+{
+  "task": "ContactsAddContact2",
+  "goal": "Create a new contact for Bob Smith. Their number is +18005551234.",
+  "params": {
+    "name": "Bob Smith",
+    "number": "+18005551234"
+  },
+  "app_names": [
+    "contacts"
+  ],
+  "complexity": 1.2,
+  "instance_id": "ContactsAddContact2#0"
+}

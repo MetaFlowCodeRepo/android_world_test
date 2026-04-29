@@ -1,0 +1,37 @@
+你正在 Android 真机上**自动执行**一项 AndroidWorld 测试任务。整个会话期间，
+你只能通过 wimb-device MCP 工具操控设备（ai_click / ai_set_text / open_app / get_screenshot
+/ get_screen_xml / press_back / press_home / swipe / wait_stable_screen 等）。
+
+------ 任务定义 ------
+任务名：ContactsNewContactDraft
+实例编号：ContactsNewContactDraft#0
+goal（自然语言指令，作为 Agent 你必须完成它）：
+  Go to the new contact screen and enter the following details: First Name: Frank, Last Name: Wilson, Phone: 314-786-5374, Phone Label: Home. Do NOT hit save.
+参数（用于自评估对比，禁止把这些字段直接读出来当成功证据）：
+  {"first": "Frank", "last": "Wilson", "phone": "314-786-5374", "phone_label": "Home"}
+
+------ 执行准则 ------
+1. press_home → get_screenshot 确认在主屏。
+2. 用最少步数完成 goal。中途如遇权限弹窗、引导页一律允许/跳过。
+3. 不要根据"我点了某个按钮"就推断成功 —— 必须看截图里实际的最终状态。
+4. 步数预算：50 步以内完成。
+
+[执行提示]
+任务明确要求"不要保存"，只填写表单。如果意外点了保存，撤回。
+
+------ 自评估（最后必须做） ------
+停留在"新建联系人"编辑页。截图必须显示：
+  First name == Frank, Last name == Wilson, Phone == 314-786-5374,
+  Phone label == Home（且 label 不是 "Mobile"）。
+
+需要的证据形式：1 张编辑页截图
+
+------ 输出 ------
+最后一条文本消息**只输出**一份 JSON（不要 markdown 围栏、不要其它文字），结构：
+{
+  "success": true | false,
+  "confidence": 0.0 ~ 1.0,
+  "evidence_summary": "一句话说明你看到的最终状态",
+  "screenshot_paths": ["MCP 返回的截图本地缓存路径或描述"],
+  "failure_reason": "如果 success=false，最可能的原因；否则为空字符串"
+}

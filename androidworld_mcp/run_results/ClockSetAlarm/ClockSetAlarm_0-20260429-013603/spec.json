@@ -1,0 +1,13 @@
+{
+  "task": "ClockSetAlarm",
+  "goal": "Set a new alarm for 7:30 AM in the Clock app.",
+  "params": {
+    "hour": 7,
+    "minute": 30
+  },
+  "app_names": [
+    "clock"
+  ],
+  "complexity": 1.2,
+  "instance_id": "ClockSetAlarm#0"
+}

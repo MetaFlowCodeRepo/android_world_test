@@ -1,0 +1,497 @@
+{
+  "instance_id": "ClockTimerEntry#0",
+  "task": "ClockTimerEntry",
+  "params": {
+    "hours": 18,
+    "minutes": 12,
+    "seconds": 45
+  },
+  "returncode": 0,
+  "self_eval": {
+    "success": true,
+    "confidence": 0.99,
+    "evidence_summary": "Timer page shows 18:12:45 with play (start) button visible and not pressed — timer has not been started.",
+    "screenshot_paths": [
+      "Final verification screenshot from get_screenshot showing 18:12:45 on the Clock app timer tab"
+    ],
+    "failure_reason": ""
+  },
+  "timing": {
+    "wall_ms": 364740,
+    "api_ms": 310653
+  },
+  "num_turns": 47,
+  "cost_usd": 1.6884540000000001,
+  "stop_reason": "success",
+  "num_steps": 46,
+  "steps": [
+    {
+      "step": 1,
+      "tool": "press_home",
+      "input": {},
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 2,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 30
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 3,
+      "tool": "open_app",
+      "input": {
+        "package_name": "com.google.android.deskclock"
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 4,
+      "tool": "wait_stable_screen",
+      "input": {
+        "stable_duration": 2,
+        "timeout": 10
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 5,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 30
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 6,
+      "tool": "ai_click",
+      "input": {
+        "text": "时钟"
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 7,
+      "tool": "wait_stable_screen",
+      "input": {
+        "stable_duration": 2,
+        "timeout": 10
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 8,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 30
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 9,
+      "tool": "get_screen_xml",
+      "input": {},
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 10,
+      "tool": "swipe",
+      "input": {
+        "from_x": 0.5,
+        "from_y": 0.5,
+        "to_x": 0.5,
+        "to_y": 0.15,
+        "duration": 500
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 11,
+      "tool": "wait_stable_screen",
+      "input": {
+        "stable_duration": 1,
+        "timeout": 5
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 12,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 30
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 13,
+      "tool": "swipe",
+      "input": {
+        "from_x": 0.5,
+        "from_y": 0.35,
+        "to_x": 0.5,
+        "to_y": 0.55,
+        "duration": 500
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 14,
+      "tool": "wait_stable_screen",
+      "input": {
+        "stable_duration": 1,
+        "timeout": 5
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 15,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 30
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 16,
+      "tool": "swipe",
+      "input": {
+        "from_x": 0.5,
+        "from_y": 0.35,
+        "to_x": 0.5,
+        "to_y": 0.6,
+        "duration": 500
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 17,
+      "tool": "wait_stable_screen",
+      "input": {
+        "stable_duration": 1,
+        "timeout": 5
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 18,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 30
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 19,
+      "tool": "swipe",
+      "input": {
+        "from_x": 540,
+        "from_y": 1100,
+        "to_x": 540,
+        "to_y": 950,
+        "duration": 300
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 20,
+      "tool": "wait_stable_screen",
+      "input": {
+        "stable_duration": 1,
+        "timeout": 5
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 21,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 30
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 22,
+      "tool": "swipe",
+      "input": {
+        "from_x": 540,
+        "from_y": 1150,
+        "to_x": 540,
+        "to_y": 850,
+        "duration": 500
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 23,
+      "tool": "wait_stable_screen",
+      "input": {
+        "stable_duration": 1,
+        "timeout": 5
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 24,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 30
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 25,
+      "tool": "swipe",
+      "input": {
+        "from_x": 0.5,
+        "from_y": 0.48,
+        "to_x": 0.5,
+        "to_y": 0.335,
+        "duration": 500
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 26,
+      "tool": "wait_stable_screen",
+      "input": {
+        "stable_duration": 1,
+        "timeout": 5
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 27,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 30
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 28,
+      "tool": "swipe",
+      "input": {
+        "from_x": 0.5,
+        "from_y": 0.48,
+        "to_x": 0.5,
+        "to_y": 0.265,
+        "duration": 500
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 29,
+      "tool": "wait_stable_screen",
+      "input": {
+        "stable_duration": 1,
+        "timeout": 5
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 30,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 30
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 31,
+      "tool": "swipe",
+      "input": {
+        "from_x": 0.5,
+        "from_y": 0.35,
+        "to_x": 0.5,
+        "to_y": 0.48,
+        "duration": 500
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 32,
+      "tool": "wait_stable_screen",
+      "input": {
+        "stable_duration": 1,
+        "timeout": 5
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 33,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 30
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 34,
+      "tool": "ai_click",
+      "input": {
+        "text": "12"
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 35,
+      "tool": "wait_stable_screen",
+      "input": {
+        "stable_duration": 1,
+        "timeout": 5
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 36,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 30
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 37,
+      "tool": "swipe",
+      "input": {
+        "from_x": 0.5,
+        "from_y": 0.38,
+        "to_x": 0.5,
+        "to_y": 0.51,
+        "duration": 500
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 38,
+      "tool": "wait_stable_screen",
+      "input": {
+        "stable_duration": 1,
+        "timeout": 5
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 39,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 30
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 40,
+      "tool": "swipe",
+      "input": {
+        "from_x": 0.833,
+        "from_y": 0.55,
+        "to_x": 0.833,
+        "to_y": 0.15,
+        "duration": 300
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 41,
+      "tool": "wait_stable_screen",
+      "input": {
+        "stable_duration": 1,
+        "timeout": 5
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 42,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 30
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 43,
+      "tool": "swipe",
+      "input": {
+        "from_x": 0.833,
+        "from_y": 0.55,
+        "to_x": 0.833,
+        "to_y": 0.05,
+        "duration": 300
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 44,
+      "tool": "wait_stable_screen",
+      "input": {
+        "stable_duration": 1,
+        "timeout": 5
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 45,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 30
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 46,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 50
+      },
+      "success": true,
+      "is_error": false
+    }
+  ]
+}

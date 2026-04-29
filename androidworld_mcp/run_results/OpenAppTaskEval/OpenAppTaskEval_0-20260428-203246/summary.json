@@ -1,0 +1,9 @@
+{
+  "instance_id": "OpenAppTaskEval#0",
+  "task": "OpenAppTaskEval",
+  "params": {
+    "app_name": "dialer"
+  },
+  "returncode": 0,
+  "self_eval": null
+}

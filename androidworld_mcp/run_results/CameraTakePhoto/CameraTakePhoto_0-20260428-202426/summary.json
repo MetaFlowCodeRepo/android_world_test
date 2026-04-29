@@ -1,0 +1,15 @@
+{
+  "instance_id": "CameraTakePhoto#0",
+  "task": "CameraTakePhoto",
+  "params": {},
+  "returncode": 0,
+  "self_eval": {
+    "success": true,
+    "confidence": 0.95,
+    "evidence_summary": "Gallery shows the most recent photo dated 2026年4月28日 20:25 (today, just taken), confirming one photo was successfully captured by the camera.",
+    "screenshot_paths": [
+      "Gallery detail view showing photo from 2026年4月28日 20:25"
+    ],
+    "failure_reason": ""
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "task": "OpenAppExpense",
+  "goal": "Open the Pro Expense app. Clear any intro pages that may appear.",
+  "params": {
+    "app_name": "expense",
+    "package": "com.arduia.expense"
+  },
+  "app_names": [
+    "expense"
+  ],
+  "complexity": 1,
+  "instance_id": "OpenAppExpense#0"
+}

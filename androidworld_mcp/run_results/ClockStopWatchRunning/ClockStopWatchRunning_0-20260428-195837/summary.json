@@ -1,0 +1,16 @@
+{
+  "instance_id": "ClockStopWatchRunning#0",
+  "task": "ClockStopWatchRunning",
+  "params": {},
+  "returncode": 0,
+  "self_eval": {
+    "success": true,
+    "confidence": 0.99,
+    "evidence_summary": "Stopwatch is running on the Clock app's stopwatch tab. First screenshot showed 00:08.35 with pause button, second screenshot ~2s later showed 00:21.87 with pause button, confirming the stopwatch is actively running and time is increasing.",
+    "screenshot_paths": [
+      "MCP screenshot 1: stopwatch at 00:08.35 with pause button",
+      "MCP screenshot 2: stopwatch at 00:21.87 with pause button"
+    ],
+    "failure_reason": ""
+  }
+}

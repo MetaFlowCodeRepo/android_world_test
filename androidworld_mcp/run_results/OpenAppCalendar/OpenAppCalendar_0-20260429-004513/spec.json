@@ -1,0 +1,13 @@
+{
+  "task": "OpenAppCalendar",
+  "goal": "Open the Simple Calendar Pro app.",
+  "params": {
+    "app_name": "calendar",
+    "package": "com.simplemobiletools.calendar.pro"
+  },
+  "app_names": [
+    "simplecalendar"
+  ],
+  "complexity": 1,
+  "instance_id": "OpenAppCalendar#0"
+}

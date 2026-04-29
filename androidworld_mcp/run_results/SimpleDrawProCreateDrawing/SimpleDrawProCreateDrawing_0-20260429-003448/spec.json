@@ -1,0 +1,10 @@
+{
+  "task": "SimpleDrawProCreateDrawing",
+  "goal": "Create a simple drawing in Simple Draw Pro and save it. Draw at least two strokes on the canvas.",
+  "params": {},
+  "app_names": [
+    "simpledrawpro"
+  ],
+  "complexity": 1.8,
+  "instance_id": "SimpleDrawProCreateDrawing#0"
+}

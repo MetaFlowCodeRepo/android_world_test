@@ -1,0 +1,17 @@
+{
+  "instance_id": "SystemBluetoothTurnOn#0",
+  "task": "SystemBluetoothTurnOn",
+  "params": {
+    "on_or_off": "on"
+  },
+  "returncode": 0,
+  "self_eval": {
+    "success": true,
+    "confidence": 0.99,
+    "evidence_summary": "Settings → Bluetooth page shows the Bluetooth toggle in the ON (blue) position, with device name visible and scanning for available devices.",
+    "screenshot_paths": [
+      "Settings → 蓝牙 page screenshot showing blue toggle ON"
+    ],
+    "failure_reason": ""
+  }
+}

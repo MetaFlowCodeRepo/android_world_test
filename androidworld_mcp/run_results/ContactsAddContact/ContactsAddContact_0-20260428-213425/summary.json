@@ -1,0 +1,19 @@
+{
+  "instance_id": "ContactsAddContact#0",
+  "task": "ContactsAddContact",
+  "params": {
+    "name": "Alice Alves",
+    "number": "+13413164752"
+  },
+  "returncode": 0,
+  "self_eval": {
+    "success": true,
+    "confidence": 0.99,
+    "evidence_summary": "Contact detail page shows name 'Alice Alves' and phone number '+1 341-316-4752', and the contact appears in the contacts list under section A.",
+    "screenshot_paths": [
+      "Contact detail screenshot showing Alice Alves with phone +1 341-316-4752",
+      "Contacts list screenshot showing Alice Alves entry"
+    ],
+    "failure_reason": ""
+  }
+}

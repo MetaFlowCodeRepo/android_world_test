@@ -1,0 +1,12 @@
+{
+  "task": "SystemCopyToClipboard2",
+  "goal": "Copy the following text to the clipboard: Meeting at 3pm tomorrow",
+  "params": {
+    "clipboard_content": "Meeting at 3pm tomorrow"
+  },
+  "app_names": [
+    "clipper"
+  ],
+  "complexity": 1,
+  "instance_id": "SystemCopyToClipboard2#0"
+}

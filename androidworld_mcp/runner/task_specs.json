@@ -132,30 +132,6 @@
     "instance_id": "SystemWifiTurnOnVerify#0"
   },
   {
-    "task": "SystemWifiTurnOff",
-    "goal": "Turn wifi off.",
-    "params": {
-      "on_or_off": "off"
-    },
-    "app_names": [
-      "settings"
-    ],
-    "complexity": 1,
-    "instance_id": "SystemWifiTurnOff#0"
-  },
-  {
-    "task": "SystemWifiTurnOffVerify",
-    "goal": "Turn wifi off.",
-    "params": {
-      "on_or_off": "off"
-    },
-    "app_names": [
-      "settings"
-    ],
-    "complexity": 1,
-    "instance_id": "SystemWifiTurnOffVerify#0"
-  },
-  {
     "task": "ClockStopWatchPausedVerify",
     "goal": "Pause the stopwatch.",
     "params": {},
@@ -266,13 +242,235 @@
     "instance_id": "TurnOnWifiAndOpenApp#0"
   },
   {
-    "task": "TurnOffWifiAndTurnOnBluetooth",
-    "goal": "Turn off WiFi, then enable bluetooth",
+    "task": "AudioRecorderRecordAudio",
+    "goal": "Record an audio clip of at least 3 seconds, then save it.",
     "params": {},
-    "app_names": [
-      "settings"
-    ],
+    "app_names": ["audiorecorder"],
+    "complexity": 1.2,
+    "instance_id": "AudioRecorderRecordAudio#0"
+  },
+  {
+    "task": "MarkorCreateNote",
+    "goal": "Create a new note in Markor with the title 'Shopping List' and the content 'Milk, Eggs, Bread, Butter'.",
+    "params": {
+      "title": "Shopping List",
+      "content": "Milk, Eggs, Bread, Butter"
+    },
+    "app_names": ["markor"],
+    "complexity": 1.6,
+    "instance_id": "MarkorCreateNote#0"
+  },
+  {
+    "task": "MarkorCreateFolder",
+    "goal": "Create a new folder named 'Work Notes' in Markor's notebook directory.",
+    "params": {
+      "folder_name": "Work Notes"
+    },
+    "app_names": ["markor"],
+    "complexity": 1,
+    "instance_id": "MarkorCreateFolder#0"
+  },
+  {
+    "task": "SimpleCalendarAddOneEvent",
+    "goal": "Create a new calendar event titled 'Team Meeting' on May 5, 2026, from 10:00 AM to 11:00 AM.",
+    "params": {
+      "title": "Team Meeting",
+      "date": "2026-05-05",
+      "start_time": "10:00",
+      "end_time": "11:00"
+    },
+    "app_names": ["simplecalendar"],
+    "complexity": 3.4,
+    "instance_id": "SimpleCalendarAddOneEvent#0"
+  },
+  {
+    "task": "ExpenseAddSingle",
+    "goal": "Add a new expense entry in Pro Expense app: amount $25.50, category 'Food'.",
+    "params": {
+      "amount": "25.50",
+      "category": "Food"
+    },
+    "app_names": ["expense"],
+    "complexity": 1.2,
+    "instance_id": "ExpenseAddSingle#0"
+  },
+  {
+    "task": "RecipeAddSingleRecipe",
+    "goal": "Add a new recipe in Broccoli app with the title 'Pasta Carbonara' and description 'Classic Italian pasta with eggs, cheese, and bacon'.",
+    "params": {
+      "title": "Pasta Carbonara",
+      "description": "Classic Italian pasta with eggs, cheese, and bacon"
+    },
+    "app_names": ["broccoli"],
+    "complexity": 2.4,
+    "instance_id": "RecipeAddSingleRecipe#0"
+  },
+  {
+    "task": "SimpleDrawProCreateDrawing",
+    "goal": "Create a simple drawing in Simple Draw Pro and save it. Draw at least two strokes on the canvas.",
+    "params": {},
+    "app_names": ["simpledrawpro"],
+    "complexity": 1.8,
+    "instance_id": "SimpleDrawProCreateDrawing#0"
+  },
+  {
+    "task": "OpenAppMarkor",
+    "goal": "Open the Markor app. Clear any pop-ups or intro pages that may appear.",
+    "params": {"app_name": "markor", "package": "net.gsantner.markor"},
+    "app_names": ["markor"],
+    "complexity": 1,
+    "instance_id": "OpenAppMarkor#0"
+  },
+  {
+    "task": "OpenAppCalendar",
+    "goal": "Open the Simple Calendar Pro app.",
+    "params": {"app_name": "calendar", "package": "com.simplemobiletools.calendar.pro"},
+    "app_names": ["simplecalendar"],
+    "complexity": 1,
+    "instance_id": "OpenAppCalendar#0"
+  },
+  {
+    "task": "OpenAppExpense",
+    "goal": "Open the Pro Expense app. Clear any intro pages that may appear.",
+    "params": {"app_name": "expense", "package": "com.arduia.expense"},
+    "app_names": ["expense"],
+    "complexity": 1,
+    "instance_id": "OpenAppExpense#0"
+  },
+  {
+    "task": "OpenAppBroccoli",
+    "goal": "Open the Broccoli recipe app.",
+    "params": {"app_name": "broccoli", "package": "com.flauschcode.broccoli"},
+    "app_names": ["broccoli"],
+    "complexity": 1,
+    "instance_id": "OpenAppBroccoli#0"
+  },
+  {
+    "task": "OpenAppRetroMusic",
+    "goal": "Open the Retro Music app. Grant all permissions that are required.",
+    "params": {"app_name": "retromusic", "package": "code.name.monkey.retromusic"},
+    "app_names": ["retromusic"],
+    "complexity": 1,
+    "instance_id": "OpenAppRetroMusic#0"
+  },
+  {
+    "task": "OpenAppVLC",
+    "goal": "Open the VLC media player app. Grant all permissions and skip any intro pages.",
+    "params": {"app_name": "vlc", "package": "org.videolan.vlc"},
+    "app_names": ["vlc"],
+    "complexity": 1,
+    "instance_id": "OpenAppVLC#0"
+  },
+  {
+    "task": "OpenAppAudioRecorder",
+    "goal": "Open the Audio Recorder app. Grant all permissions (especially microphone).",
+    "params": {"app_name": "audiorecorder", "package": "com.dimowner.audiorecorder"},
+    "app_names": ["audiorecorder"],
+    "complexity": 1,
+    "instance_id": "OpenAppAudioRecorder#0"
+  },
+  {
+    "task": "OpenAppSimpleDraw",
+    "goal": "Open the Simple Draw Pro app. Grant storage permissions if asked.",
+    "params": {"app_name": "simpledraw", "package": "com.simplemobiletools.draw.pro"},
+    "app_names": ["simpledrawpro"],
+    "complexity": 1,
+    "instance_id": "OpenAppSimpleDraw#0"
+  },
+  {
+    "task": "OpenAppGallery",
+    "goal": "Open the Simple Gallery Pro app. Grant all permissions.",
+    "params": {"app_name": "gallery", "package": "com.simplemobiletools.gallery.pro"},
+    "app_names": ["simplegallery"],
+    "complexity": 1,
+    "instance_id": "OpenAppGallery#0"
+  },
+  {
+    "task": "OpenAppOsmAnd",
+    "goal": "Open the OsmAnd map app. Skip any download prompts or intro pages.",
+    "params": {"app_name": "osmand", "package": "net.osmand"},
+    "app_names": ["osmand"],
+    "complexity": 1,
+    "instance_id": "OpenAppOsmAnd#0"
+  },
+  {
+    "task": "ContactsAddContact2",
+    "goal": "Create a new contact for Bob Smith. Their number is +18005551234.",
+    "params": {"name": "Bob Smith", "number": "+18005551234"},
+    "app_names": ["contacts"],
+    "complexity": 1.2,
+    "instance_id": "ContactsAddContact2#0"
+  },
+  {
+    "task": "SystemCopyToClipboard2",
+    "goal": "Copy the following text to the clipboard: Meeting at 3pm tomorrow",
+    "params": {"clipboard_content": "Meeting at 3pm tomorrow"},
+    "app_names": ["clipper"],
+    "complexity": 1,
+    "instance_id": "SystemCopyToClipboard2#0"
+  },
+  {
+    "task": "ExpenseAddSingle2",
+    "goal": "Add a new expense entry in Pro Expense app: amount $120.00, category 'Transport'.",
+    "params": {"amount": "120.00", "category": "Transport"},
+    "app_names": ["expense"],
+    "complexity": 1.2,
+    "instance_id": "ExpenseAddSingle2#0"
+  },
+  {
+    "task": "RecipeAddSingleRecipe2",
+    "goal": "Add a new recipe in Broccoli app with the title 'Greek Salad' and description 'Fresh salad with tomatoes, cucumber, olives, and feta cheese'.",
+    "params": {"title": "Greek Salad", "description": "Fresh salad with tomatoes, cucumber, olives, and feta cheese"},
+    "app_names": ["broccoli"],
+    "complexity": 2.4,
+    "instance_id": "RecipeAddSingleRecipe2#0"
+  },
+  {
+    "task": "MarkorCreateFolder2",
+    "goal": "Create a new folder named 'Personal' in Markor's notebook directory.",
+    "params": {"folder_name": "Personal"},
+    "app_names": ["markor"],
+    "complexity": 1,
+    "instance_id": "MarkorCreateFolder2#0"
+  },
+  {
+    "task": "SimpleDrawProCreateDrawing2",
+    "goal": "Create a drawing in Simple Draw Pro: draw a cross shape (one horizontal line and one vertical line crossing in the middle), then save it.",
+    "params": {},
+    "app_names": ["simpledrawpro"],
+    "complexity": 1.8,
+    "instance_id": "SimpleDrawProCreateDrawing2#0"
+  },
+  {
+    "task": "ClockSetAlarm",
+    "goal": "Set a new alarm for 7:30 AM in the Clock app.",
+    "params": {"hour": 7, "minute": 30},
+    "app_names": ["clock"],
+    "complexity": 1.2,
+    "instance_id": "ClockSetAlarm#0"
+  },
+  {
+    "task": "SettingsCheckStorageInfo",
+    "goal": "Navigate to Settings and find the storage information page. Take a screenshot showing the total and used storage.",
+    "params": {},
+    "app_names": ["settings"],
+    "complexity": 1,
+    "instance_id": "SettingsCheckStorageInfo#0"
+  },
+  {
+    "task": "SettingsCheckAboutPhone",
+    "goal": "Navigate to Settings > About Phone and take a screenshot showing the device model and Android version.",
+    "params": {},
+    "app_names": ["settings"],
+    "complexity": 1,
+    "instance_id": "SettingsCheckAboutPhone#0"
+  },
+  {
+    "task": "TurnOnBluetoothAndOpenApp",
+    "goal": "Turn on Bluetooth, then open the Contacts app.",
+    "params": {"app_name": "contacts"},
+    "app_names": ["settings", "contacts"],
     "complexity": 2,
-    "instance_id": "TurnOffWifiAndTurnOnBluetooth#0"
+    "instance_id": "TurnOnBluetoothAndOpenApp#0"
   }
 ]

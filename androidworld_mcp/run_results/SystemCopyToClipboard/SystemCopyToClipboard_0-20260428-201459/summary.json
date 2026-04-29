@@ -1,0 +1,9 @@
+{
+  "instance_id": "SystemCopyToClipboard#0",
+  "task": "SystemCopyToClipboard",
+  "params": {
+    "clipboard_content": "Transaction ID: def456"
+  },
+  "returncode": 0,
+  "self_eval": null
+}

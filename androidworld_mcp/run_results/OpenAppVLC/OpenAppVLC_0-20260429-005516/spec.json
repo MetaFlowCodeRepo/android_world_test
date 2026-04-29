@@ -1,0 +1,13 @@
+{
+  "task": "OpenAppVLC",
+  "goal": "Open the VLC media player app. Grant all permissions and skip any intro pages.",
+  "params": {
+    "app_name": "vlc",
+    "package": "org.videolan.vlc"
+  },
+  "app_names": [
+    "vlc"
+  ],
+  "complexity": 1,
+  "instance_id": "OpenAppVLC#0"
+}

@@ -1,0 +1,12 @@
+{
+  "task": "MarkorCreateFolder",
+  "goal": "Create a new folder named 'Work Notes' in Markor's notebook directory.",
+  "params": {
+    "folder_name": "Work Notes"
+  },
+  "app_names": [
+    "markor"
+  ],
+  "complexity": 1,
+  "instance_id": "MarkorCreateFolder#0"
+}

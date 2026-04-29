@@ -1,0 +1,63 @@
+{
+  "instance_id": "OpenAppBroccoli#0",
+  "task": "OpenAppBroccoli",
+  "params": {
+    "app_name": "broccoli",
+    "package": "com.flauschcode.broccoli"
+  },
+  "returncode": 0,
+  "self_eval": {
+    "success": true,
+    "confidence": 0.99,
+    "evidence_summary": "Broccoli app is in foreground showing the recipe list page with title '食谱' (Recipes), search icon, category filter '全部食谱', and a 'Pasta Carbonara' recipe card.",
+    "screenshot_paths": [
+      "MCP screenshot - Broccoli recipe list page"
+    ],
+    "failure_reason": ""
+  },
+  "timing": {
+    "wall_ms": 25648,
+    "api_ms": 18982
+  },
+  "num_turns": 5,
+  "cost_usd": 0.11676825,
+  "stop_reason": "success",
+  "num_steps": 4,
+  "steps": [
+    {
+      "step": 1,
+      "tool": "press_home",
+      "input": {},
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 2,
+      "tool": "open_app",
+      "input": {
+        "package_name": "com.flauschcode.broccoli"
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 3,
+      "tool": "wait_stable_screen",
+      "input": {
+        "stable_duration": 2,
+        "timeout": 10
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 4,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 30
+      },
+      "success": true,
+      "is_error": false
+    }
+  ]
+}

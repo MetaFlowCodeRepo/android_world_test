@@ -1,0 +1,247 @@
+{
+  "instance_id": "RecipeAddSingleRecipe#0",
+  "task": "RecipeAddSingleRecipe",
+  "params": {
+    "title": "Pasta Carbonara",
+    "description": "Classic Italian pasta with eggs, cheese, and bacon"
+  },
+  "returncode": 0,
+  "self_eval": {
+    "success": true,
+    "confidence": 1.0,
+    "evidence_summary": "Recipe list shows 'Pasta Carbonara' entry with description; detail page confirms title 'Pasta Carbonara' and description 'Classic Italian pasta with eggs, cheese, and bacon'.",
+    "screenshot_paths": [
+      "Screenshot 1: recipe list with Pasta Carbonara entry",
+      "Screenshot 2: recipe detail showing title and description"
+    ],
+    "failure_reason": ""
+  },
+  "timing": {
+    "wall_ms": 150728,
+    "api_ms": 109963
+  },
+  "num_turns": 25,
+  "cost_usd": 0.6820412499999998,
+  "stop_reason": "success",
+  "num_steps": 24,
+  "steps": [
+    {
+      "step": 1,
+      "tool": "press_home",
+      "input": {},
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 2,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 30
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 3,
+      "tool": "open_app",
+      "input": {
+        "package_name": "com.flauschcode.broccoli"
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 4,
+      "tool": "wait_stable_screen",
+      "input": {
+        "stable_duration": 2,
+        "timeout": 10
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 5,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 30
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 6,
+      "tool": "ai_click",
+      "input": {
+        "text": "创建新食谱"
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 7,
+      "tool": "wait_stable_screen",
+      "input": {
+        "stable_duration": 2,
+        "timeout": 10
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 8,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 30
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 9,
+      "tool": "ai_click",
+      "input": {
+        "icon": "底部右下角绿色加号按钮"
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 10,
+      "tool": "wait_stable_screen",
+      "input": {
+        "stable_duration": 2,
+        "timeout": 10
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 11,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 30
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 12,
+      "tool": "get_screen_xml",
+      "input": {},
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 13,
+      "tool": "input_text",
+      "input": {
+        "innerid": 33,
+        "text": "Pasta Carbonara"
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 14,
+      "tool": "input_text",
+      "input": {
+        "innerid": 38,
+        "text": "Classic Italian pasta with eggs, cheese, and bacon"
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 15,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 30
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 16,
+      "tool": "ai_click",
+      "input": {
+        "text": "保存"
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 17,
+      "tool": "wait_stable_screen",
+      "input": {
+        "stable_duration": 2,
+        "timeout": 10
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 18,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 30
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 19,
+      "tool": "press_back",
+      "input": {},
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 20,
+      "tool": "wait_stable_screen",
+      "input": {
+        "stable_duration": 2,
+        "timeout": 10
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 21,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 30
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 22,
+      "tool": "ai_click",
+      "input": {
+        "text": "Pasta Carbonara"
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 23,
+      "tool": "wait_stable_screen",
+      "input": {
+        "stable_duration": 2,
+        "timeout": 10
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 24,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 30
+      },
+      "success": true,
+      "is_error": false
+    }
+  ]
+}

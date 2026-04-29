@@ -1,0 +1,13 @@
+{
+  "task": "ExpenseAddSingle2",
+  "goal": "Add a new expense entry in Pro Expense app: amount $120.00, category 'Transport'.",
+  "params": {
+    "amount": "120.00",
+    "category": "Transport"
+  },
+  "app_names": [
+    "expense"
+  ],
+  "complexity": 1.2,
+  "instance_id": "ExpenseAddSingle2#0"
+}

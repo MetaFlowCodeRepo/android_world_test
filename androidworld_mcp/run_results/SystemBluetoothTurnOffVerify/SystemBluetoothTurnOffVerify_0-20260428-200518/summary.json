@@ -1,0 +1,17 @@
+{
+  "instance_id": "SystemBluetoothTurnOffVerify#0",
+  "task": "SystemBluetoothTurnOffVerify",
+  "params": {
+    "on_or_off": "off"
+  },
+  "returncode": 0,
+  "self_eval": {
+    "success": true,
+    "confidence": 0.99,
+    "evidence_summary": "Bluetooth settings page shows the Bluetooth toggle in the OFF position (gray, left-aligned). The main settings page also showed '已关闭' (Already Off) next to Bluetooth.",
+    "screenshot_paths": [
+      "Final screenshot showing 蓝牙 (Bluetooth) page with toggle switch in OFF position"
+    ],
+    "failure_reason": ""
+  }
+}

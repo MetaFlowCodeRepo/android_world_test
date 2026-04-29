@@ -1,0 +1,10 @@
+{
+  "task": "SettingsCheckStorageInfo",
+  "goal": "Navigate to Settings and find the storage information page. Take a screenshot showing the total and used storage.",
+  "params": {},
+  "app_names": [
+    "settings"
+  ],
+  "complexity": 1,
+  "instance_id": "SettingsCheckStorageInfo#0"
+}

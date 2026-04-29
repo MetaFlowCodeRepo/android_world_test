@@ -1,0 +1,10 @@
+{
+  "task": "ClockStopWatchPausedVerify",
+  "goal": "Pause the stopwatch.",
+  "params": {},
+  "app_names": [
+    "clock"
+  ],
+  "complexity": 1,
+  "instance_id": "ClockStopWatchPausedVerify#0"
+}

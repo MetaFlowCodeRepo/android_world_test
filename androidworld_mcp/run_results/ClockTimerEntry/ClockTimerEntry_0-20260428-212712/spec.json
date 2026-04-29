@@ -1,0 +1,14 @@
+{
+  "task": "ClockTimerEntry",
+  "goal": "Create a timer with 18 hours, 12 minutes, and 45 seconds. Do not start the timer.",
+  "params": {
+    "hours": 18,
+    "minutes": 12,
+    "seconds": 45
+  },
+  "app_names": [
+    "clock"
+  ],
+  "complexity": 1,
+  "instance_id": "ClockTimerEntry#0"
+}

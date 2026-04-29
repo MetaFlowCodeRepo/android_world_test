@@ -1,0 +1,337 @@
+{
+  "instance_id": "SystemCopyToClipboard2#0",
+  "task": "SystemCopyToClipboard2",
+  "params": {
+    "clipboard_content": "Meeting at 3pm tomorrow"
+  },
+  "returncode": 0,
+  "self_eval": {
+    "success": true,
+    "confidence": 0.95,
+    "evidence_summary": "Text 'Meeting at 3pm tomorrow' was typed into search box, selected all, copied to clipboard, then verified by pasting from keyboard clipboard suggestion into a new contact name field where it displayed correctly as 'Meeting at 3pm tomorrow'.",
+    "screenshot_paths": [
+      "Screenshot showing 'Meeting at 3pm tomorrow' pasted in new contact name field via clipboard suggestion"
+    ],
+    "failure_reason": ""
+  },
+  "timing": {
+    "wall_ms": 305411,
+    "api_ms": 243557
+  },
+  "num_turns": 35,
+  "cost_usd": 1.3171262499999998,
+  "stop_reason": "success",
+  "num_steps": 34,
+  "steps": [
+    {
+      "step": 1,
+      "tool": "press_home",
+      "input": {},
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 2,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 30
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 3,
+      "tool": "ai_click",
+      "input": {
+        "icon": "底部搜索栏"
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 4,
+      "tool": "wait_stable_screen",
+      "input": {
+        "stable_duration": 1.5,
+        "timeout": 5
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 5,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 30
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 6,
+      "tool": "ai_click",
+      "input": {
+        "text": "同意"
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 7,
+      "tool": "wait_stable_screen",
+      "input": {
+        "stable_duration": 1.5,
+        "timeout": 5
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 8,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 30
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 9,
+      "tool": "get_screen_xml",
+      "input": {},
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 10,
+      "tool": "input_text",
+      "input": {
+        "innerid": 21,
+        "text": "Meeting at 3pm tomorrow"
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 11,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 30
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 12,
+      "tool": "get_screen_xml",
+      "input": {},
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 13,
+      "tool": "swipe",
+      "input": {
+        "from_x": 0.447,
+        "from_y": 0.564,
+        "to_x": 0.447,
+        "to_y": 0.564,
+        "duration": 1500
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 14,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 30
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 15,
+      "tool": "ai_click",
+      "input": {
+        "text": "全选"
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 16,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 30
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 17,
+      "tool": "ai_click",
+      "input": {
+        "text": "复制"
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 18,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 30
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 19,
+      "tool": "press_home",
+      "input": {},
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 20,
+      "tool": "open_app",
+      "input": {
+        "package_name": "com.android.contacts"
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 21,
+      "tool": "wait_stable_screen",
+      "input": {
+        "stable_duration": 2,
+        "timeout": 5
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 22,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 30
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 23,
+      "tool": "ai_click",
+      "input": {
+        "icon": "绿色加号按钮"
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 24,
+      "tool": "wait_stable_screen",
+      "input": {
+        "stable_duration": 2,
+        "timeout": 5
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 25,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 30
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 26,
+      "tool": "get_screen_xml",
+      "input": {},
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 27,
+      "tool": "swipe",
+      "input": {
+        "from_x": 540,
+        "from_y": 694,
+        "to_x": 540,
+        "to_y": 694,
+        "duration": 1500
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 28,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 30
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 29,
+      "tool": "ai_click",
+      "input": {
+        "text": "Meeting at 3pm to…"
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 30,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 30
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 31,
+      "tool": "ai_click",
+      "input": {
+        "icon": "左上角X关闭按钮"
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 32,
+      "tool": "wait_stable_screen",
+      "input": {
+        "stable_duration": 1,
+        "timeout": 3
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 33,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 30
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 34,
+      "tool": "ai_click",
+      "input": {
+        "text": "确定"
+      },
+      "success": true,
+      "is_error": false
+    }
+  ]
+}

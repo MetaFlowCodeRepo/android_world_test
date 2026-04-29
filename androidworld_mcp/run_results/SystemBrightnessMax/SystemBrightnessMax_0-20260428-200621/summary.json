@@ -1,0 +1,17 @@
+{
+  "instance_id": "SystemBrightnessMax#0",
+  "task": "SystemBrightnessMax",
+  "params": {
+    "max_or_min": "max"
+  },
+  "returncode": 0,
+  "self_eval": {
+    "success": true,
+    "confidence": 0.95,
+    "evidence_summary": "Brightness slider on 显示与亮度 page is fully filled (100% blue bar extending to the right edge), auto brightness is off, confirming brightness is set to maximum.",
+    "screenshot_paths": [
+      "Final screenshot of 显示与亮度 page showing full brightness bar"
+    ],
+    "failure_reason": ""
+  }
+}

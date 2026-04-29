@@ -1,0 +1,12 @@
+{
+  "task": "SystemCopyToClipboard",
+  "goal": "Copy the following text to the clipboard: Transaction ID: def456",
+  "params": {
+    "clipboard_content": "Transaction ID: def456"
+  },
+  "app_names": [
+    "clipper"
+  ],
+  "complexity": 1,
+  "instance_id": "SystemCopyToClipboard#0"
+}

@@ -1,0 +1,948 @@
+{
+  "instance_id": "SimpleCalendarAddOneEvent#0",
+  "task": "SimpleCalendarAddOneEvent",
+  "params": {
+    "title": "Team Meeting",
+    "date": "2026-05-05",
+    "start_time": "10:00",
+    "end_time": "11:00"
+  },
+  "returncode": 0,
+  "self_eval": null,
+  "timing": {
+    "wall_ms": 1195305,
+    "api_ms": 982216
+  },
+  "num_turns": 103,
+  "cost_usd": 4.621255250000001,
+  "stop_reason": "error_max_turns",
+  "num_steps": 102,
+  "steps": [
+    {
+      "step": 1,
+      "tool": "press_home",
+      "input": {},
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 2,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 30
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 3,
+      "tool": "open_app",
+      "input": {
+        "package_name": "com.simplemobiletools.calendar.pro"
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 4,
+      "tool": "wait_stable_screen",
+      "input": {
+        "stable_duration": 2,
+        "timeout": 10
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 5,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 30
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 6,
+      "tool": "ai_click",
+      "input": {
+        "icon": "右箭头（下一个月）"
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 7,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 30
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 8,
+      "tool": "ai_click",
+      "input": {
+        "text": "5"
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 9,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 30
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 10,
+      "tool": "ai_click",
+      "input": {
+        "icon": "加号按钮"
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 11,
+      "tool": "wait_stable_screen",
+      "input": {
+        "stable_duration": 1,
+        "timeout": 5
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 12,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 30
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 13,
+      "tool": "ai_click",
+      "input": {
+        "text": "活动"
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 14,
+      "tool": "wait_stable_screen",
+      "input": {
+        "stable_duration": 1,
+        "timeout": 5
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 15,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 30
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 16,
+      "tool": "get_screen_xml",
+      "input": {},
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 17,
+      "tool": "input_text",
+      "input": {
+        "innerid": 15,
+        "text": "Team Meeting"
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 18,
+      "tool": "click",
+      "input": {
+        "x": 951,
+        "y": 1135
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 19,
+      "tool": "wait_stable_screen",
+      "input": {
+        "stable_duration": 1,
+        "timeout": 5
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 20,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 30
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 21,
+      "tool": "ai_click",
+      "input": {
+        "text": "10"
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 22,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 30
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 23,
+      "tool": "ai_click",
+      "input": {
+        "icon": "键盘图标"
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 24,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 30
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 25,
+      "tool": "get_screen_xml",
+      "input": {},
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 26,
+      "tool": "click",
+      "input": {
+        "x": 297,
+        "y": 1218
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 27,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 30
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 28,
+      "tool": "ai_click",
+      "input": {
+        "text": "确定"
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 29,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 30
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 30,
+      "tool": "get_screen_xml",
+      "input": {},
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 31,
+      "tool": "click",
+      "input": {
+        "x": 540,
+        "y": 1077
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 32,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 30
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 33,
+      "tool": "get_screen_xml",
+      "input": {},
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 34,
+      "tool": "click",
+      "input": {
+        "x": 780,
+        "y": 1870
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 35,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 30
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 36,
+      "tool": "get_screen_xml",
+      "input": {},
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 37,
+      "tool": "click",
+      "input": {
+        "x": 951,
+        "y": 1290
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 38,
+      "tool": "wait_stable_screen",
+      "input": {
+        "stable_duration": 1,
+        "timeout": 5
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 39,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 30
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 40,
+      "tool": "get_screen_xml",
+      "input": {},
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 41,
+      "tool": "click",
+      "input": {
+        "x": 400,
+        "y": 1115
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 42,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 30
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 43,
+      "tool": "get_screen_xml",
+      "input": {},
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 44,
+      "tool": "click",
+      "input": {
+        "x": 780,
+        "y": 1870
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 45,
+      "tool": "wait_stable_screen",
+      "input": {
+        "stable_duration": 1,
+        "timeout": 5
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 46,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 30
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 47,
+      "tool": "click",
+      "input": {
+        "x": 1012,
+        "y": 201
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 48,
+      "tool": "wait_stable_screen",
+      "input": {
+        "stable_duration": 2,
+        "timeout": 10
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 49,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 30
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 50,
+      "tool": "ai_click",
+      "input": {
+        "text": "确认"
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 51,
+      "tool": "wait_stable_screen",
+      "input": {
+        "stable_duration": 2,
+        "timeout": 10
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 52,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 30
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 53,
+      "tool": "get_screen_xml",
+      "input": {},
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 54,
+      "tool": "click",
+      "input": {
+        "x": 750,
+        "y": 1480
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 55,
+      "tool": "wait_stable_screen",
+      "input": {
+        "stable_duration": 2,
+        "timeout": 10
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 56,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 30
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 57,
+      "tool": "ai_click",
+      "input": {
+        "text": "始终允许"
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 58,
+      "tool": "wait_stable_screen",
+      "input": {
+        "stable_duration": 2,
+        "timeout": 10
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 59,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 30
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 60,
+      "tool": "ai_click",
+      "input": {
+        "text": "授予权限"
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 61,
+      "tool": "wait_stable_screen",
+      "input": {
+        "stable_duration": 2,
+        "timeout": 10
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 62,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 30
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 63,
+      "tool": "click",
+      "input": {
+        "x": 1012,
+        "y": 201
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 64,
+      "tool": "wait_stable_screen",
+      "input": {
+        "stable_duration": 2,
+        "timeout": 10
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 65,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 30
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 66,
+      "tool": "ai_click",
+      "input": {
+        "text": "始终允许"
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 67,
+      "tool": "wait_stable_screen",
+      "input": {
+        "stable_duration": 2,
+        "timeout": 10
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 68,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 30
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 69,
+      "tool": "ai_click",
+      "input": {
+        "text": "取消"
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 70,
+      "tool": "wait_stable_screen",
+      "input": {
+        "stable_duration": 1,
+        "timeout": 5
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 71,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 30
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 72,
+      "tool": "get_screen_xml",
+      "input": {},
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 73,
+      "tool": "click",
+      "input": {
+        "x": 624,
+        "y": 1493
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 74,
+      "tool": "wait_stable_screen",
+      "input": {
+        "stable_duration": 1,
+        "timeout": 5
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 75,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 30
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 76,
+      "tool": "get_screen_xml",
+      "input": {},
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 77,
+      "tool": "click",
+      "input": {
+        "x": 500,
+        "y": 1430
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 78,
+      "tool": "wait_stable_screen",
+      "input": {
+        "stable_duration": 2,
+        "timeout": 10
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 79,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 30
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 80,
+      "tool": "ai_click",
+      "input": {
+        "text": "Team Meeting"
+      },
+      "success": false,
+      "is_error": true
+    },
+    {
+      "step": 81,
+      "tool": "click",
+      "input": {
+        "x": 370,
+        "y": 340
+      },
+      "success": false,
+      "is_error": true
+    },
+    {
+      "step": 82,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 30
+      },
+      "success": false,
+      "is_error": true
+    },
+    {
+      "step": 83,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 30
+      },
+      "success": false,
+      "is_error": true
+    },
+    {
+      "step": 84,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 15
+      },
+      "success": false,
+      "is_error": true
+    },
+    {
+      "step": 85,
+      "tool": "Bash",
+      "input": {
+        "command": "sleep 5",
+        "description": "Wait 5 seconds before retrying MCP"
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 86,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 15
+      },
+      "success": false,
+      "is_error": true
+    },
+    {
+      "step": 87,
+      "tool": "Bash",
+      "input": {
+        "command": "sleep 10",
+        "description": "Wait 10 seconds before retrying MCP"
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 88,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 15
+      },
+      "success": false,
+      "is_error": true
+    },
+    {
+      "step": 89,
+      "tool": "list_devices",
+      "input": {},
+      "success": false,
+      "is_error": true
+    },
+    {
+      "step": 90,
+      "tool": "Bash",
+      "input": {
+        "command": "sleep 15",
+        "description": "Wait 15 seconds for MCP connection to recover"
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 91,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 15
+      },
+      "success": false,
+      "is_error": true
+    },
+    {
+      "step": 92,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 15
+      },
+      "success": false,
+      "is_error": true
+    },
+    {
+      "step": 93,
+      "tool": "Bash",
+      "input": {
+        "command": "sleep 10",
+        "description": "Wait for MCP session recovery"
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 94,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 15
+      },
+      "success": false,
+      "is_error": true
+    },
+    {
+      "step": 95,
+      "tool": "device_info",
+      "input": {},
+      "success": false,
+      "is_error": true
+    },
+    {
+      "step": 96,
+      "tool": "Bash",
+      "input": {
+        "command": "sleep 20",
+        "description": "Wait longer for MCP session recovery"
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 97,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 15
+      },
+      "success": false,
+      "is_error": true
+    },
+    {
+      "step": 98,
+      "tool": "list_devices",
+      "input": {},
+      "success": false,
+      "is_error": true
+    },
+    {
+      "step": 99,
+      "tool": "Bash",
+      "input": {
+        "command": "sleep 30",
+        "description": "Wait 30 seconds for MCP to fully recover"
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 100,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 15
+      },
+      "success": false,
+      "is_error": true
+    },
+    {
+      "step": 101,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 15
+      },
+      "success": false,
+      "is_error": true
+    },
+    {
+      "step": 102,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 30
+      },
+      "success": false,
+      "is_error": true
+    }
+  ]
+}

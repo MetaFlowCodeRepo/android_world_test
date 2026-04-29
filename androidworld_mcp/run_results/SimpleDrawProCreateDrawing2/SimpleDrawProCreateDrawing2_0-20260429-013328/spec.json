@@ -1,0 +1,10 @@
+{
+  "task": "SimpleDrawProCreateDrawing2",
+  "goal": "Create a drawing in Simple Draw Pro: draw a cross shape (one horizontal line and one vertical line crossing in the middle), then save it.",
+  "params": {},
+  "app_names": [
+    "simpledrawpro"
+  ],
+  "complexity": 1.8,
+  "instance_id": "SimpleDrawProCreateDrawing2#0"
+}

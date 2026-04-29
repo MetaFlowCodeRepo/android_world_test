@@ -1,0 +1,12 @@
+{
+  "task": "TurnOnWifiAndOpenApp",
+  "goal": "Turn on Wifi, then open the clock app",
+  "params": {
+    "app_name": "clock"
+  },
+  "app_names": [
+    "settings"
+  ],
+  "complexity": 2,
+  "instance_id": "TurnOnWifiAndOpenApp#0"
+}

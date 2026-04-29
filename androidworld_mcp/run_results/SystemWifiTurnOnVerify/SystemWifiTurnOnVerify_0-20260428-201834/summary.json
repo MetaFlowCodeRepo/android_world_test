@@ -1,0 +1,17 @@
+{
+  "instance_id": "SystemWifiTurnOnVerify#0",
+  "task": "SystemWifiTurnOnVerify",
+  "params": {
+    "on_or_off": "on"
+  },
+  "returncode": 0,
+  "self_eval": {
+    "success": true,
+    "confidence": 0.99,
+    "evidence_summary": "WLAN settings page shows the Wi-Fi toggle in ON position (blue), connected to Ziroom401_01 network.",
+    "screenshot_paths": [
+      "WLAN settings page screenshot showing toggle ON and connected network"
+    ],
+    "failure_reason": ""
+  }
+}

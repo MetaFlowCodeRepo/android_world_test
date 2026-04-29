@@ -1,0 +1,17 @@
+{
+  "instance_id": "SystemBrightnessMin#0",
+  "task": "SystemBrightnessMin",
+  "params": {
+    "max_or_min": "min"
+  },
+  "returncode": 0,
+  "self_eval": {
+    "success": true,
+    "confidence": 0.95,
+    "evidence_summary": "Display & Brightness settings page shows the brightness slider (屏幕亮度) at the far left minimum position with auto-brightness off",
+    "screenshot_paths": [
+      "final verification screenshot from get_screenshot at 21:16"
+    ],
+    "failure_reason": ""
+  }
+}

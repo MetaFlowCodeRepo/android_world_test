@@ -1,0 +1,13 @@
+{
+  "task": "ExpenseAddSingle",
+  "goal": "Add a new expense entry in Pro Expense app: amount $25.50, category 'Food'.",
+  "params": {
+    "amount": "25.50",
+    "category": "Food"
+  },
+  "app_names": [
+    "expense"
+  ],
+  "complexity": 1.2,
+  "instance_id": "ExpenseAddSingle#0"
+}

@@ -1,0 +1,18 @@
+{
+  "instance_id": "TurnOnWifiAndOpenApp#0",
+  "task": "TurnOnWifiAndOpenApp",
+  "params": {
+    "app_name": "clock"
+  },
+  "returncode": 0,
+  "self_eval": {
+    "success": true,
+    "confidence": 0.98,
+    "evidence_summary": "Wi-Fi (WLAN) toggle is ON and connected to Ziroom401_01; Clock app (com.android.deskclock) is in the foreground showing timer view with bottom tabs for Alarm/World Clock/Stopwatch/Timer.",
+    "screenshot_paths": [
+      "Screenshot 1: WLAN settings page showing toggle ON with Ziroom401_01 connected",
+      "Screenshot 2: Clock app (com.android.deskclock) timer view in foreground"
+    ],
+    "failure_reason": ""
+  }
+}

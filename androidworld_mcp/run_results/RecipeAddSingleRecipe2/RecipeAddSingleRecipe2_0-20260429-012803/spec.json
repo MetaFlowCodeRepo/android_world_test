@@ -1,0 +1,13 @@
+{
+  "task": "RecipeAddSingleRecipe2",
+  "goal": "Add a new recipe in Broccoli app with the title 'Greek Salad' and description 'Fresh salad with tomatoes, cucumber, olives, and feta cheese'.",
+  "params": {
+    "title": "Greek Salad",
+    "description": "Fresh salad with tomatoes, cucumber, olives, and feta cheese"
+  },
+  "app_names": [
+    "broccoli"
+  ],
+  "complexity": 2.4,
+  "instance_id": "RecipeAddSingleRecipe2#0"
+}

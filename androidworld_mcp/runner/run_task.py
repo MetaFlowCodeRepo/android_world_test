@@ -119,6 +119,11 @@ goal（自然语言指令，作为 Agent 你必须完成它）：
 """
 
 
+def _compute_max_turns(spec: dict[str, Any]) -> int:
+    complexity = spec.get("complexity") or 1
+    return max(50, int(complexity * 30))
+
+
 def _render_with_params(text: str, params: dict[str, Any]) -> str:
     """把 hint 里的 {key} 用 spec.params 替换；params 没有的 key 原样保留。"""
     if not text:
@@ -140,19 +145,93 @@ def build_prompt(spec: dict[str, Any], hint: dict[str, str]) -> str:
         exec_lines.append("[执行提示]\n" + _render_with_params(hint["exec_hint"], params).rstrip())
     exec_section = "\n\n".join(exec_lines) if exec_lines else ""
 
-    complexity = spec.get("complexity") or 1
-    step_budget = max(8, int(complexity * 10))
-
     return PROMPT_TEMPLATE.format(
         task=spec["task"],
         instance_id=spec["instance_id"],
         goal=spec["goal"],
         params_json=json.dumps(params, ensure_ascii=False),
-        step_budget=step_budget,
+        step_budget=_compute_max_turns(spec),
         exec_section=exec_section,
         verify=_render_with_params(hint.get("verify", "（未提供）"), params).rstrip(),
         evidence=_render_with_params(hint.get("evidence", "（未指定）"), params).rstrip(),
     )
+
+
+# ----------------- stream.jsonl parsers -----------------
+
+_MCP_PREFIX = "mcp__wimb-device__"
+
+
+def parse_steps(stream_jsonl: str) -> list[dict[str, Any]]:
+    """从 stream.jsonl 提取工具调用步骤列表。
+
+    返回 [{step, tool, input, success, is_error}, ...]
+    """
+    # 先收集所有 tool_use 调用（按 id 索引）
+    calls: dict[str, dict[str, Any]] = {}  # tool_use_id -> {tool, input}
+    call_order: list[str] = []  # 保持顺序
+
+    for line in stream_jsonl.splitlines():
+        line = line.strip()
+        if not line:
+            continue
+        try:
+            obj = json.loads(line)
+        except json.JSONDecodeError:
+            continue
+
+        if obj.get("type") == "assistant":
+            for blk in obj.get("message", {}).get("content", []) or []:
+                if blk.get("type") == "tool_use":
+                    tid = blk["id"]
+                    name = blk["name"]
+                    if name.startswith(_MCP_PREFIX):
+                        name = name[len(_MCP_PREFIX):]
+                    calls[tid] = {"tool": name, "input": blk.get("input", {})}
+                    call_order.append(tid)
+
+        elif obj.get("type") == "user":
+            for blk in obj.get("message", {}).get("content", []) or []:
+                if blk.get("type") == "tool_result" and blk.get("tool_use_id") in calls:
+                    tid = blk["tool_use_id"]
+                    calls[tid]["is_error"] = bool(blk.get("is_error", False))
+                    calls[tid]["success"] = not blk.get("is_error", False)
+
+    steps = []
+    for i, tid in enumerate(call_order, 1):
+        c = calls[tid]
+        steps.append({
+            "step": i,
+            "tool": c["tool"],
+            "input": c["input"],
+            "success": c.get("success", True),
+            "is_error": c.get("is_error", False),
+        })
+    return steps
+
+
+def parse_result_meta(stream_jsonl: str) -> dict[str, Any]:
+    """从 stream.jsonl 的 result 行提取元数据。
+
+    返回 {wall_ms, api_ms, num_turns, cost_usd, stop_reason}
+    """
+    for line in stream_jsonl.splitlines():
+        line = line.strip()
+        if not line:
+            continue
+        try:
+            obj = json.loads(line)
+        except json.JSONDecodeError:
+            continue
+        if obj.get("type") == "result":
+            return {
+                "wall_ms": obj.get("duration_ms"),
+                "api_ms": obj.get("duration_api_ms"),
+                "num_turns": obj.get("num_turns"),
+                "cost_usd": obj.get("total_cost_usd"),
+                "stop_reason": obj.get("subtype", "unknown"),  # "success" or "error_max_turns"
+            }
+    return {}
 
 
 # ----------------- runner -----------------
@@ -186,7 +265,8 @@ def run_claude(prompt: str, cwd: str, mcp_config: str, max_turns: int) -> dict[s
         "--verbose",
         "--max-turns", str(max_turns),
     ]
-    proc = subprocess.run(cmd, cwd=cwd, capture_output=True, text=True, timeout=1800)
+    env = {k: v for k, v in os.environ.items() if k != "CLAUDECODE"}
+    proc = subprocess.run(cmd, cwd=cwd, capture_output=True, text=True, timeout=1800, env=env)
     return {
         "returncode": proc.returncode,
         "stdout": proc.stdout,
@@ -228,6 +308,69 @@ def extract_final_json(stream_jsonl: str) -> dict[str, Any] | None:
         return None
 
 
+def run_single(
+    spec: dict[str, Any],
+    hint: dict[str, str],
+    out_dir: str,
+    cwd: str,
+    mcp_config: str,
+) -> dict[str, Any]:
+    """执行单个任务，返回 summary dict。
+
+    out_dir: 该 instance 的输出目录（已含时间戳后缀），会自动创建。
+    """
+    prompt = build_prompt(spec, hint)
+    max_turns = _compute_max_turns(spec)
+
+    os.makedirs(out_dir, exist_ok=True)
+
+    with open(os.path.join(out_dir, "prompt.txt"), "w") as f:
+        f.write(prompt)
+    with open(os.path.join(out_dir, "spec.json"), "w") as f:
+        json.dump(spec, f, ensure_ascii=False, indent=2)
+
+    print(f"[run ] {spec['instance_id']}  max_turns={max_turns}  → {out_dir}")
+    res = run_claude(prompt, cwd=cwd, mcp_config=mcp_config, max_turns=max_turns)
+
+    with open(os.path.join(out_dir, "stream.jsonl"), "w") as f:
+        f.write(res["stdout"])
+    if res["stderr"]:
+        with open(os.path.join(out_dir, "stderr.log"), "w") as f:
+            f.write(res["stderr"])
+
+    parsed = extract_final_json(res["stdout"])
+    steps = parse_steps(res["stdout"])
+    meta = parse_result_meta(res["stdout"])
+
+    summary = {
+        "instance_id": spec["instance_id"],
+        "task": spec["task"],
+        "params": spec.get("params"),
+        "returncode": res["returncode"],
+        "self_eval": parsed,
+        "timing": {
+            "wall_ms": meta.get("wall_ms"),
+            "api_ms": meta.get("api_ms"),
+        },
+        "num_turns": meta.get("num_turns"),
+        "cost_usd": meta.get("cost_usd"),
+        "stop_reason": meta.get("stop_reason", "unknown"),
+        "num_steps": len(steps),
+        "steps": steps,
+    }
+    with open(os.path.join(out_dir, "summary.json"), "w") as f:
+        json.dump(summary, f, ensure_ascii=False, indent=2)
+
+    if parsed and parsed.get("success") is True:
+        print(f"[ok  ] success (conf={parsed.get('confidence')})")
+    elif parsed:
+        print(f"[fail] {parsed.get('failure_reason')}")
+    else:
+        print(f"[err ] 无法解析 Claude 输出（看 {out_dir}/stream.jsonl）")
+
+    return summary
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--specs", required=True)
@@ -255,45 +398,12 @@ def main():
     if not hint:
         raise SystemExit(f"eval_hints.yaml 缺少 {spec['task']} 的 hint")
 
-    prompt = build_prompt(spec, hint)
-    step_budget = max(8, int((spec.get("complexity") or 1) * 10))
-
     ts = dt.datetime.now().strftime("%Y%m%d-%H%M%S")
     out_dir = os.path.join(args.out_dir, spec["task"], f"{spec['instance_id'].replace('#','_')}-{ts}")
-    os.makedirs(out_dir, exist_ok=True)
 
-    with open(os.path.join(out_dir, "prompt.txt"), "w") as f:
-        f.write(prompt)
-    with open(os.path.join(out_dir, "spec.json"), "w") as f:
-        json.dump(spec, f, ensure_ascii=False, indent=2)
-
-    print(f"[run ] {spec['instance_id']}  budget={step_budget}  → {out_dir}")
-    res = run_claude(prompt, cwd=cwd, mcp_config=mcp_config, max_turns=step_budget)
-
-    with open(os.path.join(out_dir, "stream.jsonl"), "w") as f:
-        f.write(res["stdout"])
-    if res["stderr"]:
-        with open(os.path.join(out_dir, "stderr.log"), "w") as f:
-            f.write(res["stderr"])
-
-    parsed = extract_final_json(res["stdout"])
-    summary = {
-        "instance_id": spec["instance_id"],
-        "task": spec["task"],
-        "params": spec.get("params"),
-        "returncode": res["returncode"],
-        "self_eval": parsed,
-    }
-    with open(os.path.join(out_dir, "summary.json"), "w") as f:
-        json.dump(summary, f, ensure_ascii=False, indent=2)
-
-    if parsed and parsed.get("success") is True:
-        print(f"[ok  ] success (conf={parsed.get('confidence')})")
-    elif parsed:
-        print(f"[fail] {parsed.get('failure_reason')}")
-    else:
-        print(f"[err ] 无法解析 Claude 输出（看 {out_dir}/stream.jsonl）")
-    return 0 if (parsed and parsed.get("success")) else 1
+    summary = run_single(spec, hint, out_dir, cwd, mcp_config)
+    ok = (summary.get("self_eval") or {}).get("success") is True
+    return 0 if ok else 1
 
 
 if __name__ == "__main__":

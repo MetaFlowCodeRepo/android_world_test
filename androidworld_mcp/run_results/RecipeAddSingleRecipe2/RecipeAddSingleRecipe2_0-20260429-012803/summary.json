@@ -1,0 +1,205 @@
+{
+  "instance_id": "RecipeAddSingleRecipe2#0",
+  "task": "RecipeAddSingleRecipe2",
+  "params": {
+    "title": "Greek Salad",
+    "description": "Fresh salad with tomatoes, cucumber, olives, and feta cheese"
+  },
+  "returncode": 0,
+  "self_eval": {
+    "success": true,
+    "confidence": 1.0,
+    "evidence_summary": "Recipe list shows 'Greek Salad' entry with correct description; detail page confirms title 'Greek Salad' and description 'Fresh salad with tomatoes, cucumber, olives, and feta cheese'.",
+    "screenshot_paths": [
+      "Screenshot 1: Recipe list showing Greek Salad entry",
+      "Screenshot 2: Greek Salad detail page with title and description"
+    ],
+    "failure_reason": ""
+  },
+  "timing": {
+    "wall_ms": 148218,
+    "api_ms": 113884
+  },
+  "num_turns": 22,
+  "cost_usd": 0.5949827500000001,
+  "stop_reason": "success",
+  "num_steps": 21,
+  "steps": [
+    {
+      "step": 1,
+      "tool": "press_home",
+      "input": {},
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 2,
+      "tool": "get_screenshot",
+      "input": {},
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 3,
+      "tool": "open_app",
+      "input": {
+        "package_name": "com.flauschcode.broccoli"
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 4,
+      "tool": "wait_stable_screen",
+      "input": {
+        "stable_duration": 2,
+        "timeout": 10
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 5,
+      "tool": "get_screenshot",
+      "input": {},
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 6,
+      "tool": "ai_click",
+      "input": {
+        "icon": "bottom right green plus button"
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 7,
+      "tool": "wait_stable_screen",
+      "input": {
+        "stable_duration": 2,
+        "timeout": 10
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 8,
+      "tool": "get_screenshot",
+      "input": {},
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 9,
+      "tool": "get_screen_xml",
+      "input": {},
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 10,
+      "tool": "input_text",
+      "input": {
+        "innerid": 33,
+        "text": "Greek Salad"
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 11,
+      "tool": "input_text",
+      "input": {
+        "innerid": 38,
+        "text": "Fresh salad with tomatoes, cucumber, olives, and feta cheese"
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 12,
+      "tool": "get_screenshot",
+      "input": {},
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 13,
+      "tool": "ai_click",
+      "input": {
+        "text": "保存"
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 14,
+      "tool": "wait_stable_screen",
+      "input": {
+        "stable_duration": 2,
+        "timeout": 10
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 15,
+      "tool": "get_screenshot",
+      "input": {},
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 16,
+      "tool": "press_back",
+      "input": {},
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 17,
+      "tool": "wait_stable_screen",
+      "input": {
+        "stable_duration": 2,
+        "timeout": 10
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 18,
+      "tool": "get_screenshot",
+      "input": {},
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 19,
+      "tool": "ai_click",
+      "input": {
+        "text": "Greek Salad"
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 20,
+      "tool": "wait_stable_screen",
+      "input": {
+        "stable_duration": 2,
+        "timeout": 10
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 21,
+      "tool": "get_screenshot",
+      "input": {},
+      "success": true,
+      "is_error": false
+    }
+  ]
+}

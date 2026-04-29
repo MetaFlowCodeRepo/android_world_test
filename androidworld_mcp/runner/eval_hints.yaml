@@ -167,3 +167,240 @@ TurnOffWifiAndTurnOnBluetooth:
     1) 截图：设置→Wi-Fi 页开关 OFF。
     2) 截图：设置→蓝牙 页开关 ON。
   evidence: 2 张截图
+
+AudioRecorderRecordAudio:
+  exec_hint: |
+    打开 Audio Recorder（包名 com.dimowner.audiorecorder）。
+    如果首次打开有权限弹窗（麦克风/存储），全部允许。
+    找到录音按钮（通常是底部圆形按钮），点击开始录音，等待至少 3 秒，
+    再次点击停止录音。录音会自动保存。
+  verify: |
+    录音完成后，检查 App 内录音列表，截图证明出现了一条新录音记录（有时长显示）。
+  evidence: 1 张录音列表截图
+
+MarkorCreateNote:
+  exec_hint: |
+    打开 Markor（包名 net.gsantner.markor）。如果是首次启动会有引导页，
+    一直点右下角的箭头（next）跳过引导直到进入主界面。
+    进入 Notebook 文件浏览器后，点右下角 + (FAB) 按钮创建新文件。
+    文件名输入 "{title}"（不含扩展名，Markor 自动加 .md）。
+    在编辑器里输入内容 "{content}"。按返回键自动保存。
+  verify: |
+    回到 Markor 文件列表，截图证明存在文件名为 "{title}" 的条目。
+    点击打开该文件，截图证明内容包含 "{content}"。
+  evidence: 2 张截图（文件列表 + 文件内容）
+
+MarkorCreateFolder:
+  exec_hint: |
+    打开 Markor，进入 Notebook 文件浏览器。
+    点右下角 + 按钮，选择"文件夹/Folder"选项（不是新建文件）。
+    输入文件夹名称 "{folder_name}"，确认创建。
+  verify: |
+    回到 Markor 文件列表，截图证明存在名为 "{folder_name}" 的文件夹条目。
+  evidence: 1 张文件列表截图
+
+SimpleCalendarAddOneEvent:
+  exec_hint: |
+    打开 Simple Calendar Pro（包名 com.simplemobiletools.calendar.pro）。
+    导航到 {date} 对应的日期（May 5, 2026），点击该日期。
+    点 + 按钮创建新事件。填写标题 "{title}"，
+    设置开始时间 {start_time}，结束时间 {end_time}。
+    保存事件。
+  verify: |
+    回到日历视图，在 {date} 对应日期上应该能看到 "{title}" 事件标记。
+    点击该日期查看事件详情，截图证明标题、日期、时间都正确。
+  evidence: 1 张事件详情截图
+
+ExpenseAddSingle:
+  exec_hint: |
+    打开 Pro Expense（包名 com.arduia.expense）。
+    如有引导页先跳过。找到添加按钮（通常是底部 + 或 FAB），
+    输入金额 {amount}，选择类别 "{category}"（如果有分类选择器）。
+    保存条目。
+  verify: |
+    回到费用列表主页，截图证明出现了一条金额为 {amount} 的条目。
+  evidence: 1 张费用列表截图
+
+RecipeAddSingleRecipe:
+  exec_hint: |
+    打开 Broccoli（包名 com.flauschcode.broccoli）。
+    点击添加按钮（+ 或 FAB）新建食谱。
+    输入标题 "{title}"，在描述/说明字段输入 "{description}"。
+    保存食谱。
+  verify: |
+    回到食谱列表，截图证明出现了标题为 "{title}" 的条目。
+    点击进入详情，截图证明描述包含 "{description}"。
+  evidence: 2 张截图（列表 + 详情）
+
+SimpleDrawProCreateDrawing:
+  exec_hint: |
+    打开 Simple Draw Pro（包名 com.simplemobiletools.draw.pro）。
+    在画布上用 swipe 绘制至少两笔（两条线段），
+    例如 swipe(0.2, 0.3, 0.8, 0.3) 和 swipe(0.5, 0.2, 0.5, 0.8)。
+    然后点击保存按钮（通常是顶部工具栏的保存图标 💾）。
+  verify: |
+    保存后截图，证明画布上有明显的绘制痕迹（至少两笔），
+    且保存成功（没有错误提示，或者能看到"已保存"toast）。
+  evidence: 1 张画布截图
+
+OpenAppMarkor:
+  exec_hint: |
+    用 open_app 打开 Markor（包名 {package}）。
+    若弹出小米安全中心"启动应用"确认框，点"始终允许"，然后再调一次 open_app。
+    若有首次引导页，一直点 next/箭头 直到进入主界面。
+  verify: |
+    截图证明前台是 Markor 的文件浏览器主界面（能看到 Notebook 标题或文件列表）。
+  evidence: 1 张前台截图
+
+OpenAppCalendar:
+  exec_hint: |
+    用 open_app 打开 Simple Calendar Pro（包名 {package}）。
+    遇到弹窗一律允许/跳过。
+  verify: |
+    截图证明前台是 Simple Calendar Pro 的日历月视图（能看到月份名和日期网格）。
+  evidence: 1 张前台截图
+
+OpenAppExpense:
+  exec_hint: |
+    用 open_app 打开 Pro Expense（包名 {package}）。
+    若有引导页或登录提示，跳过。
+  verify: |
+    截图证明前台是 Pro Expense 的主页面（能看到费用列表或首页仪表盘）。
+  evidence: 1 张前台截图
+
+OpenAppBroccoli:
+  exec_hint: |
+    用 open_app 打开 Broccoli（包名 {package}）。
+  verify: |
+    截图证明前台是 Broccoli 的食谱列表页（能看到"食谱/Recipes"标题或搜索框）。
+  evidence: 1 张前台截图
+
+OpenAppRetroMusic:
+  exec_hint: |
+    用 open_app 打开 Retro Music（包名 {package}）。
+    首次启动需要存储权限，允许。若有引导页，跳过。
+  verify: |
+    截图证明前台是 Retro Music 的主界面（能看到 Home/Library 等底部标签）。
+  evidence: 1 张前台截图
+
+OpenAppVLC:
+  exec_hint: |
+    用 open_app 打开 VLC（包名 {package}）。
+    首次启动会有权限请求和引导页，全部允许并完成引导。
+  verify: |
+    截图证明前台是 VLC 的主界面（能看到 Audio/Video/Browse 等标签或媒体列表）。
+  evidence: 1 张前台截图
+
+OpenAppAudioRecorder:
+  exec_hint: |
+    用 open_app 打开 Audio Recorder（包名 {package}）。
+    首次启动需要麦克风和存储权限，全部允许。
+  verify: |
+    截图证明前台是 Audio Recorder 的录音主界面（能看到录音按钮）。
+  evidence: 1 张前台截图
+
+OpenAppSimpleDraw:
+  exec_hint: |
+    用 open_app 打开 Simple Draw Pro（包名 {package}）。
+    遇到权限弹窗允许。
+  verify: |
+    截图证明前台是 Simple Draw Pro 的画布界面（空白画布 + 顶部/底部工具栏）。
+  evidence: 1 张前台截图
+
+OpenAppGallery:
+  exec_hint: |
+    用 open_app 打开 Simple Gallery Pro（包名 {package}）。
+    首次启动需要存储权限，允许。
+  verify: |
+    截图证明前台是 Simple Gallery Pro 的主界面（能看到文件夹列表或照片网格）。
+  evidence: 1 张前台截图
+
+OpenAppOsmAnd:
+  exec_hint: |
+    用 open_app 打开 OsmAnd（包名 {package}）。
+    首次启动可能提示下载地图，直接跳过或关闭下载提示。
+    若弹出小米安全中心确认，点始终允许，然后再调一次 open_app。
+  verify: |
+    截图证明前台是 OsmAnd 的地图界面（能看到地图画面和搜索框）。
+  evidence: 1 张前台截图
+
+ContactsAddContact2:
+  verify: |
+    通讯录主列表里出现一条新联系人，名字 == {name}，号码 == {number}。
+    先打开该条目详情，截图证明姓名 + 电话两项都在。
+  evidence: 联系人详情页截图
+
+SystemCopyToClipboard2:
+  exec_hint: |
+    没有"复制"快捷入口。建议：用 ai_set_text 把目标文本塞进任意输入框（搜索框/便签皆可），
+    然后长按 → 全选 → 复制。注意验证阶段需要重新打开一个能粘贴的输入框。
+  verify: |
+    打开通讯录"新建联系人"页（任意有输入框的页面也行），长按某输入框 → 选"粘贴"，
+    截图证明粘贴出来的内容文字 == "{clipboard_content}"（允许少量空白差异）。
+  evidence: 1 张粘贴后的截图
+
+ExpenseAddSingle2:
+  exec_hint: |
+    打开 Pro Expense（包名 com.arduia.expense）。
+    找到添加按钮，输入金额 {amount}，选择类别 "{category}"。保存。
+  verify: |
+    回到费用列表主页，截图证明出现了一条金额为 {amount} 的条目。
+  evidence: 1 张费用列表截图
+
+RecipeAddSingleRecipe2:
+  exec_hint: |
+    打开 Broccoli（包名 com.flauschcode.broccoli）。
+    点击添加按钮新建食谱。输入标题 "{title}"，描述 "{description}"。保存。
+  verify: |
+    回到食谱列表，截图证明出现了标题为 "{title}" 的条目。
+    点击进入详情，截图证明描述包含 "{description}"。
+  evidence: 2 张截图
+
+MarkorCreateFolder2:
+  exec_hint: |
+    打开 Markor，进入 Notebook 文件浏览器。
+    点右下角 + 按钮，选择"文件夹/Folder"选项。
+    输入文件夹名称 "{folder_name}"，确认创建。
+  verify: |
+    回到 Markor 文件列表，截图证明存在名为 "{folder_name}" 的文件夹条目。
+  evidence: 1 张文件列表截图
+
+SimpleDrawProCreateDrawing2:
+  exec_hint: |
+    打开 Simple Draw Pro。
+    画一个十字：先 swipe(0.2, 0.5, 0.8, 0.5) 水平线，再 swipe(0.5, 0.2, 0.5, 0.8) 垂直线。
+    然后保存。
+  verify: |
+    截图证明画布上有交叉的两条线（十字形状），且已保存成功。
+  evidence: 1 张画布截图
+
+ClockSetAlarm:
+  exec_hint: |
+    打开时钟 App，切到"闹钟"页签。
+    点 + 添加新闹钟，设置时间为 {hour}:{minute:02d}（上午 {hour}:{minute:02d}）。
+    保存闹钟。
+  verify: |
+    闹钟列表截图，证明存在一条 {hour}:{minute:02d} AM 的闹钟且处于开启状态。
+  evidence: 1 张闹钟列表截图
+
+SettingsCheckStorageInfo:
+  exec_hint: |
+    打开设置，找到"存储"或"Storage"（路径可能是 设置 → 我的设备/关于手机 → 存储 或直接 设置 → 存储）。
+  verify: |
+    截图证明当前页面显示了存储使用情况（总空间、已用空间、可用空间等信息）。
+  evidence: 1 张存储信息页截图
+
+SettingsCheckAboutPhone:
+  exec_hint: |
+    打开设置，找到"关于手机/About Phone"（通常在设置最底部或"我的设备"里）。
+  verify: |
+    截图证明当前页面显示了设备型号（Model）和 Android 版本号。
+  evidence: 1 张关于手机页截图
+
+TurnOnBluetoothAndOpenApp:
+  exec_hint: |
+    分两步：先确保蓝牙已 ON（设置或快捷面板），再 open_app contacts 打开通讯录。
+  verify: |
+    1) 截图：设置→蓝牙 页开关 ON。
+    2) 截图：前台是通讯录 app。
+  evidence: 2 张截图

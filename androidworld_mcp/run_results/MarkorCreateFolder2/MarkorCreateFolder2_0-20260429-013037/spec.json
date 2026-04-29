@@ -1,0 +1,12 @@
+{
+  "task": "MarkorCreateFolder2",
+  "goal": "Create a new folder named 'Personal' in Markor's notebook directory.",
+  "params": {
+    "folder_name": "Personal"
+  },
+  "app_names": [
+    "markor"
+  ],
+  "complexity": 1,
+  "instance_id": "MarkorCreateFolder2#0"
+}

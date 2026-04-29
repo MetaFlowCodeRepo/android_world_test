@@ -1,0 +1,12 @@
+{
+  "task": "SystemWifiTurnOn",
+  "goal": "Turn wifi on.",
+  "params": {
+    "on_or_off": "on"
+  },
+  "app_names": [
+    "settings"
+  ],
+  "complexity": 1,
+  "instance_id": "SystemWifiTurnOn#0"
+}

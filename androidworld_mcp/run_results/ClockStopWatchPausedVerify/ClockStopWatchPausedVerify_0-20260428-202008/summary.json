@@ -1,0 +1,15 @@
+{
+  "instance_id": "ClockStopWatchPausedVerify#0",
+  "task": "ClockStopWatchPausedVerify",
+  "params": {},
+  "returncode": 0,
+  "self_eval": {
+    "success": true,
+    "confidence": 0.98,
+    "evidence_summary": "Stopwatch is paused at 20:56.82 on the 秒表 (Stopwatch) tab. The play button (▶) is visible confirming paused state, and wait_screen_update confirmed the time value did not change after 3 seconds.",
+    "screenshot_paths": [
+      "MCP screenshot - Clock app stopwatch tab showing 20:56.82 with stop(■) and play(▶) buttons"
+    ],
+    "failure_reason": ""
+  }
+}

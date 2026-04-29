@@ -1,0 +1,9 @@
+{
+  "instance_id": "SystemBrightnessMin#0",
+  "task": "SystemBrightnessMin",
+  "params": {
+    "max_or_min": "min"
+  },
+  "returncode": 0,
+  "self_eval": null
+}

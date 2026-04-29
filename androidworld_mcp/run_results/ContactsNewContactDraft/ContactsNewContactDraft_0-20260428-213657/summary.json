@@ -1,0 +1,12 @@
+{
+  "instance_id": "ContactsNewContactDraft#0",
+  "task": "ContactsNewContactDraft",
+  "params": {
+    "first": "Frank",
+    "last": "Wilson",
+    "phone": "314-786-5374",
+    "phone_label": "Home"
+  },
+  "returncode": 0,
+  "self_eval": null
+}

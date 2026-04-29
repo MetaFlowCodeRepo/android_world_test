@@ -1,0 +1,13 @@
+{
+  "task": "OpenAppSimpleDraw",
+  "goal": "Open the Simple Draw Pro app. Grant storage permissions if asked.",
+  "params": {
+    "app_name": "simpledraw",
+    "package": "com.simplemobiletools.draw.pro"
+  },
+  "app_names": [
+    "simpledrawpro"
+  ],
+  "complexity": 1,
+  "instance_id": "OpenAppSimpleDraw#0"
+}

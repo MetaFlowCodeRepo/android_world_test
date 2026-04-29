@@ -1,0 +1,17 @@
+{
+  "instance_id": "SystemBrightnessMaxVerify#0",
+  "task": "SystemBrightnessMaxVerify",
+  "params": {
+    "max_or_min": "max"
+  },
+  "returncode": 0,
+  "self_eval": {
+    "success": true,
+    "confidence": 0.95,
+    "evidence_summary": "Screenshot shows the brightness SeekBar on the Display & Brightness settings page is fully filled (blue bar spans the entire width), indicating brightness is set to maximum.",
+    "screenshot_paths": [
+      "MCP screenshot - Display & Brightness page showing full blue brightness slider bar"
+    ],
+    "failure_reason": ""
+  }
+}

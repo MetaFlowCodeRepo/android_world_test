@@ -1,0 +1,194 @@
+{
+  "instance_id": "ExpenseAddSingle2#0",
+  "task": "ExpenseAddSingle2",
+  "params": {
+    "amount": "120.00",
+    "category": "Transport"
+  },
+  "returncode": 0,
+  "self_eval": {
+    "success": true,
+    "confidence": 0.95,
+    "evidence_summary": "Home screen shows a new Recent entry with transportation icon, timestamped Today 1:26 AM, amount 120 USD. Outcome total increased from 25.5 to 145.5 USD confirming the 120 USD expense was added with Transportation category.",
+    "screenshot_paths": [
+      "final screenshot from get_screenshot showing Home with 120 USD transportation entry"
+    ],
+    "failure_reason": ""
+  },
+  "timing": {
+    "wall_ms": 122605,
+    "api_ms": 89533
+  },
+  "num_turns": 19,
+  "cost_usd": 0.5040825,
+  "stop_reason": "success",
+  "num_steps": 18,
+  "steps": [
+    {
+      "step": 1,
+      "tool": "press_home",
+      "input": {},
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 2,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 15
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 3,
+      "tool": "open_app",
+      "input": {
+        "package_name": "com.arduia.expense"
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 4,
+      "tool": "wait_stable_screen",
+      "input": {
+        "stable_duration": 2,
+        "timeout": 10
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 5,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 15
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 6,
+      "tool": "ai_click",
+      "input": {
+        "icon": "plus button at bottom right"
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 7,
+      "tool": "wait_stable_screen",
+      "input": {
+        "stable_duration": 1.5,
+        "timeout": 8
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 8,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 15
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 9,
+      "tool": "ai_click",
+      "input": {
+        "text": "Amount"
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 10,
+      "tool": "get_screen_xml",
+      "input": {},
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 11,
+      "tool": "input_text",
+      "input": {
+        "innerid": 38,
+        "text": "120.00"
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 12,
+      "tool": "swipe",
+      "input": {
+        "from_x": 0.8,
+        "from_y": 0.36,
+        "to_x": 0.2,
+        "to_y": 0.36,
+        "duration": 300
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 13,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 15
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 14,
+      "tool": "ai_click",
+      "input": {
+        "text": "Transportation"
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 15,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 15
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 16,
+      "tool": "ai_click",
+      "input": {
+        "text": "SAVE"
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 17,
+      "tool": "wait_stable_screen",
+      "input": {
+        "stable_duration": 2,
+        "timeout": 8
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 18,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 15
+      },
+      "success": true,
+      "is_error": false
+    }
+  ]
+}

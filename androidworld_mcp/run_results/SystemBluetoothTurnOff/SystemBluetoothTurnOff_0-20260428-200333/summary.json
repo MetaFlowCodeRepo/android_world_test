@@ -1,0 +1,17 @@
+{
+  "instance_id": "SystemBluetoothTurnOff#0",
+  "task": "SystemBluetoothTurnOff",
+  "params": {
+    "on_or_off": "off"
+  },
+  "returncode": 0,
+  "self_eval": {
+    "success": true,
+    "confidence": 0.99,
+    "evidence_summary": "Bluetooth settings page shows the toggle in OFF (grey) position, with no available/connected devices listed - only device name and advanced settings remain visible.",
+    "screenshot_paths": [
+      "final screenshot from get_screenshot showing Bluetooth OFF state"
+    ],
+    "failure_reason": ""
+  }
+}

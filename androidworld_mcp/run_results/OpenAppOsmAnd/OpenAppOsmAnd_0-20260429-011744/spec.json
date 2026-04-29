@@ -1,0 +1,13 @@
+{
+  "task": "OpenAppOsmAnd",
+  "goal": "Open the OsmAnd map app. Skip any download prompts or intro pages.",
+  "params": {
+    "app_name": "osmand",
+    "package": "net.osmand"
+  },
+  "app_names": [
+    "osmand"
+  ],
+  "complexity": 1,
+  "instance_id": "OpenAppOsmAnd#0"
+}

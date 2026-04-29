@@ -1,0 +1,11 @@
+{
+  "instance_id": "ClockTimerEntry#0",
+  "task": "ClockTimerEntry",
+  "params": {
+    "hours": 18,
+    "minutes": 12,
+    "seconds": 45
+  },
+  "returncode": 0,
+  "self_eval": null
+}

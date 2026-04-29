@@ -1,0 +1,13 @@
+{
+  "task": "OpenAppBroccoli",
+  "goal": "Open the Broccoli recipe app.",
+  "params": {
+    "app_name": "broccoli",
+    "package": "com.flauschcode.broccoli"
+  },
+  "app_names": [
+    "broccoli"
+  ],
+  "complexity": 1,
+  "instance_id": "OpenAppBroccoli#0"
+}

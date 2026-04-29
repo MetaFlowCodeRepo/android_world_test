@@ -1,0 +1,13 @@
+{
+  "task": "OpenAppMarkor",
+  "goal": "Open the Markor app. Clear any pop-ups or intro pages that may appear.",
+  "params": {
+    "app_name": "markor",
+    "package": "net.gsantner.markor"
+  },
+  "app_names": [
+    "markor"
+  ],
+  "complexity": 1,
+  "instance_id": "OpenAppMarkor#0"
+}

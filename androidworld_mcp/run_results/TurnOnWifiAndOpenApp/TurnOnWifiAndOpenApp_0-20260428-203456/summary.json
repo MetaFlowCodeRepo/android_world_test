@@ -1,0 +1,9 @@
+{
+  "instance_id": "TurnOnWifiAndOpenApp#0",
+  "task": "TurnOnWifiAndOpenApp",
+  "params": {
+    "app_name": "clock"
+  },
+  "returncode": 0,
+  "self_eval": null
+}

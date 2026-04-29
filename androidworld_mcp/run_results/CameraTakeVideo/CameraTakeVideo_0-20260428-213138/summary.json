@@ -1,0 +1,15 @@
+{
+  "instance_id": "CameraTakeVideo#0",
+  "task": "CameraTakeVideo",
+  "params": {},
+  "returncode": 0,
+  "self_eval": {
+    "success": true,
+    "confidence": 0.95,
+    "evidence_summary": "Gallery shows '今天' (Today) section with the latest item being a video thumbnail with play icon and duration '0:22', confirming a video was successfully recorded and saved.",
+    "screenshot_paths": [
+      "Gallery grid view screenshot showing video with 0:22 duration under Today section"
+    ],
+    "failure_reason": ""
+  }
+}

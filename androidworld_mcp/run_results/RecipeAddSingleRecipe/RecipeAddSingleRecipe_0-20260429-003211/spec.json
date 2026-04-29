@@ -1,0 +1,13 @@
+{
+  "task": "RecipeAddSingleRecipe",
+  "goal": "Add a new recipe in Broccoli app with the title 'Pasta Carbonara' and description 'Classic Italian pasta with eggs, cheese, and bacon'.",
+  "params": {
+    "title": "Pasta Carbonara",
+    "description": "Classic Italian pasta with eggs, cheese, and bacon"
+  },
+  "app_names": [
+    "broccoli"
+  ],
+  "complexity": 2.4,
+  "instance_id": "RecipeAddSingleRecipe#0"
+}

@@ -1,0 +1,15 @@
+{
+  "task": "ContactsNewContactDraft",
+  "goal": "Go to the new contact screen and enter the following details: First Name: Frank, Last Name: Wilson, Phone: 314-786-5374, Phone Label: Home. Do NOT hit save.",
+  "params": {
+    "first": "Frank",
+    "last": "Wilson",
+    "phone": "314-786-5374",
+    "phone_label": "Home"
+  },
+  "app_names": [
+    "contacts"
+  ],
+  "complexity": 1.2,
+  "instance_id": "ContactsNewContactDraft#0"
+}
