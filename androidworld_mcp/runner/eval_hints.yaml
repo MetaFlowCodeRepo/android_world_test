@@ -404,3 +404,504 @@ TurnOnBluetoothAndOpenApp:
     1) 截图：设置→蓝牙 页开关 ON。
     2) 截图：前台是通讯录 app。
   evidence: 2 张截图
+
+SimpleCalendarDeleteOneEvent:
+  exec_hint: |
+    这是两阶段任务：
+    【阶段一：创建数据】先在 Simple Calendar Pro 中创建一个事件：
+      日期 2026-06-15，时间 14:00，标题 "Dentist Appointment"，描述 "Regular checkup"，时长 60 分钟。
+    创建完成后截图确认事件已存在。
+    【阶段二：执行删除】删除 2026-06-15 14:00 标题为 "Dentist Appointment" 的事件。
+  verify: |
+    导航到 2026-06-15 这一天，截图证明该日期上已经没有任何事件
+    （或不再出现 "Dentist Appointment"）。
+  evidence: 1 张日历日视图截图
+
+SimpleCalendarDeleteEvents:
+  exec_hint: |
+    这是两阶段任务：
+    【阶段一：创建数据】在 Simple Calendar Pro 中为 2026-07-10 创建两个事件：
+      1) 09:00 "Morning Standup" 时长 30 分钟
+      2) 15:00 "Code Review" 时长 60 分钟
+    每创建一个事件后截图确认。
+    【阶段二：执行删除】删除 2026-07-10 当天的所有事件。
+  verify: |
+    导航到 2026-07-10 这一天，截图证明该日期上已经没有任何事件。
+  evidence: 1 张日历日视图截图
+
+SimpleCalendarDeleteEventsOnRelativeDay:
+  exec_hint: |
+    这是两阶段任务：
+    【阶段一：创建数据】在 Simple Calendar Pro 中为本周五创建一个事件：
+      10:00 "Weekly Review" 时长 60 分钟，描述 "Team sync"。
+    截图确认事件已创建。
+    【阶段二：执行删除】删除本周五的所有事件。
+    注意：今天是 2026-04-29（周三），本周五是 2026-05-01。
+  verify: |
+    导航到本周五，截图证明该日期上已经没有任何事件。
+  evidence: 1 张日历日视图截图
+
+ExpenseAddMultiple:
+  exec_hint: |
+    打开 Pro Expense（包名 com.arduia.expense），逐个添加 3 条支出：
+    1) Coffee $4.50 Food
+    2) Taxi $18.00 Transport
+    3) Book $12.99 Entertainment
+    每添加一条后回到主列表确认。
+  verify: |
+    在 Pro Expense 主列表截图，证明 3 条支出都存在（能看到名字和金额）。
+    如果列表需要滚动才能看到全部 3 条，分别截图。
+  evidence: 1-2 张费用列表截图
+
+ExpenseAddMultipleFromMarkor:
+  exec_hint: |
+    这是两阶段任务：
+    【阶段一：创建笔记】在 Markor 中创建 expenses.txt，内容为：
+      Lunch, 15.00, Food
+      Uber, 22.50, Transport
+      Netflix, 9.99, Entertainment
+    截图确认文件内容正确。
+    【阶段二：读取并添加】打开 Markor 查看 expenses.txt 的内容，
+    然后打开 Pro Expense，按笔记中的信息逐条添加 3 条支出。
+  verify: |
+    在 Pro Expense 主列表截图，证明 3 条支出（Lunch/Uber/Netflix）都存在且金额正确。
+  evidence: 1 张费用列表截图
+
+ExpenseDeleteSingle:
+  exec_hint: |
+    这是两阶段任务：
+    【阶段一：创建数据】在 Pro Expense 中添加 2 条支出：
+      1) Gym $30.00 Health
+      2) Lunch $11.00 Food
+    截图确认两条都已添加。
+    【阶段二：执行删除】在 Pro Expense 中删除名为 "Gym" 的支出。
+    通常长按条目或点击后选择删除。
+  verify: |
+    回到费用列表，截图证明只剩 "Lunch" $11.00，"Gym" 已不存在。
+  evidence: 1 张费用列表截图
+
+ExpenseDeleteMultiple:
+  exec_hint: |
+    这是两阶段任务：
+    【阶段一：创建数据】在 Pro Expense 中依次添加 5 条支出：
+      Snack $3.00 Food / Bus $2.50 Transport / Movie $15.00 Entertainment /
+      Dinner $28.00 Food / Parking $5.00 Transport
+    每条添加后确认。
+    【阶段二：执行删除】删除 Snack、Movie、Parking 这 3 条。
+  verify: |
+    回到费用列表，截图证明只剩 Bus $2.50 和 Dinner $28.00，
+    其它 3 条（Snack/Movie/Parking）已不存在。
+  evidence: 1 张费用列表截图
+
+ExpenseDeleteDuplicates:
+  exec_hint: |
+    这是两阶段任务：
+    【阶段一：创建数据】在 Pro Expense 中依次添加 6 条支出：
+      Coffee $4.00 Food（添加 2 次）
+      Taxi $12.00 Transport（添加 3 次）
+      Lunch $10.00 Food（添加 1 次）
+    共 6 条，其中 Coffee 重复 1 次，Taxi 重复 2 次。
+    【阶段二：去重】删除所有重复条目，每组只保留 1 条。
+    最终应剩下 3 条：Coffee×1、Taxi×1、Lunch×1。
+  verify: |
+    回到费用列表，截图证明恰好只有 3 条：Coffee $4.00、Taxi $12.00、Lunch $10.00，
+    没有任何重复。
+  evidence: 1 张费用列表截图
+
+RecipeAddMultipleRecipes:
+  exec_hint: |
+    打开 Broccoli（包名 com.flauschcode.broccoli），逐个添加 3 份食谱：
+    1) Tomato Soup - Simple tomato soup with basil and cream
+    2) Chicken Stir Fry - Quick chicken stir fry with vegetables and soy sauce
+    3) Banana Smoothie - Blend banana, milk, honey, and ice
+    每添加一份后回到列表确认。
+  verify: |
+    在 Broccoli 食谱列表截图，证明 3 份食谱都存在（能看到标题）。
+  evidence: 1 张食谱列表截图
+
+RecipeAddMultipleRecipesFromMarkor:
+  exec_hint: |
+    这是两阶段任务：
+    【阶段一：创建笔记】在 Markor 中创建 recipes.txt，内容为：
+      # Egg Fried Rice
+      Fry rice with eggs, soy sauce, and green onions.
+      # Avocado Toast
+      Toast bread, spread mashed avocado, add salt and pepper.
+    截图确认文件内容。
+    【阶段二：读取并添加】打开 Markor 查看 recipes.txt，
+    然后打开 Broccoli，按笔记内容添加 2 份食谱（以 # 开头的行作为标题，后面的行作为描述）。
+  verify: |
+    在 Broccoli 食谱列表截图，证明 "Egg Fried Rice" 和 "Avocado Toast" 两份食谱都存在。
+  evidence: 1 张食谱列表截图
+
+RecipeAddMultipleRecipesFromMarkor2:
+  exec_hint: |
+    这是两阶段任务：
+    【阶段一：创建笔记】在 Markor 中分别创建两个笔记文件：
+      1) soup.md 内容 "Boil vegetables, blend until smooth, season with salt"
+      2) sandwich.md 内容 "Layer ham, cheese, lettuce on bread, toast lightly"
+    截图确认两个文件都已创建。
+    【阶段二：读取并添加】打开 Markor 逐个查看 soup.md 和 sandwich.md，
+    然后在 Broccoli 中分别添加食谱，用文件名（去掉 .md）作为标题，文件内容作为描述。
+  verify: |
+    在 Broccoli 食谱列表截图，证明 "soup" 和 "sandwich" 两份食谱都存在。
+    点击其中一个查看详情，截图确认描述内容正确。
+  evidence: 2 张截图（列表 + 详情）
+
+RecipeDeleteSingleRecipe:
+  exec_hint: |
+    这是两阶段任务：
+    【阶段一：创建数据】在 Broccoli 中添加 2 份食谱：
+      1) Miso Soup - Traditional Japanese soup with tofu and seaweed
+      2) Caesar Salad - Romaine lettuce with croutons, parmesan, and Caesar dressing
+    截图确认两份都已添加。
+    【阶段二：执行删除】在 Broccoli 中删除 "Miso Soup"。
+    通常需要进入食谱详情页，找到删除按钮或菜单。
+  verify: |
+    回到食谱列表，截图证明只剩 "Caesar Salad"，"Miso Soup" 已不存在。
+  evidence: 1 张食谱列表截图
+
+RecipeDeleteMultipleRecipes:
+  exec_hint: |
+    这是两阶段任务：
+    【阶段一：创建数据】在 Broccoli 中添加 5 份食谱：
+      Pancakes / French Toast / Omelette / Waffles / Scrambled Eggs
+    每份都有简短描述，逐个添加。
+    【阶段二：执行删除】删除 Pancakes、Omelette、Waffles 这 3 份。
+  verify: |
+    回到食谱列表，截图证明只剩 "French Toast" 和 "Scrambled Eggs"，
+    被删除的 3 份已不存在。
+  evidence: 1 张食谱列表截图
+
+RecipeDeleteMultipleRecipesWithConstraint:
+  exec_hint: |
+    这是两阶段任务：
+    【阶段一：创建数据】在 Broccoli 中添加 4 份食谱：
+      1) Garlic Bread - Spread butter and garlic on bread, bake at 375F
+      2) Garlic Shrimp - Saute shrimp with garlic and olive oil
+      3) Fruit Salad - Mix strawberries, blueberries, and grapes
+      4) Garlic Chicken - Marinate chicken with garlic and herbs, bake
+    注意：1/2/4 的描述中包含 "garlic"，3 不包含。
+    【阶段二：按条件删除】删除所有描述中包含 "garlic" 的食谱。
+  verify: |
+    回到食谱列表，截图证明只剩 "Fruit Salad"，
+    其它 3 份（Garlic Bread/Garlic Shrimp/Garlic Chicken）已被删除。
+  evidence: 1 张食谱列表截图
+
+RecipeDeleteDuplicateRecipes:
+  exec_hint: |
+    这是两阶段任务：
+    【阶段一：创建数据】在 Broccoli 中依次添加 5 份食谱：
+      Hot Chocolate（添加 2 次，描述相同）
+      Lemonade（添加 2 次，描述相同）
+      Iced Tea（添加 1 次）
+    共 5 份，其中 Hot Chocolate 和 Lemonade 各有 1 份重复。
+    【阶段二：去重】删除所有重复食谱，每组只保留 1 份。
+    最终应剩下 3 份：Hot Chocolate×1、Lemonade×1、Iced Tea×1。
+  verify: |
+    回到食谱列表，截图证明恰好只有 3 份食谱：
+    Hot Chocolate、Lemonade、Iced Tea，没有任何重复。
+  evidence: 1 张食谱列表截图
+
+AudioRecorderRecordAudioWithFileName:
+  exec_hint: |
+    打开 Audio Recorder（包名 com.dimowner.audiorecorder）。
+    录制一段至少 3 秒的音频。录制完成后，在保存时将文件名改为 "{file_name}"。
+    不同版本的 Audio Recorder 修改文件名的方式不同：
+    可能是录制后在列表里长按重命名，或者在设置里预设文件名。
+  verify: |
+    在 Audio Recorder 录音列表中，截图证明存在一条名称包含 "{file_name}" 的录音。
+  evidence: 1 张录音列表截图
+
+SimpleCalendarAddOneEventTomorrow:
+  exec_hint: |
+    打开 Simple Calendar Pro。今天是 2026-04-29，所以明天是 2026-04-30。
+    导航到明天的日期，创建事件：标题 "{event_title}"，
+    开始时间 {hour}:00，时长 {duration_mins} 分钟，
+    描述 "{event_description}"。保存。
+  verify: |
+    在日历中导航到明天（2026-04-30），截图证明该日期上显示 "{event_title}" 事件。
+    点击查看详情，截图确认标题、时间、描述都正确。
+  evidence: 1 张事件详情截图
+
+SimpleCalendarAddOneEventInTwoWeeks:
+  exec_hint: |
+    打开 Simple Calendar Pro。今天是 2026-04-29，两周后是 2026-05-13。
+    导航到 2026-05-13，创建事件：标题 "{event_title}"，
+    开始时间 {hour}:00，时长 {duration_mins} 分钟，
+    描述 "{event_description}"。保存。
+  verify: |
+    在日历中导航到 2026-05-13，截图证明该日期上显示 "{event_title}" 事件。
+    点击查看详情，截图确认标题、时间、描述都正确。
+  evidence: 1 张事件详情截图
+
+SimpleCalendarAddOneEventRelativeDay:
+  exec_hint: |
+    打开 Simple Calendar Pro。今天是 2026-04-29（周三），本周六是 2026-05-02。
+    导航到本周六，创建事件：标题 "{event_title}"，
+    开始时间 {hour}:00，时长 {duration_mins} 分钟，
+    描述 "{event_description}"。保存。
+  verify: |
+    在日历中导航到本周六，截图证明该日期上显示 "{event_title}" 事件。
+    点击查看详情，截图确认标题、时间、描述正确。
+  evidence: 1 张事件详情截图
+
+SimpleCalendarAddRepeatingEvent:
+  exec_hint: |
+    打开 Simple Calendar Pro。导航到 2026-05-04。
+    创建事件：标题 "{event_title}"，开始时间 {hour}:00，
+    时长 {duration_mins} 分钟，描述 "{event_description}"。
+    关键：设置重复规则为"每周/Weekly"，且不设结束日期（永久重复）。
+    在 Simple Calendar Pro 中，创建事件时找到"Repeat/重复"选项，选择 "Weekly"。
+  verify: |
+    1) 在 2026-05-04 查看事件详情，截图证明标题和重复规则为"每周"。
+    2) 导航到下一周（2026-05-11），截图证明同一事件也出现了。
+  evidence: 2 张截图（事件详情 + 下一周日期）
+
+MarkorAddNoteHeader:
+  exec_hint: |
+    这是两阶段任务：
+    【阶段一：创建笔记】在 Markor 中创建 todo.md，内容为
+    "Buy groceries\nClean house\nCall dentist"。
+    【阶段二：编辑笔记】打开 todo.md，在现有内容的最上方添加 "# My Todo List"
+    以及一个空行，然后将文件重命名为 my_todos.md。
+  verify: |
+    在 Markor 文件列表截图，证明存在 "my_todos.md"（且不再有 todo.md）。
+    打开 my_todos.md，截图证明第一行是 "# My Todo List"，
+    后面隔一个空行后是原始内容 "Buy groceries..."。
+  evidence: 2 张截图（文件列表 + 文件内容）
+
+MarkorChangeNoteContent:
+  exec_hint: |
+    这是两阶段任务：
+    【阶段一：创建笔记】在 Markor 中创建 draft.md，内容为
+    "This is the old content that needs to be replaced."。
+    【阶段二：修改笔记】打开 draft.md，将全部内容替换为
+    "This is the brand new updated content."，
+    然后将文件名从 draft.md 改为 final.md。
+  verify: |
+    在 Markor 文件列表截图，证明存在 "final.md"（且不再有 draft.md）。
+    打开 final.md，截图证明内容为 "This is the brand new updated content."。
+  evidence: 2 张截图（文件列表 + 文件内容）
+
+MarkorCreateNoteFromClipboard:
+  exec_hint: |
+    这是两阶段任务：
+    【阶段一：复制到剪贴板】先把 "Meeting notes from April 29 standup" 复制到剪贴板。
+    可以用 ai_set_text 将文本输入到任意输入框，然后全选 → 复制。
+    【阶段二：创建笔记】在 Markor 中创建新笔记 clipboard_note.md，
+    在编辑器里长按 → 粘贴，保存。
+  verify: |
+    打开 Markor 的 clipboard_note.md，截图证明内容为
+    "Meeting notes from April 29 standup"。
+  evidence: 1 张笔记内容截图
+
+MarkorDeleteAllNotes:
+  exec_hint: |
+    这是两阶段任务：
+    【阶段一：创建数据】在 Markor 中依次创建 3 个笔记：
+    note1.md、note2.md、note3.md，每个有简短内容。
+    【阶段二：删除全部】在 Markor 文件列表中全选所有笔记并删除。
+    可以长按一个文件进入选择模式，然后全选，点删除。
+  verify: |
+    截图证明 Markor 的 Notebook 文件列表为空（没有任何 .md 文件）。
+    注意：文件夹不算笔记，可以保留。
+  evidence: 1 张空文件列表截图
+
+MarkorDeleteNewestNote:
+  exec_hint: |
+    这是两阶段任务：
+    【阶段一：创建数据】在 Markor 中先创建 old_note.md，
+    等几秒后再创建 new_note.md。这样 new_note.md 按修改时间排最前。
+    【阶段二：删除最新笔记】根据修改时间排序，找到最新的那个笔记
+    （应该是 new_note.md），删除它。
+  verify: |
+    截图证明 Markor 文件列表中只剩 old_note.md，new_note.md 已不存在。
+  evidence: 1 张文件列表截图
+
+MarkorDeleteNote:
+  exec_hint: |
+    这是两阶段任务：
+    【阶段一：创建数据】在 Markor 中创建 keep_me.md 和 delete_me.md。
+    【阶段二：删除指定笔记】在文件列表中找到 delete_me.md，
+    长按选中后删除（或点击进入后从菜单删除）。
+  verify: |
+    截图证明 Markor 文件列表中只剩 keep_me.md，delete_me.md 已不存在。
+  evidence: 1 张文件列表截图
+
+MarkorEditNote:
+  exec_hint: |
+    这是两阶段任务：
+    【阶段一：创建笔记】在 Markor 中创建 report.md，
+    内容为 "Q1 sales were strong."。
+    【阶段二：编辑笔记】打开 report.md，在文档最顶部添加 "# Quarterly Report"，
+    然后换一行，保留原内容。保存。
+  verify: |
+    打开 report.md，截图证明：
+    第一行是 "# Quarterly Report"，下面是 "Q1 sales were strong."。
+  evidence: 1 张笔记内容截图
+
+MarkorMergeNotes:
+  exec_hint: |
+    这是两阶段任务：
+    【阶段一：创建数据】在 Markor 中创建 3 个笔记：
+    part1.md、part2.md、part3.md，内容分别如 goal 中所述。
+    【阶段二：合并笔记】逐个打开 part1.md、part2.md、part3.md，
+    复制每个的内容，然后创建新笔记 full_report.md，
+    依次粘贴 part1 内容、空行、part2 内容、空行、part3 内容。保存。
+    注意保持顺序：part1 → part2 → part3。
+  verify: |
+    打开 full_report.md，截图证明内容按顺序包含：
+    "Introduction to the project."（空行）
+    "Main body of the report."（空行）
+    "Conclusion and next steps."
+  evidence: 1 张笔记内容截图
+
+MarkorMoveNote:
+  exec_hint: |
+    这是两阶段任务：
+    【阶段一：创建数据】
+    1) 在 Markor 中创建名为 "Archive" 的文件夹。
+    2) 在 Notebook 主目录创建 old_memo.md，内容 "This memo is from last month."。
+    【阶段二：移动笔记】将 old_memo.md 从 Notebook 移到 Archive 文件夹。
+    Markor 中移动文件的方式：长按文件 → 选择"移动" → 选择目标文件夹。
+  verify: |
+    1) 截图 Notebook 主目录，证明 old_memo.md 已不在此处。
+    2) 进入 Archive 文件夹，截图证明 old_memo.md 在这里。
+  evidence: 2 张截图（Notebook 目录 + Archive 目录）
+
+OsmAndFavorite:
+  exec_hint: |
+    打开 OsmAnd（包名 net.osmand）。
+    点击搜索图标，搜索 "{location}"。
+    在搜索结果中选择匹配的地点。
+    在地点详情页面找到"添加到收藏/Add to Favorites"按钮，点击保存。
+  verify: |
+    打开 OsmAnd 的收藏夹/Favorites 列表，截图证明 "{location}" 已在收藏中。
+  evidence: 1 张收藏夹截图
+
+OsmAndMarker:
+  exec_hint: |
+    打开 OsmAnd（包名 net.osmand）。
+    搜索 "{location}"，选择匹配结果。
+    在地点详情页面，找到"标记/Mark"或"添加标记点"选项，添加一个 marker。
+    不同版本的 OsmAnd 操作可能不同：可能是长按地图 → 添加标记，
+    或者搜索后在结果页面选择 "Add marker"。
+  verify: |
+    截图证明地图上显示了 "{location}" 的标记点（marker 图标）。
+  evidence: 1 张地图截图
+
+OsmAndTrack:
+  exec_hint: |
+    打开 OsmAnd（包名 net.osmand）。此任务复杂度很高。
+    需要创建一条包含多个途经点的轨迹（Track）：
+    依次搜索并添加 Central Park、Times Square、Brooklyn Bridge 作为途经点。
+    在 OsmAnd 中可以通过"规划路线/Plan route"功能来创建轨迹，
+    逐个添加途经点，最后保存轨迹。
+  verify: |
+    在 OsmAnd 的轨迹/Tracks 列表中截图，证明存在一条新创建的轨迹。
+    打开轨迹详情，截图证明包含 3 个途经点。
+  evidence: 2 张截图（轨迹列表 + 详情）
+
+RetroCreatePlaylist:
+  exec_hint: |
+    打开 Retro Music（包名 code.name.monkey.retromusic）。
+    首次启动需要存储权限。
+    找到创建播放列表的入口（通常在 Library → Playlists 标签页）。
+    创建新播放列表，命名为 "{playlist_title}"。
+    添加设备上的任意可用歌曲到播放列表中。
+    注意：设备上可能没有歌曲，如果没有可用歌曲，创建空播放列表也可以。
+  verify: |
+    在 Playlists 页面截图，证明存在名为 "{playlist_title}" 的播放列表。
+  evidence: 1 张播放列表页截图
+
+RetroPlayingQueue:
+  exec_hint: |
+    打开 Retro Music。在 Library 中找到任意可用歌曲。
+    选择歌曲添加到播放队列（长按歌曲 → Add to playing queue）。
+    如果设备上没有歌曲，尝试播放任意可用音频文件。
+    开始播放。
+  verify: |
+    截图证明 Retro Music 正在播放（能看到播放栏显示歌曲名和进度条）。
+  evidence: 1 张播放界面截图
+
+RetroSavePlaylist:
+  exec_hint: |
+    打开 Retro Music。创建播放列表 "{playlist_title}"，
+    添加任意可用歌曲。然后找到导出/分享播放列表的选项，
+    将播放列表导出到 Downloads 目录。
+    不同版本的 Retro Music 导出方式可能不同。
+  verify: |
+    1) 截图 Playlists 页面，证明 "{playlist_title}" 存在。
+    2) 用文件管理器或 Gallery 检查 Downloads 目录，截图证明导出文件存在。
+  evidence: 2 张截图
+
+SaveCopyOfReceiptTaskEval:
+  exec_hint: |
+    这是两阶段任务：
+    【阶段一：准备图片】用相机拍一张照片（作为测试图片）。
+    拍完后记住照片文件名。
+    【阶段二：复制图片】打开 Simple Gallery Pro（包名 com.simplemobiletools.gallery.pro）。
+    找到 DCIM 文件夹中最新的照片，使用"复制到/Copy to"功能，
+    将照片复制到 Download 文件夹。保持文件名不变。
+  verify: |
+    在 Simple Gallery Pro 中打开 Download 文件夹，
+    截图证明照片副本已存在于此。
+  evidence: 1 张 Download 文件夹截图
+
+SimpleSmsSend:
+  exec_hint: |
+    打开 Simple SMS Messenger（包名 com.simplemobiletools.smsmessenger）。
+    点击新建消息按钮（+ 或 FAB）。
+    在收件人栏输入 {number}。
+    在消息内容框输入 "{message}"。
+    点击发送按钮。
+    注意：短信可能发送失败（没有真实 SIM 卡），
+    只要消息出现在对话列表中即可视为成功。
+  verify: |
+    截图证明对话列表中出现了发给 {number} 的消息，
+    内容包含 "{message}"。
+  evidence: 1 张对话截图
+
+SimpleSmsSendClipboardContent:
+  exec_hint: |
+    这是两阶段任务：
+    【阶段一：复制到剪贴板】将 "{clipboard_content}" 复制到剪贴板。
+    【阶段二：发送短信】打开 Simple SMS Messenger，
+    新建消息给 {number}，在消息框中粘贴剪贴板内容，发送。
+  verify: |
+    截图证明对话中出现了发给 {number} 的消息，
+    内容为 "{clipboard_content}"。
+  evidence: 1 张对话截图
+
+VlcCreatePlaylist:
+  exec_hint: |
+    打开 VLC（包名 org.videolan.vlc）。
+    找到播放列表管理入口（通常在 Audio/Video 标签下，或侧边栏 Playlists）。
+    创建新播放列表，命名为 "{playlist_title}"。
+    添加设备上任意可用的媒体文件。
+  verify: |
+    在 VLC 的 Playlists 页面截图，证明存在名为 "{playlist_title}" 的播放列表。
+  evidence: 1 张播放列表截图
+
+VlcCreateTwoPlaylists:
+  exec_hint: |
+    打开 VLC。分别创建两个播放列表：
+    1) 第一个命名为 "Playlist A"
+    2) 第二个命名为 "Playlist B"
+    每个都添加设备上的一些可用媒体文件。
+  verify: |
+    在 VLC 的 Playlists 页面截图，证明同时存在 "Playlist A" 和 "Playlist B"。
+  evidence: 1 张播放列表截图
+
+MarkorCreateNoteAndSms:
+  exec_hint: |
+    这是一个组合任务：
+    【步骤一】在 Markor 中创建笔记 "{file_name}"，内容为 "{text}"。
+    【步骤二】可以用 Markor 的分享功能将内容分享到 Simple SMS Messenger，
+    或者手动复制内容后打开 Simple SMS Messenger 发送。
+    收件人号码：{number}，消息内容就是笔记内容。
+  verify: |
+    1) 截图 Markor 文件列表，证明 "{file_name}" 存在。
+    2) 截图 Simple SMS Messenger 对话，证明发给 {number} 的消息内容为 "{text}"。
+  evidence: 2 张截图（Markor + SMS）

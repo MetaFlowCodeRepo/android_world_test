@@ -472,5 +472,535 @@
     "app_names": ["settings", "contacts"],
     "complexity": 2,
     "instance_id": "TurnOnBluetoothAndOpenApp#0"
+  },
+  {
+    "task": "SimpleCalendarDeleteOneEvent",
+    "goal": "First, create a calendar event in Simple Calendar Pro on 2026-06-15 at 14h with the title 'Dentist Appointment' and the description 'Regular checkup'. The event should last for 60 mins. Then, delete the calendar event on 2026-06-15 at 14h with the title 'Dentist Appointment'.",
+    "params": {
+      "year": 2026, "month": 6, "day": 15, "hour": 14,
+      "event_title": "Dentist Appointment",
+      "event_description": "Regular checkup",
+      "duration_mins": 60
+    },
+    "app_names": ["simplecalendar"],
+    "complexity": 2.4,
+    "instance_id": "SimpleCalendarDeleteOneEvent#0"
+  },
+  {
+    "task": "SimpleCalendarDeleteEvents",
+    "goal": "First, create two calendar events in Simple Calendar Pro on 2026-07-10: one at 9h titled 'Morning Standup' (30 mins) and one at 15h titled 'Code Review' (60 mins). Then, delete all the calendar events on 2026-07-10.",
+    "params": {
+      "year": 2026, "month": 7, "day": 10,
+      "events": [
+        {"hour": 9, "title": "Morning Standup", "duration_mins": 30},
+        {"hour": 15, "title": "Code Review", "duration_mins": 60}
+      ]
+    },
+    "app_names": ["simplecalendar"],
+    "complexity": 3.4,
+    "instance_id": "SimpleCalendarDeleteEvents#0"
+  },
+  {
+    "task": "SimpleCalendarDeleteEventsOnRelativeDay",
+    "goal": "First, create a calendar event in Simple Calendar Pro for this Friday at 10h titled 'Weekly Review' (60 mins, description 'Team sync'). Then, delete all events scheduled for this Friday.",
+    "params": {
+      "day_of_week": "Friday",
+      "event_title": "Weekly Review",
+      "hour": 10,
+      "duration_mins": 60,
+      "event_description": "Team sync"
+    },
+    "app_names": ["simplecalendar"],
+    "complexity": 3.4,
+    "instance_id": "SimpleCalendarDeleteEventsOnRelativeDay#0"
+  },
+  {
+    "task": "ExpenseAddMultiple",
+    "goal": "Add the following expenses into the Pro Expense app: 1) 'Coffee' amount $4.50 category 'Food', 2) 'Taxi' amount $18.00 category 'Transport', 3) 'Book' amount $12.99 category 'Entertainment'.",
+    "params": {
+      "expenses": [
+        {"name": "Coffee", "amount": "4.50", "category": "Food"},
+        {"name": "Taxi", "amount": "18.00", "category": "Transport"},
+        {"name": "Book", "amount": "12.99", "category": "Entertainment"}
+      ]
+    },
+    "app_names": ["expense"],
+    "complexity": 3,
+    "instance_id": "ExpenseAddMultiple#0"
+  },
+  {
+    "task": "ExpenseAddMultipleFromMarkor",
+    "goal": "First, create a note in Markor named 'expenses.txt' with the following content:\nLunch, 15.00, Food\nUber, 22.50, Transport\nNetflix, 9.99, Entertainment\nThen, add the expenses from expenses.txt in Markor to the Pro Expense app.",
+    "params": {
+      "file_name": "expenses.txt",
+      "expenses": [
+        {"name": "Lunch", "amount": "15.00", "category": "Food"},
+        {"name": "Uber", "amount": "22.50", "category": "Transport"},
+        {"name": "Netflix", "amount": "9.99", "category": "Entertainment"}
+      ]
+    },
+    "app_names": ["markor", "expense"],
+    "complexity": 4,
+    "instance_id": "ExpenseAddMultipleFromMarkor#0"
+  },
+  {
+    "task": "ExpenseDeleteSingle",
+    "goal": "First, add the following expenses into Pro Expense: 1) 'Gym' amount $30.00 category 'Health', 2) 'Lunch' amount $11.00 category 'Food'. Then, delete the expense named 'Gym' from Pro Expense.",
+    "params": {
+      "setup_expenses": [
+        {"name": "Gym", "amount": "30.00", "category": "Health"},
+        {"name": "Lunch", "amount": "11.00", "category": "Food"}
+      ],
+      "delete_name": "Gym"
+    },
+    "app_names": ["expense"],
+    "complexity": 2,
+    "instance_id": "ExpenseDeleteSingle#0"
+  },
+  {
+    "task": "ExpenseDeleteMultiple",
+    "goal": "First, add the following expenses into Pro Expense: 1) 'Snack' amount $3.00 category 'Food', 2) 'Bus' amount $2.50 category 'Transport', 3) 'Movie' amount $15.00 category 'Entertainment', 4) 'Dinner' amount $28.00 category 'Food', 5) 'Parking' amount $5.00 category 'Transport'. Then, delete the following expenses from Pro Expense: 'Snack', 'Movie', 'Parking'.",
+    "params": {
+      "setup_expenses": [
+        {"name": "Snack", "amount": "3.00", "category": "Food"},
+        {"name": "Bus", "amount": "2.50", "category": "Transport"},
+        {"name": "Movie", "amount": "15.00", "category": "Entertainment"},
+        {"name": "Dinner", "amount": "28.00", "category": "Food"},
+        {"name": "Parking", "amount": "5.00", "category": "Transport"}
+      ],
+      "delete_names": ["Snack", "Movie", "Parking"]
+    },
+    "app_names": ["expense"],
+    "complexity": 3,
+    "instance_id": "ExpenseDeleteMultiple#0"
+  },
+  {
+    "task": "ExpenseDeleteDuplicates",
+    "goal": "First, add the following expenses into Pro Expense: 1) 'Coffee' amount $4.00 category 'Food', 2) 'Coffee' amount $4.00 category 'Food', 3) 'Taxi' amount $12.00 category 'Transport', 4) 'Taxi' amount $12.00 category 'Transport', 5) 'Taxi' amount $12.00 category 'Transport', 6) 'Lunch' amount $10.00 category 'Food'. Then, delete all but one of any expenses that are exact duplicates, ensuring at least one instance of each unique expense remains.",
+    "params": {
+      "setup_expenses": [
+        {"name": "Coffee", "amount": "4.00", "category": "Food"},
+        {"name": "Coffee", "amount": "4.00", "category": "Food"},
+        {"name": "Taxi", "amount": "12.00", "category": "Transport"},
+        {"name": "Taxi", "amount": "12.00", "category": "Transport"},
+        {"name": "Taxi", "amount": "12.00", "category": "Transport"},
+        {"name": "Lunch", "amount": "10.00", "category": "Food"}
+      ],
+      "expected_remaining": ["Coffee", "Taxi", "Lunch"]
+    },
+    "app_names": ["expense"],
+    "complexity": 3,
+    "instance_id": "ExpenseDeleteDuplicates#0"
+  },
+  {
+    "task": "RecipeAddMultipleRecipes",
+    "goal": "Add the following recipes into the Broccoli app: 1) Title 'Tomato Soup', description 'Simple tomato soup with basil and cream'. 2) Title 'Chicken Stir Fry', description 'Quick chicken stir fry with vegetables and soy sauce'. 3) Title 'Banana Smoothie', description 'Blend banana, milk, honey, and ice'.",
+    "params": {
+      "recipes": [
+        {"title": "Tomato Soup", "description": "Simple tomato soup with basil and cream"},
+        {"title": "Chicken Stir Fry", "description": "Quick chicken stir fry with vegetables and soy sauce"},
+        {"title": "Banana Smoothie", "description": "Blend banana, milk, honey, and ice"}
+      ]
+    },
+    "app_names": ["broccoli"],
+    "complexity": 4,
+    "instance_id": "RecipeAddMultipleRecipes#0"
+  },
+  {
+    "task": "RecipeAddMultipleRecipesFromMarkor",
+    "goal": "First, create a note in Markor named 'recipes.txt' with the following content:\n# Egg Fried Rice\nFry rice with eggs, soy sauce, and green onions.\n# Avocado Toast\nToast bread, spread mashed avocado, add salt and pepper.\nThen, add the recipes from recipes.txt in Markor to the Broccoli recipe app.",
+    "params": {
+      "file_name": "recipes.txt",
+      "recipes": [
+        {"title": "Egg Fried Rice", "description": "Fry rice with eggs, soy sauce, and green onions."},
+        {"title": "Avocado Toast", "description": "Toast bread, spread mashed avocado, add salt and pepper."}
+      ]
+    },
+    "app_names": ["markor", "broccoli"],
+    "complexity": 4,
+    "instance_id": "RecipeAddMultipleRecipesFromMarkor#0"
+  },
+  {
+    "task": "RecipeDeleteSingleRecipe",
+    "goal": "First, add the following recipes into the Broccoli app: 1) Title 'Miso Soup', description 'Traditional Japanese soup with tofu and seaweed'. 2) Title 'Caesar Salad', description 'Romaine lettuce with croutons, parmesan, and Caesar dressing'. Then, delete the recipe 'Miso Soup' from the Broccoli app.",
+    "params": {
+      "setup_recipes": [
+        {"title": "Miso Soup", "description": "Traditional Japanese soup with tofu and seaweed"},
+        {"title": "Caesar Salad", "description": "Romaine lettuce with croutons, parmesan, and Caesar dressing"}
+      ],
+      "delete_title": "Miso Soup"
+    },
+    "app_names": ["broccoli"],
+    "complexity": 3,
+    "instance_id": "RecipeDeleteSingleRecipe#0"
+  },
+  {
+    "task": "RecipeDeleteMultipleRecipes",
+    "goal": "First, add the following recipes into the Broccoli app: 1) 'Pancakes' - 'Mix flour, eggs, milk. Cook on griddle'. 2) 'French Toast' - 'Dip bread in egg mixture, fry until golden'. 3) 'Omelette' - 'Beat eggs, pour in pan, add fillings'. 4) 'Waffles' - 'Pour batter into waffle iron'. 5) 'Scrambled Eggs' - 'Whisk eggs, cook on low heat with butter'. Then, delete the following recipes from Broccoli app: 'Pancakes', 'Omelette', 'Waffles'.",
+    "params": {
+      "setup_recipes": [
+        {"title": "Pancakes", "description": "Mix flour, eggs, milk. Cook on griddle"},
+        {"title": "French Toast", "description": "Dip bread in egg mixture, fry until golden"},
+        {"title": "Omelette", "description": "Beat eggs, pour in pan, add fillings"},
+        {"title": "Waffles", "description": "Pour batter into waffle iron"},
+        {"title": "Scrambled Eggs", "description": "Whisk eggs, cook on low heat with butter"}
+      ],
+      "delete_titles": ["Pancakes", "Omelette", "Waffles"]
+    },
+    "app_names": ["broccoli"],
+    "complexity": 4,
+    "instance_id": "RecipeDeleteMultipleRecipes#0"
+  },
+  {
+    "task": "RecipeDeleteMultipleRecipesWithConstraint",
+    "goal": "First, add the following recipes into the Broccoli app: 1) 'Garlic Bread' with directions 'Spread butter and garlic on bread, bake at 375F'. 2) 'Garlic Shrimp' with directions 'Saute shrimp with garlic and olive oil'. 3) 'Fruit Salad' with directions 'Mix strawberries, blueberries, and grapes'. 4) 'Garlic Chicken' with directions 'Marinate chicken with garlic and herbs, bake'. Then, delete the recipes from Broccoli app that use garlic in the directions.",
+    "params": {
+      "setup_recipes": [
+        {"title": "Garlic Bread", "description": "Spread butter and garlic on bread, bake at 375F"},
+        {"title": "Garlic Shrimp", "description": "Saute shrimp with garlic and olive oil"},
+        {"title": "Fruit Salad", "description": "Mix strawberries, blueberries, and grapes"},
+        {"title": "Garlic Chicken", "description": "Marinate chicken with garlic and herbs, bake"}
+      ],
+      "constraint_ingredient": "garlic",
+      "expected_remaining": ["Fruit Salad"]
+    },
+    "app_names": ["broccoli"],
+    "complexity": 4,
+    "instance_id": "RecipeDeleteMultipleRecipesWithConstraint#0"
+  },
+  {
+    "task": "RecipeDeleteDuplicateRecipes",
+    "goal": "First, add the following recipes into the Broccoli app: 1) 'Hot Chocolate' - 'Heat milk, add cocoa and sugar'. 2) 'Hot Chocolate' - 'Heat milk, add cocoa and sugar'. 3) 'Lemonade' - 'Squeeze lemons, add water and sugar'. 4) 'Lemonade' - 'Squeeze lemons, add water and sugar'. 5) 'Iced Tea' - 'Brew tea, chill, add ice'. Then, delete all but one of any recipes in the Broccoli app that are exact duplicates, ensuring at least one instance of each unique recipe remains.",
+    "params": {
+      "setup_recipes": [
+        {"title": "Hot Chocolate", "description": "Heat milk, add cocoa and sugar"},
+        {"title": "Hot Chocolate", "description": "Heat milk, add cocoa and sugar"},
+        {"title": "Lemonade", "description": "Squeeze lemons, add water and sugar"},
+        {"title": "Lemonade", "description": "Squeeze lemons, add water and sugar"},
+        {"title": "Iced Tea", "description": "Brew tea, chill, add ice"}
+      ],
+      "expected_remaining": ["Hot Chocolate", "Lemonade", "Iced Tea"]
+    },
+    "app_names": ["broccoli"],
+    "complexity": 3,
+    "instance_id": "RecipeDeleteDuplicateRecipes#0"
+  },
+  {
+    "task": "RecipeAddMultipleRecipesFromMarkor2",
+    "goal": "First, create the following notes in Markor: 1) A note named 'soup.md' with content 'Boil vegetables, blend until smooth, season with salt'. 2) A note named 'sandwich.md' with content 'Layer ham, cheese, lettuce on bread, toast lightly'. Then, add the recipes from all recipe notes (soup.md and sandwich.md) in Markor to the Broccoli recipe app. Use the file name (without .md) as the recipe title.",
+    "params": {
+      "notes": [
+        {"file_name": "soup.md", "content": "Boil vegetables, blend until smooth, season with salt"},
+        {"file_name": "sandwich.md", "content": "Layer ham, cheese, lettuce on bread, toast lightly"}
+      ],
+      "expected_recipes": [
+        {"title": "soup", "description": "Boil vegetables, blend until smooth, season with salt"},
+        {"title": "sandwich", "description": "Layer ham, cheese, lettuce on bread, toast lightly"}
+      ]
+    },
+    "app_names": ["markor", "broccoli"],
+    "complexity": 4,
+    "instance_id": "RecipeAddMultipleRecipesFromMarkor2#0"
+  },
+  {
+    "task": "AudioRecorderRecordAudioWithFileName",
+    "goal": "Record an audio clip and save it with name 'meeting_notes' using Audio Recorder app.",
+    "params": {"file_name": "meeting_notes"},
+    "app_names": ["audiorecorder"],
+    "complexity": 2,
+    "instance_id": "AudioRecorderRecordAudioWithFileName#0"
+  },
+  {
+    "task": "SimpleCalendarAddOneEventTomorrow",
+    "goal": "In Simple Calendar Pro, create a calendar event for tomorrow at 9h with the title 'Doctor Visit' and the description 'Annual physical exam'. The event should last for 60 mins.",
+    "params": {
+      "hour": 9,
+      "event_title": "Doctor Visit",
+      "event_description": "Annual physical exam",
+      "duration_mins": 60
+    },
+    "app_names": ["simplecalendar"],
+    "complexity": 3.4,
+    "instance_id": "SimpleCalendarAddOneEventTomorrow#0"
+  },
+  {
+    "task": "SimpleCalendarAddOneEventInTwoWeeks",
+    "goal": "In Simple Calendar Pro, create a calendar event in two weeks from today at 14h with the title 'Project Deadline' and the description 'Submit final report'. The event should last for 120 mins.",
+    "params": {
+      "hour": 14,
+      "event_title": "Project Deadline",
+      "event_description": "Submit final report",
+      "duration_mins": 120
+    },
+    "app_names": ["simplecalendar"],
+    "complexity": 3.4,
+    "instance_id": "SimpleCalendarAddOneEventInTwoWeeks#0"
+  },
+  {
+    "task": "SimpleCalendarAddOneEventRelativeDay",
+    "goal": "In Simple Calendar Pro, create a calendar event for this Saturday at 11h with the title 'Brunch with Friends' and the description 'Meet at the cafe downtown'. The event should last for 90 mins.",
+    "params": {
+      "day_of_week": "Saturday",
+      "hour": 11,
+      "event_title": "Brunch with Friends",
+      "event_description": "Meet at the cafe downtown",
+      "duration_mins": 90
+    },
+    "app_names": ["simplecalendar"],
+    "complexity": 3.4,
+    "instance_id": "SimpleCalendarAddOneEventRelativeDay#0"
+  },
+  {
+    "task": "SimpleCalendarAddRepeatingEvent",
+    "goal": "In Simple Calendar Pro, create a recurring calendar event titled 'Weekly Standup' starting on 2026-05-04 at 10h. The event recurs weekly, forever, and lasts for 30 minutes each occurrence. The event description should be 'Team sync meeting'.",
+    "params": {
+      "year": 2026, "month": 5, "day": 4,
+      "hour": 10,
+      "event_title": "Weekly Standup",
+      "event_description": "Team sync meeting",
+      "repeat_rule": "weekly",
+      "duration_mins": 30
+    },
+    "app_names": ["simplecalendar"],
+    "complexity": 3.4,
+    "instance_id": "SimpleCalendarAddRepeatingEvent#0"
+  },
+  {
+    "task": "MarkorAddNoteHeader",
+    "goal": "First, create a note in Markor named 'todo.md' with the content 'Buy groceries\nClean house\nCall dentist'. Then, update the Markor note todo.md by adding the following text, along with a new blank line before the existing content: '# My Todo List', and rename it to 'my_todos.md'.",
+    "params": {
+      "original_name": "todo.md",
+      "header": "# My Todo List",
+      "new_name": "my_todos.md",
+      "original_content": "Buy groceries\nClean house\nCall dentist"
+    },
+    "app_names": ["markor"],
+    "complexity": 2.4,
+    "instance_id": "MarkorAddNoteHeader#0"
+  },
+  {
+    "task": "MarkorChangeNoteContent",
+    "goal": "First, create a note in Markor named 'draft.md' with the content 'This is the old content that needs to be replaced.'. Then, update the content of draft.md to 'This is the brand new updated content.' in Markor and change its name to 'final.md'.",
+    "params": {
+      "original_name": "draft.md",
+      "original_content": "This is the old content that needs to be replaced.",
+      "updated_content": "This is the brand new updated content.",
+      "new_name": "final.md"
+    },
+    "app_names": ["markor"],
+    "complexity": 2.4,
+    "instance_id": "MarkorChangeNoteContent#0"
+  },
+  {
+    "task": "MarkorCreateNoteFromClipboard",
+    "goal": "First, copy the text 'Meeting notes from April 29 standup' to the clipboard. Then, create a note in Markor named 'clipboard_note.md'. Perform a paste operation in the note and save the note.",
+    "params": {
+      "file_name": "clipboard_note.md",
+      "clipboard_content": "Meeting notes from April 29 standup"
+    },
+    "app_names": ["markor", "clipper"],
+    "complexity": 2,
+    "instance_id": "MarkorCreateNoteFromClipboard#0"
+  },
+  {
+    "task": "MarkorDeleteAllNotes",
+    "goal": "First, create the following notes in Markor: 1) 'note1.md' with content 'First note'. 2) 'note2.md' with content 'Second note'. 3) 'note3.md' with content 'Third note'. Then, delete all notes in Markor.",
+    "params": {
+      "setup_notes": [
+        {"file_name": "note1.md", "content": "First note"},
+        {"file_name": "note2.md", "content": "Second note"},
+        {"file_name": "note3.md", "content": "Third note"}
+      ]
+    },
+    "app_names": ["markor"],
+    "complexity": 2.4,
+    "instance_id": "MarkorDeleteAllNotes#0"
+  },
+  {
+    "task": "MarkorDeleteNewestNote",
+    "goal": "First, create the following notes in Markor in order: 1) 'old_note.md' with content 'This is an older note'. 2) Wait 2 seconds, then create 'new_note.md' with content 'This is the newest note'. Then, delete the newest note in Markor.",
+    "params": {
+      "setup_notes": [
+        {"file_name": "old_note.md", "content": "This is an older note"},
+        {"file_name": "new_note.md", "content": "This is the newest note"}
+      ],
+      "expected_deleted": "new_note.md"
+    },
+    "app_names": ["markor"],
+    "complexity": 2,
+    "instance_id": "MarkorDeleteNewestNote#0"
+  },
+  {
+    "task": "MarkorDeleteNote",
+    "goal": "First, create the following notes in Markor: 1) 'keep_me.md' with content 'This note should stay'. 2) 'delete_me.md' with content 'This note should be deleted'. Then, delete the note in Markor named 'delete_me.md'.",
+    "params": {
+      "setup_notes": [
+        {"file_name": "keep_me.md", "content": "This note should stay"},
+        {"file_name": "delete_me.md", "content": "This note should be deleted"}
+      ],
+      "file_name": "delete_me.md"
+    },
+    "app_names": ["markor"],
+    "complexity": 2,
+    "instance_id": "MarkorDeleteNote#0"
+  },
+  {
+    "task": "MarkorEditNote",
+    "goal": "First, create a note in Markor named 'report.md' with the content 'Q1 sales were strong.'. Then, edit report.md in Markor: add the following header at the top of the note: '# Quarterly Report'.",
+    "params": {
+      "file_name": "report.md",
+      "original_content": "Q1 sales were strong.",
+      "header": "# Quarterly Report"
+    },
+    "app_names": ["markor"],
+    "complexity": 2,
+    "instance_id": "MarkorEditNote#0"
+  },
+  {
+    "task": "MarkorMergeNotes",
+    "goal": "First, create the following notes in Markor: 1) 'part1.md' with content 'Introduction to the project.'. 2) 'part2.md' with content 'Main body of the report.'. 3) 'part3.md' with content 'Conclusion and next steps.'. Then, merge the contents of Markor notes part1.md, part2.md and part3.md (in the same order) into a new Markor note named 'full_report.md' and save it. Add a new line between the content of each note.",
+    "params": {
+      "file1_name": "part1.md",
+      "file2_name": "part2.md",
+      "file3_name": "part3.md",
+      "new_file_name": "full_report.md",
+      "setup_notes": [
+        {"file_name": "part1.md", "content": "Introduction to the project."},
+        {"file_name": "part2.md", "content": "Main body of the report."},
+        {"file_name": "part3.md", "content": "Conclusion and next steps."}
+      ]
+    },
+    "app_names": ["markor"],
+    "complexity": 7.8,
+    "instance_id": "MarkorMergeNotes#0"
+  },
+  {
+    "task": "MarkorMoveNote",
+    "goal": "First, create a folder named 'Archive' in Markor. Then create a note named 'old_memo.md' with content 'This memo is from last month.' in the main Notebook directory. Then, in Markor, move the note old_memo.md from Notebook to Archive.",
+    "params": {
+      "file_name": "old_memo.md",
+      "source_folder": "Notebook",
+      "destination_folder": "Archive",
+      "original_content": "This memo is from last month."
+    },
+    "app_names": ["markor"],
+    "complexity": 2.4,
+    "instance_id": "MarkorMoveNote#0"
+  },
+  {
+    "task": "OsmAndFavorite",
+    "goal": "Add a favorite location marker for 'Eiffel Tower' in the OsmAnd maps app.",
+    "params": {"location": "Eiffel Tower"},
+    "app_names": ["osmand"],
+    "complexity": 1.3,
+    "instance_id": "OsmAndFavorite#0"
+  },
+  {
+    "task": "OsmAndMarker",
+    "goal": "Add a location marker for 'Statue of Liberty' in the OsmAnd maps app.",
+    "params": {"location": "Statue of Liberty"},
+    "app_names": ["osmand"],
+    "complexity": 2.0,
+    "instance_id": "OsmAndMarker#0"
+  },
+  {
+    "task": "OsmAndTrack",
+    "goal": "Save a track with waypoints 'Central Park', 'Times Square', 'Brooklyn Bridge' in the OsmAnd maps app in the same order as listed.",
+    "params": {
+      "waypoints": ["Central Park", "Times Square", "Brooklyn Bridge"]
+    },
+    "app_names": ["osmand"],
+    "complexity": 12,
+    "instance_id": "OsmAndTrack#0"
+  },
+  {
+    "task": "RetroCreatePlaylist",
+    "goal": "Create a playlist in Retro Music titled 'Chill Vibes'. Add any available songs from the device into the playlist.",
+    "params": {
+      "playlist_title": "Chill Vibes"
+    },
+    "app_names": ["retromusic"],
+    "complexity": 2.4,
+    "instance_id": "RetroCreatePlaylist#0"
+  },
+  {
+    "task": "RetroPlayingQueue",
+    "goal": "Add any available songs to the playing queue in Retro Music and start playback.",
+    "params": {},
+    "app_names": ["retromusic"],
+    "complexity": 3.2,
+    "instance_id": "RetroPlayingQueue#0"
+  },
+  {
+    "task": "RetroSavePlaylist",
+    "goal": "Create a playlist in Retro Music titled 'Workout Mix' with any available songs. Then export the playlist to the Downloads directory on the device.",
+    "params": {
+      "playlist_title": "Workout Mix"
+    },
+    "app_names": ["retromusic"],
+    "complexity": 5,
+    "instance_id": "RetroSavePlaylist#0"
+  },
+  {
+    "task": "SaveCopyOfReceiptTaskEval",
+    "goal": "First, take a photo using the camera (this will serve as a test image). Then, in Simple Gallery Pro, find the most recent photo in DCIM and save a copy of it with the same name in the Download folder.",
+    "params": {},
+    "app_names": ["camera", "simplegallery"],
+    "complexity": 2.6,
+    "instance_id": "SaveCopyOfReceiptTaskEval#0"
+  },
+  {
+    "task": "SimpleSmsSend",
+    "goal": "Send a text message using Simple SMS Messenger to +15551234567 with message: Hello, this is a test message from AndroidWorld.",
+    "params": {
+      "number": "+15551234567",
+      "message": "Hello, this is a test message from AndroidWorld."
+    },
+    "app_names": ["sms"],
+    "complexity": 1.6,
+    "instance_id": "SimpleSmsSend#0"
+  },
+  {
+    "task": "SimpleSmsSendClipboardContent",
+    "goal": "First, copy the text 'Budget report attached. Please review by EOD.' to the clipboard. Then, send a message to +15559876543 with the clipboard content in Simple SMS Messenger.",
+    "params": {
+      "number": "+15559876543",
+      "clipboard_content": "Budget report attached. Please review by EOD."
+    },
+    "app_names": ["sms", "clipper"],
+    "complexity": 2.2,
+    "instance_id": "SimpleSmsSendClipboardContent#0"
+  },
+  {
+    "task": "VlcCreatePlaylist",
+    "goal": "Create a playlist titled 'My Videos' in VLC with any available media files on the device.",
+    "params": {
+      "playlist_title": "My Videos"
+    },
+    "app_names": ["vlc"],
+    "complexity": 2.8,
+    "instance_id": "VlcCreatePlaylist#0"
+  },
+  {
+    "task": "VlcCreateTwoPlaylists",
+    "goal": "Create two playlists in VLC: first one titled 'Playlist A' and second one titled 'Playlist B'. Add any available media files to each.",
+    "params": {
+      "playlist_titles": ["Playlist A", "Playlist B"]
+    },
+    "app_names": ["vlc"],
+    "complexity": 4.8,
+    "instance_id": "VlcCreateTwoPlaylists#0"
+  },
+  {
+    "task": "MarkorCreateNoteAndSms",
+    "goal": "Create a new note in Markor named 'reminder.md' with the following text: 'Pick up dry cleaning at 5pm'. Share the entire content of the note with the phone number +15551112222 via SMS using Simple SMS Messenger.",
+    "params": {
+      "file_name": "reminder.md",
+      "text": "Pick up dry cleaning at 5pm",
+      "number": "+15551112222"
+    },
+    "app_names": ["markor", "sms"],
+    "complexity": 1.8,
+    "instance_id": "MarkorCreateNoteAndSms#0"
   }
 ]
