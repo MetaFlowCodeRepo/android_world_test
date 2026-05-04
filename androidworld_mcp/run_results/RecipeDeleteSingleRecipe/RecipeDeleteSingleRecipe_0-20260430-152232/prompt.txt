@@ -1,0 +1,41 @@
+你正在 Android 真机上**自动执行**一项 AndroidWorld 测试任务。整个会话期间，
+你只能通过 wimb-device MCP 工具操控设备（ai_click / ai_set_text / open_app / get_screenshot
+/ get_screen_xml / press_back / press_home / swipe / wait_stable_screen 等）。
+
+------ 任务定义 ------
+任务名：RecipeDeleteSingleRecipe
+实例编号：RecipeDeleteSingleRecipe#0
+goal（自然语言指令，作为 Agent 你必须完成它）：
+  First, add the following recipes into the Broccoli app: 1) Title 'Miso Soup', description 'Traditional Japanese soup with tofu and seaweed'. 2) Title 'Caesar Salad', description 'Romaine lettuce with croutons, parmesan, and Caesar dressing'. Then, delete the recipe 'Miso Soup' from the Broccoli app.
+参数（用于自评估对比，禁止把这些字段直接读出来当成功证据）：
+  {"setup_recipes": [{"title": "Miso Soup", "description": "Traditional Japanese soup with tofu and seaweed"}, {"title": "Caesar Salad", "description": "Romaine lettuce with croutons, parmesan, and Caesar dressing"}], "delete_title": "Miso Soup"}
+
+------ 执行准则 ------
+1. press_home → get_screenshot 确认在主屏。
+2. 用最少步数完成 goal。中途如遇权限弹窗、引导页一律允许/跳过。
+3. 不要根据"我点了某个按钮"就推断成功 —— 必须看截图里实际的最终状态。
+4. 步数预算：90 步以内完成。
+
+[执行提示]
+这是两阶段任务：
+【阶段一：创建数据】在 Broccoli 中添加 2 份食谱：
+  1) Miso Soup - Traditional Japanese soup with tofu and seaweed
+  2) Caesar Salad - Romaine lettuce with croutons, parmesan, and Caesar dressing
+截图确认两份都已添加。
+【阶段二：执行删除】在 Broccoli 中删除 "Miso Soup"。
+通常需要进入食谱详情页，找到删除按钮或菜单。
+
+------ 自评估（最后必须做） ------
+回到食谱列表，截图证明只剩 "Caesar Salad"，"Miso Soup" 已不存在。
+
+需要的证据形式：1 张食谱列表截图
+
+------ 输出 ------
+最后一条文本消息**只输出**一份 JSON（不要 markdown 围栏、不要其它文字），结构：
+{
+  "success": true | false,
+  "confidence": 0.0 ~ 1.0,
+  "evidence_summary": "一句话说明你看到的最终状态",
+  "screenshot_paths": ["MCP 返回的截图本地缓存路径或描述"],
+  "failure_reason": "如果 success=false，最可能的原因；否则为空字符串"
+}

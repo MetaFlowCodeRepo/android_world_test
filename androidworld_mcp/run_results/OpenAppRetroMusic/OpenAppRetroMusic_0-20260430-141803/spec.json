@@ -1,0 +1,13 @@
+{
+  "task": "OpenAppRetroMusic",
+  "goal": "Open the Retro Music app. Grant all permissions that are required.",
+  "params": {
+    "app_name": "retromusic",
+    "package": "code.name.monkey.retromusic"
+  },
+  "app_names": [
+    "retromusic"
+  ],
+  "complexity": 1,
+  "instance_id": "OpenAppRetroMusic#0"
+}

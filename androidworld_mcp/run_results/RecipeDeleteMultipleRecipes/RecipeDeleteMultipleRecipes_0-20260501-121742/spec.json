@@ -1,0 +1,38 @@
+{
+  "task": "RecipeDeleteMultipleRecipes",
+  "goal": "First, add the following recipes into the Broccoli app: 1) 'Pancakes' - 'Mix flour, eggs, milk. Cook on griddle'. 2) 'French Toast' - 'Dip bread in egg mixture, fry until golden'. 3) 'Omelette' - 'Beat eggs, pour in pan, add fillings'. 4) 'Waffles' - 'Pour batter into waffle iron'. 5) 'Scrambled Eggs' - 'Whisk eggs, cook on low heat with butter'. Then, delete the following recipes from Broccoli app: 'Pancakes', 'Omelette', 'Waffles'.",
+  "params": {
+    "setup_recipes": [
+      {
+        "title": "Pancakes",
+        "description": "Mix flour, eggs, milk. Cook on griddle"
+      },
+      {
+        "title": "French Toast",
+        "description": "Dip bread in egg mixture, fry until golden"
+      },
+      {
+        "title": "Omelette",
+        "description": "Beat eggs, pour in pan, add fillings"
+      },
+      {
+        "title": "Waffles",
+        "description": "Pour batter into waffle iron"
+      },
+      {
+        "title": "Scrambled Eggs",
+        "description": "Whisk eggs, cook on low heat with butter"
+      }
+    ],
+    "delete_titles": [
+      "Pancakes",
+      "Omelette",
+      "Waffles"
+    ]
+  },
+  "app_names": [
+    "broccoli"
+  ],
+  "complexity": 4,
+  "instance_id": "RecipeDeleteMultipleRecipes#0"
+}

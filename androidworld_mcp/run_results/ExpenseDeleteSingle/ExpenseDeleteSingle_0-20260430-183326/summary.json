@@ -1,0 +1,127 @@
+{
+  "instance_id": "ExpenseDeleteSingle#0",
+  "task": "ExpenseDeleteSingle",
+  "params": {
+    "setup_expenses": [
+      {
+        "name": "Gym",
+        "amount": "30.00",
+        "category": "Health"
+      },
+      {
+        "name": "Lunch",
+        "amount": "11.00",
+        "category": "Food"
+      }
+    ],
+    "delete_name": "Gym"
+  },
+  "returncode": 0,
+  "self_eval": {
+    "success": false,
+    "confidence": 0.0,
+    "evidence_summary": "无法加载 wimb-device MCP 工具（ToolSearch 对所有相关查询均返回 No matching deferred tools found），导致无法对 Android 设备执行任何操作。",
+    "screenshot_paths": [],
+    "failure_reason": "wimb-device MCP 服务器（http://8.140.220.95:8000/mcp/53a2610f7140ca28）的设备控制工具未注册为 deferred tools，ToolSearch 无法返回 get_screenshot/ai_click/open_app 等工具的 schema，会话第一步即无法进行，任务无法执行。"
+  },
+  "timing": {
+    "wall_ms": 30992,
+    "api_ms": 32446
+  },
+  "num_turns": 10,
+  "cost_usd": 0.37647924999999993,
+  "stop_reason": "success",
+  "num_steps": 9,
+  "steps": [
+    {
+      "step": 1,
+      "tool": "ToolSearch",
+      "input": {
+        "query": "select:mcp__wimb-device__get_screenshot,mcp__wimb-device__ai_click,mcp__wimb-device__ai_set_text,mcp__wimb-device__ai_seq_click,mcp__wimb-device__open_app,mcp__wimb-device__press_home,mcp__wimb-device__press_back,mcp__wimb-device__get_screen_xml,mcp__wimb-device__input_text,mcp__wimb-device__click,mcp__wimb-device__swipe,mcp__wimb-device__wait_stable_screen,mcp__wimb-device__wait_screen_update",
+        "max_results": 20
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 2,
+      "tool": "ToolSearch",
+      "input": {
+        "query": "wimb device screenshot",
+        "max_results": 20
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 3,
+      "tool": "ToolSearch",
+      "input": {
+        "query": "android device click screenshot",
+        "max_results": 20
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 4,
+      "tool": "ToolSearch",
+      "input": {
+        "query": "mcp wimb",
+        "max_results": 25
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 5,
+      "tool": "Bash",
+      "input": {
+        "command": "cat /Users/zhp/android_world_test/.mcp.json 2>/dev/null | head -50",
+        "description": "Check MCP configuration"
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 6,
+      "tool": "ToolSearch",
+      "input": {
+        "query": "screenshot",
+        "max_results": 30
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 7,
+      "tool": "ToolSearch",
+      "input": {
+        "query": "ai_click",
+        "max_results": 30
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 8,
+      "tool": "ToolSearch",
+      "input": {
+        "query": "open_app",
+        "max_results": 30
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 9,
+      "tool": "ToolSearch",
+      "input": {
+        "query": "+wimb",
+        "max_results": 30
+      },
+      "success": true,
+      "is_error": false
+    }
+  ]
+}

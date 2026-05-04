@@ -1,0 +1,15 @@
+{
+  "task": "MarkorChangeNoteContent",
+  "goal": "First, create a note in Markor named 'draft.md' with the content 'This is the old content that needs to be replaced.'. Then, update the content of draft.md to 'This is the brand new updated content.' in Markor and change its name to 'final.md'.",
+  "params": {
+    "original_name": "draft.md",
+    "original_content": "This is the old content that needs to be replaced.",
+    "updated_content": "This is the brand new updated content.",
+    "new_name": "final.md"
+  },
+  "app_names": [
+    "markor"
+  ],
+  "complexity": 2.4,
+  "instance_id": "MarkorChangeNoteContent#0"
+}

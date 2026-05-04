@@ -1,0 +1,14 @@
+{
+  "task": "MarkorCreateNoteFromClipboard",
+  "goal": "First, copy the text 'Meeting notes from April 29 standup' to the clipboard. Then, create a note in Markor named 'clipboard_note.md'. Perform a paste operation in the note and save the note.",
+  "params": {
+    "file_name": "clipboard_note.md",
+    "clipboard_content": "Meeting notes from April 29 standup"
+  },
+  "app_names": [
+    "markor",
+    "clipper"
+  ],
+  "complexity": 2,
+  "instance_id": "MarkorCreateNoteFromClipboard#0"
+}

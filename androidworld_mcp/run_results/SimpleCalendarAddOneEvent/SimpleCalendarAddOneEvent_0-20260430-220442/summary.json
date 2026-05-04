@@ -1,0 +1,154 @@
+{
+  "instance_id": "SimpleCalendarAddOneEvent#0",
+  "task": "SimpleCalendarAddOneEvent",
+  "params": {
+    "title": "Team Meeting",
+    "date": "2026-05-05",
+    "start_time": "10:00",
+    "end_time": "11:00"
+  },
+  "returncode": 0,
+  "self_eval": {
+    "success": true,
+    "confidence": 0.98,
+    "evidence_summary": "Edit event screen shows title 'Team Meeting' with start 五月 5 (周二) 10:00 and end 五月 5 (周二) 11:00, matching May 5, 2026 Tuesday 10:00-11:00.",
+    "screenshot_paths": [
+      "edit-event view of Team Meeting on 五月 5 (周二) 10:00-11:00"
+    ],
+    "failure_reason": ""
+  },
+  "timing": {
+    "wall_ms": 121834,
+    "api_ms": 92185
+  },
+  "num_turns": 15,
+  "cost_usd": 0.6193154999999999,
+  "stop_reason": "success",
+  "num_steps": 14,
+  "steps": [
+    {
+      "step": 1,
+      "tool": "ToolSearch",
+      "input": {
+        "query": "select:mcp__wimb-device__get_screenshot,mcp__wimb-device__ai_click,mcp__wimb-device__ai_set_text,mcp__wimb-device__ai_seq_click,mcp__wimb-device__open_app,mcp__wimb-device__press_home,mcp__wimb-device__press_back,mcp__wimb-device__get_screen_xml,mcp__wimb-device__input_text,mcp__wimb-device__click,mcp__wimb-device__swipe,mcp__wimb-device__wait_stable_screen,mcp__wimb-device__wait_screen_update",
+        "max_results": 20
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 2,
+      "tool": "press_home",
+      "input": {},
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 3,
+      "tool": "open_app",
+      "input": {
+        "package_name": "com.simplemobiletools.calendar.pro"
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 4,
+      "tool": "wait_stable_screen",
+      "input": {
+        "stable_duration": 1.5,
+        "timeout": 10
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 5,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 30
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 6,
+      "tool": "press_back",
+      "input": {},
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 7,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 30
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 8,
+      "tool": "ai_click",
+      "input": {
+        "text": "5 (May 5 with Team label)"
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 9,
+      "tool": "wait_stable_screen",
+      "input": {
+        "stable_duration": 1,
+        "timeout": 5
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 10,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 30
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 11,
+      "tool": "ai_click",
+      "input": {
+        "text": "Team Meeting"
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 12,
+      "tool": "wait_stable_screen",
+      "input": {
+        "stable_duration": 1,
+        "timeout": 5
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 13,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 30
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 14,
+      "tool": "press_back",
+      "input": {},
+      "success": true,
+      "is_error": false
+    }
+  ]
+}

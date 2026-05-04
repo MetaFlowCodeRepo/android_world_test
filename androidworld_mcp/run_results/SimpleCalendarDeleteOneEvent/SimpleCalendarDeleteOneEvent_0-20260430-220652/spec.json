@@ -1,0 +1,18 @@
+{
+  "task": "SimpleCalendarDeleteOneEvent",
+  "goal": "First, create a calendar event in Simple Calendar Pro on 2026-06-15 at 14h with the title 'Dentist Appointment' and the description 'Regular checkup'. The event should last for 60 mins. Then, delete the calendar event on 2026-06-15 at 14h with the title 'Dentist Appointment'.",
+  "params": {
+    "year": 2026,
+    "month": 6,
+    "day": 15,
+    "hour": 14,
+    "event_title": "Dentist Appointment",
+    "event_description": "Regular checkup",
+    "duration_mins": 60
+  },
+  "app_names": [
+    "simplecalendar"
+  ],
+  "complexity": 2.4,
+  "instance_id": "SimpleCalendarDeleteOneEvent#0"
+}

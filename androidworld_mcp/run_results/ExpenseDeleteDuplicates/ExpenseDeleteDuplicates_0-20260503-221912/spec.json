@@ -1,0 +1,48 @@
+{
+  "task": "ExpenseDeleteDuplicates",
+  "goal": "First, add the following expenses into Pro Expense: 1) 'Coffee' amount $4.00 category 'Food', 2) 'Coffee' amount $4.00 category 'Food', 3) 'Taxi' amount $12.00 category 'Transport', 4) 'Taxi' amount $12.00 category 'Transport', 5) 'Taxi' amount $12.00 category 'Transport', 6) 'Lunch' amount $10.00 category 'Food'. Then, delete all but one of any expenses that are exact duplicates, ensuring at least one instance of each unique expense remains.",
+  "params": {
+    "setup_expenses": [
+      {
+        "name": "Coffee",
+        "amount": "4.00",
+        "category": "Food"
+      },
+      {
+        "name": "Coffee",
+        "amount": "4.00",
+        "category": "Food"
+      },
+      {
+        "name": "Taxi",
+        "amount": "12.00",
+        "category": "Transport"
+      },
+      {
+        "name": "Taxi",
+        "amount": "12.00",
+        "category": "Transport"
+      },
+      {
+        "name": "Taxi",
+        "amount": "12.00",
+        "category": "Transport"
+      },
+      {
+        "name": "Lunch",
+        "amount": "10.00",
+        "category": "Food"
+      }
+    ],
+    "expected_remaining": [
+      "Coffee",
+      "Taxi",
+      "Lunch"
+    ]
+  },
+  "app_names": [
+    "expense"
+  ],
+  "complexity": 3,
+  "instance_id": "ExpenseDeleteDuplicates#0"
+}

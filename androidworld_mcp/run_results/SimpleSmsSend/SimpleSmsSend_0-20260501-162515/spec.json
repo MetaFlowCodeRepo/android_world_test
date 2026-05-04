@@ -1,0 +1,13 @@
+{
+  "task": "SimpleSmsSend",
+  "goal": "Send a text message using Simple SMS Messenger to +15551234567 with message: Hello, this is a test message from AndroidWorld.",
+  "params": {
+    "number": "+15551234567",
+    "message": "Hello, this is a test message from AndroidWorld."
+  },
+  "app_names": [
+    "sms"
+  ],
+  "complexity": 1.6,
+  "instance_id": "SimpleSmsSend#0"
+}

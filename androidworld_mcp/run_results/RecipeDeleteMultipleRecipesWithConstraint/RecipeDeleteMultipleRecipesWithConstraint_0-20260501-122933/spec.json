@@ -1,0 +1,33 @@
+{
+  "task": "RecipeDeleteMultipleRecipesWithConstraint",
+  "goal": "First, add the following recipes into the Broccoli app: 1) 'Garlic Bread' with directions 'Spread butter and garlic on bread, bake at 375F'. 2) 'Garlic Shrimp' with directions 'Saute shrimp with garlic and olive oil'. 3) 'Fruit Salad' with directions 'Mix strawberries, blueberries, and grapes'. 4) 'Garlic Chicken' with directions 'Marinate chicken with garlic and herbs, bake'. Then, delete the recipes from Broccoli app that use garlic in the directions.",
+  "params": {
+    "setup_recipes": [
+      {
+        "title": "Garlic Bread",
+        "description": "Spread butter and garlic on bread, bake at 375F"
+      },
+      {
+        "title": "Garlic Shrimp",
+        "description": "Saute shrimp with garlic and olive oil"
+      },
+      {
+        "title": "Fruit Salad",
+        "description": "Mix strawberries, blueberries, and grapes"
+      },
+      {
+        "title": "Garlic Chicken",
+        "description": "Marinate chicken with garlic and herbs, bake"
+      }
+    ],
+    "constraint_ingredient": "garlic",
+    "expected_remaining": [
+      "Fruit Salad"
+    ]
+  },
+  "app_names": [
+    "broccoli"
+  ],
+  "complexity": 4,
+  "instance_id": "RecipeDeleteMultipleRecipesWithConstraint#0"
+}

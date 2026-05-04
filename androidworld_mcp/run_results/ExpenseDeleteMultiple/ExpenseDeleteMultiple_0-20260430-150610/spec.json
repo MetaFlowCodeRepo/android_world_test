@@ -1,0 +1,43 @@
+{
+  "task": "ExpenseDeleteMultiple",
+  "goal": "First, add the following expenses into Pro Expense: 1) 'Snack' amount $3.00 category 'Food', 2) 'Bus' amount $2.50 category 'Transport', 3) 'Movie' amount $15.00 category 'Entertainment', 4) 'Dinner' amount $28.00 category 'Food', 5) 'Parking' amount $5.00 category 'Transport'. Then, delete the following expenses from Pro Expense: 'Snack', 'Movie', 'Parking'.",
+  "params": {
+    "setup_expenses": [
+      {
+        "name": "Snack",
+        "amount": "3.00",
+        "category": "Food"
+      },
+      {
+        "name": "Bus",
+        "amount": "2.50",
+        "category": "Transport"
+      },
+      {
+        "name": "Movie",
+        "amount": "15.00",
+        "category": "Entertainment"
+      },
+      {
+        "name": "Dinner",
+        "amount": "28.00",
+        "category": "Food"
+      },
+      {
+        "name": "Parking",
+        "amount": "5.00",
+        "category": "Transport"
+      }
+    ],
+    "delete_names": [
+      "Snack",
+      "Movie",
+      "Parking"
+    ]
+  },
+  "app_names": [
+    "expense"
+  ],
+  "complexity": 3,
+  "instance_id": "ExpenseDeleteMultiple#0"
+}

@@ -1,0 +1,32 @@
+{
+  "task": "RecipeAddMultipleRecipesFromMarkor2",
+  "goal": "First, create the following notes in Markor: 1) A note named 'soup.md' with content 'Boil vegetables, blend until smooth, season with salt'. 2) A note named 'sandwich.md' with content 'Layer ham, cheese, lettuce on bread, toast lightly'. Then, add the recipes from all recipe notes (soup.md and sandwich.md) in Markor to the Broccoli recipe app. Use the file name (without .md) as the recipe title.",
+  "params": {
+    "notes": [
+      {
+        "file_name": "soup.md",
+        "content": "Boil vegetables, blend until smooth, season with salt"
+      },
+      {
+        "file_name": "sandwich.md",
+        "content": "Layer ham, cheese, lettuce on bread, toast lightly"
+      }
+    ],
+    "expected_recipes": [
+      {
+        "title": "soup",
+        "description": "Boil vegetables, blend until smooth, season with salt"
+      },
+      {
+        "title": "sandwich",
+        "description": "Layer ham, cheese, lettuce on bread, toast lightly"
+      }
+    ]
+  },
+  "app_names": [
+    "markor",
+    "broccoli"
+  ],
+  "complexity": 4,
+  "instance_id": "RecipeAddMultipleRecipesFromMarkor2#0"
+}

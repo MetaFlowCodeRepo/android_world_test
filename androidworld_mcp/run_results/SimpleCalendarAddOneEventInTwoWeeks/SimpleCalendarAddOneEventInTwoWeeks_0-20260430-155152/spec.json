@@ -1,0 +1,15 @@
+{
+  "task": "SimpleCalendarAddOneEventInTwoWeeks",
+  "goal": "In Simple Calendar Pro, create a calendar event in two weeks from today at 14h with the title 'Project Deadline' and the description 'Submit final report'. The event should last for 120 mins.",
+  "params": {
+    "hour": 14,
+    "event_title": "Project Deadline",
+    "event_description": "Submit final report",
+    "duration_mins": 120
+  },
+  "app_names": [
+    "simplecalendar"
+  ],
+  "complexity": 3.4,
+  "instance_id": "SimpleCalendarAddOneEventInTwoWeeks#0"
+}

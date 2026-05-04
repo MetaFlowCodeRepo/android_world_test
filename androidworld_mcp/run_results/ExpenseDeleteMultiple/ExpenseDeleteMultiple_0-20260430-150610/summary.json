@@ -1,0 +1,49 @@
+{
+  "instance_id": "ExpenseDeleteMultiple#0",
+  "task": "ExpenseDeleteMultiple",
+  "params": {
+    "setup_expenses": [
+      {
+        "name": "Snack",
+        "amount": "3.00",
+        "category": "Food"
+      },
+      {
+        "name": "Bus",
+        "amount": "2.50",
+        "category": "Transport"
+      },
+      {
+        "name": "Movie",
+        "amount": "15.00",
+        "category": "Entertainment"
+      },
+      {
+        "name": "Dinner",
+        "amount": "28.00",
+        "category": "Food"
+      },
+      {
+        "name": "Parking",
+        "amount": "5.00",
+        "category": "Transport"
+      }
+    ],
+    "delete_names": [
+      "Snack",
+      "Movie",
+      "Parking"
+    ]
+  },
+  "returncode": 1,
+  "self_eval": null,
+  "timing": {
+    "wall_ms": 229422,
+    "api_ms": 0
+  },
+  "num_turns": 1,
+  "cost_usd": 0,
+  "stop_reason": "success",
+  "num_steps": 0,
+  "steps": []
+}

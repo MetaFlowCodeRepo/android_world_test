@@ -1,0 +1,15 @@
+{
+  "task": "MarkorMoveNote",
+  "goal": "First, create a folder named 'Archive' in Markor. Then create a note named 'old_memo.md' with content 'This memo is from last month.' in the main Notebook directory. Then, in Markor, move the note old_memo.md from Notebook to Archive.",
+  "params": {
+    "file_name": "old_memo.md",
+    "source_folder": "Notebook",
+    "destination_folder": "Archive",
+    "original_content": "This memo is from last month."
+  },
+  "app_names": [
+    "markor"
+  ],
+  "complexity": 2.4,
+  "instance_id": "MarkorMoveNote#0"
+}

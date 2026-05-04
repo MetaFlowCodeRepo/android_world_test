@@ -1,0 +1,16 @@
+{
+  "task": "SimpleCalendarDeleteEventsOnRelativeDay",
+  "goal": "First, create a calendar event in Simple Calendar Pro for this Friday at 10h titled 'Weekly Review' (60 mins, description 'Team sync'). Then, delete all events scheduled for this Friday.",
+  "params": {
+    "day_of_week": "Friday",
+    "event_title": "Weekly Review",
+    "hour": 10,
+    "duration_mins": 60,
+    "event_description": "Team sync"
+  },
+  "app_names": [
+    "simplecalendar"
+  ],
+  "complexity": 3.4,
+  "instance_id": "SimpleCalendarDeleteEventsOnRelativeDay#0"
+}

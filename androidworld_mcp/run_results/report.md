@@ -1,33 +1,6 @@
-# AndroidWorld 自动化测试报告
+# AndroidWorld 自动化跑结果
 
-通过 40/47（85.1%）  |  总耗时 7554s  |  总费用 $27.00
-
-## 字段说明
-
-| 字段 | 含义 |
-|---|---|
-| **steps** | 实际调用的 MCP 工具次数。每调用一次设备操作工具（如 `press_home`、`get_screenshot`、`ai_click`）计为一步 |
-| **turns** | Claude API 对话轮次数。一个 turn = 一次 assistant 回复 + 后续 user 消息。一个 turn 内可能包含多个工具调用，因此 steps 通常 ≥ turns |
-| **wall_s** | 整个任务的墙钟耗时（秒），从 `claude` CLI 启动到退出的总时间 |
-| **cost** | 该任务消耗的 Claude API 费用（美元），由 Claude Code CLI 根据 token 用量自动计算 |
-| **stop_reason** | 任务结束原因。`success` = 正常完成；`error_max_turns` = 达到最大轮次上限被强制终止 |
-
-## 费用计算方式
-
-cost 由 Claude Code CLI 在 `stream.jsonl` 的 `result` 行中以 `total_cost_usd` 字段给出，计算公式为各类 token 数量 × 对应单价：
-
-| Token 类型 | 单价（Claude Opus 4） | 说明 |
-|---|---|---|
-| input_tokens | $15 / 1M | 常规输入 token |
-| cache_creation_input_tokens | $18.75 / 1M | 首次写入 prompt cache 的 token |
-| cache_read_input_tokens | $1.875 / 1M | 命中 prompt cache 的 token（大幅降低成本） |
-| output_tokens | $75 / 1M | 模型生成的输出 token |
-
-每增加一个 turn，输入 token 会累积增长（因为每轮都携带之前的截图和对话历史），所以 turns 越多费用越高。例如 SimpleCalendarAddOneEvent 跑了 103 turns，花费 $4.62；而简单的 OpenAppExpense 仅 5 turns，花费 $0.12。
-
-> 注：显示 `-` 的行是早期批次执行的任务，当时尚未采集 timing/steps 数据。
-
-## 任务结果
+通过 76/88（86.4%）  |  总耗时 31842s  |  总费用 $221.56
 
 | instance | task | result | steps | turns | wall_s | cost | stop_reason |
 |---|---|---|---|---|---|---|---|
@@ -37,7 +10,7 @@ cost 由 Claude Code CLI 在 `stream.jsonl` 的 `result` 行中以 `total_cost_u
 | SystemBluetoothTurnOffVerify#0 | SystemBluetoothTurnOffVerify | PASS | - | - | - | - | - |
 | SystemBrightnessMax#0 | SystemBrightnessMax | PASS | - | - | - | - | - |
 | SystemBrightnessMaxVerify#0 | SystemBrightnessMaxVerify | PASS | - | - | - | - | - |
-| SystemBrightnessMin#0 | SystemBrightnessMin | PASS | - | - | - | - | - |
+| SystemBrightnessMin#0 | SystemBrightnessMin | PASS | 18 | 19 | 202 | $0.76 | success |
 | SystemBrightnessMinVerify#0 | SystemBrightnessMinVerify | PASS | 22 | 23 | 159 | $0.65 | success |
 | SystemCopyToClipboard#0 | SystemCopyToClipboard | PASS | - | - | - | - | - |
 | SystemWifiTurnOn#0 | SystemWifiTurnOn | PASS | - | - | - | - | - |
@@ -51,10 +24,10 @@ cost 由 Claude Code CLI 在 `stream.jsonl` 的 `result` 行中以 `total_cost_u
 | ContactsNewContactDraft#0 | ContactsNewContactDraft | PASS | 46 | 47 | 382 | $1.67 | success |
 | OpenAppTaskEval#0 | OpenAppTaskEval | PASS | - | - | - | - | - |
 | TurnOnWifiAndOpenApp#0 | TurnOnWifiAndOpenApp | PASS | - | - | - | - | - |
-| AudioRecorderRecordAudio#0 | AudioRecorderRecordAudio | FAIL | 50 | 51 | 383 | $1.45 | error_max_turns |
-| MarkorCreateNote#0 | MarkorCreateNote | FAIL | 50 | 51 | 410 | $1.48 | error_max_turns |
+| AudioRecorderRecordAudio#0 | AudioRecorderRecordAudio | PASS | 24 | 25 | 275 | $0.86 | success |
+| MarkorCreateNote#0 | MarkorCreateNote | PASS | 8 | 9 | 60 | $0.41 | success |
 | MarkorCreateFolder#0 | MarkorCreateFolder | PASS | 30 | 31 | 226 | $0.91 | success |
-| SimpleCalendarAddOneEvent#0 | SimpleCalendarAddOneEvent | FAIL | 102 | 103 | 1195 | $4.62 | error_max_turns |
+| SimpleCalendarAddOneEvent#0 | SimpleCalendarAddOneEvent | PASS | 14 | 15 | 122 | $0.62 | success |
 | ExpenseAddSingle#0 | ExpenseAddSingle | PASS | 20 | 21 | 146 | $0.55 | success |
 | RecipeAddSingleRecipe#0 | RecipeAddSingleRecipe | PASS | 24 | 25 | 151 | $0.68 | success |
 | SimpleDrawProCreateDrawing#0 | SimpleDrawProCreateDrawing | PASS | 21 | 22 | 144 | $0.57 | success |
@@ -62,7 +35,7 @@ cost 由 Claude Code CLI 在 `stream.jsonl` 的 `result` 行中以 `total_cost_u
 | OpenAppCalendar#0 | OpenAppCalendar | PASS | 17 | 18 | 121 | $0.43 | success |
 | OpenAppExpense#0 | OpenAppExpense | PASS | 4 | 5 | 30 | $0.12 | success |
 | OpenAppBroccoli#0 | OpenAppBroccoli | PASS | 4 | 5 | 26 | $0.12 | success |
-| OpenAppRetroMusic#0 | OpenAppRetroMusic | FAIL | 50 | 51 | 404 | $1.42 | error_max_turns |
+| OpenAppRetroMusic#0 | OpenAppRetroMusic | PASS | 5 | 6 | 31 | $0.31 | success |
 | OpenAppVLC#0 | OpenAppVLC | PASS | 36 | 37 | 591 | $1.01 | success |
 | OpenAppAudioRecorder#0 | OpenAppAudioRecorder | PASS | 7 | 8 | 54 | $0.18 | success |
 | OpenAppSimpleDraw#0 | OpenAppSimpleDraw | PASS | 4 | 5 | 27 | $0.12 | success |
@@ -75,6 +48,47 @@ cost 由 Claude Code CLI 在 `stream.jsonl` 的 `result` 行中以 `total_cost_u
 | MarkorCreateFolder2#0 | MarkorCreateFolder2 | PASS | 19 | 20 | 165 | $0.54 | success |
 | SimpleDrawProCreateDrawing2#0 | SimpleDrawProCreateDrawing2 | PASS | 21 | 22 | 149 | $0.57 | success |
 | ClockSetAlarm#0 | ClockSetAlarm | PASS | 37 | 38 | 246 | $1.21 | success |
-| SettingsCheckStorageInfo#0 | SettingsCheckStorageInfo | FAIL | 34 | 35 | 151 | $0.71 | success |
-| SettingsCheckAboutPhone#0 | SettingsCheckAboutPhone | FAIL | 43 | 31 | 254 | $1.00 | success |
-| TurnOnBluetoothAndOpenApp#0 | TurnOnBluetoothAndOpenApp | FAIL | 62 | 61 | 340 | $1.24 | error_max_turns |
+| SettingsCheckStorageInfo#0 | SettingsCheckStorageInfo | PASS | 12 | 13 | 103 | $0.48 | success |
+| SettingsCheckAboutPhone#0 | SettingsCheckAboutPhone | PASS | 13 | 14 | 105 | $0.51 | success |
+| TurnOnBluetoothAndOpenApp#0 | TurnOnBluetoothAndOpenApp | PASS | 15 | 16 | 130 | $0.58 | success |
+| SimpleCalendarDeleteOneEvent#0 | SimpleCalendarDeleteOneEvent | PASS | 104 | 105 | 799 | $6.80 | success |
+| SimpleCalendarDeleteEvents#0 | SimpleCalendarDeleteEvents | FAIL | 170 | 171 | 1438 | $15.53 | error_max_turns |
+| SimpleCalendarDeleteEventsOnRelativeDay#0 | SimpleCalendarDeleteEventsOnRelativeDay | PASS | 110 | 111 | 880 | $8.35 | success |
+| ExpenseAddMultiple#0 | ExpenseAddMultiple | PASS | 40 | 41 | 302 | $1.64 | success |
+| ExpenseAddMultipleFromMarkor#0 | ExpenseAddMultipleFromMarkor | PASS | 96 | 97 | 726 | $5.78 | success |
+| ExpenseDeleteSingle#0 | ExpenseDeleteSingle | PASS | 58 | 59 | 390 | $3.18 | success |
+| ExpenseDeleteMultiple#0 | ExpenseDeleteMultiple | PASS | 101 | 102 | 723 | $5.68 | success |
+| ExpenseDeleteDuplicates#0 | ExpenseDeleteDuplicates | PASS | 46 | 47 | 366 | $2.26 | success |
+| RecipeAddMultipleRecipes#0 | RecipeAddMultipleRecipes | PASS | 38 | 39 | 223 | $1.39 | success |
+| RecipeAddMultipleRecipesFromMarkor#0 | RecipeAddMultipleRecipesFromMarkor | PASS | 75 | 76 | 647 | $4.46 | success |
+| RecipeDeleteSingleRecipe#0 | RecipeDeleteSingleRecipe | PASS | 71 | 72 | 478 | $3.10 | success |
+| RecipeDeleteMultipleRecipes#0 | RecipeDeleteMultipleRecipes | PASS | 190 | 191 | 1311 | $12.66 | success |
+| RecipeDeleteMultipleRecipesWithConstraint#0 | RecipeDeleteMultipleRecipesWithConstraint | PASS | 195 | 196 | 1728 | $14.93 | success |
+| RecipeDeleteDuplicateRecipes#0 | RecipeDeleteDuplicateRecipes | FAIL | 150 | 151 | 1028 | $8.51 | error_max_turns |
+| RecipeAddMultipleRecipesFromMarkor2#0 | RecipeAddMultipleRecipesFromMarkor2 | PASS | 103 | 104 | 707 | $6.36 | success |
+| AudioRecorderRecordAudioWithFileName#0 | AudioRecorderRecordAudioWithFileName | FAIL | 100 | 101 | 861 | $5.54 | error_max_turns |
+| SimpleCalendarAddOneEventTomorrow#0 | SimpleCalendarAddOneEventTomorrow | PASS | 77 | 78 | 539 | $4.38 | success |
+| SimpleCalendarAddOneEventInTwoWeeks#0 | SimpleCalendarAddOneEventInTwoWeeks | PASS | 70 | 71 | 469 | $3.64 | success |
+| SimpleCalendarAddOneEventRelativeDay#0 | SimpleCalendarAddOneEventRelativeDay | PASS | 71 | 72 | 452 | $3.76 | success |
+| SimpleCalendarAddRepeatingEvent#0 | SimpleCalendarAddRepeatingEvent | PASS | 23 | 24 | 183 | $0.90 | success |
+| MarkorAddNoteHeader#0 | MarkorAddNoteHeader | FAIL | 120 | 121 | 1118 | $7.48 | error_max_turns |
+| MarkorChangeNoteContent#0 | MarkorChangeNoteContent | PASS | 68 | 69 | 516 | $3.98 | success |
+| MarkorCreateNoteFromClipboard#0 | MarkorCreateNoteFromClipboard | PASS | 56 | 57 | 442 | $2.78 | success |
+| MarkorDeleteAllNotes#0 | MarkorDeleteAllNotes | PASS | 58 | 59 | 466 | $3.17 | success |
+| MarkorDeleteNewestNote#0 | MarkorDeleteNewestNote | PASS | 45 | 46 | 412 | $2.67 | success |
+| MarkorDeleteNote#0 | MarkorDeleteNote | PASS | 80 | 81 | 691 | $4.95 | success |
+| MarkorEditNote#0 | MarkorEditNote | PASS | 56 | 57 | 464 | $2.86 | success |
+| MarkorMergeNotes#0 | MarkorMergeNotes | PASS | 85 | 86 | 517 | $4.01 | success |
+| MarkorMoveNote#0 | MarkorMoveNote | PASS | 63 | 64 | 497 | $3.50 | success |
+| OsmAndFavorite#0 | OsmAndFavorite | PASS | 33 | 34 | 239 | $1.25 | success |
+| OsmAndMarker#0 | OsmAndMarker | PASS | 59 | 60 | 493 | $2.78 | success |
+| OsmAndTrack#0 | OsmAndTrack | PASS | 178 | 179 | 1463 | $12.08 | success |
+| RetroCreatePlaylist#0 | RetroCreatePlaylist | PASS | 47 | 48 | 304 | $1.92 | success |
+| RetroPlayingQueue#0 | RetroPlayingQueue | FAIL | 135 | 136 | 990 | $7.80 | success |
+| RetroSavePlaylist#0 | RetroSavePlaylist | FAIL | 55 | 56 | 453 | $2.66 | success |
+| SaveCopyOfReceiptTaskEval#0 | SaveCopyOfReceiptTaskEval | FAIL | 130 | 131 | 991 | $8.12 | error_max_turns |
+| SimpleSmsSend#0 | SimpleSmsSend | FAIL | 71 | 72 | 1030 | $3.67 | success |
+| SimpleSmsSendClipboardContent#0 | SimpleSmsSendClipboardContent | FAIL | 46 | 47 | 261 | $2.01 | success |
+| VlcCreatePlaylist#0 | VlcCreatePlaylist | FAIL | 34 | 35 | 179 | $1.42 | success |
+| VlcCreateTwoPlaylists#0 | VlcCreateTwoPlaylists | FAIL | 65 | 66 | 426 | $2.68 | success |
+| MarkorCreateNoteAndSms#0 | MarkorCreateNoteAndSms | FAIL | 32 | 33 | 196 | $1.34 | success |

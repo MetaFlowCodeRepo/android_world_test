@@ -1,0 +1,15 @@
+{
+  "task": "VlcCreateTwoPlaylists",
+  "goal": "Create two playlists in VLC: first one titled 'Playlist A' and second one titled 'Playlist B'. Add any available media files to each.",
+  "params": {
+    "playlist_titles": [
+      "Playlist A",
+      "Playlist B"
+    ]
+  },
+  "app_names": [
+    "vlc"
+  ],
+  "complexity": 4.8,
+  "instance_id": "VlcCreateTwoPlaylists#0"
+}

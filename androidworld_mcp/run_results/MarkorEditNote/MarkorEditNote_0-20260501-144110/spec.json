@@ -1,0 +1,14 @@
+{
+  "task": "MarkorEditNote",
+  "goal": "First, create a note in Markor named 'report.md' with the content 'Q1 sales were strong.'. Then, edit report.md in Markor: add the following header at the top of the note: '# Quarterly Report'.",
+  "params": {
+    "file_name": "report.md",
+    "original_content": "Q1 sales were strong.",
+    "header": "# Quarterly Report"
+  },
+  "app_names": [
+    "markor"
+  ],
+  "complexity": 2,
+  "instance_id": "MarkorEditNote#0"
+}

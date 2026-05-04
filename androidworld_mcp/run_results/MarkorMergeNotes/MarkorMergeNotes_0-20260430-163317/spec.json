@@ -1,0 +1,29 @@
+{
+  "task": "MarkorMergeNotes",
+  "goal": "First, create the following notes in Markor: 1) 'part1.md' with content 'Introduction to the project.'. 2) 'part2.md' with content 'Main body of the report.'. 3) 'part3.md' with content 'Conclusion and next steps.'. Then, merge the contents of Markor notes part1.md, part2.md and part3.md (in the same order) into a new Markor note named 'full_report.md' and save it. Add a new line between the content of each note.",
+  "params": {
+    "file1_name": "part1.md",
+    "file2_name": "part2.md",
+    "file3_name": "part3.md",
+    "new_file_name": "full_report.md",
+    "setup_notes": [
+      {
+        "file_name": "part1.md",
+        "content": "Introduction to the project."
+      },
+      {
+        "file_name": "part2.md",
+        "content": "Main body of the report."
+      },
+      {
+        "file_name": "part3.md",
+        "content": "Conclusion and next steps."
+      }
+    ]
+  },
+  "app_names": [
+    "markor"
+  ],
+  "complexity": 7.8,
+  "instance_id": "MarkorMergeNotes#0"
+}

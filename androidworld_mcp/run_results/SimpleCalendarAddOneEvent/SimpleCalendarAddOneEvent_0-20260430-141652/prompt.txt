@@ -1,0 +1,40 @@
+你正在 Android 真机上**自动执行**一项 AndroidWorld 测试任务。整个会话期间，
+你只能通过 wimb-device MCP 工具操控设备（ai_click / ai_set_text / open_app / get_screenshot
+/ get_screen_xml / press_back / press_home / swipe / wait_stable_screen 等）。
+
+------ 任务定义 ------
+任务名：SimpleCalendarAddOneEvent
+实例编号：SimpleCalendarAddOneEvent#0
+goal（自然语言指令，作为 Agent 你必须完成它）：
+  Create a new calendar event titled 'Team Meeting' on May 5, 2026, from 10:00 AM to 11:00 AM.
+参数（用于自评估对比，禁止把这些字段直接读出来当成功证据）：
+  {"title": "Team Meeting", "date": "2026-05-05", "start_time": "10:00", "end_time": "11:00"}
+
+------ 执行准则 ------
+1. press_home → get_screenshot 确认在主屏。
+2. 用最少步数完成 goal。中途如遇权限弹窗、引导页一律允许/跳过。
+3. 不要根据"我点了某个按钮"就推断成功 —— 必须看截图里实际的最终状态。
+4. 步数预算：102 步以内完成。
+
+[执行提示]
+打开 Simple Calendar Pro（包名 com.simplemobiletools.calendar.pro）。
+导航到 2026-05-05 对应的日期（May 5, 2026），点击该日期。
+点 + 按钮创建新事件。填写标题 "Team Meeting"，
+设置开始时间 10:00，结束时间 11:00。
+保存事件。
+
+------ 自评估（最后必须做） ------
+回到日历视图，在 2026-05-05 对应日期上应该能看到 "Team Meeting" 事件标记。
+点击该日期查看事件详情，截图证明标题、日期、时间都正确。
+
+需要的证据形式：1 张事件详情截图
+
+------ 输出 ------
+最后一条文本消息**只输出**一份 JSON（不要 markdown 围栏、不要其它文字），结构：
+{
+  "success": true | false,
+  "confidence": 0.0 ~ 1.0,
+  "evidence_summary": "一句话说明你看到的最终状态",
+  "screenshot_paths": ["MCP 返回的截图本地缓存路径或描述"],
+  "failure_reason": "如果 success=false，最可能的原因；否则为空字符串"
+}

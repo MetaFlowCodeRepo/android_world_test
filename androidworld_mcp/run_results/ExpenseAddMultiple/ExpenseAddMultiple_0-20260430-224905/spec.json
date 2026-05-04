@@ -1,0 +1,28 @@
+{
+  "task": "ExpenseAddMultiple",
+  "goal": "Add the following expenses into the Pro Expense app: 1) 'Coffee' amount $4.50 category 'Food', 2) 'Taxi' amount $18.00 category 'Transport', 3) 'Book' amount $12.99 category 'Entertainment'.",
+  "params": {
+    "expenses": [
+      {
+        "name": "Coffee",
+        "amount": "4.50",
+        "category": "Food"
+      },
+      {
+        "name": "Taxi",
+        "amount": "18.00",
+        "category": "Transport"
+      },
+      {
+        "name": "Book",
+        "amount": "12.99",
+        "category": "Entertainment"
+      }
+    ]
+  },
+  "app_names": [
+    "expense"
+  ],
+  "complexity": 3,
+  "instance_id": "ExpenseAddMultiple#0"
+}

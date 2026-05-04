@@ -1,0 +1,12 @@
+{
+  "task": "OsmAndFavorite",
+  "goal": "Add a favorite location marker for 'Eiffel Tower' in the OsmAnd maps app.",
+  "params": {
+    "location": "Eiffel Tower"
+  },
+  "app_names": [
+    "osmand"
+  ],
+  "complexity": 1.3,
+  "instance_id": "OsmAndFavorite#0"
+}

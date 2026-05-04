@@ -1,0 +1,556 @@
+{
+  "instance_id": "MarkorCreateNoteFromClipboard#0",
+  "task": "MarkorCreateNoteFromClipboard",
+  "params": {
+    "file_name": "clipboard_note.md",
+    "clipboard_content": "Meeting notes from April 29 standup"
+  },
+  "returncode": 0,
+  "self_eval": {
+    "success": true,
+    "confidence": 0.95,
+    "evidence_summary": "clipboard_note.md created in Markor at /storage/emulated/0/Documents with content 'Meeting notes from April 29 standup' after copy→cut→paste flow; save icon greyed indicating saved state, file visible in Markor file list dated 2026/5/1 14:11.",
+    "screenshot_paths": [
+      "MCP get_screenshot showing editor with pasted text 'Meeting notes from April 29 standup' and save icon greyed",
+      "MCP get_screenshot showing clipboard_note.md present in Markor file list"
+    ],
+    "failure_reason": ""
+  },
+  "timing": {
+    "wall_ms": 442307,
+    "api_ms": 348129
+  },
+  "num_turns": 57,
+  "cost_usd": 2.7765820000000003,
+  "stop_reason": "success",
+  "num_steps": 56,
+  "steps": [
+    {
+      "step": 1,
+      "tool": "ToolSearch",
+      "input": {
+        "query": "select:mcp__wimb-device__get_screenshot,mcp__wimb-device__ai_click,mcp__wimb-device__ai_set_text,mcp__wimb-device__ai_seq_click,mcp__wimb-device__open_app,mcp__wimb-device__press_home,mcp__wimb-device__press_back,mcp__wimb-device__get_screen_xml,mcp__wimb-device__input_text,mcp__wimb-device__click,mcp__wimb-device__swipe,mcp__wimb-device__wait_stable_screen,mcp__wimb-device__wait_screen_update",
+        "max_results": 20
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 2,
+      "tool": "press_home",
+      "input": {},
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 3,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 25
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 4,
+      "tool": "open_app",
+      "input": {
+        "package_name": "net.gsantner.markor"
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 5,
+      "tool": "wait_stable_screen",
+      "input": {
+        "stable_duration": 1.5,
+        "timeout": 15
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 6,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 25
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 7,
+      "tool": "ai_click",
+      "input": {
+        "icon": "右下角红色加号按钮"
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 8,
+      "tool": "wait_stable_screen",
+      "input": {
+        "stable_duration": 1,
+        "timeout": 10
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 9,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 25
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 10,
+      "tool": "ai_set_text",
+      "input": {
+        "element": "名称输入框（左边的，含 .md 后缀的那个）",
+        "text": "clipboard_note"
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 11,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 25
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 12,
+      "tool": "ai_click",
+      "input": {
+        "text": "确定"
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 13,
+      "tool": "wait_stable_screen",
+      "input": {
+        "stable_duration": 1,
+        "timeout": 10
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 14,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 25
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 15,
+      "tool": "get_screen_xml",
+      "input": {},
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 16,
+      "tool": "ai_click",
+      "input": {
+        "text": "确定（对话框右下方按钮）"
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 17,
+      "tool": "wait_stable_screen",
+      "input": {
+        "stable_duration": 1,
+        "timeout": 10
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 18,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 25
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 19,
+      "tool": "click",
+      "input": {
+        "x": 0.84,
+        "y": 0.454
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 20,
+      "tool": "wait_stable_screen",
+      "input": {
+        "stable_duration": 1,
+        "timeout": 10
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 21,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 25
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 22,
+      "tool": "click",
+      "input": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 23,
+      "tool": "wait_stable_screen",
+      "input": {
+        "stable_duration": 0.5,
+        "timeout": 5
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 24,
+      "tool": "get_screen_xml",
+      "input": {},
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 25,
+      "tool": "input_text",
+      "input": {
+        "innerid": 22,
+        "text": "Meeting notes from April 29 standup"
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 26,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 25
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 27,
+      "tool": "swipe",
+      "input": {
+        "from_x": 0.3,
+        "from_y": 0.144,
+        "to_x": 0.3,
+        "to_y": 0.144,
+        "duration": 800
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 28,
+      "tool": "wait_stable_screen",
+      "input": {
+        "stable_duration": 1,
+        "timeout": 5
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 29,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 25
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 30,
+      "tool": "ai_click",
+      "input": {
+        "text": "全选"
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 31,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 25
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 32,
+      "tool": "ai_click",
+      "input": {
+        "text": "复制"
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 33,
+      "tool": "wait_stable_screen",
+      "input": {
+        "stable_duration": 1,
+        "timeout": 5
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 34,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 25
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 35,
+      "tool": "swipe",
+      "input": {
+        "from_x": 0.3,
+        "from_y": 0.144,
+        "to_x": 0.3,
+        "to_y": 0.144,
+        "duration": 800
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 36,
+      "tool": "wait_stable_screen",
+      "input": {
+        "stable_duration": 1,
+        "timeout": 5
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 37,
+      "tool": "ai_click",
+      "input": {
+        "text": "全选"
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 38,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 25
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 39,
+      "tool": "ai_click",
+      "input": {
+        "text": "剪切"
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 40,
+      "tool": "wait_stable_screen",
+      "input": {
+        "stable_duration": 1,
+        "timeout": 5
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 41,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 25
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 42,
+      "tool": "swipe",
+      "input": {
+        "from_x": 0.3,
+        "from_y": 0.2,
+        "to_x": 0.3,
+        "to_y": 0.2,
+        "duration": 800
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 43,
+      "tool": "wait_stable_screen",
+      "input": {
+        "stable_duration": 1,
+        "timeout": 5
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 44,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 25
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 45,
+      "tool": "ai_click",
+      "input": {
+        "text": "粘贴"
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 46,
+      "tool": "wait_stable_screen",
+      "input": {
+        "stable_duration": 1,
+        "timeout": 5
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 47,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 25
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 48,
+      "tool": "click",
+      "input": {
+        "x": 796,
+        "y": 190
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 49,
+      "tool": "wait_stable_screen",
+      "input": {
+        "stable_duration": 1,
+        "timeout": 5
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 50,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 25
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 51,
+      "tool": "press_back",
+      "input": {},
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 52,
+      "tool": "wait_stable_screen",
+      "input": {
+        "stable_duration": 1,
+        "timeout": 5
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 53,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 25
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 54,
+      "tool": "press_back",
+      "input": {},
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 55,
+      "tool": "wait_stable_screen",
+      "input": {
+        "stable_duration": 1,
+        "timeout": 5
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 56,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 25
+      },
+      "success": true,
+      "is_error": false
+    }
+  ]
+}

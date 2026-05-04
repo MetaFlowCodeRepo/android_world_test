@@ -1,0 +1,15 @@
+{
+  "task": "MarkorCreateNoteAndSms",
+  "goal": "Create a new note in Markor named 'reminder.md' with the following text: 'Pick up dry cleaning at 5pm'. Share the entire content of the note with the phone number +15551112222 via SMS using Simple SMS Messenger.",
+  "params": {
+    "file_name": "reminder.md",
+    "text": "Pick up dry cleaning at 5pm",
+    "number": "+15551112222"
+  },
+  "app_names": [
+    "markor",
+    "sms"
+  ],
+  "complexity": 1.8,
+  "instance_id": "MarkorCreateNoteAndSms#0"
+}

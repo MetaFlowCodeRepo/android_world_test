@@ -1,0 +1,808 @@
+{
+  "instance_id": "SimpleCalendarAddOneEventRelativeDay#0",
+  "task": "SimpleCalendarAddOneEventRelativeDay",
+  "params": {
+    "day_of_week": "Saturday",
+    "hour": 11,
+    "event_title": "Brunch with Friends",
+    "event_description": "Meet at the cafe downtown",
+    "duration_mins": 90
+  },
+  "returncode": 0,
+  "self_eval": {
+    "success": true,
+    "confidence": 0.97,
+    "evidence_summary": "Edit Event view shows title 'Brunch with Friends', description 'Meet at the cafe downtown', date 五月 2 (周六) = Saturday May 2 2026, time 11:00-12:30 (90 min duration).",
+    "screenshot_paths": [
+      "MCP get_screenshot - edit event view of Brunch with Friends on Saturday May 2 2026, 11:00-12:30"
+    ],
+    "failure_reason": ""
+  },
+  "timing": {
+    "wall_ms": 451966,
+    "api_ms": 341772
+  },
+  "num_turns": 72,
+  "cost_usd": 3.760415249999999,
+  "stop_reason": "success",
+  "num_steps": 71,
+  "steps": [
+    {
+      "step": 1,
+      "tool": "ToolSearch",
+      "input": {
+        "query": "select:mcp__wimb-device__get_screenshot,mcp__wimb-device__ai_click,mcp__wimb-device__ai_set_text,mcp__wimb-device__ai_seq_click,mcp__wimb-device__open_app,mcp__wimb-device__press_home,mcp__wimb-device__press_back,mcp__wimb-device__get_screen_xml,mcp__wimb-device__input_text,mcp__wimb-device__click,mcp__wimb-device__swipe,mcp__wimb-device__wait_stable_screen,mcp__wimb-device__wait_screen_update",
+        "max_results": 20
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 2,
+      "tool": "press_home",
+      "input": {},
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 3,
+      "tool": "open_app",
+      "input": {
+        "package_name": "com.simplemobiletools.calendar.pro"
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 4,
+      "tool": "wait_stable_screen",
+      "input": {
+        "stable_duration": 1.5,
+        "timeout": 10
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 5,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 30
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 6,
+      "tool": "press_back",
+      "input": {},
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 7,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 30
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 8,
+      "tool": "ai_click",
+      "input": {
+        "icon": "向右箭头(下一天)"
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 9,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 30
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 10,
+      "tool": "ToolSearch",
+      "input": {
+        "query": "select:TodoWrite",
+        "max_results": 1
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 11,
+      "tool": "TodoWrite",
+      "input": {
+        "todos": [
+          {
+            "content": "Navigate to Saturday May 2",
+            "status": "completed",
+            "activeForm": "Navigating to Saturday May 2"
+          },
+          {
+            "content": "Create new event via + button",
+            "status": "in_progress",
+            "activeForm": "Creating new event"
+          },
+          {
+            "content": "Set title 'Brunch with Friends'",
+            "status": "pending",
+            "activeForm": "Setting title"
+          },
+          {
+            "content": "Set start time 11:00 and duration 90 mins",
+            "status": "pending",
+            "activeForm": "Setting time"
+          },
+          {
+            "content": "Set description 'Meet at the cafe downtown'",
+            "status": "pending",
+            "activeForm": "Setting description"
+          },
+          {
+            "content": "Save and verify event",
+            "status": "pending",
+            "activeForm": "Saving and verifying"
+          }
+        ]
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 12,
+      "tool": "ai_click",
+      "input": {
+        "icon": "右下角加号(+)按钮"
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 13,
+      "tool": "wait_stable_screen",
+      "input": {
+        "stable_duration": 1,
+        "timeout": 5
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 14,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 30
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 15,
+      "tool": "ai_click",
+      "input": {
+        "text": "活动"
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 16,
+      "tool": "wait_stable_screen",
+      "input": {
+        "stable_duration": 1,
+        "timeout": 5
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 17,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 30
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 18,
+      "tool": "ai_set_text",
+      "input": {
+        "element": "标题输入框",
+        "text": "Brunch with Friends"
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 19,
+      "tool": "ai_set_text",
+      "input": {
+        "element": "描述输入框",
+        "text": "Meet at the cafe downtown"
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 20,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 30
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 21,
+      "tool": "TodoWrite",
+      "input": {
+        "todos": [
+          {
+            "content": "Navigate to Saturday May 2",
+            "status": "completed",
+            "activeForm": "Navigating to Saturday May 2"
+          },
+          {
+            "content": "Create new event via + button",
+            "status": "completed",
+            "activeForm": "Creating new event"
+          },
+          {
+            "content": "Set title 'Brunch with Friends'",
+            "status": "completed",
+            "activeForm": "Setting title"
+          },
+          {
+            "content": "Set description 'Meet at the cafe downtown'",
+            "status": "completed",
+            "activeForm": "Setting description"
+          },
+          {
+            "content": "Set start time 11:00 and end time 12:30",
+            "status": "in_progress",
+            "activeForm": "Setting time"
+          },
+          {
+            "content": "Save and verify event",
+            "status": "pending",
+            "activeForm": "Saving and verifying"
+          }
+        ]
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 22,
+      "tool": "ai_click",
+      "input": {
+        "text": "14:00"
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 23,
+      "tool": "wait_stable_screen",
+      "input": {
+        "stable_duration": 1,
+        "timeout": 5
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 24,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 30
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 25,
+      "tool": "ai_click",
+      "input": {
+        "text": "11"
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 26,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 30
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 27,
+      "tool": "ai_click",
+      "input": {
+        "icon": "左下角键盘图标"
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 28,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 30
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 29,
+      "tool": "get_screen_xml",
+      "input": {},
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 30,
+      "tool": "click",
+      "input": {
+        "x": 400,
+        "y": 1115
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 31,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 30
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 32,
+      "tool": "ai_click",
+      "input": {
+        "text": "确定"
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 33,
+      "tool": "wait_stable_screen",
+      "input": {
+        "stable_duration": 1,
+        "timeout": 5
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 34,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 30
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 35,
+      "tool": "get_screen_xml",
+      "input": {},
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 36,
+      "tool": "click",
+      "input": {
+        "x": 540,
+        "y": 1077
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 37,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 30
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 38,
+      "tool": "get_screen_xml",
+      "input": {},
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 39,
+      "tool": "click",
+      "input": {
+        "x": 720,
+        "y": 1555
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 40,
+      "tool": "wait_stable_screen",
+      "input": {
+        "stable_duration": 1,
+        "timeout": 5
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 41,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 30
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 42,
+      "tool": "click",
+      "input": {
+        "x": 540,
+        "y": 1077
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 43,
+      "tool": "click",
+      "input": {
+        "x": 0.79,
+        "y": 0.775
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 44,
+      "tool": "wait_stable_screen",
+      "input": {
+        "stable_duration": 1,
+        "timeout": 5
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 45,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 30
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 46,
+      "tool": "ai_click",
+      "input": {
+        "text": "第二个 11:00 (结束时间)"
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 47,
+      "tool": "wait_stable_screen",
+      "input": {
+        "stable_duration": 1,
+        "timeout": 5
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 48,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 30
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 49,
+      "tool": "click",
+      "input": {
+        "x": 0.79,
+        "y": 0.77
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 50,
+      "tool": "wait_stable_screen",
+      "input": {
+        "stable_duration": 1,
+        "timeout": 5
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 51,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 30
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 52,
+      "tool": "get_screen_xml",
+      "input": {},
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 53,
+      "tool": "click",
+      "input": {
+        "x": 956,
+        "y": 1290
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 54,
+      "tool": "wait_stable_screen",
+      "input": {
+        "stable_duration": 1,
+        "timeout": 5
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 55,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 30
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 56,
+      "tool": "click",
+      "input": {
+        "x": 540,
+        "y": 1173
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 57,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 30
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 58,
+      "tool": "get_screen_xml",
+      "input": {},
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 59,
+      "tool": "click",
+      "input": {
+        "x": 540,
+        "y": 1639
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 60,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 30
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 61,
+      "tool": "click",
+      "input": {
+        "x": 0.79,
+        "y": 0.775
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 62,
+      "tool": "wait_stable_screen",
+      "input": {
+        "stable_duration": 1,
+        "timeout": 5
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 63,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 30
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 64,
+      "tool": "TodoWrite",
+      "input": {
+        "todos": [
+          {
+            "content": "Navigate to Saturday May 2",
+            "status": "completed",
+            "activeForm": "Navigating to Saturday May 2"
+          },
+          {
+            "content": "Create new event via + button",
+            "status": "completed",
+            "activeForm": "Creating new event"
+          },
+          {
+            "content": "Set title 'Brunch with Friends'",
+            "status": "completed",
+            "activeForm": "Setting title"
+          },
+          {
+            "content": "Set description 'Meet at the cafe downtown'",
+            "status": "completed",
+            "activeForm": "Setting description"
+          },
+          {
+            "content": "Set start time 11:00 and end time 12:30",
+            "status": "completed",
+            "activeForm": "Setting time"
+          },
+          {
+            "content": "Save and verify event",
+            "status": "in_progress",
+            "activeForm": "Saving and verifying"
+          }
+        ]
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 65,
+      "tool": "click",
+      "input": {
+        "x": 1012,
+        "y": 200
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 66,
+      "tool": "wait_stable_screen",
+      "input": {
+        "stable_duration": 1,
+        "timeout": 5
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 67,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 30
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 68,
+      "tool": "ai_click",
+      "input": {
+        "text": "Brunch with Friends"
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 69,
+      "tool": "wait_stable_screen",
+      "input": {
+        "stable_duration": 1,
+        "timeout": 5
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 70,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 30
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 71,
+      "tool": "TodoWrite",
+      "input": {
+        "todos": [
+          {
+            "content": "Navigate to Saturday May 2",
+            "status": "completed",
+            "activeForm": "Navigating to Saturday May 2"
+          },
+          {
+            "content": "Create new event via + button",
+            "status": "completed",
+            "activeForm": "Creating new event"
+          },
+          {
+            "content": "Set title 'Brunch with Friends'",
+            "status": "completed",
+            "activeForm": "Setting title"
+          },
+          {
+            "content": "Set description 'Meet at the cafe downtown'",
+            "status": "completed",
+            "activeForm": "Setting description"
+          },
+          {
+            "content": "Set start time 11:00 and end time 12:30",
+            "status": "completed",
+            "activeForm": "Setting time"
+          },
+          {
+            "content": "Save and verify event",
+            "status": "completed",
+            "activeForm": "Saving and verifying"
+          }
+        ]
+      },
+      "success": true,
+      "is_error": false
+    }
+  ]
+}

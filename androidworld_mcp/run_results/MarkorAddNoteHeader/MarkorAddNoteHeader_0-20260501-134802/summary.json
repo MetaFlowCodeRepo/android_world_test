@@ -1,0 +1,681 @@
+{
+  "instance_id": "MarkorAddNoteHeader#0",
+  "task": "MarkorAddNoteHeader",
+  "params": {
+    "original_name": "todo.md",
+    "header": "# My Todo List",
+    "new_name": "my_todos.md",
+    "original_content": "Buy groceries\nClean house\nCall dentist"
+  },
+  "returncode": 1,
+  "self_eval": null,
+  "timing": {
+    "wall_ms": 554536,
+    "api_ms": 432642
+  },
+  "num_turns": 73,
+  "cost_usd": 3.961356,
+  "stop_reason": "error_max_turns",
+  "num_steps": 72,
+  "steps": [
+    {
+      "step": 1,
+      "tool": "ToolSearch",
+      "input": {
+        "query": "select:mcp__wimb-device__get_screenshot,mcp__wimb-device__ai_click,mcp__wimb-device__ai_set_text,mcp__wimb-device__ai_seq_click,mcp__wimb-device__open_app,mcp__wimb-device__press_home,mcp__wimb-device__press_back,mcp__wimb-device__get_screen_xml,mcp__wimb-device__input_text,mcp__wimb-device__click,mcp__wimb-device__swipe,mcp__wimb-device__wait_stable_screen,mcp__wimb-device__wait_screen_update",
+        "max_results": 20
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 2,
+      "tool": "press_home",
+      "input": {},
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 3,
+      "tool": "open_app",
+      "input": {
+        "package_name": "net.gsantner.markor"
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 4,
+      "tool": "wait_stable_screen",
+      "input": {
+        "stable_duration": 1.5,
+        "timeout": 15
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 5,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 30
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 6,
+      "tool": "ai_click",
+      "input": {
+        "icon": "右下角红色加号按钮"
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 7,
+      "tool": "wait_stable_screen",
+      "input": {
+        "stable_duration": 1,
+        "timeout": 10
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 8,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 30
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 9,
+      "tool": "get_screen_xml",
+      "input": {},
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 10,
+      "tool": "ai_set_text",
+      "input": {
+        "element": "名称输入框（含\"我的笔记\"）",
+        "text": "todo"
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 11,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 30
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 12,
+      "tool": "ai_click",
+      "input": {
+        "text": "确定"
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 13,
+      "tool": "wait_stable_screen",
+      "input": {
+        "stable_duration": 1,
+        "timeout": 10
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 14,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 30
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 15,
+      "tool": "get_screen_xml",
+      "input": {},
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 16,
+      "tool": "ai_click",
+      "input": {
+        "text": "对话框右下角确定按钮"
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 17,
+      "tool": "wait_stable_screen",
+      "input": {
+        "stable_duration": 1,
+        "timeout": 10
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 18,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 30
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 19,
+      "tool": "click",
+      "input": {
+        "x": 0.84,
+        "y": 0.465
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 20,
+      "tool": "wait_stable_screen",
+      "input": {
+        "stable_duration": 1,
+        "timeout": 10
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 21,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 30
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 22,
+      "tool": "get_screen_xml",
+      "input": {},
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 23,
+      "tool": "input_text",
+      "input": {
+        "innerid": 22,
+        "text": "Buy groceries\nClean house\nCall dentist"
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 24,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 30
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 25,
+      "tool": "ai_click",
+      "input": {
+        "icon": "顶部工具栏的保存图标（软盘图标）"
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 26,
+      "tool": "wait_stable_screen",
+      "input": {
+        "stable_duration": 1,
+        "timeout": 10
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 27,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 30
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 28,
+      "tool": "ai_set_text",
+      "input": {
+        "element": "笔记内容编辑区域（包含 Buy groceries 等文本的主编辑框）",
+        "text": "# My Todo List\n\nBuy groceries\nClean house\nCall dentist"
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 29,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 30
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 30,
+      "tool": "ai_click",
+      "input": {
+        "icon": "顶部工具栏的保存图标（软盘图标，黑色填充）"
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 31,
+      "tool": "wait_stable_screen",
+      "input": {
+        "stable_duration": 1,
+        "timeout": 10
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 32,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 30
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 33,
+      "tool": "ai_click",
+      "input": {
+        "icon": "右上角三点菜单（更多选项按钮）"
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 34,
+      "tool": "wait_stable_screen",
+      "input": {
+        "stable_duration": 0.8,
+        "timeout": 10
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 35,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 30
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 36,
+      "tool": "ai_click",
+      "input": {
+        "text": "文件设置"
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 37,
+      "tool": "wait_stable_screen",
+      "input": {
+        "stable_duration": 0.8,
+        "timeout": 10
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 38,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 30
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 39,
+      "tool": "click",
+      "input": {
+        "x": 0.93,
+        "y": 0.078
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 40,
+      "tool": "wait_stable_screen",
+      "input": {
+        "stable_duration": 0.8,
+        "timeout": 10
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 41,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 30
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 42,
+      "tool": "press_back",
+      "input": {},
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 43,
+      "tool": "press_back",
+      "input": {},
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 44,
+      "tool": "wait_stable_screen",
+      "input": {
+        "stable_duration": 0.8,
+        "timeout": 10
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 45,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 30
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 46,
+      "tool": "get_screen_xml",
+      "input": {},
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 47,
+      "tool": "swipe",
+      "input": {
+        "from_x": 0.5,
+        "from_y": 0.715,
+        "to_x": 0.5,
+        "to_y": 0.715,
+        "duration": 1200
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 48,
+      "tool": "wait_stable_screen",
+      "input": {
+        "stable_duration": 0.8,
+        "timeout": 10
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 49,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 30
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 50,
+      "tool": "ai_click",
+      "input": {
+        "icon": "顶部右上角三点菜单（更多操作按钮）"
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 51,
+      "tool": "wait_stable_screen",
+      "input": {
+        "stable_duration": 0.8,
+        "timeout": 10
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 52,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 30
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 53,
+      "tool": "press_back",
+      "input": {},
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 54,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 30
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 55,
+      "tool": "ai_click",
+      "input": {
+        "icon": "顶部\"A|\"或\"AI\"图标（重命名）"
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 56,
+      "tool": "wait_stable_screen",
+      "input": {
+        "stable_duration": 0.8,
+        "timeout": 10
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 57,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 30
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 58,
+      "tool": "ai_set_text",
+      "input": {
+        "element": "重命名对话框中含 todo.md 的输入框",
+        "text": "my_todos.md"
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 59,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 30
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 60,
+      "tool": "ai_click",
+      "input": {
+        "text": "确定"
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 61,
+      "tool": "wait_stable_screen",
+      "input": {
+        "stable_duration": 1,
+        "timeout": 10
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 62,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 30
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 63,
+      "tool": "ai_click",
+      "input": {
+        "icon": "顶部的\"A|\"重命名图标"
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 64,
+      "tool": "wait_stable_screen",
+      "input": {
+        "stable_duration": 0.8,
+        "timeout": 10
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 65,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 30
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 66,
+      "tool": "get_screen_xml",
+      "input": {},
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 67,
+      "tool": "input_text",
+      "input": {
+        "innerid": 13,
+        "text": "my_todos.md"
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 68,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 30
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 69,
+      "tool": "ai_click",
+      "input": {
+        "text": "重命名对话框中的\"确定\"按钮"
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 70,
+      "tool": "wait_stable_screen",
+      "input": {
+        "stable_duration": 1.2,
+        "timeout": 10
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 71,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 30
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 72,
+      "tool": "ai_click",
+      "input": {
+        "icon": "顶部的\"A|\"重命名图标"
+      },
+      "success": true,
+      "is_error": false
+    }
+  ]
+}

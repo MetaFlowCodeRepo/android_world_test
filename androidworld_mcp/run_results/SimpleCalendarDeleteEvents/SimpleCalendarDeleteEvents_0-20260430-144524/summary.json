@@ -1,0 +1,32 @@
+{
+  "instance_id": "SimpleCalendarDeleteEvents#0",
+  "task": "SimpleCalendarDeleteEvents",
+  "params": {
+    "year": 2026,
+    "month": 7,
+    "day": 10,
+    "events": [
+      {
+        "hour": 9,
+        "title": "Morning Standup",
+        "duration_mins": 30
+      },
+      {
+        "hour": 15,
+        "title": "Code Review",
+        "duration_mins": 60
+      }
+    ]
+  },
+  "returncode": 1,
+  "self_eval": null,
+  "timing": {
+    "wall_ms": 234463,
+    "api_ms": 0
+  },
+  "num_turns": 1,
+  "cost_usd": 0,
+  "stop_reason": "success",
+  "num_steps": 0,
+  "steps": []
+}

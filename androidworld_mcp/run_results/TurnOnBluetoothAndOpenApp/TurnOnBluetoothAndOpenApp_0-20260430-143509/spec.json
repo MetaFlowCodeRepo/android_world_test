@@ -1,0 +1,13 @@
+{
+  "task": "TurnOnBluetoothAndOpenApp",
+  "goal": "Turn on Bluetooth, then open the Contacts app.",
+  "params": {
+    "app_name": "contacts"
+  },
+  "app_names": [
+    "settings",
+    "contacts"
+  ],
+  "complexity": 2,
+  "instance_id": "TurnOnBluetoothAndOpenApp#0"
+}

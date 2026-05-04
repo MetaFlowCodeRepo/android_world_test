@@ -1,0 +1,34 @@
+{
+  "instance_id": "ExpenseAddMultiple#0",
+  "task": "ExpenseAddMultiple",
+  "params": {
+    "expenses": [
+      {
+        "name": "Coffee",
+        "amount": "4.50",
+        "category": "Food"
+      },
+      {
+        "name": "Taxi",
+        "amount": "18.00",
+        "category": "Transport"
+      },
+      {
+        "name": "Book",
+        "amount": "12.99",
+        "category": "Entertainment"
+      }
+    ]
+  },
+  "returncode": 1,
+  "self_eval": null,
+  "timing": {
+    "wall_ms": 232486,
+    "api_ms": 0
+  },
+  "num_turns": 1,
+  "cost_usd": 0,
+  "stop_reason": "success",
+  "num_steps": 0,
+  "steps": []
+}

@@ -1,0 +1,16 @@
+{
+  "task": "OsmAndTrack",
+  "goal": "Save a track with waypoints 'Central Park', 'Times Square', 'Brooklyn Bridge' in the OsmAnd maps app in the same order as listed.",
+  "params": {
+    "waypoints": [
+      "Central Park",
+      "Times Square",
+      "Brooklyn Bridge"
+    ]
+  },
+  "app_names": [
+    "osmand"
+  ],
+  "complexity": 12,
+  "instance_id": "OsmAndTrack#0"
+}

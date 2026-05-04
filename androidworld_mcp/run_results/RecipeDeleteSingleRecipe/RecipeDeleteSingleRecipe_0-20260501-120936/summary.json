@@ -1,0 +1,779 @@
+{
+  "instance_id": "RecipeDeleteSingleRecipe#0",
+  "task": "RecipeDeleteSingleRecipe",
+  "params": {
+    "setup_recipes": [
+      {
+        "title": "Miso Soup",
+        "description": "Traditional Japanese soup with tofu and seaweed"
+      },
+      {
+        "title": "Caesar Salad",
+        "description": "Romaine lettuce with croutons, parmesan, and Caesar dressing"
+      }
+    ],
+    "delete_title": "Miso Soup"
+  },
+  "returncode": 0,
+  "self_eval": {
+    "success": true,
+    "confidence": 0.98,
+    "evidence_summary": "食谱列表显示 Caesar Salad 仍存在（Romaine lettuce with croutons, parmesan, and Caesar dressing），Miso Soup 已不在列表中（前一截图直接从 Greek Salad 跳到 Pasta Carbonara，无 Miso Soup）。",
+    "screenshot_paths": [
+      "最终列表截图：Avocado Toast / Banana Smoothie / Caesar Salad / Chicken Stir Fry / Egg Fried Rice / Greek Salad / Pasta Carbonara / Tomato Soup —— Miso Soup 已删除"
+    ],
+    "failure_reason": ""
+  },
+  "timing": {
+    "wall_ms": 477931,
+    "api_ms": 352608
+  },
+  "num_turns": 72,
+  "cost_usd": 3.0965529999999997,
+  "stop_reason": "success",
+  "num_steps": 71,
+  "steps": [
+    {
+      "step": 1,
+      "tool": "ToolSearch",
+      "input": {
+        "query": "select:mcp__wimb-device__get_screenshot,mcp__wimb-device__ai_click,mcp__wimb-device__ai_set_text,mcp__wimb-device__ai_seq_click,mcp__wimb-device__open_app,mcp__wimb-device__press_home,mcp__wimb-device__press_back,mcp__wimb-device__get_screen_xml,mcp__wimb-device__input_text,mcp__wimb-device__click,mcp__wimb-device__swipe,mcp__wimb-device__wait_stable_screen,mcp__wimb-device__wait_screen_update",
+        "max_results": 20
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 2,
+      "tool": "press_home",
+      "input": {},
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 3,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 30
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 4,
+      "tool": "open_app",
+      "input": {
+        "package_name": "com.flauschcode.broccoli"
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 5,
+      "tool": "wait_stable_screen",
+      "input": {
+        "stable_duration": 1.5,
+        "timeout": 10
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 6,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 30
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 7,
+      "tool": "ai_click",
+      "input": {
+        "icon": "绿色加号添加按钮（右下角）"
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 8,
+      "tool": "wait_stable_screen",
+      "input": {
+        "stable_duration": 1,
+        "timeout": 8
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 9,
+      "tool": "ToolSearch",
+      "input": {
+        "query": "select:TodoWrite",
+        "max_results": 1
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 10,
+      "tool": "TodoWrite",
+      "input": {
+        "todos": [
+          {
+            "content": "Add Miso Soup recipe",
+            "activeForm": "Adding Miso Soup recipe",
+            "status": "in_progress"
+          },
+          {
+            "content": "Add Caesar Salad recipe",
+            "activeForm": "Adding Caesar Salad recipe",
+            "status": "pending"
+          },
+          {
+            "content": "Delete Miso Soup recipe",
+            "activeForm": "Deleting Miso Soup recipe",
+            "status": "pending"
+          },
+          {
+            "content": "Verify final state with screenshot",
+            "activeForm": "Verifying final state",
+            "status": "pending"
+          }
+        ]
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 11,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 30
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 12,
+      "tool": "ai_set_text",
+      "input": {
+        "element": "标题输入框",
+        "text": "Miso Soup"
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 13,
+      "tool": "ai_set_text",
+      "input": {
+        "element": "描述输入框",
+        "text": "Traditional Japanese soup with tofu and seaweed"
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 14,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 30
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 15,
+      "tool": "ai_click",
+      "input": {
+        "text": "保存"
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 16,
+      "tool": "wait_stable_screen",
+      "input": {
+        "stable_duration": 1,
+        "timeout": 8
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 17,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 30
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 18,
+      "tool": "press_back",
+      "input": {},
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 19,
+      "tool": "TodoWrite",
+      "input": {
+        "todos": [
+          {
+            "content": "Add Miso Soup recipe",
+            "activeForm": "Adding Miso Soup recipe",
+            "status": "completed"
+          },
+          {
+            "content": "Add Caesar Salad recipe",
+            "activeForm": "Adding Caesar Salad recipe",
+            "status": "in_progress"
+          },
+          {
+            "content": "Delete Miso Soup recipe",
+            "activeForm": "Deleting Miso Soup recipe",
+            "status": "pending"
+          },
+          {
+            "content": "Verify final state with screenshot",
+            "activeForm": "Verifying final state",
+            "status": "pending"
+          }
+        ]
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 20,
+      "tool": "ai_click",
+      "input": {
+        "icon": "绿色加号添加按钮（右下角）"
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 21,
+      "tool": "wait_stable_screen",
+      "input": {
+        "stable_duration": 1,
+        "timeout": 8
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 22,
+      "tool": "ai_set_text",
+      "input": {
+        "element": "标题输入框",
+        "text": "Caesar Salad"
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 23,
+      "tool": "ai_set_text",
+      "input": {
+        "element": "描述输入框",
+        "text": "Romaine lettuce with croutons, parmesan, and Caesar dressing"
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 24,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 30
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 25,
+      "tool": "ai_click",
+      "input": {
+        "text": "保存"
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 26,
+      "tool": "wait_stable_screen",
+      "input": {
+        "stable_duration": 1,
+        "timeout": 8
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 27,
+      "tool": "press_back",
+      "input": {},
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 28,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 30
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 29,
+      "tool": "TodoWrite",
+      "input": {
+        "todos": [
+          {
+            "content": "Add Miso Soup recipe",
+            "activeForm": "Adding Miso Soup recipe",
+            "status": "completed"
+          },
+          {
+            "content": "Add Caesar Salad recipe",
+            "activeForm": "Adding Caesar Salad recipe",
+            "status": "completed"
+          },
+          {
+            "content": "Delete Miso Soup recipe",
+            "activeForm": "Deleting Miso Soup recipe",
+            "status": "in_progress"
+          },
+          {
+            "content": "Verify final state with screenshot",
+            "activeForm": "Verifying final state",
+            "status": "pending"
+          }
+        ]
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 30,
+      "tool": "swipe",
+      "input": {
+        "from_x": 0.5,
+        "from_y": 0.8,
+        "to_x": 0.5,
+        "to_y": 0.2
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 31,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 30
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 32,
+      "tool": "ai_click",
+      "input": {
+        "text": "Miso Soup"
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 33,
+      "tool": "wait_stable_screen",
+      "input": {
+        "stable_duration": 1,
+        "timeout": 8
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 34,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 30
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 35,
+      "tool": "ai_click",
+      "input": {
+        "icon": "右上角三个点（更多菜单）"
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 36,
+      "tool": "wait_stable_screen",
+      "input": {
+        "stable_duration": 0.8,
+        "timeout": 5
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 37,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 30
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 38,
+      "tool": "ai_click",
+      "input": {
+        "text": "删除"
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 39,
+      "tool": "wait_stable_screen",
+      "input": {
+        "stable_duration": 1,
+        "timeout": 5
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 40,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 30
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 41,
+      "tool": "press_back",
+      "input": {},
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 42,
+      "tool": "wait_stable_screen",
+      "input": {
+        "stable_duration": 1,
+        "timeout": 5
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 43,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 30
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 44,
+      "tool": "ai_click",
+      "input": {
+        "text": "Miso Soup"
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 45,
+      "tool": "wait_stable_screen",
+      "input": {
+        "stable_duration": 1,
+        "timeout": 5
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 46,
+      "tool": "ai_click",
+      "input": {
+        "icon": "右上角三个竖点菜单图标"
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 47,
+      "tool": "wait_stable_screen",
+      "input": {
+        "stable_duration": 0.8,
+        "timeout": 5
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 48,
+      "tool": "get_screen_xml",
+      "input": {},
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 49,
+      "tool": "click",
+      "input": {
+        "x": 793,
+        "y": 618
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 50,
+      "tool": "wait_stable_screen",
+      "input": {
+        "stable_duration": 1,
+        "timeout": 5
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 51,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 30
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 52,
+      "tool": "ai_click",
+      "input": {
+        "text": "删除"
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 53,
+      "tool": "wait_stable_screen",
+      "input": {
+        "stable_duration": 1,
+        "timeout": 8
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 54,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 30
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 55,
+      "tool": "press_back",
+      "input": {},
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 56,
+      "tool": "wait_stable_screen",
+      "input": {
+        "stable_duration": 1,
+        "timeout": 5
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 57,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 30
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 58,
+      "tool": "ai_click",
+      "input": {
+        "text": "Miso Soup"
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 59,
+      "tool": "wait_stable_screen",
+      "input": {
+        "stable_duration": 1,
+        "timeout": 5
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 60,
+      "tool": "ai_click",
+      "input": {
+        "icon": "右上角三个竖点菜单图标"
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 61,
+      "tool": "wait_stable_screen",
+      "input": {
+        "stable_duration": 0.8,
+        "timeout": 5
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 62,
+      "tool": "click",
+      "input": {
+        "x": 793,
+        "y": 618
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 63,
+      "tool": "wait_stable_screen",
+      "input": {
+        "stable_duration": 1,
+        "timeout": 5
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 64,
+      "tool": "get_screen_xml",
+      "input": {},
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 65,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 30
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 66,
+      "tool": "click",
+      "input": {
+        "x": 0.82,
+        "y": 0.555
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 67,
+      "tool": "wait_stable_screen",
+      "input": {
+        "stable_duration": 1,
+        "timeout": 5
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 68,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 30
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 69,
+      "tool": "swipe",
+      "input": {
+        "from_x": 0.5,
+        "from_y": 0.3,
+        "to_x": 0.5,
+        "to_y": 0.8
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 70,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 30
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 71,
+      "tool": "TodoWrite",
+      "input": {
+        "todos": [
+          {
+            "content": "Add Miso Soup recipe",
+            "activeForm": "Adding Miso Soup recipe",
+            "status": "completed"
+          },
+          {
+            "content": "Add Caesar Salad recipe",
+            "activeForm": "Adding Caesar Salad recipe",
+            "status": "completed"
+          },
+          {
+            "content": "Delete Miso Soup recipe",
+            "activeForm": "Deleting Miso Soup recipe",
+            "status": "completed"
+          },
+          {
+            "content": "Verify final state with screenshot",
+            "activeForm": "Verifying final state",
+            "status": "completed"
+          }
+        ]
+      },
+      "success": true,
+      "is_error": false
+    }
+  ]
+}

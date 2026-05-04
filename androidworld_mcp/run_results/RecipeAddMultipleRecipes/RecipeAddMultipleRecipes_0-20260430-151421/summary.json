@@ -1,0 +1,31 @@
+{
+  "instance_id": "RecipeAddMultipleRecipes#0",
+  "task": "RecipeAddMultipleRecipes",
+  "params": {
+    "recipes": [
+      {
+        "title": "Tomato Soup",
+        "description": "Simple tomato soup with basil and cream"
+      },
+      {
+        "title": "Chicken Stir Fry",
+        "description": "Quick chicken stir fry with vegetables and soy sauce"
+      },
+      {
+        "title": "Banana Smoothie",
+        "description": "Blend banana, milk, honey, and ice"
+      }
+    ]
+  },
+  "returncode": 1,
+  "self_eval": null,
+  "timing": {
+    "wall_ms": 229092,
+    "api_ms": 0
+  },
+  "num_turns": 1,
+  "cost_usd": 0,
+  "stop_reason": "success",
+  "num_steps": 0,
+  "steps": []
+}

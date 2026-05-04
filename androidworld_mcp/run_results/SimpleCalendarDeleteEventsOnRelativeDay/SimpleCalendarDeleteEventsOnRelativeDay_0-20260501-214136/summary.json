@@ -1,0 +1,624 @@
+{
+  "instance_id": "SimpleCalendarDeleteEventsOnRelativeDay#0",
+  "task": "SimpleCalendarDeleteEventsOnRelativeDay",
+  "params": {
+    "day_of_week": "Friday",
+    "event_title": "Weekly Review",
+    "hour": 10,
+    "duration_mins": 60,
+    "event_description": "Team sync"
+  },
+  "returncode": 0,
+  "self_eval": {
+    "success": false,
+    "confidence": 0.95,
+    "evidence_summary": "Device is stuck on com.android.systemui keyguard/AOD; all wake attempts (press_home, press_back, taps, multiple swipes up, open_app on calendar/launcher) returned no screen update — couldn't reach home screen, let alone Simple Calendar Pro.",
+    "screenshot_paths": [
+      "initial screenshot showed dim AOD-style display with faint '16:3X' time over a black/dark wallpaper; subsequent screenshots remained identical"
+    ],
+    "failure_reason": "Unable to wake/unlock device — keyguard layer (com.android.systemui) refuses input, and the available wimb-device MCP tools provide no power-button / KEYCODE_WAKEUP equivalent to bring the device out of its sleep/AOD state, so the calendar app could never be launched."
+  },
+  "timing": {
+    "wall_ms": 369397,
+    "api_ms": 280502
+  },
+  "num_turns": 61,
+  "cost_usd": 2.577359,
+  "stop_reason": "success",
+  "num_steps": 60,
+  "steps": [
+    {
+      "step": 1,
+      "tool": "ToolSearch",
+      "input": {
+        "query": "select:mcp__wimb-device__get_screenshot,mcp__wimb-device__ai_click,mcp__wimb-device__ai_set_text,mcp__wimb-device__ai_seq_click,mcp__wimb-device__open_app,mcp__wimb-device__press_home,mcp__wimb-device__press_back,mcp__wimb-device__get_screen_xml,mcp__wimb-device__input_text,mcp__wimb-device__click,mcp__wimb-device__swipe,mcp__wimb-device__wait_stable_screen,mcp__wimb-device__wait_screen_update",
+        "max_results": 20
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 2,
+      "tool": "press_home",
+      "input": {},
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 3,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 15
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 4,
+      "tool": "press_home",
+      "input": {},
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 5,
+      "tool": "wait_stable_screen",
+      "input": {
+        "timeout": 5
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 6,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 30
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 7,
+      "tool": "swipe",
+      "input": {
+        "from_x": 0.5,
+        "from_y": 0.85,
+        "to_x": 0.5,
+        "to_y": 0.2
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 8,
+      "tool": "wait_stable_screen",
+      "input": {
+        "timeout": 5
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 9,
+      "tool": "ToolSearch",
+      "input": {
+        "query": "select:TodoWrite",
+        "max_results": 1
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 10,
+      "tool": "TodoWrite",
+      "input": {
+        "todos": [
+          {
+            "content": "Unlock device and reach home screen",
+            "activeForm": "Unlocking device",
+            "status": "in_progress"
+          },
+          {
+            "content": "Open Simple Calendar Pro and create Friday 10am 'Weekly Review' event (60min, 'Team sync')",
+            "activeForm": "Creating event",
+            "status": "pending"
+          },
+          {
+            "content": "Delete all events on Friday 2026-05-01",
+            "activeForm": "Deleting events",
+            "status": "pending"
+          },
+          {
+            "content": "Verify Friday day view is empty - capture screenshot",
+            "activeForm": "Verifying",
+            "status": "pending"
+          }
+        ]
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 11,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 30
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 12,
+      "tool": "open_app",
+      "input": {
+        "package_name": "com.simplemobiletools.calendar.pro"
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 13,
+      "tool": "wait_stable_screen",
+      "input": {
+        "timeout": 5
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 14,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 40
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 15,
+      "tool": "get_screen_xml",
+      "input": {},
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 16,
+      "tool": "swipe",
+      "input": {
+        "from_x": 0.5,
+        "from_y": 0.95,
+        "to_x": 0.5,
+        "to_y": 0.05,
+        "duration": 300
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 17,
+      "tool": "wait_stable_screen",
+      "input": {
+        "timeout": 5
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 18,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 40
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 19,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 90
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 20,
+      "tool": "swipe",
+      "input": {
+        "from_x": 0.5,
+        "from_y": 0.9,
+        "to_x": 0.5,
+        "to_y": 0.1,
+        "duration": 800
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 21,
+      "tool": "wait_stable_screen",
+      "input": {
+        "timeout": 5
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 22,
+      "tool": "get_screen_xml",
+      "input": {},
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 23,
+      "tool": "click",
+      "input": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 24,
+      "tool": "wait_stable_screen",
+      "input": {
+        "timeout": 5
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 25,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 80
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 26,
+      "tool": "press_home",
+      "input": {},
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 27,
+      "tool": "wait_screen_update",
+      "input": {
+        "timeout": 3
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 28,
+      "tool": "click",
+      "input": {
+        "x": 540,
+        "y": 1196
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 29,
+      "tool": "wait_screen_update",
+      "input": {
+        "timeout": 3
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 30,
+      "tool": "swipe",
+      "input": {
+        "from_x": 0.5,
+        "from_y": 0.5,
+        "to_x": 0.5,
+        "to_y": 0.05,
+        "duration": 500
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 31,
+      "tool": "wait_screen_update",
+      "input": {
+        "timeout": 3
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 32,
+      "tool": "get_screen_xml",
+      "input": {},
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 33,
+      "tool": "open_app",
+      "input": {
+        "package_name": "com.simplemobiletools.calendar.pro"
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 34,
+      "tool": "wait_screen_update",
+      "input": {
+        "timeout": 5
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 35,
+      "tool": "get_screen_xml",
+      "input": {},
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 36,
+      "tool": "click",
+      "input": {
+        "x": 540,
+        "y": 2200
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 37,
+      "tool": "swipe",
+      "input": {
+        "from_x": 540,
+        "from_y": 2100,
+        "to_x": 540,
+        "to_y": 300,
+        "duration": 600
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 38,
+      "tool": "wait_stable_screen",
+      "input": {
+        "timeout": 5
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 39,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 80
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 40,
+      "tool": "ToolSearch",
+      "input": {
+        "query": "select:mcp__wimb-device__device_info",
+        "max_results": 1
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 41,
+      "tool": "device_info",
+      "input": {},
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 42,
+      "tool": "open_app",
+      "input": {
+        "package_name": "com.miui.home"
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 43,
+      "tool": "wait_screen_update",
+      "input": {
+        "timeout": 5
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 44,
+      "tool": "device_info",
+      "input": {},
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 45,
+      "tool": "Bash",
+      "input": {
+        "command": "ls /Users/zhp/android_world_test/androidworld_mcp/runner/",
+        "description": "List runner files"
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 46,
+      "tool": "Bash",
+      "input": {
+        "command": "grep -n -i -E \"lock|wake|unlock|keyguard\" /Users/zhp/android_world_test/androidworld_mcp/runner/*.py | head -30",
+        "description": "Check for unlock logic"
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 47,
+      "tool": "swipe",
+      "input": {
+        "from_x": 540,
+        "from_y": 2300,
+        "to_x": 540,
+        "to_y": 100,
+        "duration": 200
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 48,
+      "tool": "wait_screen_update",
+      "input": {
+        "timeout": 5
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 49,
+      "tool": "device_info",
+      "input": {},
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 50,
+      "tool": "ai_click",
+      "input": {
+        "text": "屏幕中央"
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 51,
+      "tool": "press_back",
+      "input": {},
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 52,
+      "tool": "wait_screen_update",
+      "input": {
+        "timeout": 3
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 53,
+      "tool": "device_info",
+      "input": {},
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 54,
+      "tool": "click",
+      "input": {
+        "x": 540,
+        "y": 1000
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 55,
+      "tool": "click",
+      "input": {
+        "x": 540,
+        "y": 1000
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 56,
+      "tool": "wait_stable_screen",
+      "input": {
+        "timeout": 3
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 57,
+      "tool": "swipe",
+      "input": {
+        "from_x": 540,
+        "from_y": 2000,
+        "to_x": 540,
+        "to_y": 500,
+        "duration": 400
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 58,
+      "tool": "wait_stable_screen",
+      "input": {
+        "timeout": 5
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 59,
+      "tool": "device_info",
+      "input": {},
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 60,
+      "tool": "TodoWrite",
+      "input": {
+        "todos": [
+          {
+            "content": "Unlock device and reach home screen",
+            "activeForm": "Unlocking device",
+            "status": "in_progress"
+          },
+          {
+            "content": "Open Simple Calendar Pro and create Friday 10am 'Weekly Review' event (60min, 'Team sync')",
+            "activeForm": "Creating event",
+            "status": "pending"
+          },
+          {
+            "content": "Delete all events on Friday 2026-05-01",
+            "activeForm": "Deleting events",
+            "status": "pending"
+          },
+          {
+            "content": "Verify Friday day view is empty - capture screenshot",
+            "activeForm": "Verifying",
+            "status": "pending"
+          }
+        ]
+      },
+      "success": true,
+      "is_error": false
+    }
+  ]
+}

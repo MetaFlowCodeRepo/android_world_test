@@ -1,0 +1,25 @@
+{
+  "task": "RecipeAddMultipleRecipes",
+  "goal": "Add the following recipes into the Broccoli app: 1) Title 'Tomato Soup', description 'Simple tomato soup with basil and cream'. 2) Title 'Chicken Stir Fry', description 'Quick chicken stir fry with vegetables and soy sauce'. 3) Title 'Banana Smoothie', description 'Blend banana, milk, honey, and ice'.",
+  "params": {
+    "recipes": [
+      {
+        "title": "Tomato Soup",
+        "description": "Simple tomato soup with basil and cream"
+      },
+      {
+        "title": "Chicken Stir Fry",
+        "description": "Quick chicken stir fry with vegetables and soy sauce"
+      },
+      {
+        "title": "Banana Smoothie",
+        "description": "Blend banana, milk, honey, and ice"
+      }
+    ]
+  },
+  "app_names": [
+    "broccoli"
+  ],
+  "complexity": 4,
+  "instance_id": "RecipeAddMultipleRecipes#0"
+}

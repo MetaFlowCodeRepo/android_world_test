@@ -1,0 +1,15 @@
+{
+  "task": "SimpleCalendarAddOneEvent",
+  "goal": "Create a new calendar event titled 'Team Meeting' on May 5, 2026, from 10:00 AM to 11:00 AM.",
+  "params": {
+    "title": "Team Meeting",
+    "date": "2026-05-05",
+    "start_time": "10:00",
+    "end_time": "11:00"
+  },
+  "app_names": [
+    "simplecalendar"
+  ],
+  "complexity": 3.4,
+  "instance_id": "SimpleCalendarAddOneEvent#0"
+}

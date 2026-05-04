@@ -1,0 +1,12 @@
+{
+  "task": "RetroCreatePlaylist",
+  "goal": "Create a playlist in Retro Music titled 'Chill Vibes'. Add any available songs from the device into the playlist.",
+  "params": {
+    "playlist_title": "Chill Vibes"
+  },
+  "app_names": [
+    "retromusic"
+  ],
+  "complexity": 2.4,
+  "instance_id": "RetroCreatePlaylist#0"
+}

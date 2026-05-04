@@ -1,0 +1,12 @@
+{
+  "task": "RetroSavePlaylist",
+  "goal": "Create a playlist in Retro Music titled 'Workout Mix' with any available songs. Then export the playlist to the Downloads directory on the device.",
+  "params": {
+    "playlist_title": "Workout Mix"
+  },
+  "app_names": [
+    "retromusic"
+  ],
+  "complexity": 5,
+  "instance_id": "RetroSavePlaylist#0"
+}

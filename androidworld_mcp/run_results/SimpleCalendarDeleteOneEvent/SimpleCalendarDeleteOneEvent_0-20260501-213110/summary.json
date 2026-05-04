@@ -1,0 +1,521 @@
+{
+  "instance_id": "SimpleCalendarDeleteOneEvent#0",
+  "task": "SimpleCalendarDeleteOneEvent",
+  "params": {
+    "year": 2026,
+    "month": 6,
+    "day": 15,
+    "hour": 14,
+    "event_title": "Dentist Appointment",
+    "event_description": "Regular checkup",
+    "duration_mins": 60
+  },
+  "returncode": 0,
+  "self_eval": {
+    "success": false,
+    "confidence": 0.95,
+    "evidence_summary": "Device remained stuck on Always-On-Display lockscreen (com.android.systemui keyguard, time 16:?? visible dimly) throughout the session; press_home, multiple swipe-up gestures, taps, and open_app calls all reported success but the screen never advanced — Simple Calendar Pro never came to foreground, so the event was never created or deleted.",
+    "screenshot_paths": [
+      "dim AOD lockscreen with 16:?? clock; XML showed com.android.systemui:id/keyguard_root_view with no interactive content"
+    ],
+    "failure_reason": "无法解锁设备/唤醒屏幕——设备始终停留在 com.android.systemui 锁屏(AOD)状态，press_home/swipe/click/open_app 均无法点亮并解锁屏幕，因此 Simple Calendar Pro 从未进入前台，事件未被创建也未被删除。"
+  },
+  "timing": {
+    "wall_ms": 303082,
+    "api_ms": 253745
+  },
+  "num_turns": 51,
+  "cost_usd": 2.0714017499999997,
+  "stop_reason": "success",
+  "num_steps": 50,
+  "steps": [
+    {
+      "step": 1,
+      "tool": "ToolSearch",
+      "input": {
+        "query": "select:mcp__wimb-device__get_screenshot,mcp__wimb-device__ai_click,mcp__wimb-device__ai_set_text,mcp__wimb-device__ai_seq_click,mcp__wimb-device__open_app,mcp__wimb-device__press_home,mcp__wimb-device__press_back,mcp__wimb-device__get_screen_xml,mcp__wimb-device__input_text,mcp__wimb-device__click,mcp__wimb-device__swipe,mcp__wimb-device__wait_stable_screen,mcp__wimb-device__wait_screen_update",
+        "max_results": 20
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 2,
+      "tool": "press_home",
+      "input": {},
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 3,
+      "tool": "open_app",
+      "input": {
+        "package_name": "com.simplemobiletools.calendar.pro"
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 4,
+      "tool": "wait_stable_screen",
+      "input": {
+        "timeout": 10
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 5,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 25
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 6,
+      "tool": "wait_stable_screen",
+      "input": {
+        "timeout": 5,
+        "stable_duration": 2
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 7,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 40
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 8,
+      "tool": "swipe",
+      "input": {
+        "from_x": 0.5,
+        "from_y": 0.9,
+        "to_x": 0.5,
+        "to_y": 0.2
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 9,
+      "tool": "wait_stable_screen",
+      "input": {
+        "timeout": 5
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 10,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 40
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 11,
+      "tool": "ToolSearch",
+      "input": {
+        "query": "select:TodoWrite",
+        "max_results": 1
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 12,
+      "tool": "TodoWrite",
+      "input": {
+        "todos": [
+          {
+            "content": "Unlock device and open Simple Calendar Pro",
+            "activeForm": "Unlocking device and opening Simple Calendar Pro",
+            "status": "in_progress"
+          },
+          {
+            "content": "Create event on 2026-06-15 14:00 'Dentist Appointment' 60 mins",
+            "activeForm": "Creating event",
+            "status": "pending"
+          },
+          {
+            "content": "Delete the created event",
+            "activeForm": "Deleting event",
+            "status": "pending"
+          },
+          {
+            "content": "Verify the date has no event remaining",
+            "activeForm": "Verifying",
+            "status": "pending"
+          }
+        ]
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 13,
+      "tool": "press_home",
+      "input": {},
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 14,
+      "tool": "wait_stable_screen",
+      "input": {
+        "timeout": 3
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 15,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 40
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 16,
+      "tool": "click",
+      "input": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 17,
+      "tool": "wait_stable_screen",
+      "input": {
+        "timeout": 3
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 18,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 40
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 19,
+      "tool": "get_screen_xml",
+      "input": {},
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 20,
+      "tool": "swipe",
+      "input": {
+        "from_x": 0.5,
+        "from_y": 0.95,
+        "to_x": 0.5,
+        "to_y": 0.05,
+        "duration": 300
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 21,
+      "tool": "wait_stable_screen",
+      "input": {
+        "timeout": 3
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 22,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 40
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 23,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 90
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 24,
+      "tool": "ToolSearch",
+      "input": {
+        "query": "select:mcp__wimb-device__lock_screen,mcp__wimb-device__device_info",
+        "max_results": 3
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 25,
+      "tool": "device_info",
+      "input": {},
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 26,
+      "tool": "swipe",
+      "input": {
+        "from_x": 0.5,
+        "from_y": 0.85,
+        "to_x": 0.5,
+        "to_y": 0.15,
+        "duration": 800
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 27,
+      "tool": "wait_stable_screen",
+      "input": {
+        "timeout": 3
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 28,
+      "tool": "device_info",
+      "input": {},
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 29,
+      "tool": "open_app",
+      "input": {
+        "package_name": "com.simplemobiletools.calendar.pro"
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 30,
+      "tool": "wait_stable_screen",
+      "input": {
+        "timeout": 8,
+        "stable_duration": 2
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 31,
+      "tool": "device_info",
+      "input": {},
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 32,
+      "tool": "swipe",
+      "input": {
+        "from_x": 0.5,
+        "from_y": 0.98,
+        "to_x": 0.5,
+        "to_y": 0.02,
+        "duration": 1500
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 33,
+      "tool": "wait_stable_screen",
+      "input": {
+        "timeout": 5
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 34,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 90
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 35,
+      "tool": "swipe",
+      "input": {
+        "from_x": 0.5,
+        "from_y": 0.7,
+        "to_x": 0.5,
+        "to_y": 0.3,
+        "duration": 200
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 36,
+      "tool": "wait_stable_screen",
+      "input": {
+        "timeout": 3
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 37,
+      "tool": "device_info",
+      "input": {},
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 38,
+      "tool": "click",
+      "input": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 39,
+      "tool": "click",
+      "input": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 40,
+      "tool": "wait_stable_screen",
+      "input": {
+        "timeout": 3
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 41,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 90
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 42,
+      "tool": "swipe",
+      "input": {
+        "from_x": 0.5,
+        "from_y": 0.99,
+        "to_x": 0.5,
+        "to_y": 0.5,
+        "duration": 500
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 43,
+      "tool": "wait_stable_screen",
+      "input": {
+        "timeout": 3
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 44,
+      "tool": "device_info",
+      "input": {},
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 45,
+      "tool": "ai_click",
+      "input": {
+        "icon": "screen unlock fingerprint icon at bottom of lockscreen"
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 46,
+      "tool": "ai_click",
+      "input": {
+        "text": "16"
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 47,
+      "tool": "click",
+      "input": {
+        "x": 540,
+        "y": 1196
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 48,
+      "tool": "click",
+      "input": {
+        "x": 540,
+        "y": 1196
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 49,
+      "tool": "wait_stable_screen",
+      "input": {
+        "timeout": 5
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 50,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 90
+      },
+      "success": true,
+      "is_error": false
+    }
+  ]
+}

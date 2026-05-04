@@ -1,0 +1,18 @@
+{
+  "instance_id": "OsmAndFavorite#0",
+  "task": "OsmAndFavorite",
+  "params": {
+    "location": "Eiffel Tower"
+  },
+  "returncode": 1,
+  "self_eval": null,
+  "timing": {
+    "wall_ms": 232568,
+    "api_ms": 0
+  },
+  "num_turns": 1,
+  "cost_usd": 0,
+  "stop_reason": "success",
+  "num_steps": 0,
+  "steps": []
+}

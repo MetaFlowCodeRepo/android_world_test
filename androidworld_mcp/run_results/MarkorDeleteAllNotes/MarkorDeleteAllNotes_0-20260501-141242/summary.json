@@ -1,0 +1,707 @@
+{
+  "instance_id": "MarkorDeleteAllNotes#0",
+  "task": "MarkorDeleteAllNotes",
+  "params": {
+    "setup_notes": [
+      {
+        "file_name": "note1.md",
+        "content": "First note"
+      },
+      {
+        "file_name": "note2.md",
+        "content": "Second note"
+      },
+      {
+        "file_name": "note3.md",
+        "content": "Third note"
+      }
+    ]
+  },
+  "returncode": 1,
+  "self_eval": null,
+  "timing": {
+    "wall_ms": 495061,
+    "api_ms": 365367
+  },
+  "num_turns": 73,
+  "cost_usd": 3.2411264999999987,
+  "stop_reason": "error_max_turns",
+  "num_steps": 72,
+  "steps": [
+    {
+      "step": 1,
+      "tool": "ToolSearch",
+      "input": {
+        "query": "select:mcp__wimb-device__get_screenshot,mcp__wimb-device__ai_click,mcp__wimb-device__ai_set_text,mcp__wimb-device__ai_seq_click,mcp__wimb-device__open_app,mcp__wimb-device__press_home,mcp__wimb-device__press_back,mcp__wimb-device__get_screen_xml,mcp__wimb-device__input_text,mcp__wimb-device__click,mcp__wimb-device__swipe,mcp__wimb-device__wait_stable_screen,mcp__wimb-device__wait_screen_update",
+        "max_results": 20
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 2,
+      "tool": "press_home",
+      "input": {},
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 3,
+      "tool": "open_app",
+      "input": {
+        "package_name": "net.gsantner.markor"
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 4,
+      "tool": "wait_stable_screen",
+      "input": {
+        "stable_duration": 1.5,
+        "timeout": 10
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 5,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 30
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 6,
+      "tool": "ai_click",
+      "input": {
+        "icon": "右下角红色加号按钮"
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 7,
+      "tool": "wait_stable_screen",
+      "input": {
+        "stable_duration": 1,
+        "timeout": 5
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 8,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 30
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 9,
+      "tool": "ai_set_text",
+      "input": {
+        "element": "名称输入框",
+        "text": "note1"
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 10,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 30
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 11,
+      "tool": "ai_click",
+      "input": {
+        "text": "确定"
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 12,
+      "tool": "wait_stable_screen",
+      "input": {
+        "stable_duration": 1,
+        "timeout": 5
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 13,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 30
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 14,
+      "tool": "get_screen_xml",
+      "input": {},
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 15,
+      "tool": "ai_click",
+      "input": {
+        "text": "确定"
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 16,
+      "tool": "wait_stable_screen",
+      "input": {
+        "stable_duration": 1,
+        "timeout": 5
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 17,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 30
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 18,
+      "tool": "click",
+      "input": {
+        "x": 0.84,
+        "y": 0.46
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 19,
+      "tool": "wait_stable_screen",
+      "input": {
+        "stable_duration": 1,
+        "timeout": 5
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 20,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 30
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 21,
+      "tool": "ai_set_text",
+      "input": {
+        "element": "笔记内容编辑区",
+        "text": "First note"
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 22,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 30
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 23,
+      "tool": "ai_click",
+      "input": {
+        "icon": "顶部保存(磁盘)图标"
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 24,
+      "tool": "wait_stable_screen",
+      "input": {
+        "stable_duration": 1,
+        "timeout": 5
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 25,
+      "tool": "press_back",
+      "input": {},
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 26,
+      "tool": "wait_stable_screen",
+      "input": {
+        "stable_duration": 1,
+        "timeout": 5
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 27,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 30
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 28,
+      "tool": "ai_click",
+      "input": {
+        "icon": "右下角红色加号按钮"
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 29,
+      "tool": "wait_stable_screen",
+      "input": {
+        "stable_duration": 1,
+        "timeout": 5
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 30,
+      "tool": "ai_set_text",
+      "input": {
+        "element": "名称输入框",
+        "text": "note2"
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 31,
+      "tool": "click",
+      "input": {
+        "x": 0.84,
+        "y": 0.46
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 32,
+      "tool": "wait_stable_screen",
+      "input": {
+        "stable_duration": 1,
+        "timeout": 5
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 33,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 30
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 34,
+      "tool": "ai_set_text",
+      "input": {
+        "element": "笔记内容编辑区",
+        "text": "Second note"
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 35,
+      "tool": "ai_click",
+      "input": {
+        "icon": "顶部保存(磁盘)图标"
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 36,
+      "tool": "wait_stable_screen",
+      "input": {
+        "stable_duration": 1,
+        "timeout": 5
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 37,
+      "tool": "press_back",
+      "input": {},
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 38,
+      "tool": "wait_stable_screen",
+      "input": {
+        "stable_duration": 1,
+        "timeout": 5
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 39,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 30
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 40,
+      "tool": "ai_click",
+      "input": {
+        "icon": "右下角红色加号按钮"
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 41,
+      "tool": "wait_stable_screen",
+      "input": {
+        "stable_duration": 1,
+        "timeout": 5
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 42,
+      "tool": "ai_set_text",
+      "input": {
+        "element": "名称输入框",
+        "text": "note3"
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 43,
+      "tool": "click",
+      "input": {
+        "x": 0.84,
+        "y": 0.46
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 44,
+      "tool": "wait_stable_screen",
+      "input": {
+        "stable_duration": 1,
+        "timeout": 5
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 45,
+      "tool": "ai_set_text",
+      "input": {
+        "element": "笔记内容编辑区",
+        "text": "Third note"
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 46,
+      "tool": "ai_click",
+      "input": {
+        "icon": "顶部保存(磁盘)图标"
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 47,
+      "tool": "wait_stable_screen",
+      "input": {
+        "stable_duration": 1,
+        "timeout": 5
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 48,
+      "tool": "press_back",
+      "input": {},
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 49,
+      "tool": "wait_stable_screen",
+      "input": {
+        "stable_duration": 1,
+        "timeout": 5
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 50,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 30
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 51,
+      "tool": "ai_click",
+      "input": {
+        "icon": "右上角三个点的菜单按钮"
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 52,
+      "tool": "wait_stable_screen",
+      "input": {
+        "stable_duration": 1,
+        "timeout": 5
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 53,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 30
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 54,
+      "tool": "press_back",
+      "input": {},
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 55,
+      "tool": "get_screen_xml",
+      "input": {},
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 56,
+      "tool": "swipe",
+      "input": {
+        "from_x": 0.5,
+        "from_y": 0.587,
+        "to_x": 0.5,
+        "to_y": 0.587,
+        "duration": 1000
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 57,
+      "tool": "wait_stable_screen",
+      "input": {
+        "stable_duration": 1,
+        "timeout": 5
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 58,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 30
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 59,
+      "tool": "ai_click",
+      "input": {
+        "icon": "右上角三个点的菜单按钮"
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 60,
+      "tool": "wait_stable_screen",
+      "input": {
+        "stable_duration": 1,
+        "timeout": 5
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 61,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 30
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 62,
+      "tool": "press_back",
+      "input": {},
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 63,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 30
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 64,
+      "tool": "click",
+      "input": {
+        "x": 540,
+        "y": 945
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 65,
+      "tool": "click",
+      "input": {
+        "x": 540,
+        "y": 1098
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 66,
+      "tool": "click",
+      "input": {
+        "x": 540,
+        "y": 1557
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 67,
+      "tool": "click",
+      "input": {
+        "x": 540,
+        "y": 1710
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 68,
+      "tool": "click",
+      "input": {
+        "x": 540,
+        "y": 2016
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 69,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 30
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 70,
+      "tool": "click",
+      "input": {
+        "x": 540,
+        "y": 2147
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 71,
+      "tool": "swipe",
+      "input": {
+        "from_x": 0.5,
+        "from_y": 0.7,
+        "to_x": 0.5,
+        "to_y": 0.3,
+        "duration": 500
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 72,
+      "tool": "wait_stable_screen",
+      "input": {
+        "stable_duration": 1,
+        "timeout": 5
+      },
+      "success": true,
+      "is_error": false
+    }
+  ]
+}

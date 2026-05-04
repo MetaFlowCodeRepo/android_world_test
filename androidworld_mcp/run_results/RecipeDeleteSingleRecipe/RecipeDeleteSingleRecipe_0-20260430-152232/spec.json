@@ -1,0 +1,22 @@
+{
+  "task": "RecipeDeleteSingleRecipe",
+  "goal": "First, add the following recipes into the Broccoli app: 1) Title 'Miso Soup', description 'Traditional Japanese soup with tofu and seaweed'. 2) Title 'Caesar Salad', description 'Romaine lettuce with croutons, parmesan, and Caesar dressing'. Then, delete the recipe 'Miso Soup' from the Broccoli app.",
+  "params": {
+    "setup_recipes": [
+      {
+        "title": "Miso Soup",
+        "description": "Traditional Japanese soup with tofu and seaweed"
+      },
+      {
+        "title": "Caesar Salad",
+        "description": "Romaine lettuce with croutons, parmesan, and Caesar dressing"
+      }
+    ],
+    "delete_title": "Miso Soup"
+  },
+  "app_names": [
+    "broccoli"
+  ],
+  "complexity": 3,
+  "instance_id": "RecipeDeleteSingleRecipe#0"
+}

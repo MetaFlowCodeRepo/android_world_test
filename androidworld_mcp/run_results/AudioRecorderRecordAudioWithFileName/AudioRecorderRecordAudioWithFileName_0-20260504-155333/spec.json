@@ -1,0 +1,12 @@
+{
+  "task": "AudioRecorderRecordAudioWithFileName",
+  "goal": "Record an audio clip and save it with name 'meeting_notes' using Audio Recorder app.",
+  "params": {
+    "file_name": "meeting_notes"
+  },
+  "app_names": [
+    "audiorecorder"
+  ],
+  "complexity": 2,
+  "instance_id": "AudioRecorderRecordAudioWithFileName#0"
+}

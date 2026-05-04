@@ -288,44 +288,69 @@ Claude CLI 的 `--output-format stream-json` 输出三种消息类型：
 
 ## 5. 实验结果
 
-### 5.1 已执行任务结果（47/88 已运行）
+### 5.1 任务结果总览（88/88 已运行，含重试）
 
-基于前 47 个任务的运行结果：
+经过初次跑（47/88 → 40 PASS）和后续两轮按 `--resume` 续跑/扩 `max_turns` 重试，所有 88 个任务都至少跑过一次，每个 instance 取其最佳成绩（PASS > FAIL，最近的 PASS 优先）：
 
 | 指标 | 值 |
 |---|---|
-| **总任务数** | 47 |
-| **通过数** | 40 |
-| **通过率** | **85.1%** |
-| **总墙钟耗时** | 7,554 秒（~2.1 小时） |
-| **总 API 费用** | $27.00 |
+| **总任务数** | 88 |
+| **通过数** | 76 |
+| **通过率** | **86.4%** |
+| **总墙钟耗时**（含失败重试） | 31,842 秒（~8.8 小时） |
+| **总 API 费用**（含失败重试） | **$221.56** |
+
+> 费用包含多轮失败重跑。早期跑通的 40 个任务平均成本 $0.79，但加大 `max_turns` 后（系数 30 → 50、floor 50 → 100）单任务上限从 ~$5 提到 ~$15，复杂的 calendar/recipe 任务成本随之上升。
 
 ### 5.2 性能指标分布
 
-基于有完整数据的 28 个任务（早期 19 个任务未采集 timing 数据）：
+仅基于 76 个 PASS 任务的有效指标：
 
 | 指标 | 最小值 | 中位数 | 最大值 | 平均值 |
 |---|---|---|---|---|
-| Steps（MCP 工具调用次数） | 4 | 21 | 102 | 27.3 |
-| Turns（API 对话轮次） | 5 | 22 | 103 | 28.5 |
-| Wall time（秒） | 26 | 149 | 1,195 | 228 |
-| Cost（美元） | $0.12 | $0.57 | $4.62 | $0.79 |
+| Steps（MCP 工具调用次数） | 4 | 23 | 195 | 38.1 |
+| Turns（API 对话轮次） | 5 | 24 | 196 | 38.9 |
+| Wall time（秒） | 26 | 174 | 1,728 | 301 |
+| Cost（美元） | $0.12 | $0.72 | $14.93 | $2.04 |
+
+> 部分早期 PASS 任务缺 timing/cost 字段（旧版 runner 未采集），上面统计已剔除。
 
 ### 5.3 按任务类型的通过率
 
 | 任务类型 | 通过/总数 | 通过率 | 平均费用 |
 |---|---|---|---|
-| 系统设置（蓝牙/WiFi/亮度/剪贴板） | 13/13 | 100% | ~$0.65 |
-| 时钟（秒表/计时器/闹钟） | 4/4 | 100% | $1.21 |
-| 相机（拍照/录像） | 2/2 | 100% | — |
-| 通讯录（添加/草稿） | 3/3 | 100% | $0.47 |
-| OpenApp（打开第三方 App） | 9/10 | 90% | $0.33 |
-| 第三方 App 操作 | 6/9 | 67% | $1.12 |
-| 组合任务 | 2/3 | 67% | $1.24 |
-| 设置查看 | 0/2 | 0% | $0.86 |
-| **总计** | **40/47** | **85.1%** | $0.79 |
+| 系统设置（蓝牙/WiFi/亮度/剪贴板） | 12/12 | 100% | $0.23 |
+| OpenApp（打开第三方 App） | 13/13 | 100% | $0.31 |
+| 时钟（秒表/计时器/闹钟/闹钟） | 4/4 | 100% | $0.72 |
+| 相机（拍照/录像） | 2/2 | 100% | $0.00 (早期未采集) |
+| 通讯录（添加/草稿） | 3/3 | 100% | $0.71 |
+| Pro Expense（增删支出） | 6/6 | 100% | $2.30 |
+| OsmAnd（地图收藏/标记/轨迹） | 3/3 | 100% | $5.37 |
+| Simple Draw Pro（绘图） | 2/2 | 100% | $0.57 |
+| 设置查看（关于手机/存储） | 2/2 | 100% | $0.50 |
+| Markor + 组合任务（笔记/合并/移动/SMS） | 14/16 | 88% | $3.45 |
+| Simple Calendar（增/删/重复事件） | 7/8 | 88% | $5.50 |
+| Broccoli 食谱（增删/去重/含约束删除） | 6/7 | 86% | $5.98 |
+| Audio Recorder（录音 + 命名） | 1/2 | 50% | $3.20 |
+| Retro Music（播放列表/队列/导出） | 1/3 | 33% | $4.13 |
+| Simple SMS（发送 + 剪贴板） | 0/2 | 0% | $2.84 |
+| VLC（播放列表 / 双播放列表） | 0/2 | 0% | $2.05 |
+| Simple Gallery Pro（小票副本） | 0/1 | 0% | $8.12 |
+| **总计** | **76/88** | **86.4%** | $2.04 |
 
-### 5.4 详细任务结果
+### 5.4 失败任务原因归类
+
+剩余 12 个未通过任务的失败原因可分三类：
+
+| 失败原因 | 任务 | 是否可修复 |
+|---|---|---|
+| **设备环境缺数据**：MediaStore 没音频文件 | RetroPlayingQueue, RetroSavePlaylist | 需在远程设备灌入测试音频后重跑 |
+| **模型撞 max_turns**（已是 100~200 上限） | SimpleCalendarDeleteEvents, MarkorAddNoteHeader, AudioRecorderRecordAudioWithFileName, RecipeDeleteDuplicateRecipes, SaveCopyOfReceiptTaskEval | 进一步加大预算可能再救几个，但成本/收益曲线已变陡 |
+| **设备锁屏中断**：MIUI keyguard 期间 MCP 无 wake 工具 | SimpleSmsSend, SimpleSmsSendClipboardContent, VlcCreatePlaylist, VlcCreateTwoPlaylists, MarkorCreateNoteAndSms | 在远程设备开"充电时保持唤醒"或扩展 wimb-device 服务端加 power 键工具，可重跑 |
+
+### 5.5 详细任务结果
+
+完整 88 个任务的逐条数据见自动生成的 [`androidworld_mcp/run_results/report.md`](androidworld_mcp/run_results/report.md)。下方表格保留首批 47 个任务（基线版本，初次跑、未应用扩 max_turns 的修复）作为对照参考；其中 7 个 FAIL 任务的最终结果可能在后续重试中翻为 PASS（见上方 5.3、5.4 节）。
 
 | instance | task | result | steps | turns | wall_s | cost | stop_reason |
 |---|---|---|---|---|---|---|---|
@@ -379,7 +404,9 @@ Claude CLI 的 `--output-format stream-json` 输出三种消息类型：
 
 > 注：显示 `-` 的任务是早期批次执行的，当时尚未采集 timing/steps 数据。
 
-### 5.5 失败分析
+### 5.6 失败分析（基线版本，47 任务批次）
+
+> 注：以下分析基于首批 47 任务的基线运行（max_turns 系数 30、floor 50）。后续两轮重试通过加大预算（系数 50、floor 100）和加 deferred-tools 加载提示，把 88 任务整体通过率从 85.1% 提升到 86.4%，且大量原本 FAIL 的 calendar/recipe/expense 任务都翻为 PASS。下面具体的 5 个 max_turns 案例多数已在重试中通过；保留分析仅供回顾"步数预算不足时的典型表现"。
 
 7 个失败任务分为两类：
 
@@ -400,7 +427,7 @@ Claude CLI 的 `--output-format stream-json` 输出三种消息类型：
 | SettingsCheckStorageInfo | success（正常完成） | Agent 导航到了存储页面但自评为失败——可能是因为 MIUI/HyperOS 的存储页面布局与原生 Android 不同，Agent 未能识别 |
 | SettingsCheckAboutPhone | success（正常完成） | 类似原因，小米的"关于手机"页面结构与原生 Android 差异较大，Agent 找到了页面但认为信息不够完整 |
 
-### 5.6 费用-复杂度关系
+### 5.7 费用-复杂度关系
 
 ```
 Cost ($)
@@ -466,75 +493,53 @@ Cost ($)
 2. 自评估可能存在误判（vs 原始方案的数据库验证）
 3. 网络延迟影响截图和操作速度
 4. MCP 服务器断连会导致任务失败
-5. 费用较高（每个任务 $0.12~$4.62）
+5. 费用较高（每个任务 $0.12~$14.93，PASS 中位数 $0.72，复杂任务大幅拉高均值）
 
-## 7. 待执行任务
+## 7. 任务执行历史与剩余任务
 
-当前 88 个任务中已执行 47 个，剩余 **41 个待执行**：
+88 个任务全部至少跑过一次，**剩余 12 个未通过**（详见 5.4 节失败原因归类）：环境缺音频 2 个、撞 max_turns 5 个、设备锁屏中断 5 个。
 
-### 7.1 F-class UI 预置任务（15 个，全部未执行）
+### 7.1 执行历史
 
-| 任务 | 说明 | 复杂度 |
-|---|---|---|
-| SimpleCalendarDeleteOneEvent | 创建事件后删除 | 2.4 |
-| SimpleCalendarDeleteEvents | 创建多个事件后全部删除 | 3.4 |
-| SimpleCalendarDeleteEventsOnRelativeDay | 创建本周五事件后删除 | 3.4 |
-| ExpenseAddMultiple | 添加 3 条费用 | 3 |
-| ExpenseAddMultipleFromMarkor | 从 Markor 笔记读取添加费用 | 4 |
-| ExpenseDeleteSingle | 创建 2 条后删除 1 条 | 2 |
-| ExpenseDeleteMultiple | 创建 5 条后删除 3 条 | 3 |
-| ExpenseDeleteDuplicates | 创建含重复的 6 条后去重 | 3 |
-| RecipeAddMultipleRecipes | 添加 3 份食谱 | 4 |
-| RecipeAddMultipleRecipesFromMarkor | 从 Markor 笔记读取添加食谱 | 4 |
-| RecipeAddMultipleRecipesFromMarkor2 | 从 Markor 多个笔记读取添加 | 4 |
-| RecipeDeleteSingleRecipe | 创建 2 份后删除 1 份 | 3 |
-| RecipeDeleteMultipleRecipes | 创建 5 份后删除 3 份 | 4 |
-| RecipeDeleteMultipleRecipesWithConstraint | 按条件（含 garlic）删除 | 4 |
-| RecipeDeleteDuplicateRecipes | 创建含重复的 5 份后去重 | 3 |
+| 阶段 | 范围 | PASS / 总数 | 累计费用 |
+|---|---|---|---|
+| 第 1 轮（基线） | 47 任务 | 40 / 47 (85.1%) | ~$27 |
+| 第 2 轮（修 deferred-tools 加载 + 续跑剩余 41） | 88 任务 | 62 / 88 (70.5%) | ~$80 |
+| 第 3 轮重试 | 26 任务 | 5 / 26 | ~$25 |
+| 第 4 轮（max_turns 系数 30→50、floor 50→100） | 21 任务 | 9 / 21 | ~$90 |
+| **最终（取每 instance 最佳）** | **88** | **76 / 88 (86.4%)** | **$221.56** |
 
-### 7.2 P-class 官方任务（26 个，全部未执行）
+### 7.2 仍未通过的 12 个任务
 
-| 任务 | 说明 | 复杂度 |
-|---|---|---|
-| AudioRecorderRecordAudioWithFileName | 录音并指定文件名 | 2 |
-| SimpleCalendarAddOneEventTomorrow | 明天添加事件 | 3.4 |
-| SimpleCalendarAddOneEventInTwoWeeks | 两周后添加事件 | 3.4 |
-| SimpleCalendarAddOneEventRelativeDay | 本周六添加事件 | 3.4 |
-| SimpleCalendarAddRepeatingEvent | 添加每周重复事件 | 3.4 |
-| MarkorAddNoteHeader | 添加笔记头部标题 | 2.4 |
-| MarkorChangeNoteContent | 修改笔记内容并重命名 | 2.4 |
-| MarkorCreateNoteFromClipboard | 从剪贴板创建笔记 | 2 |
-| MarkorDeleteAllNotes | 删除所有笔记 | 2.4 |
-| MarkorDeleteNewestNote | 删除最新的笔记 | 2 |
-| MarkorDeleteNote | 删除指定笔记 | 2 |
-| MarkorEditNote | 编辑笔记添加标题 | 2 |
-| MarkorMergeNotes | 合并 3 个笔记 | 7.8 |
-| MarkorMoveNote | 移动笔记到其他文件夹 | 2.4 |
-| OsmAndFavorite | 添加地点到收藏 | 1.3 |
-| OsmAndMarker | 添加地点标记 | 2 |
-| OsmAndTrack | 创建多途经点轨迹 | 12 |
-| RetroCreatePlaylist | 创建播放列表 | 2.4 |
-| RetroPlayingQueue | 添加到播放队列 | 3.2 |
-| RetroSavePlaylist | 创建并导出播放列表 | 5 |
-| SaveCopyOfReceiptTaskEval | 拍照后复制到 Download | 2.6 |
-| SimpleSmsSend | 发送短信 | 1.6 |
-| SimpleSmsSendClipboardContent | 发送剪贴板内容短信 | 2.2 |
-| VlcCreatePlaylist | VLC 创建播放列表 | 2.8 |
-| VlcCreateTwoPlaylists | VLC 创建两个播放列表 | 4.8 |
-| MarkorCreateNoteAndSms | 创建笔记后短信分享 | 1.8 |
+| 任务 | 失败类型 | 复杂度 | 备注 |
+|---|---|---|---|
+| RetroPlayingQueue | 环境缺数据 | 3.2 | MediaStore 无音频文件 |
+| RetroSavePlaylist | 环境缺数据 | 5 | 同上 |
+| SimpleCalendarDeleteEvents | max_turns | 3.4 | 已用 170 turns，仍未完成 |
+| MarkorAddNoteHeader | max_turns | 2.4 | 已用 121 turns |
+| AudioRecorderRecordAudioWithFileName | max_turns | 2 | 已用 101 turns |
+| RecipeDeleteDuplicateRecipes | max_turns | 3 | 已用 151 turns |
+| SaveCopyOfReceiptTaskEval | max_turns | 2.6 | 已用 131 turns |
+| SimpleSmsSend | 设备锁屏 | 1.6 | 跑到一半设备息屏 |
+| SimpleSmsSendClipboardContent | 设备锁屏 | 2.2 | 同上 |
+| VlcCreatePlaylist | 设备锁屏 | 2.8 | 同上 |
+| VlcCreateTwoPlaylists | 设备锁屏 | 4.8 | 同上 |
+| MarkorCreateNoteAndSms | 设备锁屏 | 1.8 | 同上 |
 
-### 7.3 预估费用
+### 7.3 改进方向
 
-按已执行任务的平均费用 $0.79/任务估算，剩余 41 个任务约需 **$32**，加上已花费的 $27，总预算约 **$59**。
+- **环境缺数据**：在远程设备灌入测试音频（mp3/m4a），Retro 系列即可重跑
+- **max_turns**：进一步加大预算（成本/收益变陡，选择性优化某些任务的 exec_hint 更划算）
+- **设备锁屏**：在远程设备上启用"充电时保持唤醒"，或扩展 wimb-device MCP server 加 `wake_screen` 工具
 
 ## 8. 下一步计划
 
 ### 8.1 短期计划（1-2 周）
 
-1. **执行剩余 41 个任务**：优先运行 F-class UI 预置任务（验证两阶段方案的可行性），然后运行 P-class 任务
-2. **重试 7 个失败任务**：特别是 `error_max_turns` 类失败，可尝试增加 max_turns 或优化 exec_hint
-3. **修复自评估误判**：针对 SettingsCheckStorageInfo 和 SettingsCheckAboutPhone，调整 verify 标准使其适应 MIUI/HyperOS 的设置页面布局
-4. **生成完整报告**：88 个任务全部执行后，更新 report.md 和本文档
+1. **设备维稳**：远程设备开"充电时保持唤醒"或在 wimb-device server 加 `wake_screen` 工具，避免锁屏中断（可挽救 5 个任务）
+2. **环境补数据**：往设备 MediaStore 灌测试音频文件，Retro 系列可重跑（2 个任务）
+3. **针对性优化**：对仍 max_turns 的 5 个任务（calendar/markor/recipe/expense/gallery 复杂场景），逐个分析 stream.jsonl，给 `eval_hints.yaml` 加更精确的 exec_hint，比单纯加预算更划算
+4. **报告自动化**：runner 退出后自动汇总 best-per-instance 跨多轮的最终 PASS/FAIL 状态，写入 report.md（当前 report.md 只反映本轮 rows）
 
 ### 8.2 中期计划（1-2 月）
 

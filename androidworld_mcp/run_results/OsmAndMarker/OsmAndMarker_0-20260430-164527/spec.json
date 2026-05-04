@@ -1,0 +1,12 @@
+{
+  "task": "OsmAndMarker",
+  "goal": "Add a location marker for 'Statue of Liberty' in the OsmAnd maps app.",
+  "params": {
+    "location": "Statue of Liberty"
+  },
+  "app_names": [
+    "osmand"
+  ],
+  "complexity": 2.0,
+  "instance_id": "OsmAndMarker#0"
+}

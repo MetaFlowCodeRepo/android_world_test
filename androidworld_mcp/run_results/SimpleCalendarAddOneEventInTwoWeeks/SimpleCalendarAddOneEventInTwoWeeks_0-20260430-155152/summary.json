@@ -1,0 +1,21 @@
+{
+  "instance_id": "SimpleCalendarAddOneEventInTwoWeeks#0",
+  "task": "SimpleCalendarAddOneEventInTwoWeeks",
+  "params": {
+    "hour": 14,
+    "event_title": "Project Deadline",
+    "event_description": "Submit final report",
+    "duration_mins": 120
+  },
+  "returncode": 1,
+  "self_eval": null,
+  "timing": {
+    "wall_ms": 233572,
+    "api_ms": 0
+  },
+  "num_turns": 1,
+  "cost_usd": 0,
+  "stop_reason": "success",
+  "num_steps": 0,
+  "steps": []
+}

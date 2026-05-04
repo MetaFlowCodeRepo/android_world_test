@@ -1,0 +1,30 @@
+{
+  "task": "ExpenseAddMultipleFromMarkor",
+  "goal": "First, create a note in Markor named 'expenses.txt' with the following content:\nLunch, 15.00, Food\nUber, 22.50, Transport\nNetflix, 9.99, Entertainment\nThen, add the expenses from expenses.txt in Markor to the Pro Expense app.",
+  "params": {
+    "file_name": "expenses.txt",
+    "expenses": [
+      {
+        "name": "Lunch",
+        "amount": "15.00",
+        "category": "Food"
+      },
+      {
+        "name": "Uber",
+        "amount": "22.50",
+        "category": "Transport"
+      },
+      {
+        "name": "Netflix",
+        "amount": "9.99",
+        "category": "Entertainment"
+      }
+    ]
+  },
+  "app_names": [
+    "markor",
+    "expense"
+  ],
+  "complexity": 4,
+  "instance_id": "ExpenseAddMultipleFromMarkor#0"
+}

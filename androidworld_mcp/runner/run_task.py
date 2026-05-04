@@ -86,6 +86,14 @@ PROMPT_TEMPLATE = """你正在 Android 真机上**自动执行**一项 AndroidWo
 你只能通过 wimb-device MCP 工具操控设备（ai_click / ai_set_text / open_app / get_screenshot
 / get_screen_xml / press_back / press_home / swipe / wait_stable_screen 等）。
 
+------ ⚠️ 第一步必须做：加载 deferred 工具 ------
+wimb-device 的工具是 **deferred tools**，schema 没预加载，直接调用会 InputValidationError。
+**会话的第一个动作就只能是这个 ToolSearch 调用**，把所有需要用到的设备工具一次性加载进来：
+
+  ToolSearch(query="select:mcp__wimb-device__get_screenshot,mcp__wimb-device__ai_click,mcp__wimb-device__ai_set_text,mcp__wimb-device__ai_seq_click,mcp__wimb-device__open_app,mcp__wimb-device__press_home,mcp__wimb-device__press_back,mcp__wimb-device__get_screen_xml,mcp__wimb-device__input_text,mcp__wimb-device__click,mcp__wimb-device__swipe,mcp__wimb-device__wait_stable_screen,mcp__wimb-device__wait_screen_update", max_results=20)
+
+加载成功后才开始执行任务。**不要**再用其它 ToolSearch 查询去乱搜，也不要把 ToolSearch 当作执行工具。
+
 ------ 任务定义 ------
 任务名：{task}
 实例编号：{instance_id}
@@ -121,7 +129,7 @@ goal（自然语言指令，作为 Agent 你必须完成它）：
 
 def _compute_max_turns(spec: dict[str, Any]) -> int:
     complexity = spec.get("complexity") or 1
-    return max(50, int(complexity * 30))
+    return max(100, int(complexity * 50))
 
 
 def _render_with_params(text: str, params: dict[str, Any]) -> str:
@@ -266,12 +274,22 @@ def run_claude(prompt: str, cwd: str, mcp_config: str, max_turns: int) -> dict[s
         "--max-turns", str(max_turns),
     ]
     env = {k: v for k, v in os.environ.items() if k != "CLAUDECODE"}
-    proc = subprocess.run(cmd, cwd=cwd, capture_output=True, text=True, timeout=1800, env=env)
-    return {
-        "returncode": proc.returncode,
-        "stdout": proc.stdout,
-        "stderr": proc.stderr,
-    }
+    try:
+        proc = subprocess.run(cmd, cwd=cwd, capture_output=True, text=True, timeout=3600, env=env)
+        return {
+            "returncode": proc.returncode,
+            "stdout": proc.stdout,
+            "stderr": proc.stderr,
+            "timed_out": False,
+        }
+    except subprocess.TimeoutExpired as e:
+        # 超时时把已收集的 partial stdout 返回，让上层照常落盘
+        return {
+            "returncode": -1,
+            "stdout": (e.stdout or b"").decode("utf-8", errors="replace") if isinstance(e.stdout, bytes) else (e.stdout or ""),
+            "stderr": (e.stderr or b"").decode("utf-8", errors="replace") if isinstance(e.stderr, bytes) else (e.stderr or ""),
+            "timed_out": True,
+        }
 
 
 def extract_final_json(stream_jsonl: str) -> dict[str, Any] | None:
@@ -354,7 +372,7 @@ def run_single(
         },
         "num_turns": meta.get("num_turns"),
         "cost_usd": meta.get("cost_usd"),
-        "stop_reason": meta.get("stop_reason", "unknown"),
+        "stop_reason": "subprocess_timeout" if res.get("timed_out") else meta.get("stop_reason", "unknown"),
         "num_steps": len(steps),
         "steps": steps,
     }

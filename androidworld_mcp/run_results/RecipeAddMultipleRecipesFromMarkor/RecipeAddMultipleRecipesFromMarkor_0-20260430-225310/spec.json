@@ -1,0 +1,23 @@
+{
+  "task": "RecipeAddMultipleRecipesFromMarkor",
+  "goal": "First, create a note in Markor named 'recipes.txt' with the following content:\n# Egg Fried Rice\nFry rice with eggs, soy sauce, and green onions.\n# Avocado Toast\nToast bread, spread mashed avocado, add salt and pepper.\nThen, add the recipes from recipes.txt in Markor to the Broccoli recipe app.",
+  "params": {
+    "file_name": "recipes.txt",
+    "recipes": [
+      {
+        "title": "Egg Fried Rice",
+        "description": "Fry rice with eggs, soy sauce, and green onions."
+      },
+      {
+        "title": "Avocado Toast",
+        "description": "Toast bread, spread mashed avocado, add salt and pepper."
+      }
+    ]
+  },
+  "app_names": [
+    "markor",
+    "broccoli"
+  ],
+  "complexity": 4,
+  "instance_id": "RecipeAddMultipleRecipesFromMarkor#0"
+}

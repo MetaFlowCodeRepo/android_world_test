@@ -1,0 +1,22 @@
+{
+  "instance_id": "SimpleCalendarAddOneEventRelativeDay#0",
+  "task": "SimpleCalendarAddOneEventRelativeDay",
+  "params": {
+    "day_of_week": "Saturday",
+    "hour": 11,
+    "event_title": "Brunch with Friends",
+    "event_description": "Meet at the cafe downtown",
+    "duration_mins": 90
+  },
+  "returncode": 1,
+  "self_eval": null,
+  "timing": {
+    "wall_ms": 239297,
+    "api_ms": 0
+  },
+  "num_turns": 1,
+  "cost_usd": 0,
+  "stop_reason": "success",
+  "num_steps": 0,
+  "steps": []
+}

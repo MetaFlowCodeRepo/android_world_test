@@ -1,0 +1,31 @@
+{
+  "instance_id": "MarkorDeleteAllNotes#0",
+  "task": "MarkorDeleteAllNotes",
+  "params": {
+    "setup_notes": [
+      {
+        "file_name": "note1.md",
+        "content": "First note"
+      },
+      {
+        "file_name": "note2.md",
+        "content": "Second note"
+      },
+      {
+        "file_name": "note3.md",
+        "content": "Third note"
+      }
+    ]
+  },
+  "returncode": 1,
+  "self_eval": null,
+  "timing": {
+    "wall_ms": 230155,
+    "api_ms": 0
+  },
+  "num_turns": 1,
+  "cost_usd": 0,
+  "stop_reason": "success",
+  "num_steps": 0,
+  "steps": []
+}

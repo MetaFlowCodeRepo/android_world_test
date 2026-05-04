@@ -1,0 +1,12 @@
+{
+  "task": "VlcCreatePlaylist",
+  "goal": "Create a playlist titled 'My Videos' in VLC with any available media files on the device.",
+  "params": {
+    "playlist_title": "My Videos"
+  },
+  "app_names": [
+    "vlc"
+  ],
+  "complexity": 2.8,
+  "instance_id": "VlcCreatePlaylist#0"
+}

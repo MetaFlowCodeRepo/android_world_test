@@ -1,0 +1,22 @@
+{
+  "task": "MarkorDeleteNewestNote",
+  "goal": "First, create the following notes in Markor in order: 1) 'old_note.md' with content 'This is an older note'. 2) Wait 2 seconds, then create 'new_note.md' with content 'This is the newest note'. Then, delete the newest note in Markor.",
+  "params": {
+    "setup_notes": [
+      {
+        "file_name": "old_note.md",
+        "content": "This is an older note"
+      },
+      {
+        "file_name": "new_note.md",
+        "content": "This is the newest note"
+      }
+    ],
+    "expected_deleted": "new_note.md"
+  },
+  "app_names": [
+    "markor"
+  ],
+  "complexity": 2,
+  "instance_id": "MarkorDeleteNewestNote#0"
+}

@@ -1,0 +1,16 @@
+{
+  "task": "SimpleCalendarAddOneEventRelativeDay",
+  "goal": "In Simple Calendar Pro, create a calendar event for this Saturday at 11h with the title 'Brunch with Friends' and the description 'Meet at the cafe downtown'. The event should last for 90 mins.",
+  "params": {
+    "day_of_week": "Saturday",
+    "hour": 11,
+    "event_title": "Brunch with Friends",
+    "event_description": "Meet at the cafe downtown",
+    "duration_mins": 90
+  },
+  "app_names": [
+    "simplecalendar"
+  ],
+  "complexity": 3.4,
+  "instance_id": "SimpleCalendarAddOneEventRelativeDay#0"
+}

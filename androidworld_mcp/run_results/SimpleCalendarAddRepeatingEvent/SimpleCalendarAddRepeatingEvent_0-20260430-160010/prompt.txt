@@ -1,0 +1,40 @@
+你正在 Android 真机上**自动执行**一项 AndroidWorld 测试任务。整个会话期间，
+你只能通过 wimb-device MCP 工具操控设备（ai_click / ai_set_text / open_app / get_screenshot
+/ get_screen_xml / press_back / press_home / swipe / wait_stable_screen 等）。
+
+------ 任务定义 ------
+任务名：SimpleCalendarAddRepeatingEvent
+实例编号：SimpleCalendarAddRepeatingEvent#0
+goal（自然语言指令，作为 Agent 你必须完成它）：
+  In Simple Calendar Pro, create a recurring calendar event titled 'Weekly Standup' starting on 2026-05-04 at 10h. The event recurs weekly, forever, and lasts for 30 minutes each occurrence. The event description should be 'Team sync meeting'.
+参数（用于自评估对比，禁止把这些字段直接读出来当成功证据）：
+  {"year": 2026, "month": 5, "day": 4, "hour": 10, "event_title": "Weekly Standup", "event_description": "Team sync meeting", "repeat_rule": "weekly", "duration_mins": 30}
+
+------ 执行准则 ------
+1. press_home → get_screenshot 确认在主屏。
+2. 用最少步数完成 goal。中途如遇权限弹窗、引导页一律允许/跳过。
+3. 不要根据"我点了某个按钮"就推断成功 —— 必须看截图里实际的最终状态。
+4. 步数预算：102 步以内完成。
+
+[执行提示]
+打开 Simple Calendar Pro。导航到 2026-05-04。
+创建事件：标题 "Weekly Standup"，开始时间 10:00，
+时长 30 分钟，描述 "Team sync meeting"。
+关键：设置重复规则为"每周/Weekly"，且不设结束日期（永久重复）。
+在 Simple Calendar Pro 中，创建事件时找到"Repeat/重复"选项，选择 "Weekly"。
+
+------ 自评估（最后必须做） ------
+1) 在 2026-05-04 查看事件详情，截图证明标题和重复规则为"每周"。
+2) 导航到下一周（2026-05-11），截图证明同一事件也出现了。
+
+需要的证据形式：2 张截图（事件详情 + 下一周日期）
+
+------ 输出 ------
+最后一条文本消息**只输出**一份 JSON（不要 markdown 围栏、不要其它文字），结构：
+{
+  "success": true | false,
+  "confidence": 0.0 ~ 1.0,
+  "evidence_summary": "一句话说明你看到的最终状态",
+  "screenshot_paths": ["MCP 返回的截图本地缓存路径或描述"],
+  "failure_reason": "如果 success=false，最可能的原因；否则为空字符串"
+}

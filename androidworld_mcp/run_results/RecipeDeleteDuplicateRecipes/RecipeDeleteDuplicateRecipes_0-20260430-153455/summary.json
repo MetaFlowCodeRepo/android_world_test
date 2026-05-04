@@ -1,0 +1,44 @@
+{
+  "instance_id": "RecipeDeleteDuplicateRecipes#0",
+  "task": "RecipeDeleteDuplicateRecipes",
+  "params": {
+    "setup_recipes": [
+      {
+        "title": "Hot Chocolate",
+        "description": "Heat milk, add cocoa and sugar"
+      },
+      {
+        "title": "Hot Chocolate",
+        "description": "Heat milk, add cocoa and sugar"
+      },
+      {
+        "title": "Lemonade",
+        "description": "Squeeze lemons, add water and sugar"
+      },
+      {
+        "title": "Lemonade",
+        "description": "Squeeze lemons, add water and sugar"
+      },
+      {
+        "title": "Iced Tea",
+        "description": "Brew tea, chill, add ice"
+      }
+    ],
+    "expected_remaining": [
+      "Hot Chocolate",
+      "Lemonade",
+      "Iced Tea"
+    ]
+  },
+  "returncode": 1,
+  "self_eval": null,
+  "timing": {
+    "wall_ms": 238667,
+    "api_ms": 0
+  },
+  "num_turns": 1,
+  "cost_usd": 0,
+  "stop_reason": "success",
+  "num_steps": 0,
+  "steps": []
+}

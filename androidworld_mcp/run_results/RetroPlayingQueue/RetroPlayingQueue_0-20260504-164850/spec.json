@@ -1,0 +1,10 @@
+{
+  "task": "RetroPlayingQueue",
+  "goal": "Add any available songs to the playing queue in Retro Music and start playback.",
+  "params": {},
+  "app_names": [
+    "retromusic"
+  ],
+  "complexity": 3.2,
+  "instance_id": "RetroPlayingQueue#0"
+}

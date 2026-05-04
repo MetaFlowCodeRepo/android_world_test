@@ -1,0 +1,13 @@
+{
+  "task": "MarkorCreateNote",
+  "goal": "Create a new note in Markor with the title 'Shopping List' and the content 'Milk, Eggs, Bread, Butter'.",
+  "params": {
+    "title": "Shopping List",
+    "content": "Milk, Eggs, Bread, Butter"
+  },
+  "app_names": [
+    "markor"
+  ],
+  "complexity": 1.6,
+  "instance_id": "MarkorCreateNote#0"
+}

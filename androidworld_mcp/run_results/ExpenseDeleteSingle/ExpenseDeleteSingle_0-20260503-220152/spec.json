@@ -1,0 +1,24 @@
+{
+  "task": "ExpenseDeleteSingle",
+  "goal": "First, add the following expenses into Pro Expense: 1) 'Gym' amount $30.00 category 'Health', 2) 'Lunch' amount $11.00 category 'Food'. Then, delete the expense named 'Gym' from Pro Expense.",
+  "params": {
+    "setup_expenses": [
+      {
+        "name": "Gym",
+        "amount": "30.00",
+        "category": "Health"
+      },
+      {
+        "name": "Lunch",
+        "amount": "11.00",
+        "category": "Food"
+      }
+    ],
+    "delete_name": "Gym"
+  },
+  "app_names": [
+    "expense"
+  ],
+  "complexity": 2,
+  "instance_id": "ExpenseDeleteSingle#0"
+}

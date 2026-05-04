@@ -51,6 +51,37 @@ def already_passed(summary: dict[str, Any] | None) -> bool:
     return (summary.get("self_eval") or {}).get("success") is True
 
 
+def wait_for_mcp(server_name: str = "wimb-device",
+                 poll_interval: float = 30.0,
+                 max_wait_seconds: float = 1800.0) -> bool:
+    """轮询 `claude mcp list`，直到 server_name 显示 Connected。
+    超时返回 False（让上层决定是否中止整个 batch）。"""
+    import subprocess
+    deadline = time.time() + max_wait_seconds
+    first = True
+    while time.time() < deadline:
+        try:
+            res = subprocess.run(
+                ["claude", "mcp", "list"],
+                capture_output=True, text=True, timeout=20,
+            )
+            line = next(
+                (ln for ln in res.stdout.splitlines() if server_name in ln),
+                "",
+            )
+            if "✓ Connected" in line:
+                if not first:
+                    print(f"[mcp ] {server_name} 已恢复连接")
+                return True
+            print(f"[mcp ] {server_name} 不在线（'{line.strip()[:80]}'），{poll_interval:.0f}s 后重试…")
+        except Exception as e:
+            print(f"[mcp ] 检查失败: {e}，{poll_interval:.0f}s 后重试…")
+        first = False
+        time.sleep(poll_interval)
+    print(f"[mcp ] 等待 {server_name} 恢复超时（{max_wait_seconds:.0f}s）")
+    return False
+
+
 def _fmt_seconds(ms: int | float | None) -> str:
     if ms is None:
         return "-"
@@ -114,6 +145,11 @@ def main():
         if not hint:
             print(f"[skip] {iid} (no hint in eval_hints.yaml)")
             continue
+
+        # 跑前先确认 wimb-device MCP 还在线，断了就阻塞等用户重连，避免烧 token
+        if not wait_for_mcp(poll_interval=30.0, max_wait_seconds=1800.0):
+            print(f"[abort] MCP 长时间未恢复，停在 {iid} 之前。已跑结果不丢，下次 --resume 续跑。")
+            break
 
         print(f"\n========== {iid} ==========")
         ts = dt.datetime.now().strftime("%Y%m%d-%H%M%S")

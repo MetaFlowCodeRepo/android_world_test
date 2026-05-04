@@ -1,0 +1,11 @@
+{
+  "task": "SaveCopyOfReceiptTaskEval",
+  "goal": "First, take a photo using the camera (this will serve as a test image). Then, in Simple Gallery Pro, find the most recent photo in DCIM and save a copy of it with the same name in the Download folder.",
+  "params": {},
+  "app_names": [
+    "camera",
+    "simplegallery"
+  ],
+  "complexity": 2.6,
+  "instance_id": "SaveCopyOfReceiptTaskEval#0"
+}

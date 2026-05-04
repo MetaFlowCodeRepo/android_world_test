@@ -1,0 +1,26 @@
+{
+  "task": "SimpleCalendarDeleteEvents",
+  "goal": "First, create two calendar events in Simple Calendar Pro on 2026-07-10: one at 9h titled 'Morning Standup' (30 mins) and one at 15h titled 'Code Review' (60 mins). Then, delete all the calendar events on 2026-07-10.",
+  "params": {
+    "year": 2026,
+    "month": 7,
+    "day": 10,
+    "events": [
+      {
+        "hour": 9,
+        "title": "Morning Standup",
+        "duration_mins": 30
+      },
+      {
+        "hour": 15,
+        "title": "Code Review",
+        "duration_mins": 60
+      }
+    ]
+  },
+  "app_names": [
+    "simplecalendar"
+  ],
+  "complexity": 3.4,
+  "instance_id": "SimpleCalendarDeleteEvents#0"
+}

@@ -1,0 +1,15 @@
+{
+  "task": "SimpleCalendarAddOneEventTomorrow",
+  "goal": "In Simple Calendar Pro, create a calendar event for tomorrow at 9h with the title 'Doctor Visit' and the description 'Annual physical exam'. The event should last for 60 mins.",
+  "params": {
+    "hour": 9,
+    "event_title": "Doctor Visit",
+    "event_description": "Annual physical exam",
+    "duration_mins": 60
+  },
+  "app_names": [
+    "simplecalendar"
+  ],
+  "complexity": 3.4,
+  "instance_id": "SimpleCalendarAddOneEventTomorrow#0"
+}

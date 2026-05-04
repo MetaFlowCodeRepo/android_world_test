@@ -1,0 +1,51 @@
+你正在 Android 真机上**自动执行**一项 AndroidWorld 测试任务。整个会话期间，
+你只能通过 wimb-device MCP 工具操控设备（ai_click / ai_set_text / open_app / get_screenshot
+/ get_screen_xml / press_back / press_home / swipe / wait_stable_screen 等）。
+
+------ ⚠️ 第一步必须做：加载 deferred 工具 ------
+wimb-device 的工具是 **deferred tools**，schema 没预加载，直接调用会 InputValidationError。
+**会话的第一个动作就只能是这个 ToolSearch 调用**，把所有需要用到的设备工具一次性加载进来：
+
+  ToolSearch(query="select:mcp__wimb-device__get_screenshot,mcp__wimb-device__ai_click,mcp__wimb-device__ai_set_text,mcp__wimb-device__ai_seq_click,mcp__wimb-device__open_app,mcp__wimb-device__press_home,mcp__wimb-device__press_back,mcp__wimb-device__get_screen_xml,mcp__wimb-device__input_text,mcp__wimb-device__click,mcp__wimb-device__swipe,mcp__wimb-device__wait_stable_screen,mcp__wimb-device__wait_screen_update", max_results=20)
+
+加载成功后才开始执行任务。**不要**再用其它 ToolSearch 查询去乱搜，也不要把 ToolSearch 当作执行工具。
+
+------ 任务定义 ------
+任务名：RecipeDeleteMultipleRecipesWithConstraint
+实例编号：RecipeDeleteMultipleRecipesWithConstraint#0
+goal（自然语言指令，作为 Agent 你必须完成它）：
+  First, add the following recipes into the Broccoli app: 1) 'Garlic Bread' with directions 'Spread butter and garlic on bread, bake at 375F'. 2) 'Garlic Shrimp' with directions 'Saute shrimp with garlic and olive oil'. 3) 'Fruit Salad' with directions 'Mix strawberries, blueberries, and grapes'. 4) 'Garlic Chicken' with directions 'Marinate chicken with garlic and herbs, bake'. Then, delete the recipes from Broccoli app that use garlic in the directions.
+参数（用于自评估对比，禁止把这些字段直接读出来当成功证据）：
+  {"setup_recipes": [{"title": "Garlic Bread", "description": "Spread butter and garlic on bread, bake at 375F"}, {"title": "Garlic Shrimp", "description": "Saute shrimp with garlic and olive oil"}, {"title": "Fruit Salad", "description": "Mix strawberries, blueberries, and grapes"}, {"title": "Garlic Chicken", "description": "Marinate chicken with garlic and herbs, bake"}], "constraint_ingredient": "garlic", "expected_remaining": ["Fruit Salad"]}
+
+------ 执行准则 ------
+1. press_home → get_screenshot 确认在主屏。
+2. 用最少步数完成 goal。中途如遇权限弹窗、引导页一律允许/跳过。
+3. 不要根据"我点了某个按钮"就推断成功 —— 必须看截图里实际的最终状态。
+4. 步数预算：200 步以内完成。
+
+[执行提示]
+这是两阶段任务：
+【阶段一：创建数据】在 Broccoli 中添加 4 份食谱：
+  1) Garlic Bread - Spread butter and garlic on bread, bake at 375F
+  2) Garlic Shrimp - Saute shrimp with garlic and olive oil
+  3) Fruit Salad - Mix strawberries, blueberries, and grapes
+  4) Garlic Chicken - Marinate chicken with garlic and herbs, bake
+注意：1/2/4 的描述中包含 "garlic"，3 不包含。
+【阶段二：按条件删除】删除所有描述中包含 "garlic" 的食谱。
+
+------ 自评估（最后必须做） ------
+回到食谱列表，截图证明只剩 "Fruit Salad"，
+其它 3 份（Garlic Bread/Garlic Shrimp/Garlic Chicken）已被删除。
+
+需要的证据形式：1 张食谱列表截图
+
+------ 输出 ------
+最后一条文本消息**只输出**一份 JSON（不要 markdown 围栏、不要其它文字），结构：
+{
+  "success": true | false,
+  "confidence": 0.0 ~ 1.0,
+  "evidence_summary": "一句话说明你看到的最终状态",
+  "screenshot_paths": ["MCP 返回的截图本地缓存路径或描述"],
+  "failure_reason": "如果 success=false，最可能的原因；否则为空字符串"
+}

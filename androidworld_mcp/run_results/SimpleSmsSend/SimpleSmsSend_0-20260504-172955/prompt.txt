@@ -1,0 +1,50 @@
+你正在 Android 真机上**自动执行**一项 AndroidWorld 测试任务。整个会话期间，
+你只能通过 wimb-device MCP 工具操控设备（ai_click / ai_set_text / open_app / get_screenshot
+/ get_screen_xml / press_back / press_home / swipe / wait_stable_screen 等）。
+
+------ ⚠️ 第一步必须做：加载 deferred 工具 ------
+wimb-device 的工具是 **deferred tools**，schema 没预加载，直接调用会 InputValidationError。
+**会话的第一个动作就只能是这个 ToolSearch 调用**，把所有需要用到的设备工具一次性加载进来：
+
+  ToolSearch(query="select:mcp__wimb-device__get_screenshot,mcp__wimb-device__ai_click,mcp__wimb-device__ai_set_text,mcp__wimb-device__ai_seq_click,mcp__wimb-device__open_app,mcp__wimb-device__press_home,mcp__wimb-device__press_back,mcp__wimb-device__get_screen_xml,mcp__wimb-device__input_text,mcp__wimb-device__click,mcp__wimb-device__swipe,mcp__wimb-device__wait_stable_screen,mcp__wimb-device__wait_screen_update", max_results=20)
+
+加载成功后才开始执行任务。**不要**再用其它 ToolSearch 查询去乱搜，也不要把 ToolSearch 当作执行工具。
+
+------ 任务定义 ------
+任务名：SimpleSmsSend
+实例编号：SimpleSmsSend#0
+goal（自然语言指令，作为 Agent 你必须完成它）：
+  Send a text message using Simple SMS Messenger to +15551234567 with message: Hello, this is a test message from AndroidWorld.
+参数（用于自评估对比，禁止把这些字段直接读出来当成功证据）：
+  {"number": "+15551234567", "message": "Hello, this is a test message from AndroidWorld."}
+
+------ 执行准则 ------
+1. press_home → get_screenshot 确认在主屏。
+2. 用最少步数完成 goal。中途如遇权限弹窗、引导页一律允许/跳过。
+3. 不要根据"我点了某个按钮"就推断成功 —— 必须看截图里实际的最终状态。
+4. 步数预算：100 步以内完成。
+
+[执行提示]
+打开 Simple SMS Messenger（包名 com.simplemobiletools.smsmessenger）。
+点击新建消息按钮（+ 或 FAB）。
+在收件人栏输入 +15551234567。
+在消息内容框输入 "Hello, this is a test message from AndroidWorld."。
+点击发送按钮。
+注意：短信可能发送失败（没有真实 SIM 卡），
+只要消息出现在对话列表中即可视为成功。
+
+------ 自评估（最后必须做） ------
+截图证明对话列表中出现了发给 +15551234567 的消息，
+内容包含 "Hello, this is a test message from AndroidWorld."。
+
+需要的证据形式：1 张对话截图
+
+------ 输出 ------
+最后一条文本消息**只输出**一份 JSON（不要 markdown 围栏、不要其它文字），结构：
+{
+  "success": true | false,
+  "confidence": 0.0 ~ 1.0,
+  "evidence_summary": "一句话说明你看到的最终状态",
+  "screenshot_paths": ["MCP 返回的截图本地缓存路径或描述"],
+  "failure_reason": "如果 success=false，最可能的原因；否则为空字符串"
+}

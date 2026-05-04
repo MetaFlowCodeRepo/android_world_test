@@ -1,0 +1,37 @@
+{
+  "instance_id": "RecipeAddMultipleRecipesFromMarkor2#0",
+  "task": "RecipeAddMultipleRecipesFromMarkor2",
+  "params": {
+    "notes": [
+      {
+        "file_name": "soup.md",
+        "content": "Boil vegetables, blend until smooth, season with salt"
+      },
+      {
+        "file_name": "sandwich.md",
+        "content": "Layer ham, cheese, lettuce on bread, toast lightly"
+      }
+    ],
+    "expected_recipes": [
+      {
+        "title": "soup",
+        "description": "Boil vegetables, blend until smooth, season with salt"
+      },
+      {
+        "title": "sandwich",
+        "description": "Layer ham, cheese, lettuce on bread, toast lightly"
+      }
+    ]
+  },
+  "returncode": 1,
+  "self_eval": null,
+  "timing": {
+    "wall_ms": 244228,
+    "api_ms": 0
+  },
+  "num_turns": 1,
+  "cost_usd": 0,
+  "stop_reason": "success",
+  "num_steps": 0,
+  "steps": []
+}

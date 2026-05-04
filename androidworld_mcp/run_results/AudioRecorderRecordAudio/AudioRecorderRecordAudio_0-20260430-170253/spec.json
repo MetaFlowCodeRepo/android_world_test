@@ -1,0 +1,10 @@
+{
+  "task": "AudioRecorderRecordAudio",
+  "goal": "Record an audio clip of at least 3 seconds, then save it.",
+  "params": {},
+  "app_names": [
+    "audiorecorder"
+  ],
+  "complexity": 1.2,
+  "instance_id": "AudioRecorderRecordAudio#0"
+}

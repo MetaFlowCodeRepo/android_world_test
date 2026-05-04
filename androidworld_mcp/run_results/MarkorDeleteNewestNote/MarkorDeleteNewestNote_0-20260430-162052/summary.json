@@ -1,0 +1,28 @@
+{
+  "instance_id": "MarkorDeleteNewestNote#0",
+  "task": "MarkorDeleteNewestNote",
+  "params": {
+    "setup_notes": [
+      {
+        "file_name": "old_note.md",
+        "content": "This is an older note"
+      },
+      {
+        "file_name": "new_note.md",
+        "content": "This is the newest note"
+      }
+    ],
+    "expected_deleted": "new_note.md"
+  },
+  "returncode": 1,
+  "self_eval": null,
+  "timing": {
+    "wall_ms": 235066,
+    "api_ms": 0
+  },
+  "num_turns": 1,
+  "cost_usd": 0,
+  "stop_reason": "success",
+  "num_steps": 0,
+  "steps": []
+}

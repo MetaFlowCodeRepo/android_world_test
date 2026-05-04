@@ -1,0 +1,10 @@
+{
+  "task": "SettingsCheckAboutPhone",
+  "goal": "Navigate to Settings > About Phone and take a screenshot showing the device model and Android version.",
+  "params": {},
+  "app_names": [
+    "settings"
+  ],
+  "complexity": 1,
+  "instance_id": "SettingsCheckAboutPhone#0"
+}

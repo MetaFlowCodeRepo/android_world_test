@@ -1,0 +1,14 @@
+{
+  "task": "SimpleSmsSendClipboardContent",
+  "goal": "First, copy the text 'Budget report attached. Please review by EOD.' to the clipboard. Then, send a message to +15559876543 with the clipboard content in Simple SMS Messenger.",
+  "params": {
+    "number": "+15559876543",
+    "clipboard_content": "Budget report attached. Please review by EOD."
+  },
+  "app_names": [
+    "sms",
+    "clipper"
+  ],
+  "complexity": 2.2,
+  "instance_id": "SimpleSmsSendClipboardContent#0"
+}

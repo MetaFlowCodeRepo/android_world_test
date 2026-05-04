@@ -1,0 +1,15 @@
+{
+  "task": "MarkorAddNoteHeader",
+  "goal": "First, create a note in Markor named 'todo.md' with the content 'Buy groceries\nClean house\nCall dentist'. Then, update the Markor note todo.md by adding the following text, along with a new blank line before the existing content: '# My Todo List', and rename it to 'my_todos.md'.",
+  "params": {
+    "original_name": "todo.md",
+    "header": "# My Todo List",
+    "new_name": "my_todos.md",
+    "original_content": "Buy groceries\nClean house\nCall dentist"
+  },
+  "app_names": [
+    "markor"
+  ],
+  "complexity": 2.4,
+  "instance_id": "MarkorAddNoteHeader#0"
+}

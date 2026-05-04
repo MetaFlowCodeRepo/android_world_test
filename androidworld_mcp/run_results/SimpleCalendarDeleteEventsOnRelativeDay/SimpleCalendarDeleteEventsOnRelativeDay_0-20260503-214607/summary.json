@@ -1,0 +1,977 @@
+{
+  "instance_id": "SimpleCalendarDeleteEventsOnRelativeDay#0",
+  "task": "SimpleCalendarDeleteEventsOnRelativeDay",
+  "params": {
+    "day_of_week": "Friday",
+    "event_title": "Weekly Review",
+    "hour": 10,
+    "duration_mins": 60,
+    "event_description": "Team sync"
+  },
+  "returncode": 1,
+  "self_eval": null,
+  "timing": {
+    "wall_ms": 932575,
+    "api_ms": 723927
+  },
+  "num_turns": 103,
+  "cost_usd": 6.550224499999999,
+  "stop_reason": "error_max_turns",
+  "num_steps": 103,
+  "steps": [
+    {
+      "step": 1,
+      "tool": "ToolSearch",
+      "input": {
+        "query": "select:mcp__wimb-device__get_screenshot,mcp__wimb-device__ai_click,mcp__wimb-device__ai_set_text,mcp__wimb-device__ai_seq_click,mcp__wimb-device__open_app,mcp__wimb-device__press_home,mcp__wimb-device__press_back,mcp__wimb-device__get_screen_xml,mcp__wimb-device__input_text,mcp__wimb-device__click,mcp__wimb-device__swipe,mcp__wimb-device__wait_stable_screen,mcp__wimb-device__wait_screen_update",
+        "max_results": 20
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 2,
+      "tool": "press_home",
+      "input": {},
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 3,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 25
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 4,
+      "tool": "open_app",
+      "input": {
+        "package_name": "com.simplemobiletools.calendar.pro"
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 5,
+      "tool": "wait_stable_screen",
+      "input": {
+        "stable_duration": 1.5,
+        "timeout": 10
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 6,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 25
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 7,
+      "tool": "ai_click",
+      "input": {
+        "text": "5月1日 五"
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 8,
+      "tool": "wait_stable_screen",
+      "input": {
+        "stable_duration": 1,
+        "timeout": 5
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 9,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 25
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 10,
+      "tool": "ai_click",
+      "input": {
+        "icon": "右下角加号按钮"
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 11,
+      "tool": "wait_stable_screen",
+      "input": {
+        "stable_duration": 1,
+        "timeout": 5
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 12,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 25
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 13,
+      "tool": "ai_click",
+      "input": {
+        "text": "活动"
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 14,
+      "tool": "wait_stable_screen",
+      "input": {
+        "stable_duration": 1,
+        "timeout": 5
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 15,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 25
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 16,
+      "tool": "ai_set_text",
+      "input": {
+        "element": "标题输入框",
+        "text": "Weekly Review"
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 17,
+      "tool": "ai_set_text",
+      "input": {
+        "element": "描述输入框",
+        "text": "Team sync"
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 18,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 25
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 19,
+      "tool": "ai_click",
+      "input": {
+        "text": "22:00"
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 20,
+      "tool": "wait_stable_screen",
+      "input": {
+        "stable_duration": 1,
+        "timeout": 5
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 21,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 25
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 22,
+      "tool": "ai_click",
+      "input": {
+        "icon": "左下角键盘图标"
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 23,
+      "tool": "wait_stable_screen",
+      "input": {
+        "stable_duration": 1,
+        "timeout": 5
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 24,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 25
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 25,
+      "tool": "ai_click",
+      "input": {
+        "text": "10"
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 26,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 25
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 27,
+      "tool": "get_screen_xml",
+      "input": {},
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 28,
+      "tool": "click",
+      "input": {
+        "x": 297,
+        "y": 1218
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 29,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 25
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 30,
+      "tool": "click",
+      "input": {
+        "x": 175,
+        "y": 1551
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 31,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 25
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 32,
+      "tool": "click",
+      "input": {
+        "x": 371,
+        "y": 784
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 33,
+      "tool": "click",
+      "input": {
+        "x": 240,
+        "y": 1218
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 34,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 25
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 35,
+      "tool": "ai_click",
+      "input": {
+        "text": "确定"
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 36,
+      "tool": "wait_stable_screen",
+      "input": {
+        "stable_duration": 1,
+        "timeout": 5
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 37,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 25
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 38,
+      "tool": "ai_click",
+      "input": {
+        "text": "00"
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 39,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 25
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 40,
+      "tool": "get_screen_xml",
+      "input": {},
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 41,
+      "tool": "click",
+      "input": {
+        "x": 540,
+        "y": 1077
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 42,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 25
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 43,
+      "tool": "click",
+      "input": {
+        "x": 715,
+        "y": 1551
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 44,
+      "tool": "wait_stable_screen",
+      "input": {
+        "stable_duration": 1,
+        "timeout": 5
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 45,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 25
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 46,
+      "tool": "get_screen_xml",
+      "input": {},
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 47,
+      "tool": "click",
+      "input": {
+        "x": 715,
+        "y": 1850
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 48,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 25
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 49,
+      "tool": "ai_click",
+      "input": {
+        "text": "22:00"
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 50,
+      "tool": "wait_stable_screen",
+      "input": {
+        "stable_duration": 1,
+        "timeout": 5
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 51,
+      "tool": "get_screen_xml",
+      "input": {},
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 52,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 25
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 53,
+      "tool": "click",
+      "input": {
+        "x": 240,
+        "y": 1218
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 54,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 25
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 55,
+      "tool": "click",
+      "input": {
+        "x": 0.79,
+        "y": 0.8
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 56,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 25
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 57,
+      "tool": "ai_click",
+      "input": {
+        "text": "第二个10:00"
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 58,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 25
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 59,
+      "tool": "get_screen_xml",
+      "input": {},
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 60,
+      "tool": "click",
+      "input": {
+        "x": 400,
+        "y": 1115
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 61,
+      "tool": "click",
+      "input": {
+        "x": 400,
+        "y": 1115
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 62,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 25
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 63,
+      "tool": "click",
+      "input": {
+        "x": 540,
+        "y": 1077
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 64,
+      "tool": "click",
+      "input": {
+        "x": 0.79,
+        "y": 0.8
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 65,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 25
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 66,
+      "tool": "ai_click",
+      "input": {
+        "icon": "右上角对勾保存按钮"
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 67,
+      "tool": "wait_stable_screen",
+      "input": {
+        "stable_duration": 1,
+        "timeout": 5
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 68,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 25
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 69,
+      "tool": "ai_click",
+      "input": {
+        "text": "Weekly Review"
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 70,
+      "tool": "wait_stable_screen",
+      "input": {
+        "stable_duration": 1,
+        "timeout": 5
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 71,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 25
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 72,
+      "tool": "ai_click",
+      "input": {
+        "icon": "顶部垃圾桶删除图标"
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 73,
+      "tool": "wait_stable_screen",
+      "input": {
+        "stable_duration": 1,
+        "timeout": 5
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 74,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 25
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 75,
+      "tool": "ai_click",
+      "input": {
+        "text": "是"
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 76,
+      "tool": "wait_stable_screen",
+      "input": {
+        "stable_duration": 1,
+        "timeout": 5
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 77,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 25
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 78,
+      "tool": "press_back",
+      "input": {},
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 79,
+      "tool": "wait_stable_screen",
+      "input": {
+        "stable_duration": 1,
+        "timeout": 5
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 80,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 25
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 81,
+      "tool": "ai_click",
+      "input": {
+        "text": "Weekly Review"
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 82,
+      "tool": "wait_stable_screen",
+      "input": {
+        "stable_duration": 1,
+        "timeout": 5
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 83,
+      "tool": "get_screen_xml",
+      "input": {},
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 84,
+      "tool": "click",
+      "input": {
+        "x": 763,
+        "y": 201
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 85,
+      "tool": "wait_stable_screen",
+      "input": {
+        "stable_duration": 1,
+        "timeout": 5
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 86,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 25
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 87,
+      "tool": "get_screen_xml",
+      "input": {},
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 88,
+      "tool": "click",
+      "input": {
+        "x": 819,
+        "y": 1292
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 89,
+      "tool": "wait_stable_screen",
+      "input": {
+        "stable_duration": 1,
+        "timeout": 5
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 90,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 25
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 91,
+      "tool": "ai_click",
+      "input": {
+        "text": "Weekly Review"
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 92,
+      "tool": "wait_stable_screen",
+      "input": {
+        "stable_duration": 1,
+        "timeout": 5
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 93,
+      "tool": "click",
+      "input": {
+        "x": 763,
+        "y": 201
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 94,
+      "tool": "wait_stable_screen",
+      "input": {
+        "stable_duration": 1,
+        "timeout": 5
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 95,
+      "tool": "click",
+      "input": {
+        "x": 819,
+        "y": 1292
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 96,
+      "tool": "wait_stable_screen",
+      "input": {
+        "stable_duration": 1,
+        "timeout": 5
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 97,
+      "tool": "get_screenshot",
+      "input": {
+        "quality": 25
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 98,
+      "tool": "ai_click",
+      "input": {
+        "text": "Weekly Review"
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 99,
+      "tool": "wait_stable_screen",
+      "input": {
+        "stable_duration": 1,
+        "timeout": 5
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 100,
+      "tool": "click",
+      "input": {
+        "x": 763,
+        "y": 201
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 101,
+      "tool": "wait_stable_screen",
+      "input": {
+        "stable_duration": 1,
+        "timeout": 5
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 102,
+      "tool": "click",
+      "input": {
+        "x": 819,
+        "y": 1292
+      },
+      "success": true,
+      "is_error": false
+    },
+    {
+      "step": 103,
+      "tool": "wait_stable_screen",
+      "input": {
+        "stable_duration": 1,
+        "timeout": 5
+      },
+      "success": true,
+      "is_error": false
+    }
+  ]
+}

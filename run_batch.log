@@ -1,0 +1,776 @@
+[skip] SystemBluetoothTurnOn#0 (already passed)
+[skip] SystemBluetoothTurnOnVerify#0 (already passed)
+[skip] SystemBluetoothTurnOff#0 (already passed)
+[skip] SystemBluetoothTurnOffVerify#0 (already passed)
+[skip] SystemBrightnessMax#0 (already passed)
+[skip] SystemBrightnessMaxVerify#0 (already passed)
+[skip] SystemBrightnessMin#0 (already passed)
+[skip] SystemBrightnessMinVerify#0 (already passed)
+[skip] SystemCopyToClipboard#0 (already passed)
+[skip] SystemWifiTurnOn#0 (already passed)
+[skip] SystemWifiTurnOnVerify#0 (already passed)
+[skip] ClockStopWatchPausedVerify#0 (already passed)
+[skip] ClockStopWatchRunning#0 (already passed)
+[skip] ClockTimerEntry#0 (already passed)
+[skip] CameraTakePhoto#0 (already passed)
+[skip] CameraTakeVideo#0 (already passed)
+[skip] ContactsAddContact#0 (already passed)
+[skip] ContactsNewContactDraft#0 (already passed)
+[skip] OpenAppTaskEval#0 (already passed)
+[skip] TurnOnWifiAndOpenApp#0 (already passed)
+
+========== AudioRecorderRecordAudio#0 ==========
+[run ] AudioRecorderRecordAudio#0  max_turns=50  → androidworld_mcp/run_results/AudioRecorderRecordAudio/AudioRecorderRecordAudio_0-20260430-141518
+[fail] MCP 设备控制工具不可用，会话中没有可调用的 wimb-device 工具，无法连接到远程 Android 设备执行录音操作。
+
+========== MarkorCreateNote#0 ==========
+[run ] MarkorCreateNote#0  max_turns=50  → androidworld_mcp/run_results/MarkorCreateNote/MarkorCreateNote_0-20260430-141613
+[fail] MCP server 'wimb-device' is configured in .mcp.json but its tools were not exposed to this session, so no screenshot or UI action could be issued.
+[skip] MarkorCreateFolder#0 (already passed)
+
+========== SimpleCalendarAddOneEvent#0 ==========
+[run ] SimpleCalendarAddOneEvent#0  max_turns=102  → androidworld_mcp/run_results/SimpleCalendarAddOneEvent/SimpleCalendarAddOneEvent_0-20260430-141652
+[fail] MCP 设备控制工具不可用，当前会话中没有可调用的 wimb-device 工具，无法连接到远程 Android 设备打开 Simple Calendar Pro 并创建事件。
+[skip] ExpenseAddSingle#0 (already passed)
+[skip] RecipeAddSingleRecipe#0 (already passed)
+[skip] SimpleDrawProCreateDrawing#0 (already passed)
+[skip] OpenAppMarkor#0 (already passed)
+[skip] OpenAppCalendar#0 (already passed)
+[skip] OpenAppExpense#0 (already passed)
+[skip] OpenAppBroccoli#0 (already passed)
+
+========== OpenAppRetroMusic#0 ==========
+[run ] OpenAppRetroMusic#0  max_turns=50  → androidworld_mcp/run_results/OpenAppRetroMusic/OpenAppRetroMusic_0-20260430-141803
+[err ] 无法解析 Claude 输出（看 androidworld_mcp/run_results/OpenAppRetroMusic/OpenAppRetroMusic_0-20260430-141803/stream.jsonl）
+[skip] OpenAppVLC#0 (already passed)
+[skip] OpenAppAudioRecorder#0 (already passed)
+[skip] OpenAppSimpleDraw#0 (already passed)
+[skip] OpenAppGallery#0 (already passed)
+[skip] OpenAppOsmAnd#0 (already passed)
+[skip] ContactsAddContact2#0 (already passed)
+[skip] SystemCopyToClipboard2#0 (already passed)
+[skip] ExpenseAddSingle2#0 (already passed)
+[skip] RecipeAddSingleRecipe2#0 (already passed)
+[skip] MarkorCreateFolder2#0 (already passed)
+[skip] SimpleDrawProCreateDrawing2#0 (already passed)
+[skip] ClockSetAlarm#0 (already passed)
+
+========== SettingsCheckStorageInfo#0 ==========
+[run ] SettingsCheckStorageInfo#0  max_turns=50  → androidworld_mcp/run_results/SettingsCheckStorageInfo/SettingsCheckStorageInfo_0-20260430-143127
+[ok  ] success (conf=0.97)
+
+========== SettingsCheckAboutPhone#0 ==========
+[run ] SettingsCheckAboutPhone#0  max_turns=50  → androidworld_mcp/run_results/SettingsCheckAboutPhone/SettingsCheckAboutPhone_0-20260430-143316
+[ok  ] success (conf=0.98)
+
+========== TurnOnBluetoothAndOpenApp#0 ==========
+[run ] TurnOnBluetoothAndOpenApp#0  max_turns=60  → androidworld_mcp/run_results/TurnOnBluetoothAndOpenApp/TurnOnBluetoothAndOpenApp_0-20260430-143509
+[ok  ] success (conf=0.97)
+
+========== SimpleCalendarDeleteOneEvent#0 ==========
+[run ] SimpleCalendarDeleteOneEvent#0  max_turns=72  → androidworld_mcp/run_results/SimpleCalendarDeleteOneEvent/SimpleCalendarDeleteOneEvent_0-20260430-143725
+[err ] 无法解析 Claude 输出（看 androidworld_mcp/run_results/SimpleCalendarDeleteOneEvent/SimpleCalendarDeleteOneEvent_0-20260430-143725/stream.jsonl）
+
+========== SimpleCalendarDeleteEvents#0 ==========
+[run ] SimpleCalendarDeleteEvents#0  max_turns=102  → androidworld_mcp/run_results/SimpleCalendarDeleteEvents/SimpleCalendarDeleteEvents_0-20260430-144524
+[err ] 无法解析 Claude 输出（看 androidworld_mcp/run_results/SimpleCalendarDeleteEvents/SimpleCalendarDeleteEvents_0-20260430-144524/stream.jsonl）
+
+========== SimpleCalendarDeleteEventsOnRelativeDay#0 ==========
+[run ] SimpleCalendarDeleteEventsOnRelativeDay#0  max_turns=102  → androidworld_mcp/run_results/SimpleCalendarDeleteEventsOnRelativeDay/SimpleCalendarDeleteEventsOnRelativeDay_0-20260430-144931
+[err ] 无法解析 Claude 输出（看 androidworld_mcp/run_results/SimpleCalendarDeleteEventsOnRelativeDay/SimpleCalendarDeleteEventsOnRelativeDay_0-20260430-144931/stream.jsonl）
+
+========== ExpenseAddMultiple#0 ==========
+[run ] ExpenseAddMultiple#0  max_turns=90  → androidworld_mcp/run_results/ExpenseAddMultiple/ExpenseAddMultiple_0-20260430-145348
+[err ] 无法解析 Claude 输出（看 androidworld_mcp/run_results/ExpenseAddMultiple/ExpenseAddMultiple_0-20260430-145348/stream.jsonl）
+
+========== ExpenseAddMultipleFromMarkor#0 ==========
+[run ] ExpenseAddMultipleFromMarkor#0  max_turns=120  → androidworld_mcp/run_results/ExpenseAddMultipleFromMarkor/ExpenseAddMultipleFromMarkor_0-20260430-145753
+[err ] 无法解析 Claude 输出（看 androidworld_mcp/run_results/ExpenseAddMultipleFromMarkor/ExpenseAddMultipleFromMarkor_0-20260430-145753/stream.jsonl）
+
+========== ExpenseDeleteSingle#0 ==========
+[run ] ExpenseDeleteSingle#0  max_turns=60  → androidworld_mcp/run_results/ExpenseDeleteSingle/ExpenseDeleteSingle_0-20260430-150201
+[err ] 无法解析 Claude 输出（看 androidworld_mcp/run_results/ExpenseDeleteSingle/ExpenseDeleteSingle_0-20260430-150201/stream.jsonl）
+
+========== ExpenseDeleteMultiple#0 ==========
+[run ] ExpenseDeleteMultiple#0  max_turns=90  → androidworld_mcp/run_results/ExpenseDeleteMultiple/ExpenseDeleteMultiple_0-20260430-150610
+[err ] 无法解析 Claude 输出（看 androidworld_mcp/run_results/ExpenseDeleteMultiple/ExpenseDeleteMultiple_0-20260430-150610/stream.jsonl）
+
+========== ExpenseDeleteDuplicates#0 ==========
+[run ] ExpenseDeleteDuplicates#0  max_turns=90  → androidworld_mcp/run_results/ExpenseDeleteDuplicates/ExpenseDeleteDuplicates_0-20260430-151012
+[err ] 无法解析 Claude 输出（看 androidworld_mcp/run_results/ExpenseDeleteDuplicates/ExpenseDeleteDuplicates_0-20260430-151012/stream.jsonl）
+
+========== RecipeAddMultipleRecipes#0 ==========
+[run ] RecipeAddMultipleRecipes#0  max_turns=120  → androidworld_mcp/run_results/RecipeAddMultipleRecipes/RecipeAddMultipleRecipes_0-20260430-151421
+[err ] 无法解析 Claude 输出（看 androidworld_mcp/run_results/RecipeAddMultipleRecipes/RecipeAddMultipleRecipes_0-20260430-151421/stream.jsonl）
+
+========== RecipeAddMultipleRecipesFromMarkor#0 ==========
+[run ] RecipeAddMultipleRecipesFromMarkor#0  max_turns=120  → androidworld_mcp/run_results/RecipeAddMultipleRecipesFromMarkor/RecipeAddMultipleRecipesFromMarkor_0-20260430-151823
+[err ] 无法解析 Claude 输出（看 androidworld_mcp/run_results/RecipeAddMultipleRecipesFromMarkor/RecipeAddMultipleRecipesFromMarkor_0-20260430-151823/stream.jsonl）
+
+========== RecipeDeleteSingleRecipe#0 ==========
+[run ] RecipeDeleteSingleRecipe#0  max_turns=90  → androidworld_mcp/run_results/RecipeDeleteSingleRecipe/RecipeDeleteSingleRecipe_0-20260430-152232
+[err ] 无法解析 Claude 输出（看 androidworld_mcp/run_results/RecipeDeleteSingleRecipe/RecipeDeleteSingleRecipe_0-20260430-152232/stream.jsonl）
+
+========== RecipeDeleteMultipleRecipes#0 ==========
+[run ] RecipeDeleteMultipleRecipes#0  max_turns=120  → androidworld_mcp/run_results/RecipeDeleteMultipleRecipes/RecipeDeleteMultipleRecipes_0-20260430-152643
+[skip] SystemBluetoothTurnOn#0 (already passed)
+[skip] SystemBluetoothTurnOnVerify#0 (already passed)
+[skip] SystemBluetoothTurnOff#0 (already passed)
+[skip] SystemBluetoothTurnOffVerify#0 (already passed)
+[skip] SystemBrightnessMax#0 (already passed)
+[skip] SystemBrightnessMaxVerify#0 (already passed)
+[skip] SystemBrightnessMin#0 (already passed)
+[skip] SystemBrightnessMinVerify#0 (already passed)
+[skip] SystemCopyToClipboard#0 (already passed)
+[skip] SystemWifiTurnOn#0 (already passed)
+[skip] SystemWifiTurnOnVerify#0 (already passed)
+[skip] ClockStopWatchPausedVerify#0 (already passed)
+[skip] ClockStopWatchRunning#0 (already passed)
+[skip] ClockTimerEntry#0 (already passed)
+[skip] CameraTakePhoto#0 (already passed)
+[skip] CameraTakeVideo#0 (already passed)
+[skip] ContactsAddContact#0 (already passed)
+[skip] ContactsNewContactDraft#0 (already passed)
+[skip] OpenAppTaskEval#0 (already passed)
+[skip] TurnOnWifiAndOpenApp#0 (already passed)
+[skip] AudioRecorderRecordAudio#0 (already passed)
+[mcp ] wimb-device 不在线（'wimb-device: http://8.140.220.95:8000/mcp/53a2610f7140ca28 (HTTP) - ✗ Failed to '），30s 后重试…
+[mcp ] wimb-device 不在线（'wimb-device: http://8.140.220.95:8000/mcp/53a2610f7140ca28 (HTTP) - ✗ Failed to '），30s 后重试…
+[mcp ] wimb-device 不在线（'wimb-device: http://8.140.220.95:8000/mcp/53a2610f7140ca28 (HTTP) - ✗ Failed to '），30s 后重试…
+[mcp ] wimb-device 不在线（'wimb-device: http://8.140.220.95:8000/mcp/53a2610f7140ca28 (HTTP) - ✗ Failed to '），30s 后重试…
+[mcp ] wimb-device 不在线（'wimb-device: http://8.140.220.95:8000/mcp/53a2610f7140ca28 (HTTP) - ✗ Failed to '），30s 后重试…
+[mcp ] wimb-device 不在线（'wimb-device: http://8.140.220.95:8000/mcp/53a2610f7140ca28 (HTTP) - ✗ Failed to '），30s 后重试…
+[mcp ] wimb-device 不在线（'wimb-device: http://8.140.220.95:8000/mcp/53a2610f7140ca28 (HTTP) - ✗ Failed to '），30s 后重试…
+[mcp ] wimb-device 不在线（'wimb-device: http://8.140.220.95:8000/mcp/53a2610f7140ca28 (HTTP) - ✗ Failed to '），30s 后重试…
+[mcp ] wimb-device 不在线（'wimb-device: http://8.140.220.95:8000/mcp/53a2610f7140ca28 (HTTP) - ✗ Failed to '），30s 后重试…
+[mcp ] wimb-device 不在线（'wimb-device: http://8.140.220.95:8000/mcp/53a2610f7140ca28 (HTTP) - ✗ Failed to '），30s 后重试…
+[mcp ] wimb-device 不在线（'wimb-device: http://8.140.220.95:8000/mcp/53a2610f7140ca28 (HTTP) - ✗ Failed to '），30s 后重试…
+[mcp ] wimb-device 不在线（'wimb-device: http://8.140.220.95:8000/mcp/53a2610f7140ca28 (HTTP) - ✗ Failed to '），30s 后重试…
+[mcp ] wimb-device 不在线（'wimb-device: http://8.140.220.95:8000/mcp/53a2610f7140ca28 (HTTP) - ✗ Failed to '），30s 后重试…
+[mcp ] wimb-device 不在线（'wimb-device: http://8.140.220.95:8000/mcp/53a2610f7140ca28 (HTTP) - ✗ Failed to '），30s 后重试…
+[mcp ] wimb-device 不在线（'wimb-device: http://8.140.220.95:8000/mcp/53a2610f7140ca28 (HTTP) - ✗ Failed to '），30s 后重试…
+[mcp ] wimb-device 不在线（'wimb-device: http://8.140.220.95:8000/mcp/53a2610f7140ca28 (HTTP) - ✗ Failed to '），30s 后重试…
+[mcp ] wimb-device 不在线（'wimb-device: http://8.140.220.95:8000/mcp/53a2610f7140ca28 (HTTP) - ✗ Failed to '），30s 后重试…
+[mcp ] wimb-device 不在线（'wimb-device: http://8.140.220.95:8000/mcp/53a2610f7140ca28 (HTTP) - ✗ Failed to '），30s 后重试…
+[mcp ] wimb-device 不在线（'wimb-device: http://8.140.220.95:8000/mcp/53a2610f7140ca28 (HTTP) - ✗ Failed to '），30s 后重试…
+[mcp ] wimb-device 不在线（'wimb-device: http://8.140.220.95:8000/mcp/53a2610f7140ca28 (HTTP) - ✗ Failed to '），30s 后重试…
+[mcp ] wimb-device 不在线（'wimb-device: http://8.140.220.95:8000/mcp/53a2610f7140ca28 (HTTP) - ✗ Failed to '），30s 后重试…
+[mcp ] wimb-device 不在线（'wimb-device: http://8.140.220.95:8000/mcp/53a2610f7140ca28 (HTTP) - ✗ Failed to '），30s 后重试…
+[mcp ] wimb-device 不在线（'wimb-device: http://8.140.220.95:8000/mcp/53a2610f7140ca28 (HTTP) - ✗ Failed to '），30s 后重试…
+[mcp ] wimb-device 不在线（'wimb-device: http://8.140.220.95:8000/mcp/53a2610f7140ca28 (HTTP) - ✗ Failed to '），30s 后重试…
+[mcp ] wimb-device 不在线（'wimb-device: http://8.140.220.95:8000/mcp/53a2610f7140ca28 (HTTP) - ✗ Failed to '），30s 后重试…
+[mcp ] wimb-device 不在线（'wimb-device: http://8.140.220.95:8000/mcp/53a2610f7140ca28 (HTTP) - ✗ Failed to '），30s 后重试…
+[mcp ] wimb-device 不在线（'wimb-device: http://8.140.220.95:8000/mcp/53a2610f7140ca28 (HTTP) - ✗ Failed to '），30s 后重试…
+[mcp ] wimb-device 不在线（'wimb-device: http://8.140.220.95:8000/mcp/53a2610f7140ca28 (HTTP) - ✗ Failed to '），30s 后重试…
+[mcp ] wimb-device 不在线（'wimb-device: http://8.140.220.95:8000/mcp/53a2610f7140ca28 (HTTP) - ✗ Failed to '），30s 后重试…
+[mcp ] wimb-device 不在线（'wimb-device: http://8.140.220.95:8000/mcp/53a2610f7140ca28 (HTTP) - ✗ Failed to '），30s 后重试…
+[mcp ] wimb-device 不在线（'wimb-device: http://8.140.220.95:8000/mcp/53a2610f7140ca28 (HTTP) - ✗ Failed to '），30s 后重试…
+[mcp ] wimb-device 不在线（'wimb-device: http://8.140.220.95:8000/mcp/53a2610f7140ca28 (HTTP) - ✗ Failed to '），30s 后重试…
+[mcp ] wimb-device 不在线（'wimb-device: http://8.140.220.95:8000/mcp/53a2610f7140ca28 (HTTP) - ✗ Failed to '），30s 后重试…
+[mcp ] wimb-device 不在线（'wimb-device: http://8.140.220.95:8000/mcp/53a2610f7140ca28 (HTTP) - ✗ Failed to '），30s 后重试…
+[mcp ] wimb-device 不在线（'wimb-device: http://8.140.220.95:8000/mcp/53a2610f7140ca28 (HTTP) - ✗ Failed to '），30s 后重试…
+[mcp ] wimb-device 不在线（'wimb-device: http://8.140.220.95:8000/mcp/53a2610f7140ca28 (HTTP) - ✗ Failed to '），30s 后重试…
+[mcp ] wimb-device 不在线（'wimb-device: http://8.140.220.95:8000/mcp/53a2610f7140ca28 (HTTP) - ✗ Failed to '），30s 后重试…
+[mcp ] wimb-device 不在线（'wimb-device: http://8.140.220.95:8000/mcp/53a2610f7140ca28 (HTTP) - ✗ Failed to '），30s 后重试…
+[mcp ] wimb-device 不在线（'wimb-device: http://8.140.220.95:8000/mcp/53a2610f7140ca28 (HTTP) - ✗ Failed to '），30s 后重试…
+[mcp ] wimb-device 不在线（'wimb-device: http://8.140.220.95:8000/mcp/53a2610f7140ca28 (HTTP) - ✗ Failed to '），30s 后重试…
+[mcp ] wimb-device 不在线（'wimb-device: http://8.140.220.95:8000/mcp/53a2610f7140ca28 (HTTP) - ✗ Failed to '），30s 后重试…
+[mcp ] wimb-device 不在线（'wimb-device: http://8.140.220.95:8000/mcp/53a2610f7140ca28 (HTTP) - ✗ Failed to '），30s 后重试…
+[mcp ] wimb-device 不在线（'wimb-device: http://8.140.220.95:8000/mcp/53a2610f7140ca28 (HTTP) - ✗ Failed to '），30s 后重试…
+[mcp ] wimb-device 不在线（'wimb-device: http://8.140.220.95:8000/mcp/53a2610f7140ca28 (HTTP) - ✗ Failed to '），30s 后重试…
+[mcp ] wimb-device 不在线（'wimb-device: http://8.140.220.95:8000/mcp/53a2610f7140ca28 (HTTP) - ✗ Failed to '），30s 后重试…
+[mcp ] wimb-device 不在线（'wimb-device: http://8.140.220.95:8000/mcp/53a2610f7140ca28 (HTTP) - ✗ Failed to '），30s 后重试…
+[mcp ] wimb-device 不在线（'wimb-device: http://8.140.220.95:8000/mcp/53a2610f7140ca28 (HTTP) - ✗ Failed to '），30s 后重试…
+[mcp ] wimb-device 不在线（'wimb-device: http://8.140.220.95:8000/mcp/53a2610f7140ca28 (HTTP) - ✗ Failed to '），30s 后重试…
+[mcp ] wimb-device 不在线（'wimb-device: http://8.140.220.95:8000/mcp/53a2610f7140ca28 (HTTP) - ✗ Failed to '），30s 后重试…
+[mcp ] wimb-device 不在线（'wimb-device: http://8.140.220.95:8000/mcp/53a2610f7140ca28 (HTTP) - ✗ Failed to '），30s 后重试…
+[mcp ] wimb-device 不在线（'wimb-device: http://8.140.220.95:8000/mcp/53a2610f7140ca28 (HTTP) - ✗ Failed to '），30s 后重试…
+[mcp ] wimb-device 不在线（'wimb-device: http://8.140.220.95:8000/mcp/53a2610f7140ca28 (HTTP) - ✗ Failed to '），30s 后重试…
+[mcp ] wimb-device 不在线（'wimb-device: http://8.140.220.95:8000/mcp/53a2610f7140ca28 (HTTP) - ✗ Failed to '），30s 后重试…
+[mcp ] wimb-device 不在线（'wimb-device: http://8.140.220.95:8000/mcp/53a2610f7140ca28 (HTTP) - ✗ Failed to '），30s 后重试…
+[mcp ] 等待 wimb-device 恢复超时（1800s）
+[abort] MCP 长时间未恢复，停在 MarkorCreateNote#0 之前。已跑结果不丢，下次 --resume 续跑。
+
+[done] 通过 21/21 → androidworld_mcp/run_results/report.md
+[skip] SystemBluetoothTurnOn#0 (already passed)
+[skip] SystemBluetoothTurnOnVerify#0 (already passed)
+[skip] SystemBluetoothTurnOff#0 (already passed)
+[skip] SystemBluetoothTurnOffVerify#0 (already passed)
+[skip] SystemBrightnessMax#0 (already passed)
+[skip] SystemBrightnessMaxVerify#0 (already passed)
+[skip] SystemBrightnessMin#0 (already passed)
+[skip] SystemBrightnessMinVerify#0 (already passed)
+[skip] SystemCopyToClipboard#0 (already passed)
+[skip] SystemWifiTurnOn#0 (already passed)
+[skip] SystemWifiTurnOnVerify#0 (already passed)
+[skip] ClockStopWatchPausedVerify#0 (already passed)
+[skip] ClockStopWatchRunning#0 (already passed)
+[skip] ClockTimerEntry#0 (already passed)
+[skip] CameraTakePhoto#0 (already passed)
+[skip] CameraTakeVideo#0 (already passed)
+[skip] ContactsAddContact#0 (already passed)
+[skip] ContactsNewContactDraft#0 (already passed)
+[skip] OpenAppTaskEval#0 (already passed)
+[skip] TurnOnWifiAndOpenApp#0 (already passed)
+[skip] AudioRecorderRecordAudio#0 (already passed)
+
+========== MarkorCreateNote#0 ==========
+[run ] MarkorCreateNote#0  max_turns=50  → androidworld_mcp/run_results/MarkorCreateNote/MarkorCreateNote_0-20260501-101035
+[ok  ] success (conf=0.95)
+[skip] MarkorCreateFolder#0 (already passed)
+[skip] SimpleCalendarAddOneEvent#0 (already passed)
+[skip] ExpenseAddSingle#0 (already passed)
+[skip] RecipeAddSingleRecipe#0 (already passed)
+[skip] SimpleDrawProCreateDrawing#0 (already passed)
+[skip] OpenAppMarkor#0 (already passed)
+[skip] OpenAppCalendar#0 (already passed)
+[skip] OpenAppExpense#0 (already passed)
+[skip] OpenAppBroccoli#0 (already passed)
+[skip] OpenAppRetroMusic#0 (already passed)
+[skip] OpenAppVLC#0 (already passed)
+[skip] OpenAppAudioRecorder#0 (already passed)
+[skip] OpenAppSimpleDraw#0 (already passed)
+[skip] OpenAppGallery#0 (already passed)
+[skip] OpenAppOsmAnd#0 (already passed)
+[skip] ContactsAddContact2#0 (already passed)
+[skip] SystemCopyToClipboard2#0 (already passed)
+[skip] ExpenseAddSingle2#0 (already passed)
+[skip] RecipeAddSingleRecipe2#0 (already passed)
+[skip] MarkorCreateFolder2#0 (already passed)
+[skip] SimpleDrawProCreateDrawing2#0 (already passed)
+[skip] ClockSetAlarm#0 (already passed)
+[skip] SettingsCheckStorageInfo#0 (already passed)
+[skip] SettingsCheckAboutPhone#0 (already passed)
+[skip] TurnOnBluetoothAndOpenApp#0 (already passed)
+
+========== SimpleCalendarDeleteOneEvent#0 ==========
+[run ] SimpleCalendarDeleteOneEvent#0  max_turns=72  → androidworld_mcp/run_results/SimpleCalendarDeleteOneEvent/SimpleCalendarDeleteOneEvent_0-20260501-101144
+[err ] 无法解析 Claude 输出（看 androidworld_mcp/run_results/SimpleCalendarDeleteOneEvent/SimpleCalendarDeleteOneEvent_0-20260501-101144/stream.jsonl）
+
+========== SimpleCalendarDeleteEvents#0 ==========
+[run ] SimpleCalendarDeleteEvents#0  max_turns=102  → androidworld_mcp/run_results/SimpleCalendarDeleteEvents/SimpleCalendarDeleteEvents_0-20260501-102047
+[err ] 无法解析 Claude 输出（看 androidworld_mcp/run_results/SimpleCalendarDeleteEvents/SimpleCalendarDeleteEvents_0-20260501-102047/stream.jsonl）
+
+========== SimpleCalendarDeleteEventsOnRelativeDay#0 ==========
+[run ] SimpleCalendarDeleteEventsOnRelativeDay#0  max_turns=102  → androidworld_mcp/run_results/SimpleCalendarDeleteEventsOnRelativeDay/SimpleCalendarDeleteEventsOnRelativeDay_0-20260501-104016
+[fail] MCP wimb-device server disconnected mid-task during Phase 2 deletion; could not delete all Friday events or capture the final empty-day verification screenshot.
+[mcp ] wimb-device 不在线（'wimb-device: http://8.140.220.95:8000/mcp/53a2610f7140ca28 (HTTP) - ✗ Failed to '），30s 后重试…
+[mcp ] wimb-device 不在线（'wimb-device: http://8.140.220.95:8000/mcp/53a2610f7140ca28 (HTTP) - ✗ Failed to '），30s 后重试…
+[mcp ] wimb-device 不在线（'wimb-device: http://8.140.220.95:8000/mcp/53a2610f7140ca28 (HTTP) - ✗ Failed to '），30s 后重试…
+[mcp ] wimb-device 不在线（'wimb-device: http://8.140.220.95:8000/mcp/53a2610f7140ca28 (HTTP) - ✗ Failed to '），30s 后重试…
+[mcp ] wimb-device 不在线（'wimb-device: http://8.140.220.95:8000/mcp/53a2610f7140ca28 (HTTP) - ✗ Failed to '），30s 后重试…
+[mcp ] wimb-device 不在线（'wimb-device: http://8.140.220.95:8000/mcp/53a2610f7140ca28 (HTTP) - ✗ Failed to '），30s 后重试…
+[mcp ] wimb-device 不在线（'wimb-device: http://8.140.220.95:8000/mcp/53a2610f7140ca28 (HTTP) - ✗ Failed to '），30s 后重试…
+[mcp ] wimb-device 不在线（'wimb-device: http://8.140.220.95:8000/mcp/53a2610f7140ca28 (HTTP) - ✗ Failed to '），30s 后重试…
+[mcp ] wimb-device 不在线（'wimb-device: http://8.140.220.95:8000/mcp/53a2610f7140ca28 (HTTP) - ✗ Failed to '），30s 后重试…
+[mcp ] wimb-device 不在线（'wimb-device: http://8.140.220.95:8000/mcp/53a2610f7140ca28 (HTTP) - ✗ Failed to '），30s 后重试…
+[mcp ] wimb-device 不在线（'wimb-device: http://8.140.220.95:8000/mcp/53a2610f7140ca28 (HTTP) - ✗ Failed to '），30s 后重试…
+[mcp ] wimb-device 不在线（'wimb-device: http://8.140.220.95:8000/mcp/53a2610f7140ca28 (HTTP) - ✗ Failed to '），30s 后重试…
+[mcp ] wimb-device 不在线（'wimb-device: http://8.140.220.95:8000/mcp/53a2610f7140ca28 (HTTP) - ✗ Failed to '），30s 后重试…
+[mcp ] wimb-device 不在线（'wimb-device: http://8.140.220.95:8000/mcp/53a2610f7140ca28 (HTTP) - ✗ Failed to '），30s 后重试…
+[mcp ] wimb-device 不在线（'wimb-device: http://8.140.220.95:8000/mcp/53a2610f7140ca28 (HTTP) - ✗ Failed to '），30s 后重试…
+[mcp ] wimb-device 不在线（'wimb-device: http://8.140.220.95:8000/mcp/53a2610f7140ca28 (HTTP) - ✗ Failed to '），30s 后重试…
+[mcp ] wimb-device 不在线（'wimb-device: http://8.140.220.95:8000/mcp/53a2610f7140ca28 (HTTP) - ✗ Failed to '），30s 后重试…
+[mcp ] wimb-device 不在线（'wimb-device: http://8.140.220.95:8000/mcp/53a2610f7140ca28 (HTTP) - ✗ Failed to '），30s 后重试…
+[mcp ] wimb-device 不在线（'wimb-device: http://8.140.220.95:8000/mcp/53a2610f7140ca28 (HTTP) - ✗ Failed to '），30s 后重试…
+[mcp ] wimb-device 不在线（'wimb-device: http://8.140.220.95:8000/mcp/53a2610f7140ca28 (HTTP) - ✗ Failed to '），30s 后重试…
+[mcp ] wimb-device 已恢复连接
+
+========== ExpenseAddMultiple#0 ==========
+[run ] ExpenseAddMultiple#0  max_turns=90  → androidworld_mcp/run_results/ExpenseAddMultiple/ExpenseAddMultiple_0-20260501-110759
+[ok  ] success (conf=0.97)
+
+========== ExpenseAddMultipleFromMarkor#0 ==========
+[run ] ExpenseAddMultipleFromMarkor#0  max_turns=120  → androidworld_mcp/run_results/ExpenseAddMultipleFromMarkor/ExpenseAddMultipleFromMarkor_0-20260501-111309
+[ok  ] success (conf=0.95)
+
+========== ExpenseDeleteSingle#0 ==========
+[run ] ExpenseDeleteSingle#0  max_turns=60  → androidworld_mcp/run_results/ExpenseDeleteSingle/ExpenseDeleteSingle_0-20260501-112526
+[err ] 无法解析 Claude 输出（看 androidworld_mcp/run_results/ExpenseDeleteSingle/ExpenseDeleteSingle_0-20260501-112526/stream.jsonl）
+
+========== ExpenseDeleteMultiple#0 ==========
+[run ] ExpenseDeleteMultiple#0  max_turns=90  → androidworld_mcp/run_results/ExpenseDeleteMultiple/ExpenseDeleteMultiple_0-20260501-113326
+[err ] 无法解析 Claude 输出（看 androidworld_mcp/run_results/ExpenseDeleteMultiple/ExpenseDeleteMultiple_0-20260501-113326/stream.jsonl）
+
+========== ExpenseDeleteDuplicates#0 ==========
+[run ] ExpenseDeleteDuplicates#0  max_turns=90  → androidworld_mcp/run_results/ExpenseDeleteDuplicates/ExpenseDeleteDuplicates_0-20260501-114305
+[err ] 无法解析 Claude 输出（看 androidworld_mcp/run_results/ExpenseDeleteDuplicates/ExpenseDeleteDuplicates_0-20260501-114305/stream.jsonl）
+
+========== RecipeAddMultipleRecipes#0 ==========
+[run ] RecipeAddMultipleRecipes#0  max_turns=120  → androidworld_mcp/run_results/RecipeAddMultipleRecipes/RecipeAddMultipleRecipes_0-20260501-115444
+[ok  ] success (conf=0.98)
+
+========== RecipeAddMultipleRecipesFromMarkor#0 ==========
+[run ] RecipeAddMultipleRecipesFromMarkor#0  max_turns=120  → androidworld_mcp/run_results/RecipeAddMultipleRecipesFromMarkor/RecipeAddMultipleRecipesFromMarkor_0-20260501-115838
+[ok  ] success (conf=0.92)
+
+========== RecipeDeleteSingleRecipe#0 ==========
+[run ] RecipeDeleteSingleRecipe#0  max_turns=90  → androidworld_mcp/run_results/RecipeDeleteSingleRecipe/RecipeDeleteSingleRecipe_0-20260501-120936
+[ok  ] success (conf=0.98)
+
+========== RecipeDeleteMultipleRecipes#0 ==========
+[run ] RecipeDeleteMultipleRecipes#0  max_turns=120  → androidworld_mcp/run_results/RecipeDeleteMultipleRecipes/RecipeDeleteMultipleRecipes_0-20260501-121742
+[err ] 无法解析 Claude 输出（看 androidworld_mcp/run_results/RecipeDeleteMultipleRecipes/RecipeDeleteMultipleRecipes_0-20260501-121742/stream.jsonl）
+
+========== RecipeDeleteMultipleRecipesWithConstraint#0 ==========
+[run ] RecipeDeleteMultipleRecipesWithConstraint#0  max_turns=120  → androidworld_mcp/run_results/RecipeDeleteMultipleRecipesWithConstraint/RecipeDeleteMultipleRecipesWithConstraint_0-20260501-122933
+[err ] 无法解析 Claude 输出（看 androidworld_mcp/run_results/RecipeDeleteMultipleRecipesWithConstraint/RecipeDeleteMultipleRecipesWithConstraint_0-20260501-122933/stream.jsonl）
+
+========== RecipeDeleteDuplicateRecipes#0 ==========
+[run ] RecipeDeleteDuplicateRecipes#0  max_turns=90  → androidworld_mcp/run_results/RecipeDeleteDuplicateRecipes/RecipeDeleteDuplicateRecipes_0-20260501-124225
+[err ] 无法解析 Claude 输出（看 androidworld_mcp/run_results/RecipeDeleteDuplicateRecipes/RecipeDeleteDuplicateRecipes_0-20260501-124225/stream.jsonl）
+
+========== RecipeAddMultipleRecipesFromMarkor2#0 ==========
+[run ] RecipeAddMultipleRecipesFromMarkor2#0  max_turns=120  → androidworld_mcp/run_results/RecipeAddMultipleRecipesFromMarkor2/RecipeAddMultipleRecipesFromMarkor2_0-20260501-125119
+[ok  ] success (conf=0.95)
+
+========== AudioRecorderRecordAudioWithFileName#0 ==========
+[run ] AudioRecorderRecordAudioWithFileName#0  max_turns=60  → androidworld_mcp/run_results/AudioRecorderRecordAudioWithFileName/AudioRecorderRecordAudioWithFileName_0-20260501-130317
+[err ] 无法解析 Claude 输出（看 androidworld_mcp/run_results/AudioRecorderRecordAudioWithFileName/AudioRecorderRecordAudioWithFileName_0-20260501-130317/stream.jsonl）
+
+========== SimpleCalendarAddOneEventTomorrow#0 ==========
+[run ] SimpleCalendarAddOneEventTomorrow#0  max_turns=102  → androidworld_mcp/run_results/SimpleCalendarAddOneEventTomorrow/SimpleCalendarAddOneEventTomorrow_0-20260501-131056
+[ok  ] success (conf=0.95)
+
+========== SimpleCalendarAddOneEventInTwoWeeks#0 ==========
+[run ] SimpleCalendarAddOneEventInTwoWeeks#0  max_turns=102  → androidworld_mcp/run_results/SimpleCalendarAddOneEventInTwoWeeks/SimpleCalendarAddOneEventInTwoWeeks_0-20260501-132004
+[ok  ] success (conf=0.95)
+
+========== SimpleCalendarAddOneEventRelativeDay#0 ==========
+[run ] SimpleCalendarAddOneEventRelativeDay#0  max_turns=102  → androidworld_mcp/run_results/SimpleCalendarAddOneEventRelativeDay/SimpleCalendarAddOneEventRelativeDay_0-20260501-132803
+[ok  ] success (conf=0.97)
+
+========== SimpleCalendarAddRepeatingEvent#0 ==========
+[run ] SimpleCalendarAddRepeatingEvent#0  max_turns=102  → androidworld_mcp/run_results/SimpleCalendarAddRepeatingEvent/SimpleCalendarAddRepeatingEvent_0-20260501-133545
+[err ] 无法解析 Claude 输出（看 androidworld_mcp/run_results/SimpleCalendarAddRepeatingEvent/SimpleCalendarAddRepeatingEvent_0-20260501-133545/stream.jsonl）
+
+========== MarkorAddNoteHeader#0 ==========
+[run ] MarkorAddNoteHeader#0  max_turns=72  → androidworld_mcp/run_results/MarkorAddNoteHeader/MarkorAddNoteHeader_0-20260501-134802
+[err ] 无法解析 Claude 输出（看 androidworld_mcp/run_results/MarkorAddNoteHeader/MarkorAddNoteHeader_0-20260501-134802/stream.jsonl）
+
+========== MarkorChangeNoteContent#0 ==========
+[run ] MarkorChangeNoteContent#0  max_turns=72  → androidworld_mcp/run_results/MarkorChangeNoteContent/MarkorChangeNoteContent_0-20260501-135727
+[err ] 无法解析 Claude 输出（看 androidworld_mcp/run_results/MarkorChangeNoteContent/MarkorChangeNoteContent_0-20260501-135727/stream.jsonl）
+
+========== MarkorCreateNoteFromClipboard#0 ==========
+[run ] MarkorCreateNoteFromClipboard#0  max_turns=60  → androidworld_mcp/run_results/MarkorCreateNoteFromClipboard/MarkorCreateNoteFromClipboard_0-20260501-140509
+[ok  ] success (conf=0.95)
+
+========== MarkorDeleteAllNotes#0 ==========
+[run ] MarkorDeleteAllNotes#0  max_turns=72  → androidworld_mcp/run_results/MarkorDeleteAllNotes/MarkorDeleteAllNotes_0-20260501-141242
+[err ] 无法解析 Claude 输出（看 androidworld_mcp/run_results/MarkorDeleteAllNotes/MarkorDeleteAllNotes_0-20260501-141242/stream.jsonl）
+
+========== MarkorDeleteNewestNote#0 ==========
+[run ] MarkorDeleteNewestNote#0  max_turns=60  → androidworld_mcp/run_results/MarkorDeleteNewestNote/MarkorDeleteNewestNote_0-20260501-142106
+[err ] 无法解析 Claude 输出（看 androidworld_mcp/run_results/MarkorDeleteNewestNote/MarkorDeleteNewestNote_0-20260501-142106/stream.jsonl）
+
+========== MarkorDeleteNote#0 ==========
+[run ] MarkorDeleteNote#0  max_turns=60  → androidworld_mcp/run_results/MarkorDeleteNote/MarkorDeleteNote_0-20260501-143119
+[err ] 无法解析 Claude 输出（看 androidworld_mcp/run_results/MarkorDeleteNote/MarkorDeleteNote_0-20260501-143119/stream.jsonl）
+
+========== MarkorEditNote#0 ==========
+[run ] MarkorEditNote#0  max_turns=60  → androidworld_mcp/run_results/MarkorEditNote/MarkorEditNote_0-20260501-144110
+[ok  ] success (conf=0.95)
+
+========== MarkorMergeNotes#0 ==========
+[run ] MarkorMergeNotes#0  max_turns=234  → androidworld_mcp/run_results/MarkorMergeNotes/MarkorMergeNotes_0-20260501-144903
+[ok  ] success (conf=0.95)
+
+========== MarkorMoveNote#0 ==========
+[run ] MarkorMoveNote#0  max_turns=72  → androidworld_mcp/run_results/MarkorMoveNote/MarkorMoveNote_0-20260501-145751
+[err ] 无法解析 Claude 输出（看 androidworld_mcp/run_results/MarkorMoveNote/MarkorMoveNote_0-20260501-145751/stream.jsonl）
+
+========== OsmAndFavorite#0 ==========
+[run ] OsmAndFavorite#0  max_turns=50  → androidworld_mcp/run_results/OsmAndFavorite/OsmAndFavorite_0-20260501-150702
+[err ] 无法解析 Claude 输出（看 androidworld_mcp/run_results/OsmAndFavorite/OsmAndFavorite_0-20260501-150702/stream.jsonl）
+
+========== OsmAndMarker#0 ==========
+[run ] OsmAndMarker#0  max_turns=60  → androidworld_mcp/run_results/OsmAndMarker/OsmAndMarker_0-20260501-151249
+[ok  ] success (conf=0.85)
+
+========== OsmAndTrack#0 ==========
+[run ] OsmAndTrack#0  max_turns=360  → androidworld_mcp/run_results/OsmAndTrack/OsmAndTrack_0-20260501-152112
+[ok  ] success (conf=0.85)
+
+========== RetroCreatePlaylist#0 ==========
+[run ] RetroCreatePlaylist#0  max_turns=72  → androidworld_mcp/run_results/RetroCreatePlaylist/RetroCreatePlaylist_0-20260501-154545
+[ok  ] success (conf=0.95)
+
+========== RetroPlayingQueue#0 ==========
+[run ] RetroPlayingQueue#0  max_turns=96  → androidworld_mcp/run_results/RetroPlayingQueue/RetroPlayingQueue_0-20260501-155058
+[fail] 设备本地无任何音频文件可供 Retro Music 扫描和播放，无法添加到播放队列或启动播放。
+
+========== RetroSavePlaylist#0 ==========
+[run ] RetroSavePlaylist#0  max_turns=150  → androidworld_mcp/run_results/RetroSavePlaylist/RetroSavePlaylist_0-20260501-160124
+[fail] Device has no music files available, so no songs could be added to the playlist. Retro Music's 'Save as file' export silently fails for an empty playlist, so no playlist file was created in Downloads.
+
+========== SaveCopyOfReceiptTaskEval#0 ==========
+[run ] SaveCopyOfReceiptTaskEval#0  max_turns=78  → androidworld_mcp/run_results/SaveCopyOfReceiptTaskEval/SaveCopyOfReceiptTaskEval_0-20260501-161537
+[err ] 无法解析 Claude 输出（看 androidworld_mcp/run_results/SaveCopyOfReceiptTaskEval/SaveCopyOfReceiptTaskEval_0-20260501-161537/stream.jsonl）
+
+========== SimpleSmsSend#0 ==========
+[run ] SimpleSmsSend#0  max_turns=50  → androidworld_mcp/run_results/SimpleSmsSend/SimpleSmsSend_0-20260501-162515
+[fail] 设备进入锁屏/息屏状态后无法唤醒，没有 power 键或解锁凭证可用，无法返回 Simple SMS Messenger 完成发送短信流程
+
+========== SimpleSmsSendClipboardContent#0 ==========
+[run ] SimpleSmsSendClipboardContent#0  max_turns=66  → androidworld_mcp/run_results/SimpleSmsSendClipboardContent/SimpleSmsSendClipboardContent_0-20260501-163843
+[fail] Device is on a MIUI keyguard / AOD that does not respond to swipe-up unlock or touch-to-wake via the available MCP tools (no wake/power-button or PIN-entry tool exposed). Without unlocking, I cannot launch Simple SMS Messenger, copy to clipboard, or send the message.
+
+========== VlcCreatePlaylist#0 ==========
+[run ] VlcCreatePlaylist#0  max_turns=84  → androidworld_mcp/run_results/VlcCreatePlaylist/VlcCreatePlaylist_0-20260501-164223
+[fail] Unable to bypass the device keyguard/lockscreen via available MCP gestures; foreground package never left com.android.systemui, so VLC could not be opened to create the 'My Videos' playlist.
+
+========== VlcCreateTwoPlaylists#0 ==========
+[run ] VlcCreateTwoPlaylists#0  max_turns=144  → androidworld_mcp/run_results/VlcCreateTwoPlaylists/VlcCreateTwoPlaylists_0-20260501-164653
+[fail] Unable to bypass the device keyguard via available MCP gestures; foreground package never left com.android.systemui, so VLC could not be opened to create 'Playlist A' or 'Playlist B'.
+
+========== MarkorCreateNoteAndSms#0 ==========
+[run ] MarkorCreateNoteAndSms#0  max_turns=54  → androidworld_mcp/run_results/MarkorCreateNoteAndSms/MarkorCreateNoteAndSms_0-20260501-165224
+[fail] 设备处于锁屏(AOD)状态无法解锁,所有唤醒尝试(swipe、click、back、open_app)后wait_screen_update均返回screen_updated:false,且这是一台中国MIUI消费机,可能未安装AndroidWorld所需的Markor和Simple SMS Messenger应用。
+
+[done] 通过 62/88 → androidworld_mcp/run_results/report.md
+[skip] SystemBluetoothTurnOn#0 (already passed)
+[skip] SystemBluetoothTurnOnVerify#0 (already passed)
+[skip] SystemBluetoothTurnOff#0 (already passed)
+[skip] SystemBluetoothTurnOffVerify#0 (already passed)
+[skip] SystemBrightnessMax#0 (already passed)
+[skip] SystemBrightnessMaxVerify#0 (already passed)
+[skip] SystemBrightnessMin#0 (already passed)
+[skip] SystemBrightnessMinVerify#0 (already passed)
+[skip] SystemCopyToClipboard#0 (already passed)
+[skip] SystemWifiTurnOn#0 (already passed)
+[skip] SystemWifiTurnOnVerify#0 (already passed)
+[skip] ClockStopWatchPausedVerify#0 (already passed)
+[skip] ClockStopWatchRunning#0 (already passed)
+[skip] ClockTimerEntry#0 (already passed)
+[skip] CameraTakePhoto#0 (already passed)
+[skip] CameraTakeVideo#0 (already passed)
+[skip] ContactsAddContact#0 (already passed)
+[skip] ContactsNewContactDraft#0 (already passed)
+[skip] OpenAppTaskEval#0 (already passed)
+[skip] TurnOnWifiAndOpenApp#0 (already passed)
+[skip] AudioRecorderRecordAudio#0 (already passed)
+[skip] MarkorCreateNote#0 (already passed)
+[skip] MarkorCreateFolder#0 (already passed)
+[skip] SimpleCalendarAddOneEvent#0 (already passed)
+[skip] ExpenseAddSingle#0 (already passed)
+[skip] RecipeAddSingleRecipe#0 (already passed)
+[skip] SimpleDrawProCreateDrawing#0 (already passed)
+[skip] OpenAppMarkor#0 (already passed)
+[skip] OpenAppCalendar#0 (already passed)
+[skip] OpenAppExpense#0 (already passed)
+[skip] OpenAppBroccoli#0 (already passed)
+[skip] OpenAppRetroMusic#0 (already passed)
+[skip] OpenAppVLC#0 (already passed)
+[skip] OpenAppAudioRecorder#0 (already passed)
+[skip] OpenAppSimpleDraw#0 (already passed)
+[skip] OpenAppGallery#0 (already passed)
+[skip] OpenAppOsmAnd#0 (already passed)
+[skip] ContactsAddContact2#0 (already passed)
+[skip] SystemCopyToClipboard2#0 (already passed)
+[skip] ExpenseAddSingle2#0 (already passed)
+[skip] RecipeAddSingleRecipe2#0 (already passed)
+[skip] MarkorCreateFolder2#0 (already passed)
+[skip] SimpleDrawProCreateDrawing2#0 (already passed)
+[skip] ClockSetAlarm#0 (already passed)
+[skip] SettingsCheckStorageInfo#0 (already passed)
+[skip] SettingsCheckAboutPhone#0 (already passed)
+[skip] TurnOnBluetoothAndOpenApp#0 (already passed)
+
+========== SimpleCalendarDeleteOneEvent#0 ==========
+[run ] SimpleCalendarDeleteOneEvent#0  max_turns=72  → androidworld_mcp/run_results/SimpleCalendarDeleteOneEvent/SimpleCalendarDeleteOneEvent_0-20260503-211900
+[err ] 无法解析 Claude 输出（看 androidworld_mcp/run_results/SimpleCalendarDeleteOneEvent/SimpleCalendarDeleteOneEvent_0-20260503-211900/stream.jsonl）
+
+========== SimpleCalendarDeleteEvents#0 ==========
+[run ] SimpleCalendarDeleteEvents#0  max_turns=102  → androidworld_mcp/run_results/SimpleCalendarDeleteEvents/SimpleCalendarDeleteEvents_0-20260503-212852
+[err ] 无法解析 Claude 输出（看 androidworld_mcp/run_results/SimpleCalendarDeleteEvents/SimpleCalendarDeleteEvents_0-20260503-212852/stream.jsonl）
+
+========== SimpleCalendarDeleteEventsOnRelativeDay#0 ==========
+[run ] SimpleCalendarDeleteEventsOnRelativeDay#0  max_turns=102  → androidworld_mcp/run_results/SimpleCalendarDeleteEventsOnRelativeDay/SimpleCalendarDeleteEventsOnRelativeDay_0-20260503-214607
+[err ] 无法解析 Claude 输出（看 androidworld_mcp/run_results/SimpleCalendarDeleteEventsOnRelativeDay/SimpleCalendarDeleteEventsOnRelativeDay_0-20260503-214607/stream.jsonl）
+[skip] ExpenseAddMultiple#0 (already passed)
+[skip] ExpenseAddMultipleFromMarkor#0 (already passed)
+
+========== ExpenseDeleteSingle#0 ==========
+[run ] ExpenseDeleteSingle#0  max_turns=60  → androidworld_mcp/run_results/ExpenseDeleteSingle/ExpenseDeleteSingle_0-20260503-220152
+[ok  ] success (conf=0.95)
+
+========== ExpenseDeleteMultiple#0 ==========
+[run ] ExpenseDeleteMultiple#0  max_turns=90  → androidworld_mcp/run_results/ExpenseDeleteMultiple/ExpenseDeleteMultiple_0-20260503-220835
+[err ] 无法解析 Claude 输出（看 androidworld_mcp/run_results/ExpenseDeleteMultiple/ExpenseDeleteMultiple_0-20260503-220835/stream.jsonl）
+
+========== ExpenseDeleteDuplicates#0 ==========
+[run ] ExpenseDeleteDuplicates#0  max_turns=90  → androidworld_mcp/run_results/ExpenseDeleteDuplicates/ExpenseDeleteDuplicates_0-20260503-221912
+[err ] 无法解析 Claude 输出（看 androidworld_mcp/run_results/ExpenseDeleteDuplicates/ExpenseDeleteDuplicates_0-20260503-221912/stream.jsonl）
+[skip] RecipeAddMultipleRecipes#0 (already passed)
+[skip] RecipeAddMultipleRecipesFromMarkor#0 (already passed)
+[skip] RecipeDeleteSingleRecipe#0 (already passed)
+
+========== RecipeDeleteMultipleRecipes#0 ==========
+[run ] RecipeDeleteMultipleRecipes#0  max_turns=120  → androidworld_mcp/run_results/RecipeDeleteMultipleRecipes/RecipeDeleteMultipleRecipes_0-20260503-223312
+[err ] 无法解析 Claude 输出（看 androidworld_mcp/run_results/RecipeDeleteMultipleRecipes/RecipeDeleteMultipleRecipes_0-20260503-223312/stream.jsonl）
+
+========== RecipeDeleteMultipleRecipesWithConstraint#0 ==========
+[run ] RecipeDeleteMultipleRecipesWithConstraint#0  max_turns=120  → androidworld_mcp/run_results/RecipeDeleteMultipleRecipesWithConstraint/RecipeDeleteMultipleRecipesWithConstraint_0-20260503-225325
+[err ] 无法解析 Claude 输出（看 androidworld_mcp/run_results/RecipeDeleteMultipleRecipesWithConstraint/RecipeDeleteMultipleRecipesWithConstraint_0-20260503-225325/stream.jsonl）
+
+========== RecipeDeleteDuplicateRecipes#0 ==========
+[run ] RecipeDeleteDuplicateRecipes#0  max_turns=90  → androidworld_mcp/run_results/RecipeDeleteDuplicateRecipes/RecipeDeleteDuplicateRecipes_0-20260503-230841
+[err ] 无法解析 Claude 输出（看 androidworld_mcp/run_results/RecipeDeleteDuplicateRecipes/RecipeDeleteDuplicateRecipes_0-20260503-230841/stream.jsonl）
+[skip] RecipeAddMultipleRecipesFromMarkor2#0 (already passed)
+
+========== AudioRecorderRecordAudioWithFileName#0 ==========
+[run ] AudioRecorderRecordAudioWithFileName#0  max_turns=60  → androidworld_mcp/run_results/AudioRecorderRecordAudioWithFileName/AudioRecorderRecordAudioWithFileName_0-20260503-231931
+[err ] 无法解析 Claude 输出（看 androidworld_mcp/run_results/AudioRecorderRecordAudioWithFileName/AudioRecorderRecordAudioWithFileName_0-20260503-231931/stream.jsonl）
+[skip] SimpleCalendarAddOneEventTomorrow#0 (already passed)
+[skip] SimpleCalendarAddOneEventInTwoWeeks#0 (already passed)
+[skip] SimpleCalendarAddOneEventRelativeDay#0 (already passed)
+
+========== SimpleCalendarAddRepeatingEvent#0 ==========
+[run ] SimpleCalendarAddRepeatingEvent#0  max_turns=102  → androidworld_mcp/run_results/SimpleCalendarAddRepeatingEvent/SimpleCalendarAddRepeatingEvent_0-20260503-232641
+[err ] 无法解析 Claude 输出（看 androidworld_mcp/run_results/SimpleCalendarAddRepeatingEvent/SimpleCalendarAddRepeatingEvent_0-20260503-232641/stream.jsonl）
+
+========== MarkorAddNoteHeader#0 ==========
+[run ] MarkorAddNoteHeader#0  max_turns=72  → androidworld_mcp/run_results/MarkorAddNoteHeader/MarkorAddNoteHeader_0-20260503-234112
+[err ] 无法解析 Claude 输出（看 androidworld_mcp/run_results/MarkorAddNoteHeader/MarkorAddNoteHeader_0-20260503-234112/stream.jsonl）
+
+========== MarkorChangeNoteContent#0 ==========
+[run ] MarkorChangeNoteContent#0  max_turns=72  → androidworld_mcp/run_results/MarkorChangeNoteContent/MarkorChangeNoteContent_0-20260503-235011
+[ok  ] success (conf=0.95)
+[skip] MarkorCreateNoteFromClipboard#0 (already passed)
+
+========== MarkorDeleteAllNotes#0 ==========
+[run ] MarkorDeleteAllNotes#0  max_turns=72  → androidworld_mcp/run_results/MarkorDeleteAllNotes/MarkorDeleteAllNotes_0-20260503-235857
+[ok  ] success (conf=0.95)
+
+========== MarkorDeleteNewestNote#0 ==========
+[run ] MarkorDeleteNewestNote#0  max_turns=60  → androidworld_mcp/run_results/MarkorDeleteNewestNote/MarkorDeleteNewestNote_0-20260504-000655
+[err ] 无法解析 Claude 输出（看 androidworld_mcp/run_results/MarkorDeleteNewestNote/MarkorDeleteNewestNote_0-20260504-000655/stream.jsonl）
+
+========== MarkorDeleteNote#0 ==========
+[run ] MarkorDeleteNote#0  max_turns=60  → androidworld_mcp/run_results/MarkorDeleteNote/MarkorDeleteNote_0-20260504-001304
+[skip] SystemBluetoothTurnOn#0 (already passed)
+[skip] SystemBluetoothTurnOnVerify#0 (already passed)
+[skip] SystemBluetoothTurnOff#0 (already passed)
+[skip] SystemBluetoothTurnOffVerify#0 (already passed)
+[skip] SystemBrightnessMax#0 (already passed)
+[skip] SystemBrightnessMaxVerify#0 (already passed)
+[skip] SystemBrightnessMin#0 (already passed)
+[skip] SystemBrightnessMinVerify#0 (already passed)
+[skip] SystemCopyToClipboard#0 (already passed)
+[skip] SystemWifiTurnOn#0 (already passed)
+[skip] SystemWifiTurnOnVerify#0 (already passed)
+[skip] ClockStopWatchPausedVerify#0 (already passed)
+[skip] ClockStopWatchRunning#0 (already passed)
+[skip] ClockTimerEntry#0 (already passed)
+[skip] CameraTakePhoto#0 (already passed)
+[skip] CameraTakeVideo#0 (already passed)
+[skip] ContactsAddContact#0 (already passed)
+[skip] ContactsNewContactDraft#0 (already passed)
+[skip] OpenAppTaskEval#0 (already passed)
+[skip] TurnOnWifiAndOpenApp#0 (already passed)
+[skip] AudioRecorderRecordAudio#0 (already passed)
+[skip] MarkorCreateNote#0 (already passed)
+[skip] MarkorCreateFolder#0 (already passed)
+[skip] SimpleCalendarAddOneEvent#0 (already passed)
+[skip] ExpenseAddSingle#0 (already passed)
+[skip] RecipeAddSingleRecipe#0 (already passed)
+[skip] SimpleDrawProCreateDrawing#0 (already passed)
+[skip] OpenAppMarkor#0 (already passed)
+[skip] OpenAppCalendar#0 (already passed)
+[skip] OpenAppExpense#0 (already passed)
+[skip] OpenAppBroccoli#0 (already passed)
+[skip] OpenAppRetroMusic#0 (already passed)
+[skip] OpenAppVLC#0 (already passed)
+[skip] OpenAppAudioRecorder#0 (already passed)
+[skip] OpenAppSimpleDraw#0 (already passed)
+[skip] OpenAppGallery#0 (already passed)
+[skip] OpenAppOsmAnd#0 (already passed)
+[skip] ContactsAddContact2#0 (already passed)
+[skip] SystemCopyToClipboard2#0 (already passed)
+[skip] ExpenseAddSingle2#0 (already passed)
+[skip] RecipeAddSingleRecipe2#0 (already passed)
+[skip] MarkorCreateFolder2#0 (already passed)
+[skip] SimpleDrawProCreateDrawing2#0 (already passed)
+[skip] ClockSetAlarm#0 (already passed)
+[skip] SettingsCheckStorageInfo#0 (already passed)
+[skip] SettingsCheckAboutPhone#0 (already passed)
+[skip] TurnOnBluetoothAndOpenApp#0 (already passed)
+
+========== SimpleCalendarDeleteOneEvent#0 ==========
+[run ] SimpleCalendarDeleteOneEvent#0  max_turns=120  → androidworld_mcp/run_results/SimpleCalendarDeleteOneEvent/SimpleCalendarDeleteOneEvent_0-20260504-115719
+[err ] 无法解析 Claude 输出（看 androidworld_mcp/run_results/SimpleCalendarDeleteOneEvent/SimpleCalendarDeleteOneEvent_0-20260504-115719/stream.jsonl）
+
+========== SimpleCalendarDeleteEvents#0 ==========
+[run ] SimpleCalendarDeleteEvents#0  max_turns=170  → androidworld_mcp/run_results/SimpleCalendarDeleteEvents/SimpleCalendarDeleteEvents_0-20260504-122042
+Traceback (most recent call last):
+  File "/Users/zhp/android_world_test/androidworld_mcp/runner/run_all.py", line 195, in <module>
+    main()
+  File "/Users/zhp/android_world_test/androidworld_mcp/runner/run_all.py", line 158, in main
+    summary = run_single(spec, hint, inst_out_dir, cwd, mcp_config)
+  File "/Users/zhp/android_world_test/androidworld_mcp/runner/run_task.py", line 341, in run_single
+    res = run_claude(prompt, cwd=cwd, mcp_config=mcp_config, max_turns=max_turns)
+  File "/Users/zhp/android_world_test/androidworld_mcp/runner/run_task.py", line 277, in run_claude
+    proc = subprocess.run(cmd, cwd=cwd, capture_output=True, text=True, timeout=1800, env=env)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/subprocess.py", line 507, in run
+    stdout, stderr = process.communicate(input, timeout=timeout)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/subprocess.py", line 1134, in communicate
+    stdout, stderr = self._communicate(input, endtime, timeout)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/subprocess.py", line 1980, in _communicate
+    self._check_timeout(endtime, orig_timeout, stdout, stderr)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/subprocess.py", line 1178, in _check_timeout
+    raise TimeoutExpired(
+subprocess.TimeoutExpired: Command '['claude', '-p', '你正在 Android 真机上**自动执行**一项 AndroidWorld 测试任务。整个会话期间，\n你只能通过 wimb-device MCP 工具操控设备（ai_click / ai_set_text / open_app / get_screenshot\n/ get_screen_xml / press_back / press_home / swipe / wait_stable_screen 等）。\n\n------ ⚠️ 第一步必须做：加载 deferred 工具 ------\nwimb-device 的工具是 **deferred tools**，schema 没预加载，直接调用会 InputValidationError。\n**会话的第一个动作就只能是这个 ToolSearch 调用**，把所有需要用到的设备工具一次性加载进来：\n\n  ToolSearch(query="select:mcp__wimb-device__get_screenshot,mcp__wimb-device__ai_click,mcp__wimb-device__ai_set_text,mcp__wimb-device__ai_seq_click,mcp__wimb-device__open_app,mcp__wimb-device__press_home,mcp__wimb-device__press_back,mcp__wimb-device__get_screen_xml,mcp__wimb-device__input_text,mcp__wimb-device__click,mcp__wimb-device__swipe,mcp__wimb-device__wait_stable_screen,mcp__wimb-device__wait_screen_update", max_results=20)\n\n加载成功后才开始执行任务。**不要**再用其它 ToolSearch 查询去乱搜，也不要把 ToolSearch 当作执行工具。\n\n------ 任务定义 ------\n任务名：SimpleCalendarDeleteEvents\n实例编号：SimpleCalendarDeleteEvents#0\ngoal（自然语言指令，作为 Agent 你必须完成它）：\n  First, create two calendar events in Simple Calendar Pro on 2026-07-10: one at 9h titled \'Morning Standup\' (30 mins) and one at 15h titled \'Code Review\' (60 mins). Then, delete all the calendar events on 2026-07-10.\n参数（用于自评估对比，禁止把这些字段直接读出来当成功证据）：\n  {"year": 2026, "month": 7, "day": 10, "events": [{"hour": 9, "title": "Morning Standup", "duration_mins": 30}, {"hour": 15, "title": "Code Review", "duration_mins": 60}]}\n\n------ 执行准则 ------\n1. press_home → get_screenshot 确认在主屏。\n2. 用最少步数完成 goal。中途如遇权限弹窗、引导页一律允许/跳过。\n3. 不要根据"我点了某个按钮"就推断成功 —— 必须看截图里实际的最终状态。\n4. 步数预算：170 步以内完成。\n\n[执行提示]\n这是两阶段任务：\n【阶段一：创建数据】在 Simple Calendar Pro 中为 2026-07-10 创建两个事件：\n  1) 09:00 "Morning Standup" 时长 30 分钟\n  2) 15:00 "Code Review" 时长 60 分钟\n每创建一个事件后截图确认。\n【阶段二：执行删除】删除 2026-07-10 当天的所有事件。\n\n------ 自评估（最后必须做） ------\n导航到 2026-07-10 这一天，截图证明该日期上已经没有任何事件。\n\n需要的证据形式：1 张日历日视图截图\n\n------ 输出 ------\n最后一条文本消息**只输出**一份 JSON（不要 markdown 围栏、不要其它文字），结构：\n{\n  "success": true | false,\n  "confidence": 0.0 ~ 1.0,\n  "evidence_summary": "一句话说明你看到的最终状态",\n  "screenshot_paths": ["MCP 返回的截图本地缓存路径或描述"],\n  "failure_reason": "如果 success=false，最可能的原因；否则为空字符串"\n}\n', '--mcp-config', '/Users/zhp/android_world_test/.mcp.json', '--allowed-tools', 'mcp__wimb-device__*', '--permission-mode', 'acceptEdits', '--output-format', 'stream-json', '--include-partial-messages', '--verbose', '--max-turns', '170']' timed out after 1800 seconds
+[skip] SystemBluetoothTurnOn#0 (already passed)
+[skip] SystemBluetoothTurnOnVerify#0 (already passed)
+[skip] SystemBluetoothTurnOff#0 (already passed)
+[skip] SystemBluetoothTurnOffVerify#0 (already passed)
+[skip] SystemBrightnessMax#0 (already passed)
+[skip] SystemBrightnessMaxVerify#0 (already passed)
+[skip] SystemBrightnessMin#0 (already passed)
+[skip] SystemBrightnessMinVerify#0 (already passed)
+[skip] SystemCopyToClipboard#0 (already passed)
+[skip] SystemWifiTurnOn#0 (already passed)
+[skip] SystemWifiTurnOnVerify#0 (already passed)
+[skip] ClockStopWatchPausedVerify#0 (already passed)
+[skip] ClockStopWatchRunning#0 (already passed)
+[skip] ClockTimerEntry#0 (already passed)
+[skip] CameraTakePhoto#0 (already passed)
+[skip] CameraTakeVideo#0 (already passed)
+[skip] ContactsAddContact#0 (already passed)
+[skip] ContactsNewContactDraft#0 (already passed)
+[skip] OpenAppTaskEval#0 (already passed)
+[skip] TurnOnWifiAndOpenApp#0 (already passed)
+[skip] AudioRecorderRecordAudio#0 (already passed)
+[skip] MarkorCreateNote#0 (already passed)
+[skip] MarkorCreateFolder#0 (already passed)
+[skip] SimpleCalendarAddOneEvent#0 (already passed)
+[skip] ExpenseAddSingle#0 (already passed)
+[skip] RecipeAddSingleRecipe#0 (already passed)
+[skip] SimpleDrawProCreateDrawing#0 (already passed)
+[skip] OpenAppMarkor#0 (already passed)
+[skip] OpenAppCalendar#0 (already passed)
+[skip] OpenAppExpense#0 (already passed)
+[skip] OpenAppBroccoli#0 (already passed)
+[skip] OpenAppRetroMusic#0 (already passed)
+[skip] OpenAppVLC#0 (already passed)
+[skip] OpenAppAudioRecorder#0 (already passed)
+[skip] OpenAppSimpleDraw#0 (already passed)
+[skip] OpenAppGallery#0 (already passed)
+[skip] OpenAppOsmAnd#0 (already passed)
+[skip] ContactsAddContact2#0 (already passed)
+[skip] SystemCopyToClipboard2#0 (already passed)
+[skip] ExpenseAddSingle2#0 (already passed)
+[skip] RecipeAddSingleRecipe2#0 (already passed)
+[skip] MarkorCreateFolder2#0 (already passed)
+[skip] SimpleDrawProCreateDrawing2#0 (already passed)
+[skip] ClockSetAlarm#0 (already passed)
+[skip] SettingsCheckStorageInfo#0 (already passed)
+[skip] SettingsCheckAboutPhone#0 (already passed)
+[skip] TurnOnBluetoothAndOpenApp#0 (already passed)
+
+========== SimpleCalendarDeleteOneEvent#0 ==========
+[run ] SimpleCalendarDeleteOneEvent#0  max_turns=120  → androidworld_mcp/run_results/SimpleCalendarDeleteOneEvent/SimpleCalendarDeleteOneEvent_0-20260504-133418
+[ok  ] success (conf=0.95)
+
+========== SimpleCalendarDeleteEvents#0 ==========
+[run ] SimpleCalendarDeleteEvents#0  max_turns=170  → androidworld_mcp/run_results/SimpleCalendarDeleteEvents/SimpleCalendarDeleteEvents_0-20260504-134747
+[err ] 无法解析 Claude 输出（看 androidworld_mcp/run_results/SimpleCalendarDeleteEvents/SimpleCalendarDeleteEvents_0-20260504-134747/stream.jsonl）
+
+========== SimpleCalendarDeleteEventsOnRelativeDay#0 ==========
+[run ] SimpleCalendarDeleteEventsOnRelativeDay#0  max_turns=170  → androidworld_mcp/run_results/SimpleCalendarDeleteEventsOnRelativeDay/SimpleCalendarDeleteEventsOnRelativeDay_0-20260504-141154
+[ok  ] success (conf=0.95)
+[skip] ExpenseAddMultiple#0 (already passed)
+[skip] ExpenseAddMultipleFromMarkor#0 (already passed)
+[skip] ExpenseDeleteSingle#0 (already passed)
+
+========== ExpenseDeleteMultiple#0 ==========
+[run ] ExpenseDeleteMultiple#0  max_turns=150  → androidworld_mcp/run_results/ExpenseDeleteMultiple/ExpenseDeleteMultiple_0-20260504-142645
+[ok  ] success (conf=0.95)
+
+========== ExpenseDeleteDuplicates#0 ==========
+[run ] ExpenseDeleteDuplicates#0  max_turns=150  → androidworld_mcp/run_results/ExpenseDeleteDuplicates/ExpenseDeleteDuplicates_0-20260504-143857
+[ok  ] success (conf=0.7)
+[skip] RecipeAddMultipleRecipes#0 (already passed)
+[skip] RecipeAddMultipleRecipesFromMarkor#0 (already passed)
+[skip] RecipeDeleteSingleRecipe#0 (already passed)
+
+========== RecipeDeleteMultipleRecipes#0 ==========
+[run ] RecipeDeleteMultipleRecipes#0  max_turns=200  → androidworld_mcp/run_results/RecipeDeleteMultipleRecipes/RecipeDeleteMultipleRecipes_0-20260504-144513
+[ok  ] success (conf=0.9)
+
+========== RecipeDeleteMultipleRecipesWithConstraint#0 ==========
+[run ] RecipeDeleteMultipleRecipesWithConstraint#0  max_turns=200  → androidworld_mcp/run_results/RecipeDeleteMultipleRecipesWithConstraint/RecipeDeleteMultipleRecipesWithConstraint_0-20260504-150715
+[ok  ] success (conf=0.9)
+
+========== RecipeDeleteDuplicateRecipes#0 ==========
+[run ] RecipeDeleteDuplicateRecipes#0  max_turns=150  → androidworld_mcp/run_results/RecipeDeleteDuplicateRecipes/RecipeDeleteDuplicateRecipes_0-20260504-153614
+[err ] 无法解析 Claude 输出（看 androidworld_mcp/run_results/RecipeDeleteDuplicateRecipes/RecipeDeleteDuplicateRecipes_0-20260504-153614/stream.jsonl）
+[skip] RecipeAddMultipleRecipesFromMarkor2#0 (already passed)
+
+========== AudioRecorderRecordAudioWithFileName#0 ==========
+[run ] AudioRecorderRecordAudioWithFileName#0  max_turns=100  → androidworld_mcp/run_results/AudioRecorderRecordAudioWithFileName/AudioRecorderRecordAudioWithFileName_0-20260504-155333
+[err ] 无法解析 Claude 输出（看 androidworld_mcp/run_results/AudioRecorderRecordAudioWithFileName/AudioRecorderRecordAudioWithFileName_0-20260504-155333/stream.jsonl）
+[skip] SimpleCalendarAddOneEventTomorrow#0 (already passed)
+[skip] SimpleCalendarAddOneEventInTwoWeeks#0 (already passed)
+[skip] SimpleCalendarAddOneEventRelativeDay#0 (already passed)
+
+========== SimpleCalendarAddRepeatingEvent#0 ==========
+[run ] SimpleCalendarAddRepeatingEvent#0  max_turns=170  → androidworld_mcp/run_results/SimpleCalendarAddRepeatingEvent/SimpleCalendarAddRepeatingEvent_0-20260504-160804
+[ok  ] success (conf=0.9)
+
+========== MarkorAddNoteHeader#0 ==========
+[run ] MarkorAddNoteHeader#0  max_turns=120  → androidworld_mcp/run_results/MarkorAddNoteHeader/MarkorAddNoteHeader_0-20260504-161117
+[err ] 无法解析 Claude 输出（看 androidworld_mcp/run_results/MarkorAddNoteHeader/MarkorAddNoteHeader_0-20260504-161117/stream.jsonl）
+[skip] MarkorChangeNoteContent#0 (already passed)
+[skip] MarkorCreateNoteFromClipboard#0 (already passed)
+[skip] MarkorDeleteAllNotes#0 (already passed)
+
+========== MarkorDeleteNewestNote#0 ==========
+[run ] MarkorDeleteNewestNote#0  max_turns=100  → androidworld_mcp/run_results/MarkorDeleteNewestNote/MarkorDeleteNewestNote_0-20260504-163006
+[ok  ] success (conf=0.95)
+
+========== MarkorDeleteNote#0 ==========
+[run ] MarkorDeleteNote#0  max_turns=100  → androidworld_mcp/run_results/MarkorDeleteNote/MarkorDeleteNote_0-20260504-163709
+[ok  ] success (conf=0.97)
+[skip] MarkorEditNote#0 (already passed)
+[skip] MarkorMergeNotes#0 (already passed)
+[skip] MarkorMoveNote#0 (already passed)
+[skip] OsmAndFavorite#0 (already passed)
+[skip] OsmAndMarker#0 (already passed)
+[skip] OsmAndTrack#0 (already passed)
+[skip] RetroCreatePlaylist#0 (already passed)
+
+========== RetroPlayingQueue#0 ==========
+[run ] RetroPlayingQueue#0  max_turns=160  → androidworld_mcp/run_results/RetroPlayingQueue/RetroPlayingQueue_0-20260504-164850
+[fail] 设备上没有任何可用音频文件：Retro Music 媒体库（歌曲/专辑/最近添加/文件夹）和系统文件管理器全局音乐分类均为空，扫描媒体后仍无歌曲，无法添加到播放队列或开始播放。
+
+========== RetroSavePlaylist#0 ==========
+[run ] RetroSavePlaylist#0  max_turns=250  → androidworld_mcp/run_results/RetroSavePlaylist/RetroSavePlaylist_0-20260504-170531
+[fail] 设备上没有任何音频文件可添加到播放列表，无法满足'添加任意可用歌曲'的要求；Retro Music 对空播放列表的'保存为文件'操作未触发系统文件选择器，导出未发生；Download 目录未发现导出的播放列表文件。
+
+========== SaveCopyOfReceiptTaskEval#0 ==========
+[run ] SaveCopyOfReceiptTaskEval#0  max_turns=130  → androidworld_mcp/run_results/SaveCopyOfReceiptTaskEval/SaveCopyOfReceiptTaskEval_0-20260504-171313
+[err ] 无法解析 Claude 输出（看 androidworld_mcp/run_results/SaveCopyOfReceiptTaskEval/SaveCopyOfReceiptTaskEval_0-20260504-171313/stream.jsonl）
+
+========== SimpleSmsSend#0 ==========
+[run ] SimpleSmsSend#0  max_turns=100  → androidworld_mcp/run_results/SimpleSmsSend/SimpleSmsSend_0-20260504-172955
+[fail] Device became unresponsive on the lockscreen after the initial 'set as default SMS app' dialog was cancelled; no power-button equivalent in the toolset to wake it, and swipe/tap gestures did not dismiss the keyguard.
+
+========== SimpleSmsSendClipboardContent#0 ==========
+[run ] SimpleSmsSendClipboardContent#0  max_turns=110  → androidworld_mcp/run_results/SimpleSmsSendClipboardContent/SimpleSmsSendClipboardContent_0-20260504-174715
+[fail] 设备在锁屏/息屏状态下 MCP 工具集无 power 键等效操作，swipe/tap/lock_screen 都无法唤醒并解除 keyguard，导致剪贴板复制和短信发送两个阶段都无法开始。
+
+========== VlcCreatePlaylist#0 ==========
+[run ] VlcCreatePlaylist#0  max_turns=140  → androidworld_mcp/run_results/VlcCreatePlaylist/VlcCreatePlaylist_0-20260504-175145
+[fail] Device stuck on locked AOD screen — no power-key tool available to wake it, swipe-up unlock did not transition the screen, so VLC could not be launched to create the 'My Videos' playlist.
+
+========== VlcCreateTwoPlaylists#0 ==========
+[run ] VlcCreateTwoPlaylists#0  max_turns=240  → androidworld_mcp/run_results/VlcCreateTwoPlaylists/VlcCreateTwoPlaylists_0-20260504-175453
+[fail] Device is stuck on the lock screen and unresponsive to touch input via the available MCP tools; no PIN/pattern UI shown, but swipe-to-unlock has no effect and there is no power-button/wake tool exposed, so VLC could not be opened and playlists could not be created.
+
+========== MarkorCreateNoteAndSms#0 ==========
+[run ] MarkorCreateNoteAndSms#0  max_turns=100  → androidworld_mcp/run_results/MarkorCreateNoteAndSms/MarkorCreateNoteAndSms_0-20260504-180210
+[fail] Could not dismiss the MIUI keyguard via swipe; device never reached home screen, so the Markor note creation and SMS send steps could not be performed.
+
+[done] 通过 76/88 → androidworld_mcp/run_results/report.md

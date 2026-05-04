@@ -1,0 +1,20 @@
+{
+  "instance_id": "MarkorEditNote#0",
+  "task": "MarkorEditNote",
+  "params": {
+    "file_name": "report.md",
+    "original_content": "Q1 sales were strong.",
+    "header": "# Quarterly Report"
+  },
+  "returncode": 1,
+  "self_eval": null,
+  "timing": {
+    "wall_ms": 234866,
+    "api_ms": 0
+  },
+  "num_turns": 1,
+  "cost_usd": 0,
+  "stop_reason": "success",
+  "num_steps": 0,
+  "steps": []
+}

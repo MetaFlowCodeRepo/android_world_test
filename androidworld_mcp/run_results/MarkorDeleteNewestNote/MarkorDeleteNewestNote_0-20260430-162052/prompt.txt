@@ -1,0 +1,39 @@
+你正在 Android 真机上**自动执行**一项 AndroidWorld 测试任务。整个会话期间，
+你只能通过 wimb-device MCP 工具操控设备（ai_click / ai_set_text / open_app / get_screenshot
+/ get_screen_xml / press_back / press_home / swipe / wait_stable_screen 等）。
+
+------ 任务定义 ------
+任务名：MarkorDeleteNewestNote
+实例编号：MarkorDeleteNewestNote#0
+goal（自然语言指令，作为 Agent 你必须完成它）：
+  First, create the following notes in Markor in order: 1) 'old_note.md' with content 'This is an older note'. 2) Wait 2 seconds, then create 'new_note.md' with content 'This is the newest note'. Then, delete the newest note in Markor.
+参数（用于自评估对比，禁止把这些字段直接读出来当成功证据）：
+  {"setup_notes": [{"file_name": "old_note.md", "content": "This is an older note"}, {"file_name": "new_note.md", "content": "This is the newest note"}], "expected_deleted": "new_note.md"}
+
+------ 执行准则 ------
+1. press_home → get_screenshot 确认在主屏。
+2. 用最少步数完成 goal。中途如遇权限弹窗、引导页一律允许/跳过。
+3. 不要根据"我点了某个按钮"就推断成功 —— 必须看截图里实际的最终状态。
+4. 步数预算：60 步以内完成。
+
+[执行提示]
+这是两阶段任务：
+【阶段一：创建数据】在 Markor 中先创建 old_note.md，
+等几秒后再创建 new_note.md。这样 new_note.md 按修改时间排最前。
+【阶段二：删除最新笔记】根据修改时间排序，找到最新的那个笔记
+（应该是 new_note.md），删除它。
+
+------ 自评估（最后必须做） ------
+截图证明 Markor 文件列表中只剩 old_note.md，new_note.md 已不存在。
+
+需要的证据形式：1 张文件列表截图
+
+------ 输出 ------
+最后一条文本消息**只输出**一份 JSON（不要 markdown 围栏、不要其它文字），结构：
+{
+  "success": true | false,
+  "confidence": 0.0 ~ 1.0,
+  "evidence_summary": "一句话说明你看到的最终状态",
+  "screenshot_paths": ["MCP 返回的截图本地缓存路径或描述"],
+  "failure_reason": "如果 success=false，最可能的原因；否则为空字符串"
+}

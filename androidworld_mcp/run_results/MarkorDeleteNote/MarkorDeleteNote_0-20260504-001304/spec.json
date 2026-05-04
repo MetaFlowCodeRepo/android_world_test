@@ -1,0 +1,22 @@
+{
+  "task": "MarkorDeleteNote",
+  "goal": "First, create the following notes in Markor: 1) 'keep_me.md' with content 'This note should stay'. 2) 'delete_me.md' with content 'This note should be deleted'. Then, delete the note in Markor named 'delete_me.md'.",
+  "params": {
+    "setup_notes": [
+      {
+        "file_name": "keep_me.md",
+        "content": "This note should stay"
+      },
+      {
+        "file_name": "delete_me.md",
+        "content": "This note should be deleted"
+      }
+    ],
+    "file_name": "delete_me.md"
+  },
+  "app_names": [
+    "markor"
+  ],
+  "complexity": 2,
+  "instance_id": "MarkorDeleteNote#0"
+}

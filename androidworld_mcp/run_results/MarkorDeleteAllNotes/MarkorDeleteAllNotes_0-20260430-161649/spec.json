@@ -1,0 +1,25 @@
+{
+  "task": "MarkorDeleteAllNotes",
+  "goal": "First, create the following notes in Markor: 1) 'note1.md' with content 'First note'. 2) 'note2.md' with content 'Second note'. 3) 'note3.md' with content 'Third note'. Then, delete all notes in Markor.",
+  "params": {
+    "setup_notes": [
+      {
+        "file_name": "note1.md",
+        "content": "First note"
+      },
+      {
+        "file_name": "note2.md",
+        "content": "Second note"
+      },
+      {
+        "file_name": "note3.md",
+        "content": "Third note"
+      }
+    ]
+  },
+  "app_names": [
+    "markor"
+  ],
+  "complexity": 2.4,
+  "instance_id": "MarkorDeleteAllNotes#0"
+}
